@@ -9,6 +9,7 @@ import { businessContextSchema } from "@/lib/schemas/business-context";
 import { marketInsightsSchema } from "@/lib/schemas/market-insights";
 import { consumerInsightSchema } from "@/lib/schemas/consumer-insight";
 import { competitiveInsightsSchema } from "@/lib/schemas/competitive";
+import { brandStrategySchema } from "@/lib/schemas/brand-strategy";
 import { getProjectById } from "@/lib/db/project-repo";
 import { getStageRecord } from "@/lib/db/stage-repo";
 import { getStageStatus } from "@/lib/workflow/workflow";
@@ -20,7 +21,8 @@ const SCHEMAS: Record<number, any> = {
   3: marketInsightsSchema,
   4: consumerInsightSchema,
   5: competitiveInsightsSchema,
-  // S6-S8 在对应 Task 实现时注册
+  6: brandStrategySchema,
+  // S7-S8 在对应 Task 实现时注册
 };
 
 export async function POST(

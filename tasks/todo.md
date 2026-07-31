@@ -120,10 +120,12 @@ Phase 3 把 AI Quality Audit + Cross Stage Check 插入 Step 3-4 之间。
   - Opening Message：AI 先展示竞品搜索发现，再引导用户讨论竞争格局
   - competitiveGap.marketOpportunity 可追溯到具体竞品差评原文或产品缺口
 
-- [ ] **2.5 ★** S6 品牌核心战略（战略枢纽验证）
-  - Schema: brand-strategy.ts。positioning / valuePropositions（三层）/ brandStory / brandPersonality / **reasoning**（marketOpportunityReference/consumerInsightReference/competitiveGapReference）
+- [x] **2.5 ★** S6 品牌核心战略（战略枢纽验证）
+  - Schema: brand-strategy.ts。positioning / valuePropositions（三层：functional/emotional/social，恰好3条）/ brandStory / brandPersonality（5-7个trait，每个含dos/donts）/ **reasoning**（marketOpportunityReference/consumerInsightReference/competitiveGapReference）
+  - Stage 6 extractor registered in Decision Memory（reasoning 不存入）
+  - S6 prompts copied from reference/ to src/lib/ai/prompts/
   - 本阶段不依赖搜索，但依赖 S3/S4/S5 的完整输出
-  - 强制引用：reasoning 字段显式追溯到 S3 市场机会 + S4 identityNeeds + S5 competitiveGap
+  - 强制引用：reasoning 字段显式追溯到 S3 市场机会 + S4 identityNeed + S5 competitiveGap
   - Opening Message：基于前序全部资产总结，引导创始人确认战略方向
   - **对照测试**：有 Context vs 无 Context 的 S6 输出
 

@@ -701,6 +701,98 @@ export function extractFromCompetitiveInsights(
   return entries;
 }
 
+// ── S6 提取器 ──────────────────────────────────────────
+
+/**
+ * 从 BrandStrategy JSON 提取战略资产
+ *
+ * 映射规则（来自 plan.md Task 1.5）：
+ * - positioning → confirmed_decision
+ * - valuePropositions[] → confirmed_decision
+ * - brandStory / brandPersonality → confirmed_decision
+ * - reasoning → 不存入（仅用于 Cross Stage Check）
+ */
+export function extractFromBrandStrategy(
+  projectId: string,
+  data: Record<string, any>
+): Array<{
+  entryType: EntryType;
+  content: string;
+  fieldPath: string;
+  evidenceLevel: EvidenceLevel;
+}> {
+  const entries: Array<{
+    entryType: EntryType;
+    content: string;
+    fieldPath: string;
+    evidenceLevel: EvidenceLevel;
+  }> = [];
+
+  // positioning → decision
+  if (data.positioning) {
+    entries.push({
+      entryType: "confirmed_decision",
+      content: data.positioning,
+      fieldPath: "positioning",
+      evidenceLevel: "ai_inferred",
+    });
+  }
+
+  // valuePropositions[] → decisions
+  if (Array.isArray(data.valuePropositions)) {
+    for (let i = 0; i < data.valuePropositions.length; i++) {
+      const vp = data.valuePropositions[i];
+      if (vp.proposition) {
+        entries.push({
+          entryType: "confirmed_decision",
+          content: `[${vp.level}] ${vp.proposition}`,
+          fieldPath: `valuePropositions[${i}]`,
+          evidenceLevel: "ai_inferred",
+        });
+      }
+    }
+  }
+
+  // brandStory.struggleMoment → fact
+  if (data.brandStory?.struggleMoment) {
+    entries.push({
+      entryType: "confirmed_fact",
+      content: data.brandStory.struggleMoment,
+      fieldPath: "brandStory.struggleMoment",
+      evidenceLevel: "ai_inferred",
+    });
+  }
+
+  // brandStory.brandAction → decision
+  if (data.brandStory?.brandAction) {
+    entries.push({
+      entryType: "confirmed_decision",
+      content: data.brandStory.brandAction,
+      fieldPath: "brandStory.brandAction",
+      evidenceLevel: "ai_inferred",
+    });
+  }
+
+  // brandPersonality traits → decisions (concatenated trait summary)
+  if (Array.isArray(data.brandPersonality)) {
+    const traits = data.brandPersonality
+      .filter((t: any) => t.trait)
+      .map((t: any) => t.trait);
+    if (traits.length > 0) {
+      entries.push({
+        entryType: "confirmed_decision",
+        content: `品牌人格特质: ${traits.join("、")}`,
+        fieldPath: "brandPersonality",
+        evidenceLevel: "ai_inferred",
+      });
+    }
+  }
+
+  // reasoning → 不存入（plan.md: "reasoning→不存入"）
+
+  return entries;
+}
+
 /** 阶段提取器注册表（Phase 2+ 填充） */
 export const stageExtractors: Record<number, StageExtractor> = {
   1: extractFromFounderVision,
@@ -708,5 +800,6 @@ export const stageExtractors: Record<number, StageExtractor> = {
   3: extractFromMarketInsights,
   4: extractFromConsumerInsight,
   5: extractFromCompetitiveInsights,
-  // S6-S8 提取器在对应阶段接入时注册
+  6: extractFromBrandStrategy,
+  // S7-S8 提取器在对应阶段接入时注册
 };

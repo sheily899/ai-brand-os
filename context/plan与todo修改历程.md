@@ -480,7 +480,7 @@ Phase 2 (8 tasks)
   2.2 S3 市场机会 + 搜索 ✅ 已完成
   2.3 S4 消费者洞察（无搜索）✅ 已完成
   2.4 S5 竞争判断 + 搜索 ✅ 已完成
-  2.5 S6 ★ 战略枢纽（无搜索）
+  2.5 S6 ★ 战略枢纽（无搜索）✅ 已完成
   2.6 S7 视觉 + S8 内容（S8 + 搜索）
   2.7 Knowledge Base 基础设施
   + Stage Orchestrator（advanceToNextStage，嵌入 stage-engine.ts）
@@ -678,3 +678,54 @@ Search Intelligence Layer: 8 个模块全部实现，构建通过 ✅
 - `npm run build`：全部路由注册成功 ✅
 - competitiveGap.marketOpportunity 可追溯到具体竞品差评原文或产品缺口 ✅
 - STAGE_REQUIRED_FIELDS[5] 无需修改（`["competitors", "competitiveGap"]` 与 Schema 一致）
+
+---
+
+## R13：Task 2.5 S6 品牌核心战略接入（战略枢纽）
+
+### 日期
+
+2026-08-01
+
+### 为什么修改
+
+按 Phase 2 执行计划，接入 S6 品牌核心战略阶段。S6 是整个工作流的战略枢纽——必须验证 S6 正确承接 S1-S5 并能够影响 S7-S8。
+
+### 如何修改
+
+1. **新建 `src/lib/schemas/brand-strategy.ts`**：
+   - `positioning`：完整定位陈述句（≥15 字）
+   - `valuePropositions`：恰好 3 条，level 分别为 functional/emotional/social，每条含 proposition + soWhatDerivation
+   - `brandStory`：struggleMoment + brandAction + brandRelationship
+   - `brandPersonality`：5-7 个 trait，每个含 trait + dos + donts
+   - `reasoning`：marketOpportunityReference（→S3）+ consumerInsightReference（→S4）+ competitiveGapReference（→S5）
+   - reasoning 三个字段均必填（≥10 字），无法追溯时标注"未追溯到前序数据"
+
+2. **S6 Decision Memory 提取器**（`decision-memory.ts`）：
+   - 注册 `extractFromBrandStrategy` 函数
+   - positioning → confirmed_decision
+   - valuePropositions[] → confirmed_decision
+   - brandStory.struggleMoment → confirmed_fact
+   - brandStory.brandAction / brandPersonality → confirmed_decision
+   - **reasoning → 不存入**（plan.md: "reasoning→不存入"，仅用于 Cross Stage Check）
+
+3. **注册 S6 Schema 到 converge 路由**：`SCHEMAS[6] = brandStrategySchema`
+
+4. **复制 S6 Prompt 文件**：`reference/stage6-{consultation,converge}.md` → `src/lib/ai/prompts/`
+
+### 影响的文件
+
+- `src/lib/schemas/brand-strategy.ts`（新建）
+- `src/lib/memory/decision-memory.ts`（新增 S6 提取器 + 注册，reasoning 不存入）
+- `src/app/api/project/[id]/stage/[n]/converge/route.ts`（注册 S6 Schema）
+- `src/lib/ai/prompts/stage6-consultation.md`（从 reference 复制）
+- `src/lib/ai/prompts/stage6-converge.md`（从 reference 复制）
+- `tasks/todo.md`（Task 2.5 标记完成）
+
+### 验证结果
+
+- `npx tsc --noEmit`：零错误 ✅
+- `npm run build`：全部路由注册成功 ✅
+- reasoning 显式追溯 S3/S4/S5 具体字段，供 Phase 3 Cross Stage Check 验证 ✅
+- reasoning 不存入 Decision Memory ✅
+- STAGE_REQUIRED_FIELDS[6] 无需修改（`["positioning", "valuePropositions", "reasoning"]` 与 Schema 一致）
