@@ -376,9 +376,157 @@ export function extractFromBusinessContext(
   return entries;
 }
 
+// ── S3 提取器 ──────────────────────────────────────────
+
+/**
+ * 从 MarketInsights JSON 提取战略资产
+ *
+ * 映射规则（来自 plan.md Task 1.5）：
+ * - marketOverview.marketSize/growthRate/marketStage → confirmed_fact (search_backed)
+ * - industryTrend.currentTrends[] → confirmed_fact
+ * - channelAnalysis.mainChannels[] → confirmed_fact
+ * - regulatoryEnvironment.policies[] → confirmed_fact
+ * - categoryStatus.* → confirmed_fact
+ * - experienceGaps[].gap → confirmed_fact
+ * - opportunityDirections[].direction（evidenceLevel=verified）→ confirmed_fact
+ * - opportunityDirections[].direction（evidenceLevel=inferred/hypothesis）→ hypothesis
+ *
+ * 通用规则：search_backed > search_snippet > ai_inferred
+ * 字段值为"搜索范围内未找到"或空数组不写入
+ */
+export function extractFromMarketInsights(
+  projectId: string,
+  data: Record<string, any>
+): Array<{
+  entryType: EntryType;
+  content: string;
+  fieldPath: string;
+  evidenceLevel: EvidenceLevel;
+}> {
+  const entries: Array<{
+    entryType: EntryType;
+    content: string;
+    fieldPath: string;
+    evidenceLevel: EvidenceLevel;
+  }> = [];
+
+  const hasSearchData =
+    Array.isArray(data.dataSources) && data.dataSources.length > 0;
+  const searchEvidence: EvidenceLevel = hasSearchData
+    ? "search_backed"
+    : "ai_inferred";
+
+  // marketOverview.* → facts (search data)
+  if (data.marketOverview?.marketSize) {
+    const val = data.marketOverview.marketSize;
+    if (val !== "搜索范围内未找到") {
+      entries.push({
+        entryType: "confirmed_fact",
+        content: val,
+        fieldPath: "marketOverview.marketSize",
+        evidenceLevel: searchEvidence,
+      });
+    }
+  }
+  if (data.marketOverview?.growthRate) {
+    const val = data.marketOverview.growthRate;
+    if (val !== "搜索范围内未找到") {
+      entries.push({
+        entryType: "confirmed_fact",
+        content: val,
+        fieldPath: "marketOverview.growthRate",
+        evidenceLevel: searchEvidence,
+      });
+    }
+  }
+  if (data.marketOverview?.marketStage && data.marketOverview.marketStage !== "信息不足") {
+    entries.push({
+      entryType: "confirmed_fact",
+      content: `赛道阶段: ${data.marketOverview.marketStage}`,
+      fieldPath: "marketOverview.marketStage",
+      evidenceLevel: searchEvidence,
+    });
+  }
+
+  // industryTrend.currentTrends[] → facts
+  if (Array.isArray(data.industryTrend?.currentTrends)) {
+    for (let i = 0; i < data.industryTrend.currentTrends.length; i++) {
+      entries.push({
+        entryType: "confirmed_fact",
+        content: data.industryTrend.currentTrends[i],
+        fieldPath: `industryTrend.currentTrends[${i}]`,
+        evidenceLevel: searchEvidence,
+      });
+    }
+  }
+
+  // channelAnalysis.mainChannels[] → facts
+  if (Array.isArray(data.channelAnalysis?.mainChannels)) {
+    for (let i = 0; i < data.channelAnalysis.mainChannels.length; i++) {
+      entries.push({
+        entryType: "confirmed_fact",
+        content: data.channelAnalysis.mainChannels[i],
+        fieldPath: `channelAnalysis.mainChannels[${i}]`,
+        evidenceLevel: searchEvidence,
+      });
+    }
+  }
+
+  // categoryStatus.* → facts
+  if (data.categoryStatus?.definition) {
+    entries.push({
+      entryType: "confirmed_fact",
+      content: data.categoryStatus.definition,
+      fieldPath: "categoryStatus.definition",
+      evidenceLevel: "ai_inferred",
+    });
+  }
+  if (data.categoryStatus?.currentState) {
+    entries.push({
+      entryType: "confirmed_fact",
+      content: data.categoryStatus.currentState,
+      fieldPath: "categoryStatus.currentState",
+      evidenceLevel: "ai_inferred",
+    });
+  }
+
+  // experienceGaps[].gap → facts
+  if (Array.isArray(data.experienceGaps)) {
+    for (let i = 0; i < data.experienceGaps.length; i++) {
+      if (data.experienceGaps[i].gap) {
+        entries.push({
+          entryType: "confirmed_fact",
+          content: data.experienceGaps[i].gap,
+          fieldPath: `experienceGaps[${i}].gap`,
+          evidenceLevel: "ai_inferred",
+        });
+      }
+    }
+  }
+
+  // opportunityDirections[] → verified→fact, inferred/hypothesis→hypothesis
+  if (Array.isArray(data.opportunityDirections)) {
+    for (let i = 0; i < data.opportunityDirections.length; i++) {
+      const od = data.opportunityDirections[i];
+      if (od.direction) {
+        const isVerified = od.evidenceLevel === "verified";
+        entries.push({
+          entryType: isVerified ? "confirmed_fact" : "hypothesis",
+          content: od.direction,
+          fieldPath: `opportunityDirections[${i}].direction`,
+          evidenceLevel: od.evidenceLevel === "verified" ? "search_backed" : "ai_inferred",
+        });
+      }
+    }
+  }
+
+  return entries;
+}
+
 /** 阶段提取器注册表（Phase 2+ 填充） */
 export const stageExtractors: Record<number, StageExtractor> = {
   1: extractFromFounderVision,
   2: extractFromBusinessContext,
-  // S3-S8 提取器在对应阶段接入时注册
+  3: extractFromMarketInsights,
+  // S4-S8 提取器在对应阶段接入时注册
 };

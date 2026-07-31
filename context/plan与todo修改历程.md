@@ -477,7 +477,7 @@ Phase 1 (5 tasks + shared tool)
 Phase 2 (8 tasks)
   2.0 ★ Search Intelligence Layer ✅ 已完成
   2.1 S2 商业背景 + 搜索 ✅ 已完成
-  2.2 S3 市场机会 + 搜索
+  2.2 S3 市场机会 + 搜索 ✅ 已完成
   2.3 S4 消费者洞察（无搜索）
   2.4 S5 竞争判断 + 搜索
   2.5 S6 ★ 战略枢纽（无搜索）
@@ -524,3 +524,50 @@ Opening Message: 通过 sendMessage 触发，无独立文件 ✅
 Search Intelligence Layer: 8 个模块全部实现，构建通过 ✅
 模块边界红线: 8 条全部保持 ✅
 ```
+
+---
+
+## R10：Task 2.2 S3 市场机会分析接入
+
+### 日期
+
+2026-08-01
+
+### 为什么修改
+
+按 Phase 2 执行计划，接入 S3 市场机会分析阶段。
+
+### 如何修改
+
+1. **新建 `src/lib/schemas/market-insights.ts`**：
+   - 搜索数据层（5 个字段）：marketOverview + industryTrend + channelAnalysis + regulatoryEnvironment + dataSources[]
+   - AI 分析层（3 个字段）：categoryStatus + experienceGaps[] + opportunityDirections[]
+   - experienceGaps[].severity 枚举：critical / major / minor
+   - opportunityDirections[].evidenceLevel 枚举：verified / inferred / hypothesis
+   - dataSources[].type 枚举：full_text / snippet
+
+2. **S3 Decision Memory 提取器**（`decision-memory.ts`）：
+   - 注册 `extractFromMarketInsights` 函数
+   - marketOverview.* / industryTrend.currentTrends[] / channelAnalysis.* → confirmed_fact (search_backed)
+   - categoryStatus.* / experienceGaps[].gap → confirmed_fact
+   - opportunityDirections[] → verified→confirmed_fact, inferred/hypothesis→hypothesis
+   - "搜索范围内未找到" 或空数组不写入
+
+3. **注册 S3 Schema 到 converge 路由**：`SCHEMAS[3] = marketInsightsSchema`
+
+4. **复制 S3 Prompt 文件**：`reference/stage3-{consultation,converge}.md` → `src/lib/ai/prompts/`
+
+### 影响的文件
+
+- `src/lib/schemas/market-insights.ts`（新建）
+- `src/lib/memory/decision-memory.ts`（新增 S3 提取器 + 注册）
+- `src/app/api/project/[id]/stage/[n]/converge/route.ts`（注册 S3 Schema）
+- `src/lib/ai/prompts/stage3-consultation.md`（从 reference 复制）
+- `src/lib/ai/prompts/stage3-converge.md`（从 reference 复制）
+- `tasks/todo.md`（Task 2.2 标记完成）
+
+### 验证结果
+
+- `npx tsc --noEmit`：零错误 ✅
+- `npm run build`：全部路由注册成功 ✅
+- S3 两层结构：搜索数据层不直接进入报告，必须经过 AI 分析层 ✅

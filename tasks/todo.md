@@ -93,8 +93,10 @@ Phase 3 把 AI Quality Audit + Cross Stage Check 插入 Step 3-4 之间。
   - Opening Message：AI 先展示搜索结果摘要，再引导用户讨论行业环境
   - 验证：BusinessContext JSON 产出，搜索覆盖维度完整，dataSources 标注
 
-- [ ] **2.2** S3 市场机会分析
+- [x] **2.2** S3 市场机会分析
   - Schema: market-insights.ts。搜索数据层（marketOverview/industryTrend/channelAnalysis/regulatoryEnvironment/dataSources）+ AI 分析层（categoryStatus/experienceGaps/opportunityDirections）
+  - Stage 3 extractor registered in Decision Memory
+  - S3 prompts copied from reference/ to src/lib/ai/prompts/
   - **复用 2.0 Search Intelligence Layer**：覆盖矩阵 8 维度（品类规模/增速/供需缺口/价格带/用户画像/区域差异/季节周期/替代威胁）
   - Opening Message：AI 先展示市场搜索发现，再引导用户讨论品类机会
   - 验证：MarketInsights JSON 两层结构完整，dataSources 区分全文/摘要
