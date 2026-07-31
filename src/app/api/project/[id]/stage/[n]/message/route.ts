@@ -3,11 +3,12 @@
  * Consultation 消息 — SSE 流式响应
  */
 import { NextRequest } from "next/server";
-import { loadPrompt, buildMessages } from "@/lib/ai/loader";
+import { loadPrompt, buildMessages, isSearchStage } from "@/lib/ai/loader";
 import { getLLMProvider } from "@/lib/ai/provider";
 import { getProjectById } from "@/lib/db/project-repo";
 import { getStageRecord, saveConsultationMessages } from "@/lib/db/stage-repo";
 import { initStageRecord } from "@/lib/workflow/workflow";
+import { buildMemoryContext } from "@/lib/memory/decision-memory";
 
 export async function POST(
   req: NextRequest,
@@ -38,11 +39,16 @@ export async function POST(
       content: m.content,
     })) ?? [];
 
-  // 加载 Prompt
+  // 加载 Decision Memory Context（前序阶段已确认的战略资产）
+  const decisionMemoryContext = await buildMemoryContext(projectId, stageNumber);
+
+  // 加载 Prompt（注入 Decision Memory Context + 搜索协议）
   const systemPrompt = loadPrompt({
     stage: stageNumber,
     mode: "consultation",
     variables: { 品牌名: project.name, 品类: project.category || "" },
+    decisionMemoryContext: decisionMemoryContext || undefined,
+    includeSearchProtocol: isSearchStage(stageNumber),
   });
 
   const messages = buildMessages(systemPrompt, history, message);
