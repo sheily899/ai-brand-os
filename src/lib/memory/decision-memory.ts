@@ -523,10 +523,97 @@ export function extractFromMarketInsights(
   return entries;
 }
 
+// ── S4 提取器 ──────────────────────────────────────────
+
+/**
+ * 从 ConsumerInsight JSON 提取战略资产
+ *
+ * 映射规则（来自 plan.md Task 1.5）：
+ * - targetConsumer.definition → confirmed_fact
+ * - existingSolutions[].failReason → confirmed_fact
+ * - deepNeeds.functionalNeed → confirmed_fact
+ * - deepNeeds.identityNeed → confirmed_decision（S6 强制引用）
+ *
+ * identityNeed 是 S6 的强制引用字段，标记为 decision 级别。
+ */
+export function extractFromConsumerInsight(
+  projectId: string,
+  data: Record<string, any>
+): Array<{
+  entryType: EntryType;
+  content: string;
+  fieldPath: string;
+  evidenceLevel: EvidenceLevel;
+}> {
+  const entries: Array<{
+    entryType: EntryType;
+    content: string;
+    fieldPath: string;
+    evidenceLevel: EvidenceLevel;
+  }> = [];
+
+  // targetConsumer.definition → fact
+  if (data.targetConsumer?.definition) {
+    entries.push({
+      entryType: "confirmed_fact",
+      content: data.targetConsumer.definition,
+      fieldPath: "targetConsumer.definition",
+      evidenceLevel: "ai_inferred",
+    });
+  }
+
+  // targetConsumer.idealSelfReflection → hypothesis (inferred by nature)
+  if (data.targetConsumer?.idealSelfReflection) {
+    entries.push({
+      entryType: "hypothesis",
+      content: data.targetConsumer.idealSelfReflection,
+      fieldPath: "targetConsumer.idealSelfReflection",
+      evidenceLevel: "ai_inferred",
+    });
+  }
+
+  // existingSolutions[].failReason → facts
+  if (Array.isArray(data.existingSolutions)) {
+    for (let i = 0; i < data.existingSolutions.length; i++) {
+      if (data.existingSolutions[i].failReason) {
+        entries.push({
+          entryType: "confirmed_fact",
+          content: data.existingSolutions[i].failReason,
+          fieldPath: `existingSolutions[${i}].failReason`,
+          evidenceLevel: "ai_inferred",
+        });
+      }
+    }
+  }
+
+  // deepNeeds.functionalNeed → fact
+  if (data.deepNeeds?.functionalNeed) {
+    entries.push({
+      entryType: "confirmed_fact",
+      content: data.deepNeeds.functionalNeed,
+      fieldPath: "deepNeeds.functionalNeed",
+      evidenceLevel: "ai_inferred",
+    });
+  }
+
+  // deepNeeds.identityNeed → decision（S6 强制引用）
+  if (data.deepNeeds?.identityNeed) {
+    entries.push({
+      entryType: "confirmed_decision",
+      content: data.deepNeeds.identityNeed,
+      fieldPath: "deepNeeds.identityNeed",
+      evidenceLevel: "ai_inferred",
+    });
+  }
+
+  return entries;
+}
+
 /** 阶段提取器注册表（Phase 2+ 填充） */
 export const stageExtractors: Record<number, StageExtractor> = {
   1: extractFromFounderVision,
   2: extractFromBusinessContext,
   3: extractFromMarketInsights,
-  // S4-S8 提取器在对应阶段接入时注册
+  4: extractFromConsumerInsight,
+  // S5-S8 提取器在对应阶段接入时注册
 };

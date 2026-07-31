@@ -85,7 +85,7 @@ export const STAGE_REQUIRED_FIELDS: Record<number, string[]> = {
   1: ["founderMotivation", "observations", "confirmedProblems"],
   2: ["businessBackground.marketContext", "coreChallenges.externalChallenges", "strategicDirection.directionHypothesis"],
   3: ["marketOverview", "opportunityDirections"],
-  4: ["identityNeeds", "functionalNeeds", "userPersona"],
+  4: ["targetConsumer.definition", "deepNeeds.identityNeed", "deepNeeds.functionalNeed"],
   5: ["competitors", "competitiveGap"],
   6: ["positioning", "valuePropositions", "reasoning"],
   7: ["visualDirection"],

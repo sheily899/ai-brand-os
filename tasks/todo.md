@@ -101,11 +101,14 @@ Phase 3 把 AI Quality Audit + Cross Stage Check 插入 Step 3-4 之间。
   - Opening Message：AI 先展示市场搜索发现，再引导用户讨论品类机会
   - 验证：MarketInsights JSON 两层结构完整，dataSources 区分全文/摘要
 
-- [ ] **2.3** S4 消费者洞察
-  - Schema: consumer-insight.ts。关键字段：identityNeeds（S6 强制引用）
+- [x] **2.3** S4 消费者洞察
+  - Schema: consumer-insight.ts。关键字段：deepNeeds.identityNeed（S6 强制引用）
+  - Stage 4 extractor registered in Decision Memory
+  - S4 prompts copied from reference/ to src/lib/ai/prompts/
   - 本阶段不依赖搜索，但使用 S3/S5 的搜索数据作为交叉验证
   - Opening Message：基于前序阶段资产，引导用户描述目标消费者
   - 验证：输出完成"原始信息 → 行为事实 → 洞察"推导
+  - ⚠️ plan.md 字段名 `identityNeeds`/`functionalNeeds`/`userPersona` 与实际 Prompt 中 `deepNeeds.identityNeed`/`deepNeeds.functionalNeed`/`targetConsumer` 不一致，已按 Prompt 实际字段实现
 
 - [ ] **2.4** S5 竞争判断
   - Schema: competitive.ts。竞品数据层（competitors[] 完整卡片）+ competitiveGap + competitiveLandscape

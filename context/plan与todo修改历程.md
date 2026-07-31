@@ -478,7 +478,7 @@ Phase 2 (8 tasks)
   2.0 ★ Search Intelligence Layer ✅ 已完成
   2.1 S2 商业背景 + 搜索 ✅ 已完成
   2.2 S3 市场机会 + 搜索 ✅ 已完成
-  2.3 S4 消费者洞察（无搜索）
+  2.3 S4 消费者洞察（无搜索）✅ 已完成
   2.4 S5 竞争判断 + 搜索
   2.5 S6 ★ 战略枢纽（无搜索）
   2.6 S7 视觉 + S8 内容（S8 + 搜索）
@@ -571,3 +571,60 @@ Search Intelligence Layer: 8 个模块全部实现，构建通过 ✅
 - `npx tsc --noEmit`：零错误 ✅
 - `npm run build`：全部路由注册成功 ✅
 - S3 两层结构：搜索数据层不直接进入报告，必须经过 AI 分析层 ✅
+
+---
+
+## R11：Task 2.3 S4 消费者洞察接入
+
+### 日期
+
+2026-08-01
+
+### 为什么修改
+
+按 Phase 2 执行计划，接入 S4 消费者洞察阶段。S4 不依赖搜索，使用 S1-S3 Decision Memory 作为 Context。
+
+### 如何修改
+
+1. **新建 `src/lib/schemas/consumer-insight.ts`**：
+   - `targetConsumer`：definition + idealSelfReflection
+   - `existingSolutions[]`：solutionType + examples + failReason
+   - `deepNeeds`：functionalNeed + identityNeed（S6 强制引用字段）
+
+2. **S4 Decision Memory 提取器**（`decision-memory.ts`）：
+   - 注册 `extractFromConsumerInsight` 函数
+   - targetConsumer.definition / existingSolutions[].failReason / deepNeeds.functionalNeed → confirmed_fact
+   - targetConsumer.idealSelfReflection → hypothesis
+   - deepNeeds.identityNeed → confirmed_decision（S6 强制引用，标记为 decision 级别）
+
+3. **修复 `rule-check.ts` 字段不匹配**：
+   - `STAGE_REQUIRED_FIELDS[4]` 旧值：`["identityNeeds", "functionalNeeds", "userPersona"]`
+   - 新值：`["targetConsumer.definition", "deepNeeds.identityNeed", "deepNeeds.functionalNeed"]`
+
+4. **注册 S4 Schema 到 converge 路由**：`SCHEMAS[4] = consumerInsightSchema`
+
+5. **复制 S4 Prompt 文件**：`reference/stage4-{consultation,converge}.md` → `src/lib/ai/prompts/`
+
+### 发现的字段不一致
+
+| 位置 | plan.md/todo.md 旧字段名 | 实际 Prompt 字段名 | 说明 |
+|---|---|---|---|
+| `rule-check.ts` L88 | `identityNeeds` | `deepNeeds.identityNeed`（嵌套在 deepNeeds 下，单数） | plan.md 顶层字段名与实际嵌套结构不一致 |
+| `rule-check.ts` L88 | `functionalNeeds` | `deepNeeds.functionalNeed`（嵌套在 deepNeeds 下，单数） | 同上 |
+| `rule-check.ts` L88 | `userPersona` | `targetConsumer.definition` | 不存在 `userPersona` 顶层字段 |
+
+### 影响的文件
+
+- `src/lib/schemas/consumer-insight.ts`（新建）
+- `src/lib/memory/decision-memory.ts`（新增 S4 提取器 + 注册）
+- `src/lib/audit/rule-check.ts`（修复字段名）
+- `src/app/api/project/[id]/stage/[n]/converge/route.ts`（注册 S4 Schema）
+- `src/lib/ai/prompts/stage4-consultation.md`（从 reference 复制）
+- `src/lib/ai/prompts/stage4-converge.md`（从 reference 复制）
+- `tasks/todo.md`（Task 2.3 标记完成，标注字段不一致）
+
+### 验证结果
+
+- `npx tsc --noEmit`：零错误 ✅
+- `npm run build`：全部路由注册成功 ✅
+- identityNeed 标记为 confirmed_decision，供 S6 强制引用 ✅
