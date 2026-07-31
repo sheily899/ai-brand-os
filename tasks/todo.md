@@ -110,11 +110,13 @@ Phase 3 把 AI Quality Audit + Cross Stage Check 插入 Step 3-4 之间。
   - 验证：输出完成"原始信息 → 行为事实 → 洞察"推导
   - ⚠️ plan.md 字段名 `identityNeeds`/`functionalNeeds`/`userPersona` 与实际 Prompt 中 `deepNeeds.identityNeed`/`deepNeeds.functionalNeed`/`targetConsumer` 不一致，已按 Prompt 实际字段实现
 
-- [ ] **2.4** S5 竞争判断
+- [x] **2.4** S5 竞争判断
   - Schema: competitive.ts。竞品数据层（competitors[] 完整卡片）+ competitiveGap + competitiveLandscape
-  - 关键字段：competitiveGap + competitors[].opportunityGap（S6 强制引用）
+  - 关键字段：competitiveGap.marketOpportunity + competitors[].opportunityGap（S6 强制引用）
+  - Stage 5 extractor registered in Decision Memory
+  - S5 prompts copied from reference/ to src/lib/ai/prompts/
   - **复用 2.0 Search Intelligence Layer**：覆盖矩阵 8 维度（品牌定位/价格体系/产品体系/核心卖点/视觉体系/内容传播/用户好评/用户差评）
-  - 竞品卡片：至少 3 个竞品，含用户好评/差评原文摘录（excerpt 字段）
+  - 竞品卡片：至少 3 个竞品，含用户好评/差评原文摘录（excerpt 字段，≥10 字）
   - Opening Message：AI 先展示竞品搜索发现，再引导用户讨论竞争格局
   - competitiveGap.marketOpportunity 可追溯到具体竞品差评原文或产品缺口
 

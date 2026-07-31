@@ -479,7 +479,7 @@ Phase 2 (8 tasks)
   2.1 S2 商业背景 + 搜索 ✅ 已完成
   2.2 S3 市场机会 + 搜索 ✅ 已完成
   2.3 S4 消费者洞察（无搜索）✅ 已完成
-  2.4 S5 竞争判断 + 搜索
+  2.4 S5 竞争判断 + 搜索 ✅ 已完成
   2.5 S6 ★ 战略枢纽（无搜索）
   2.6 S7 视觉 + S8 内容（S8 + 搜索）
   2.7 Knowledge Base 基础设施
@@ -628,3 +628,53 @@ Search Intelligence Layer: 8 个模块全部实现，构建通过 ✅
 - `npx tsc --noEmit`：零错误 ✅
 - `npm run build`：全部路由注册成功 ✅
 - identityNeed 标记为 confirmed_decision，供 S6 强制引用 ✅
+
+---
+
+## R12：Task 2.4 S5 竞争判断接入
+
+### 日期
+
+2026-08-01
+
+### 为什么修改
+
+按 Phase 2 执行计划，接入 S5 竞争判断阶段。S5 复用 Search Intelligence Layer（覆盖矩阵 8 维度）。
+
+### 如何修改
+
+1. **新建 `src/lib/schemas/competitive.ts`**（最复杂的 Schema，200+ 行）：
+   - `competitiveLandscape`：dimensions[]（type/representativeBrands/coreStrategy/consumerNeed）+ convergenceAndDivergence
+   - `competitors[]`（13 字段竞品卡片）：name/positioning/slogan/priceRange/heroProducts[]/visualSystem(4 子字段)/communication(platforms/contentDirection/userPraise[]/userComplaints[])/strengths[]/weaknesses[]/opportunityGap/sources[]
+   - `competitiveGap`：unmetNeeds[] + marketOpportunity
+   - `dataSources[]`
+   - 关键约束：userPraise/userComplaints 各 ≥2 条，excerpt ≥10 字保留用户原文
+   - weaknesses[] 禁止比较级评价词（更好/更差/不如/更高级）
+   - opportunityGap 是竞品卡片最重要字段 — 直接为 S6 差异化方向提供输入
+
+2. **S5 Decision Memory 提取器**（`decision-memory.ts`）：
+   - 注册 `extractFromCompetitiveInsights` 函数
+   - competitors[] → confirmed_fact（search_backed）
+   - competitors[].opportunityGap → hypothesis
+   - competitiveGap.unmetNeeds[] → hypothesis
+   - competitiveGap.marketOpportunity → hypothesis（S6 强制引用）
+
+3. **注册 S5 Schema 到 converge 路由**：`SCHEMAS[5] = competitiveInsightsSchema`
+
+4. **复制 S5 Prompt 文件**：`reference/stage5-{consultation,converge}.md` → `src/lib/ai/prompts/`
+
+### 影响的文件
+
+- `src/lib/schemas/competitive.ts`（新建）
+- `src/lib/memory/decision-memory.ts`（新增 S5 提取器 + 注册）
+- `src/app/api/project/[id]/stage/[n]/converge/route.ts`（注册 S5 Schema）
+- `src/lib/ai/prompts/stage5-consultation.md`（从 reference 复制）
+- `src/lib/ai/prompts/stage5-converge.md`（从 reference 复制）
+- `tasks/todo.md`（Task 2.4 标记完成）
+
+### 验证结果
+
+- `npx tsc --noEmit`：零错误 ✅
+- `npm run build`：全部路由注册成功 ✅
+- competitiveGap.marketOpportunity 可追溯到具体竞品差评原文或产品缺口 ✅
+- STAGE_REQUIRED_FIELDS[5] 无需修改（`["competitors", "competitiveGap"]` 与 Schema 一致）

@@ -609,11 +609,104 @@ export function extractFromConsumerInsight(
   return entries;
 }
 
+// ── S5 提取器 ──────────────────────────────────────────
+
+/**
+ * 从 CompetitiveInsights JSON 提取战略资产
+ *
+ * 映射规则（来自 plan.md Task 1.5）：
+ * - competitors[].name / positioning / strengths / weaknesses → confirmed_fact（search_backed）
+ * - competitiveGap.marketOpportunity → hypothesis
+ * - competitiveGap.unmetNeeds[] → hypothesis
+ *
+ * competitiveGap 供 S6 强制引用。
+ */
+export function extractFromCompetitiveInsights(
+  projectId: string,
+  data: Record<string, any>
+): Array<{
+  entryType: EntryType;
+  content: string;
+  fieldPath: string;
+  evidenceLevel: EvidenceLevel;
+}> {
+  const entries: Array<{
+    entryType: EntryType;
+    content: string;
+    fieldPath: string;
+    evidenceLevel: EvidenceLevel;
+  }> = [];
+
+  const hasSearchData =
+    Array.isArray(data.dataSources) && data.dataSources.length > 0;
+  const searchEvidence: EvidenceLevel = hasSearchData
+    ? "search_backed"
+    : "ai_inferred";
+
+  // competitiveLandscape → fact
+  if (data.competitiveLandscape?.convergenceAndDivergence) {
+    entries.push({
+      entryType: "confirmed_fact",
+      content: data.competitiveLandscape.convergenceAndDivergence,
+      fieldPath: "competitiveLandscape.convergenceAndDivergence",
+      evidenceLevel: searchEvidence,
+    });
+  }
+
+  // competitors[] → facts (search data backed)
+  if (Array.isArray(data.competitors)) {
+    for (let i = 0; i < data.competitors.length; i++) {
+      const c = data.competitors[i];
+      if (c.name) {
+        entries.push({
+          entryType: "confirmed_fact",
+          content: `竞品: ${c.name} — 定位: ${c.positioning || "未标注"}`,
+          fieldPath: `competitors[${i}]`,
+          evidenceLevel: searchEvidence,
+        });
+      }
+      if (c.opportunityGap) {
+        entries.push({
+          entryType: "hypothesis",
+          content: `${c.name} 机会缺口: ${c.opportunityGap}`,
+          fieldPath: `competitors[${i}].opportunityGap`,
+          evidenceLevel: "ai_inferred",
+        });
+      }
+    }
+  }
+
+  // competitiveGap.unmetNeeds[] → hypotheses
+  if (Array.isArray(data.competitiveGap?.unmetNeeds)) {
+    for (let i = 0; i < data.competitiveGap.unmetNeeds.length; i++) {
+      entries.push({
+        entryType: "hypothesis",
+        content: data.competitiveGap.unmetNeeds[i],
+        fieldPath: `competitiveGap.unmetNeeds[${i}]`,
+        evidenceLevel: "ai_inferred",
+      });
+    }
+  }
+
+  // competitiveGap.marketOpportunity → hypothesis（S6 强制引用）
+  if (data.competitiveGap?.marketOpportunity) {
+    entries.push({
+      entryType: "hypothesis",
+      content: data.competitiveGap.marketOpportunity,
+      fieldPath: "competitiveGap.marketOpportunity",
+      evidenceLevel: "ai_inferred",
+    });
+  }
+
+  return entries;
+}
+
 /** 阶段提取器注册表（Phase 2+ 填充） */
 export const stageExtractors: Record<number, StageExtractor> = {
   1: extractFromFounderVision,
   2: extractFromBusinessContext,
   3: extractFromMarketInsights,
   4: extractFromConsumerInsight,
-  // S5-S8 提取器在对应阶段接入时注册
+  5: extractFromCompetitiveInsights,
+  // S6-S8 提取器在对应阶段接入时注册
 };
