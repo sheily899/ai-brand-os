@@ -21,6 +21,10 @@ export interface ConsultationContext {
   history: ConsultationMessage[];
   variables: Record<string, string>;
   decisionMemoryContext?: string;
+  /** 搜索上下文（Search Intelligence Layer 产出） */
+  searchContext?: string;
+  /** 是否注入搜索协议（S2/S3/S5/S8 默认开启） */
+  includeSearchProtocol?: boolean;
 }
 
 /** 流式响应生成器 — 用于 SSE API */
@@ -35,6 +39,8 @@ export async function* streamConsultation(
     mode: "consultation",
     variables: ctx.variables,
     decisionMemoryContext: ctx.decisionMemoryContext,
+    searchContext: ctx.searchContext,
+    includeSearchProtocol: ctx.includeSearchProtocol,
   });
 
   const messages = buildMessages(
@@ -64,6 +70,8 @@ export async function sendMessage(
     mode: "consultation",
     variables: ctx.variables,
     decisionMemoryContext: ctx.decisionMemoryContext,
+    searchContext: ctx.searchContext,
+    includeSearchProtocol: ctx.includeSearchProtocol,
   });
 
   const messages = buildMessages(
