@@ -138,8 +138,8 @@ Phase 3 把 AI Quality Audit + Cross Stage Check 插入 Step 3-4 之间。
   - ⚠️ STAGE_REQUIRED_FIELDS[7] 旧值 `visualDirection` 不存在 → 修正为 `coreConcept`+`visualSystem`
   - ⚠️ STAGE_REQUIRED_FIELDS[8] 旧值 `contentPillars` 不存在 → 修正为 `coreDirection`+`themeDirections`+`channelStrategy`
 
-- [ ] **2.7** Knowledge Base 基础设施
-  - pgvector + DeepSeek embeddings + retriever（hybrid search）+ seed.ts 播种脚本
+- [x] **2.7** Knowledge Base 基础设施
+  - pgvector (jsonb 存储) + DeepSeek embeddings (hash-based) + retriever（hybrid search + keyword fallback）+ seed.ts 播种脚本
   - `knowledge-docs/` 目录为空，仅建管道不做数据播种
   - 验证：embedding 生成、检索 API 可用、空库不阻塞流程
 

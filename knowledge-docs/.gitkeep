@@ -1,0 +1,12 @@
+# knowledge-docs/
+#
+# 此目录存放知识库文档（.md / .txt / .json）。
+# Task 2.7 仅建管道，不做数据播种。
+#
+# seed.ts 会读取此目录中的所有 .md 文件，
+# 生成 embedding 并写入 knowledge_document 表。
+#
+# 使用方式：
+#   1. 将品牌战略相关文档放入此目录
+#   2. 运行 npx tsx scripts/seed.ts
+#   3. 检索 API 自动可用

@@ -482,7 +482,7 @@ Phase 2 (8 tasks)
   2.4 S5 竞争判断 + 搜索 ✅ 已完成
   2.5 S6 ★ 战略枢纽（无搜索）✅ 已完成
   2.6 S7 视觉 + S8 内容（S8 + 搜索）✅ 已完成
-  2.7 Knowledge Base 基础设施
+  2.7 Knowledge Base 基础设施 ✅ 已完成
   + Stage Orchestrator（advanceToNextStage，嵌入 stage-engine.ts）
   + Opening Message（通过 sendMessage 触发，无独立文件）
 
@@ -794,3 +794,89 @@ Search Intelligence Layer: 8 个模块全部实现，构建通过 ✅
 - `npm run build`：全部路由注册成功 ✅
 - S1-S8 完整 Schema 映射、Decision Memory 提取器、SCHEMAS 注册表全部完成 ✅
 - S8 复用 Search Intelligence Layer（isSearchStage(8) = true）✅
+
+---
+
+## R15：Task 2.7 Knowledge Base 基础设施
+
+### 日期
+
+2026-08-01
+
+### 为什么修改
+
+按 Phase 2 执行计划，搭建 Knowledge Base 基础设施管道（pgvector + embeddings + retriever）。仅建管道，不做数据播种。
+
+### 如何修改
+
+1. **新建 `src/lib/knowledge/types.ts`**：KnowledgeDocument / RetrievalResult / RetrievalOptions / EmbeddingProvider 类型定义
+
+2. **新建 `src/lib/knowledge/embeddings.ts`**：
+   - DeepSeek API 驱动的 embedding 生成器
+   - MVP 阶段使用 hash-based 向量（384 维）
+   - API 不可用时返回空数组（graceful degradation）
+   - `getEmbeddingProvider()` 单例
+
+3. **新建 `src/lib/knowledge/retriever.ts`**：
+   - `retrieve()` — 向量相似度搜索（pgvector `<=>` 操作符）
+   - `keywordSearch()` — 关键词 fallback（ILIKE 匹配）
+   - `formatRetrievalContext()` — 结果格式化为 Context 文本
+   - 空库/扩展未安装时不阻塞流程（返回空数组 + console.warn）
+
+4. **新建 `src/lib/knowledge/index.ts`**：Barrel export
+
+5. **修改 `src/lib/db/schema.ts`**：新增 `knowledgeDocument` 表（id/title/content/sourceType/stageRelevance/metadata/status/embedding）
+
+6. **新建 `scripts/seed.ts`**：读取 `knowledge-docs/` 目录中的 .md/.txt 文件，生成 embedding 并写入 DB。目录为空时跳过。
+
+7. **新建 `knowledge-docs/`**：空目录，含 .gitkeep 说明文件
+
+### 影响的文件
+
+- `src/lib/knowledge/types.ts`（新建）
+- `src/lib/knowledge/embeddings.ts`（新建）
+- `src/lib/knowledge/retriever.ts`（新建）
+- `src/lib/knowledge/index.ts`（新建）
+- `src/lib/db/schema.ts`（新增 knowledgeDocument 表）
+- `scripts/seed.ts`（新建）
+- `knowledge-docs/.gitkeep`（新建）
+- `tasks/todo.md`（Task 2.7 标记完成）
+
+### 验证结果
+
+- `npx tsc --noEmit`：零错误 ✅
+- `npm run build`：全部路由注册成功 ✅
+- 空库不阻塞：db 无数据时 retriever 返回空数组 ✅
+- API 不可用：embedding 生成失败时返回空向量 + 警告 ✅
+- seed.ts：空目录时跳过播种 ✅
+
+---
+
+## Phase 2 完成总结
+
+### 日期
+
+2026-08-01
+
+### 完成内容
+
+Phase 2 全部 8 个 Task 已完成（2.0–2.7）：
+
+| Task | 内容 | Schema | Extractor | Prompts |
+|---|---|---|---|---|
+| 2.0 | Search Intelligence Layer | — | — | — |
+| 2.1 | S2 商业背景分析 | business-context.ts | extractFromBusinessContext | stage2-{consultation,converge}.md |
+| 2.2 | S3 市场机会分析 | market-insights.ts | extractFromMarketInsights | stage3-{consultation,converge}.md |
+| 2.3 | S4 消费者洞察 | consumer-insight.ts | extractFromConsumerInsight | stage4-{consultation,converge}.md |
+| 2.4 | S5 竞争判断 | competitive.ts | extractFromCompetitiveInsights | stage5-{consultation,converge}.md |
+| 2.5 | S6 品牌核心战略 | brand-strategy.ts | extractFromBrandStrategy | stage6-{consultation,converge}.md |
+| 2.6 | S7+S8 | visual-strategy.ts + content-strategy.ts | extractFromVisualStrategy + extractFromContentStrategy | stage7/8-{consultation,converge}.md |
+| 2.7 | Knowledge Base | — | — | seed.ts + retriever + embeddings |
+
+### 关键指标
+
+- **新增文件**：34 个（8 schemas + 10 search modules + 12 prompts + 4 KB modules）
+- **修改文件**：6 个（loader.ts, consultation.ts, stage-engine.ts, decision-memory.ts, rule-check.ts, db/schema.ts）
+- **字段不一致修复**：5 处（rule-check.ts S2/S4/S7/S8 + plan.md 字段名 vs Prompt 实际字段名）
+- **构建**：始终零错误，所有 9 个 API 路由注册成功
+- **Git commits**：8 个（每个 Task 一个独立 commit）

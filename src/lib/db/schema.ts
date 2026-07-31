@@ -34,6 +34,24 @@ export const stageRecord = pgTable(
   })
 );
 
+// ── KnowledgeDocument ───────────────────────────────────
+// pgvector 扩展需在 Supabase 中手动启用：
+//   CREATE EXTENSION IF NOT EXISTS vector;
+// 向量列使用 text 存储（JSON 序列化的浮点数组），
+// 正式环境切换为 pgvector 原生 vector(384) 类型。
+export const knowledgeDocument = pgTable("knowledge_document", {
+  id: text("id").primaryKey(),
+  title: text("title").notNull(),
+  content: text("content").notNull(),
+  sourceType: text("source_type").notNull().default("general"),
+  stageRelevance: integer("stage_relevance"),
+  metadata: jsonb("metadata"),
+  status: text("status").notNull().default("active"), // active | archived
+  embedding: jsonb("embedding"), // number[] — 正式环境替换为 pgvector vector(384)
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
 // ── DecisionMemoryEntry ──────────────────────────────────
 export const decisionMemoryEntry = pgTable("decision_memory_entry", {
   id: text("id").primaryKey(),
