@@ -71,7 +71,7 @@ Phase 3 把 AI Quality Audit + Cross Stage Check 插入 Step 3-4 之间。
 
 ---
 
-- [ ] **2.0 ★ Search Intelligence Layer**（共享基础能力，S2/S3/S5/S8 共用）
+- [x] **2.0 ★ Search Intelligence Layer**（共享基础能力，S2/S3/S5/S8 共用）
   - **Search Intent Generator**：根据阶段 + 品牌信息 + 品类 + Decision Memory Context，自动生成搜索关键词和方向
   - **Brave Search API 封装**：调用 Brave Search，返回结构化结果（URL + title + snippet）
   - **URL Ranking**：AI 根据权威性/相关度/数据密度筛选 Top 3-5 URL
@@ -80,7 +80,7 @@ Phase 3 把 AI Quality Audit + Cross Stage Check 插入 Step 3-4 之间。
   - **Search Coverage Matrix 驱动**：每个阶段调用前对照 `shared-search-protocol.md` 覆盖矩阵，缺哪补哪
   - **自动搜索触发**：Stage Orchestrator 在进入新阶段时自动调用，无需用户手动触发
   - **Search Context 注入**：搜索结果结构化注入 Consultation system prompt（实现 `loader.ts` 中 `includeSearchProtocol` 参数，当前为空壳）
-  - **Opening Message 生成器**（`src/lib/stage/opening-message.ts`）：根据阶段+搜索结果+Decision Memory 生成 AI 开场白，S2/S3/S5/S8 含搜索发现四段式
+  - **Opening Message**：不创建独立文件，由 Orchestrator 通过 `sendMessage()` + 搜索上下文触发 AI 自然生成开场白
   - **Stage Orchestrator 串联**（`stage-engine.ts` 新增 `advanceToNextStage()`）：Convergence → Decision Memory → Rule Check → Gate → Advance → Search → Opening Message → 咨询
   - **dataSources 区分**：全文引用 vs 摘要引用，存入阶段 JSON
   - 验证：S2/S3/S5/S8 进入时自动搜索 → 搜索结果进入 Consultation Context → AI 开场白包含搜索发现 → 未覆盖维度标注"搜索范围内未找到"

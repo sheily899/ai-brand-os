@@ -367,16 +367,105 @@ Phase 6 (3 tasks)
   6.3 Prompt 优化（含强制回归门禁）
 ```
 
+---
+
+## R8：Task 2.0 实现 + Opening Message 方案调整（2026-08-01）
+
+### 为什么修改
+
+1. Task 2.0 Search Intelligence Layer 实现完成
+2. 用户明确指令"不要额外创建 opening-message.ts"，改为通过 `sendMessage()` + 搜索上下文触发 AI 自然生成开场白
+
+### Task 2.0 实现文件
+
+| 文件 | 职责 |
+|---|---|
+| `src/lib/ai/search/types.ts` | 搜索层全部类型定义 |
+| `src/lib/ai/search/search-intent.ts` | AI 搜索意图生成，读取 shared-search-protocol.md |
+| `src/lib/ai/search/brave-search.ts` | Brave Search API 封装（无 key 优雅降级） |
+| `src/lib/ai/search/url-ranking.ts` | AI 三维评分 URL 排名（权威/相关/密度） |
+| `src/lib/ai/search/retrieval.ts` | 三级回退抓取（Jina → cheerio → snippet） |
+| `src/lib/ai/search/source-credibility.ts` | 分阶段来源可信度配置 |
+| `src/lib/ai/search/search-context.ts` | 搜索结果 → Consultation Context 注入 |
+| `src/lib/ai/search/index.ts` | Barrel export + `runSearch()` 一键编排 |
+| `src/lib/audit/rule-check.ts` | Phase 2 轻量 Rule Check（纯代码） |
+| `src/lib/stage/stage-engine.ts` | 新增 `advanceToNextStage()` Orchestrator |
+| `src/app/api/project/[id]/stage/[n]/advance/route.ts` | Orchestrator API 端点 |
+| `src/lib/ai/loader.ts`（修改） | 实现 `includeSearchProtocol` + `searchContext` |
+| `src/lib/ai/consultation.ts`（修改） | 传递 `searchContext` + `includeSearchProtocol` |
+
+### Opening Message 方案变更
+
+| 旧方案（R7 plan.md） | 新方案（R8 实现） |
+|---|---|
+| 创建独立 `opening-message.ts` 文件 | ❌ 不创建 |
+| 由 `opening-message.ts` 生成 AI 开场白 | 由 Orchestrator 通过 `sendMessage()` 发送触发消息，AI 由阶段 Prompt + 搜索上下文自然生成第一条回复 |
+
+### 影响的文件
+
+- `tasks/plan.md`：移除 `opening-message.ts` 引用，更新 Orchestrator 实现归属表和 Opening Message 生成机制说明
+- `tasks/todo.md`：Task 2.0 标记完成，Opening Message 条目更新为实现方式
+
+---
+
+## 当前 plan.md 最终结构
+
+```
+Phase 1 (5 tasks + shared tool)
+  1.1 项目初始化
+  1.2 Project 实体 + 创建页
+  1.3 Workflow Engine
+  1.4 Stage Engine S1 闭环
+  1.5 Decision Memory（含 S1-S8 完整映射表）
+  共享工具 run-stage.ts
+
+Phase 2 (8 tasks)
+  2.0 ★ Search Intelligence Layer ✅ 已完成
+  2.1 S2 商业背景 + 搜索
+  2.2 S3 市场机会 + 搜索
+  2.3 S4 消费者洞察（无搜索）
+  2.4 S5 竞争判断 + 搜索
+  2.5 S6 ★ 战略枢纽（无搜索）
+  2.6 S7 视觉 + S8 内容（S8 + 搜索）
+  2.7 Knowledge Base 基础设施
+  + Stage Orchestrator（advanceToNextStage，嵌入 stage-engine.ts）
+  + Opening Message（通过 sendMessage 触发，无独立文件）
+
+Phase 3 (5 tasks，增强 Phase 2 已有组件)
+  3.1 Rule Check 增强（+ 逻辑冲突检测）
+  3.2 AI Quality Audit（新增 LLM 组件）
+  3.3 ★ Cross Stage Context Check（新增，含 S6 字段级依赖）
+  3.4 Quality Gate 增强（简单 Gate → 三级 + 评分阈值）
+  3.5 Report Engine + Final Audit（新增引擎层，含中文字体）
+
+Phase 4 (4 tasks)
+  4.1 工作台 UI（含状态恢复）
+  4.2 审计卡片
+  4.3 报告页 UI
+  4.4 文件上传
+
+Phase 5 (3 tasks)
+  5.1 单元测试
+  5.2 集成测试
+  5.3 ★ 三案例质量测试
+
+Phase 6 (3 tasks)
+  6.1 Token 追踪
+  6.2 Prompt Caching
+  6.3 Prompt 优化（含强制回归门禁）
+```
+
 ## 最终全链路验证结果
 
 ```
 旧字段残留: 全部零残留 ✅
 旧 Task 编号(2.2a/2.2b): 全部零残留 ✅
 新通道一致性: 28 个 Task 依赖声明与附录图完全一致 ✅
-端到端流程: 创建项目→S1→Orchestrator(Converge→Memory→Check→Gate→Advance→Search→Opening)→S2→...→S8→Audit→Report→PDF 可通 ✅
+端到端流程: 创建项目→S1→Orchestrator(Converge→Memory→Check→Gate→Advance→Search→sendMessage)→S2→...→S8→Audit→Report→PDF 可通 ✅
 Decision Memory: S1 已实现，S2-S8 提取规则完整定义 ✅
 Cross Stage Check: S6 reasoning 字段级检查已衔接 ✅
 Stage Orchestrator: 每步→文件→Task 全部有归属 ✅
-Opening Message: 生成机制已定义（opening-message.ts） ✅
+Opening Message: 通过 sendMessage 触发，无独立文件 ✅
+Search Intelligence Layer: 8 个模块全部实现，构建通过 ✅
 模块边界红线: 8 条全部保持 ✅
 ```

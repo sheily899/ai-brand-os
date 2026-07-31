@@ -408,16 +408,15 @@ S4/S6/S7 的开场白基于前序阶段 Decision Memory Context 总结。
 | Step 3: Rule Check | `src/lib/audit/rule-check.ts` → Phase 2 轻量版（仅字段完整性+Schema完整性） | Task 2.0（Phase 2 版）、Task 3.1（增强版） |
 | Step 4: Gate Decision → Advance | `src/lib/workflow/workflow.ts` → `handleGateDecision()`（已实现） | Task 1.3 |
 | Step 5: Search（自动） | `src/lib/ai/search.ts` + `search-intent.ts` + `retrieval.ts` + `source-credibility.ts`（新建） | Task 2.0 |
-| Step 6: Opening Message | `src/lib/stage/opening-message.ts`（新建）→ 根据阶段+搜索结果+Decision Memory 生成开场白 | Task 2.0 |
+| Step 6: Opening Message | `src/lib/stage/stage-engine.ts` → 通过 `sendMessage()` 发送系统触发消息（含搜索上下文）让 AI 自然生成开场白，不创建独立 opening-message.ts | Task 2.0 |
 | Step 7: 进入咨询 | `src/lib/ai/consultation.ts` → `streamConsultation()`（已实现） | Task 1.4 |
 | 串联调度 | `src/lib/stage/stage-engine.ts` → 新增 `advanceToNextStage()` 函数，按序调用以上步骤 | Task 2.0 |
 
 **Opening Message 生成机制**：
-- 文件：`src/lib/stage/opening-message.ts`
-- 输入：阶段编号 + 品牌名 + 品类 + Decision Memory Context + 搜索结果（S2/S3/S5/S8）
-- 输出：首条 AI 消息文本（Markdown 格式，S2/S3/S5/S8 含搜索发现四段式）
-- 触发：Orchestrator Step 6 调用 → 结果作为 Consultation 首条 assistant 消息注入对话历史
-- 不发起独立 LLM 调用：Opening Message 由 `src/lib/ai/consultation.ts` 的 `streamConsultation()` 生成（作为首条系统指令的特殊响应），与后续咨询共享同一对话上下文
+- 方式：不创建独立的 `opening-message.ts`。Orchestrator Step 6 通过 `sendMessage()` 发送系统触发消息，AI 由对应阶段 Prompt + 搜索上下文自然生成第一条回复
+- 触发消息（有搜索结果时）：`请基于以上搜索发现，先向用户展示搜索成果覆盖情况，然后提出本阶段的第一个咨询问题。`
+- 触发消息（无搜索结果时）：`请基于前序阶段的战略资产，向用户总结当前阶段的目标和已知信息，然后提出本阶段的第一个咨询问题。`
+- 不发起独立 LLM 调用：Opening Message 就是 Consultation Engine 的第一条回复，与后续咨询共享同一对话上下文
 
 ---
 
