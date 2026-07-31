@@ -793,6 +793,109 @@ export function extractFromBrandStrategy(
   return entries;
 }
 
+// ── S7 提取器 ──────────────────────────────────────────
+
+/**
+ * 从 VisualStrategy JSON 提取战略资产
+ *
+ * 映射规则（来自 plan.md Task 1.5）：
+ * - visualDirection → confirmed_decision
+ */
+export function extractFromVisualStrategy(
+  projectId: string,
+  data: Record<string, any>
+): Array<{
+  entryType: EntryType;
+  content: string;
+  fieldPath: string;
+  evidenceLevel: EvidenceLevel;
+}> {
+  const entries: Array<{
+    entryType: EntryType;
+    content: string;
+    fieldPath: string;
+    evidenceLevel: EvidenceLevel;
+  }> = [];
+
+  // coreConcept → decision
+  if (data.coreConcept) {
+    entries.push({
+      entryType: "confirmed_decision",
+      content: data.coreConcept,
+      fieldPath: "coreConcept",
+      evidenceLevel: "ai_inferred",
+    });
+  }
+
+  // keywords → decisions
+  if (Array.isArray(data.keywords)) {
+    for (const kw of data.keywords) {
+      if (kw.keyword) {
+        entries.push({
+          entryType: "confirmed_decision",
+          content: `视觉关键词: ${kw.keyword}`,
+          fieldPath: "keywords",
+          evidenceLevel: "ai_inferred",
+        });
+      }
+    }
+  }
+
+  return entries;
+}
+
+// ── S8 提取器 ──────────────────────────────────────────
+
+/**
+ * 从 ContentStrategy JSON 提取战略资产
+ *
+ * 映射规则（来自 plan.md Task 1.5）：
+ * - contentPillars → confirmed_decision
+ */
+export function extractFromContentStrategy(
+  projectId: string,
+  data: Record<string, any>
+): Array<{
+  entryType: EntryType;
+  content: string;
+  fieldPath: string;
+  evidenceLevel: EvidenceLevel;
+}> {
+  const entries: Array<{
+    entryType: EntryType;
+    content: string;
+    fieldPath: string;
+    evidenceLevel: EvidenceLevel;
+  }> = [];
+
+  // coreDirection → decision
+  if (data.coreDirection) {
+    entries.push({
+      entryType: "confirmed_decision",
+      content: data.coreDirection,
+      fieldPath: "coreDirection",
+      evidenceLevel: "ai_inferred",
+    });
+  }
+
+  // themeDirections[].pillar → decisions
+  if (Array.isArray(data.themeDirections)) {
+    for (let i = 0; i < data.themeDirections.length; i++) {
+      const td = data.themeDirections[i];
+      if (td.pillar) {
+        entries.push({
+          entryType: "confirmed_decision",
+          content: `内容支柱: ${td.pillar} — ${td.corePurpose || ""}`,
+          fieldPath: `themeDirections[${i}]`,
+          evidenceLevel: "ai_inferred",
+        });
+      }
+    }
+  }
+
+  return entries;
+}
+
 /** 阶段提取器注册表（Phase 2+ 填充） */
 export const stageExtractors: Record<number, StageExtractor> = {
   1: extractFromFounderVision,
@@ -801,5 +904,6 @@ export const stageExtractors: Record<number, StageExtractor> = {
   4: extractFromConsumerInsight,
   5: extractFromCompetitiveInsights,
   6: extractFromBrandStrategy,
-  // S7-S8 提取器在对应阶段接入时注册
+  7: extractFromVisualStrategy,
+  8: extractFromContentStrategy,
 };

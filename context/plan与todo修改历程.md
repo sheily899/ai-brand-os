@@ -481,7 +481,7 @@ Phase 2 (8 tasks)
   2.3 S4 消费者洞察（无搜索）✅ 已完成
   2.4 S5 竞争判断 + 搜索 ✅ 已完成
   2.5 S6 ★ 战略枢纽（无搜索）✅ 已完成
-  2.6 S7 视觉 + S8 内容（S8 + 搜索）
+  2.6 S7 视觉 + S8 内容（S8 + 搜索）✅ 已完成
   2.7 Knowledge Base 基础设施
   + Stage Orchestrator（advanceToNextStage，嵌入 stage-engine.ts）
   + Opening Message（通过 sendMessage 触发，无独立文件）
@@ -729,3 +729,68 @@ Search Intelligence Layer: 8 个模块全部实现，构建通过 ✅
 - reasoning 显式追溯 S3/S4/S5 具体字段，供 Phase 3 Cross Stage Check 验证 ✅
 - reasoning 不存入 Decision Memory ✅
 - STAGE_REQUIRED_FIELDS[6] 无需修改（`["positioning", "valuePropositions", "reasoning"]` 与 Schema 一致）
+
+---
+
+## R14：Task 2.6 S7 视觉策略 + S8 内容规划接入
+
+### 日期
+
+2026-08-01
+
+### 为什么修改
+
+按 Phase 2 执行计划，接入 S7 和 S8 最后两个执行层阶段。S8 复用 Search Intelligence Layer。
+
+### 如何修改
+
+1. **新建 `src/lib/schemas/visual-strategy.ts`**（S7）：
+   - `coreConcept`：统领性视觉核心概念（≥10 字）
+   - `keywords[]`：3-5 个感知关键词，每个含 keyword + rationale（≥4 字）
+   - `visualSystem`：5 维度（form/color/typography/imagery/material），每个含 choice（≥6 字，含视觉方向+品牌感知关联）+ exclusions + perceptualTone（≥6 字）
+   - `restrictions[]`：≥3 条视觉禁区，每个含 exclusion + strategicRationale
+
+2. **新建 `src/lib/schemas/content-strategy.ts`**（S8）：
+   - `coreDirection`：内容核心方向（≥10 字）
+   - `contentValueSystem`：恰好 4 条（awareness/interest/trust/decision），含 userProblem + contentValue
+   - `themeDirections[]`：2-4 个内容支柱，每个含 pillar + corePurpose + topicDirections[]
+   - `channelStrategy`：恰好 3 条（xiaohongshu/douyin/wechat），含 contentFormat + expressionFocus
+   - 可选 dataSources[]（S8 复用 Search Intelligence Layer）
+
+3. **S7/S8 Decision Memory 提取器**（`decision-memory.ts`）：
+   - S7 coreConcept + keywords → confirmed_decision
+   - S8 coreDirection + themeDirections → confirmed_decision
+   - 阶段提取器注册表 S1-S8 全部完成
+
+4. **修复 `rule-check.ts` 字段不匹配**：
+   - `STAGE_REQUIRED_FIELDS[7]` 旧值：`["visualDirection"]` → 新值：`["coreConcept", "visualSystem"]`
+   - `STAGE_REQUIRED_FIELDS[8]` 旧值：`["contentPillars"]` → 新值：`["coreDirection", "themeDirections", "channelStrategy"]`
+
+5. **注册 S7/S8 Schema 到 converge 路由**：SCHEMAS 映射 S1-S8 全部完成
+
+6. **复制 S7/S8 Prompt 文件**：4 个文件从 reference/ → prompts/
+
+### 发现的字段不一致
+
+| 位置 | 旧值 | 新值 | 说明 |
+|---|---|---|---|
+| `rule-check.ts` S7 | `["visualDirection"]` | `["coreConcept", "visualSystem"]` | `visualDirection` 不存在于 S7 Prompt Schema |
+| `rule-check.ts` S8 | `["contentPillars"]` | `["coreDirection", "themeDirections", "channelStrategy"]` | `contentPillars` 不存在于 S8 Prompt Schema |
+
+### 影响的文件
+
+- `src/lib/schemas/visual-strategy.ts`（新建）
+- `src/lib/schemas/content-strategy.ts`（新建）
+- `src/lib/memory/decision-memory.ts`（新增 S7/S8 提取器，注册表完整）
+- `src/lib/audit/rule-check.ts`（修复 S7/S8 字段名）
+- `src/app/api/project/[id]/stage/[n]/converge/route.ts`（SCHEMAS S1-S8 完整）
+- `src/lib/ai/prompts/stage7-{consultation,converge}.md`（从 reference 复制）
+- `src/lib/ai/prompts/stage8-{consultation,converge}.md`（从 reference 复制）
+- `tasks/todo.md`（Task 2.6 标记完成）
+
+### 验证结果
+
+- `npx tsc --noEmit`：零错误 ✅
+- `npm run build`：全部路由注册成功 ✅
+- S1-S8 完整 Schema 映射、Decision Memory 提取器、SCHEMAS 注册表全部完成 ✅
+- S8 复用 Search Intelligence Layer（isSearchStage(8) = true）✅

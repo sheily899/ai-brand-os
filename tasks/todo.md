@@ -129,10 +129,14 @@ Phase 3 把 AI Quality Audit + Cross Stage Check 插入 Step 3-4 之间。
   - Opening Message：基于前序全部资产总结，引导创始人确认战略方向
   - **对照测试**：有 Context vs 无 Context 的 S6 输出
 
-- [ ] **2.6** S7 视觉策略 + S8 内容规划
+- [x] **2.6** S7 视觉策略 + S8 内容规划
   - visual-strategy.ts + content-strategy.ts
+  - Stage 7+8 extractors registered in Decision Memory
+  - S7/S8 prompts copied from reference/ to src/lib/ai/prompts/
   - S8 **复用 2.0 Search Intelligence Layer**：覆盖矩阵 7 维度（平台生态/内容趋势/用户兴趣/KOL 生态/内容形式/品牌案例/用户互动）
   - 验证：S7 visualDirection 可追溯到 S6，S8 ContentStrategy JSON 的 dataSources 非空
+  - ⚠️ STAGE_REQUIRED_FIELDS[7] 旧值 `visualDirection` 不存在 → 修正为 `coreConcept`+`visualSystem`
+  - ⚠️ STAGE_REQUIRED_FIELDS[8] 旧值 `contentPillars` 不存在 → 修正为 `coreDirection`+`themeDirections`+`channelStrategy`
 
 - [ ] **2.7** Knowledge Base 基础设施
   - pgvector + DeepSeek embeddings + retriever（hybrid search）+ seed.ts 播种脚本

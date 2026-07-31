@@ -10,11 +10,13 @@ import { marketInsightsSchema } from "@/lib/schemas/market-insights";
 import { consumerInsightSchema } from "@/lib/schemas/consumer-insight";
 import { competitiveInsightsSchema } from "@/lib/schemas/competitive";
 import { brandStrategySchema } from "@/lib/schemas/brand-strategy";
+import { visualStrategySchema } from "@/lib/schemas/visual-strategy";
+import { contentStrategySchema } from "@/lib/schemas/content-strategy";
 import { getProjectById } from "@/lib/db/project-repo";
 import { getStageRecord } from "@/lib/db/stage-repo";
 import { getStageStatus } from "@/lib/workflow/workflow";
 
-// 阶段 Schema 映射表
+// 阶段 Schema 映射表（S1-S8 完整）
 const SCHEMAS: Record<number, any> = {
   1: founderVisionSchema,
   2: businessContextSchema,
@@ -22,7 +24,8 @@ const SCHEMAS: Record<number, any> = {
   4: consumerInsightSchema,
   5: competitiveInsightsSchema,
   6: brandStrategySchema,
-  // S7-S8 在对应 Task 实现时注册
+  7: visualStrategySchema,
+  8: contentStrategySchema,
 };
 
 export async function POST(
