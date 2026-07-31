@@ -5,6 +5,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { runStage } from "@/lib/stage/stage-engine";
 import { founderVisionSchema } from "@/lib/schemas/founder-vision";
+import { businessContextSchema } from "@/lib/schemas/business-context";
 import { getProjectById } from "@/lib/db/project-repo";
 import { getStageRecord } from "@/lib/db/stage-repo";
 import { getStageStatus } from "@/lib/workflow/workflow";
@@ -12,7 +13,8 @@ import { getStageStatus } from "@/lib/workflow/workflow";
 // 阶段 Schema 映射表
 const SCHEMAS: Record<number, any> = {
   1: founderVisionSchema,
-  // Phase 2 阶段在此扩展
+  2: businessContextSchema,
+  // S3-S8 在对应 Task 实现时注册
 };
 
 export async function POST(

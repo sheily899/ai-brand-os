@@ -261,8 +261,124 @@ export type StageExtractor = (
   evidenceLevel: EvidenceLevel;
 }>;
 
+// ── S2 提取器 ──────────────────────────────────────────
+
+/**
+ * 从 BusinessContext JSON 提取战略资产
+ *
+ * 映射规则（来自 plan.md Task 1.5）：
+ * - businessBackground.marketContext → confirmed_fact (search_backed if dataSources present)
+ * - businessBackground.drivingForces[] → confirmed_fact
+ * - businessBackground.strategicWindow → confirmed_fact
+ * - coreChallenges.externalChallenges[] → confirmed_fact
+ * - coreChallenges.internalChallenges[] → confirmed_fact
+ * - strategicDirection.directionHypothesis → hypothesis
+ * - strategicDirection.workingPriorities[] → hypothesis
+ */
+export function extractFromBusinessContext(
+  projectId: string,
+  data: Record<string, any>
+): Array<{
+  entryType: EntryType;
+  content: string;
+  fieldPath: string;
+  evidenceLevel: EvidenceLevel;
+}> {
+  const entries: Array<{
+    entryType: EntryType;
+    content: string;
+    fieldPath: string;
+    evidenceLevel: EvidenceLevel;
+  }> = [];
+
+  const hasSearchData =
+    Array.isArray(data.dataSources) && data.dataSources.length > 0;
+  const factEvidence: EvidenceLevel = hasSearchData ? "search_backed" : "ai_inferred";
+
+  // businessBackground.marketContext → fact
+  if (data.businessBackground?.marketContext) {
+    entries.push({
+      entryType: "confirmed_fact",
+      content: data.businessBackground.marketContext,
+      fieldPath: "businessBackground.marketContext",
+      evidenceLevel: factEvidence,
+    });
+  }
+
+  // businessBackground.drivingForces[] → facts
+  if (Array.isArray(data.businessBackground?.drivingForces)) {
+    for (let i = 0; i < data.businessBackground.drivingForces.length; i++) {
+      entries.push({
+        entryType: "confirmed_fact",
+        content: data.businessBackground.drivingForces[i],
+        fieldPath: `businessBackground.drivingForces[${i}]`,
+        evidenceLevel: factEvidence,
+      });
+    }
+  }
+
+  // businessBackground.strategicWindow → fact
+  if (data.businessBackground?.strategicWindow) {
+    entries.push({
+      entryType: "confirmed_fact",
+      content: data.businessBackground.strategicWindow,
+      fieldPath: "businessBackground.strategicWindow",
+      evidenceLevel: factEvidence,
+    });
+  }
+
+  // coreChallenges.externalChallenges[] → facts
+  if (Array.isArray(data.coreChallenges?.externalChallenges)) {
+    for (let i = 0; i < data.coreChallenges.externalChallenges.length; i++) {
+      entries.push({
+        entryType: "confirmed_fact",
+        content: data.coreChallenges.externalChallenges[i],
+        fieldPath: `coreChallenges.externalChallenges[${i}]`,
+        evidenceLevel: "ai_inferred",
+      });
+    }
+  }
+
+  // coreChallenges.internalChallenges[] → facts
+  if (Array.isArray(data.coreChallenges?.internalChallenges)) {
+    for (let i = 0; i < data.coreChallenges.internalChallenges.length; i++) {
+      entries.push({
+        entryType: "confirmed_fact",
+        content: data.coreChallenges.internalChallenges[i],
+        fieldPath: `coreChallenges.internalChallenges[${i}]`,
+        evidenceLevel: "ai_inferred",
+      });
+    }
+  }
+
+  // strategicDirection.directionHypothesis → hypothesis
+  if (data.strategicDirection?.directionHypothesis) {
+    entries.push({
+      entryType: "hypothesis",
+      content: data.strategicDirection.directionHypothesis,
+      fieldPath: "strategicDirection.directionHypothesis",
+      evidenceLevel: "ai_inferred",
+    });
+  }
+
+  // strategicDirection.workingPriorities[] → hypotheses
+  if (Array.isArray(data.strategicDirection?.workingPriorities)) {
+    for (let i = 0; i < data.strategicDirection.workingPriorities.length; i++) {
+      entries.push({
+        entryType: "hypothesis",
+        content: data.strategicDirection.workingPriorities[i],
+        fieldPath: `strategicDirection.workingPriorities[${i}]`,
+        evidenceLevel: "ai_inferred",
+      });
+    }
+  }
+
+  return entries;
+}
+
 /** 阶段提取器注册表（Phase 2+ 填充） */
 export const stageExtractors: Record<number, StageExtractor> = {
   1: extractFromFounderVision,
-  // S2-S8 提取器在对应阶段接入时注册
+  2: extractFromBusinessContext,
+  // S3-S8 提取器在对应阶段接入时注册
 };

@@ -85,8 +85,10 @@ Phase 3 把 AI Quality Audit + Cross Stage Check 插入 Step 3-4 之间。
   - **dataSources 区分**：全文引用 vs 摘要引用，存入阶段 JSON
   - 验证：S2/S3/S5/S8 进入时自动搜索 → 搜索结果进入 Consultation Context → AI 开场白包含搜索发现 → 未覆盖维度标注"搜索范围内未找到"
 
-- [ ] **2.1** S2 商业背景分析
+- [x] **2.1** S2 商业背景分析
   - Schema: business-context.ts
+  - Stage 2 extractor registered in Decision Memory
+  - S2 prompts copied from reference/ to src/lib/ai/prompts/
   - **复用 2.0 Search Intelligence Layer**：覆盖矩阵 8 维度（市场规模/增长趋势/生命周期/政策环境/消费趋势/渠道结构/平台生态/爆品路径）
   - Opening Message：AI 先展示搜索结果摘要，再引导用户讨论行业环境
   - 验证：BusinessContext JSON 产出，搜索覆盖维度完整，dataSources 标注

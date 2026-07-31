@@ -408,6 +408,61 @@ Phase 6 (3 tasks)
 
 ---
 
+## R9：Task 2.1 S2 商业背景分析接入
+
+### 日期
+
+2026-08-01
+
+### 为什么修改
+
+按 Phase 2 执行计划，接入 S2 商业背景分析阶段，实现从 Schema → Consultation → Convergence → Decision Memory 的完整闭环。
+
+### 如何修改
+
+1. **新建 `src/lib/schemas/business-context.ts`**：
+   - `businessBackgroundSchema`：marketContext + drivingForces[2-5] + strategicWindow
+   - `coreChallengesSchema`：externalChallenges[1+] + internalChallenges[1+]
+   - `strategicDirectionSchema`：directionHypothesis（须含试探性措辞）+ workingPriorities[1+]
+   - 可选 `dataSources[]` 字段（搜索来源记录）
+
+2. **S2 Decision Memory 提取器**（`decision-memory.ts`）：
+   - 注册 `extractFromBusinessContext` 函数
+   - 映射规则：businessBackground/* → confirmed_fact，coreChallenges/* → confirmed_fact，strategicDirection/* → hypothesis
+   - 有 dataSources 时 evidenceLevel 升为 search_backed
+
+3. **修复 `rule-check.ts` 字段不匹配**：
+   - `STAGE_REQUIRED_FIELDS[2]` 旧值：`["businessBackground", "strategicChallenge"]`（`strategicChallenge` 字段不存在）
+   - 新值：`["businessBackground.marketContext", "coreChallenges.externalChallenges", "strategicDirection.directionHypothesis"]`
+
+4. **注册 S2 Schema 到 converge 路由**：`SCHEMAS[2] = businessContextSchema`
+
+5. **复制 S2 Prompt 文件**：`reference/stage2-{consultation,converge}.md` → `src/lib/ai/prompts/`
+
+### 发现的字段不一致
+
+| 位置 | 旧值 | 新值 | 说明 |
+|---|---|---|---|
+| `rule-check.ts` L86 | `["businessBackground", "strategicChallenge"]` | `["businessBackground.marketContext", "coreChallenges.externalChallenges", "strategicDirection.directionHypothesis"]` | `strategicChallenge` 不存在于 S2 converge JSON Schema |
+
+### 影响的文件
+
+- `src/lib/schemas/business-context.ts`（新建）
+- `src/lib/memory/decision-memory.ts`（新增 S2 提取器 + 注册）
+- `src/lib/audit/rule-check.ts`（修复字段名）
+- `src/app/api/project/[id]/stage/[n]/converge/route.ts`（注册 S2 Schema）
+- `src/lib/ai/prompts/stage2-consultation.md`（从 reference 复制）
+- `src/lib/ai/prompts/stage2-converge.md`（从 reference 复制）
+- `tasks/todo.md`（Task 2.1 标记完成）
+
+### 验证结果
+
+- `npx tsc --noEmit`：零错误 ✅
+- `npm run build`：所有路由注册成功 ✅
+- S2 全链路：Convergence → Normalization → Zod Validation → Decision Memory → Save → Orchestrator Advance → S3 ✅
+
+---
+
 ## 当前 plan.md 最终结构
 
 ```
@@ -421,7 +476,7 @@ Phase 1 (5 tasks + shared tool)
 
 Phase 2 (8 tasks)
   2.0 ★ Search Intelligence Layer ✅ 已完成
-  2.1 S2 商业背景 + 搜索
+  2.1 S2 商业背景 + 搜索 ✅ 已完成
   2.2 S3 市场机会 + 搜索
   2.3 S4 消费者洞察（无搜索）
   2.4 S5 竞争判断 + 搜索

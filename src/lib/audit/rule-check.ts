@@ -83,7 +83,7 @@ export function runRuleCheck(
  */
 export const STAGE_REQUIRED_FIELDS: Record<number, string[]> = {
   1: ["founderMotivation", "observations", "confirmedProblems"],
-  2: ["businessBackground", "strategicChallenge"],
+  2: ["businessBackground.marketContext", "coreChallenges.externalChallenges", "strategicDirection.directionHypothesis"],
   3: ["marketOverview", "opportunityDirections"],
   4: ["identityNeeds", "functionalNeeds", "userPersona"],
   5: ["competitors", "competitiveGap"],
