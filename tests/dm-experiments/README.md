@@ -168,7 +168,7 @@ Layered Mode: 2,709,655 tokens (10.8M chars)
 
 ---
 
-## 七、实验 4：输出质量回归实验（假设③验证）
+## 八、实验 4：输出质量回归实验（假设③验证）
 
 ### 设计
 
@@ -206,7 +206,7 @@ Layered Mode: 2,709,655 tokens (10.8M chars)
 
 ---
 
-## 八、文件结构
+## 九、文件结构
 
 ```
 tests/dm-experiments/
