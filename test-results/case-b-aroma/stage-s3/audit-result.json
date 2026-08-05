@@ -1,0 +1,139 @@
+{
+  "projectId": "n8gJp1ysMBKBnZOI",
+  "stageNumber": 3,
+  "ruleCheck": {
+    "passed": true,
+    "issues": []
+  },
+  "crossStage": {
+    "referenceIssues": [
+      {
+        "severity": "warning",
+        "currentStage": 3,
+        "upstreamStage": 1,
+        "upstreamField": "confirmedProblems",
+        "message": "依赖的上游字段 [S1] confirmedProblems 不存在于 Decision Memory 中——上游阶段可能尚未完成或未产出该字段",
+        "userMessage": "S1 用户访谈中的确认的核心问题尚未产出，建议先回到 S1 确认该部分内容，再继续当前阶段",
+        "dependencyPath": "S1.confirmedProblems → S3.opportunityDirections"
+      }
+    ],
+    "semanticIssues": [],
+    "referenceIntegrityPassed": true
+  },
+  "aiAudit": {
+    "stageNumber": 3,
+    "dimensionScores": [
+      {
+        "dimension": "specificity",
+        "score": 4,
+        "weight": 0.25,
+        "weightedScore": 20,
+        "reason": "市场范围明确：报告大厅2025年数据给出具体规模（2023年181.5亿元、2025年预计254.4亿元）和增速（24.25%），并细分了消费群体（26-40岁占82.6%、女性64.3%、一二线79.7%）。趋势包含具体行为变化（30%消费者选择高端香薰作为礼品、功能性需求增长）。体验缺口具体到用户场景（如'不知道如何选择和使用'、'情绪烦躁时使用期待快速见效'），并描述了现有替代方案（白噪音机、冥想App、刷手机等）及其不足。但部分趋势（如'健康意识提升'）仍偏常识，且体验缺口未完全覆盖'谁/什么情况/现有方案/为何不够好'的完整链条，故扣1分。",
+        "improvements": [
+          "为每个体验缺口补充具体用户画像（如'32岁项目经理'）和典型场景细节，增强场景化描述",
+          "将'健康意识提升'等常识性趋势替换为更具体的行为数据（如'天然有机产品搜索量增长X%'）"
+        ]
+      },
+      {
+        "dimension": "differentiation",
+        "score": 4,
+        "weight": 0.2,
+        "weightedScore": 16,
+        "reason": "提出了非显性发现：将香薰定位为'情绪状态切换的仪式工具'而非单纯香味消费品，并指出供给端仅以香型丰富度和外观设计为卖点，未覆盖'状态切换'需求。这一判断与S2战略方向（情绪场景配方）有逻辑衔接。机会方向二（围绕使用过程提供情绪引导）也区别于行业通用表述。但整体上仍依赖行业报告中的常识性趋势（如情绪价值、功能性需求），缺乏对品类边界的重新定义或排他性判断（如'大多数人认为X，但数据显示Y'），故未达5分。",
+        "improvements": [
+          "增加至少一个排他性判断，例如'虽然行业普遍强调香型创新，但数据显示消费者更关注使用效果和引导'",
+          "尝试重新定义品类边界，如'香薰不仅是香氛，更是情绪管理工具'，并给出数据支撑"
+        ]
+      },
+      {
+        "dimension": "actionability",
+        "score": 4,
+        "weight": 0.2,
+        "weightedScore": 16,
+        "reason": "两个机会方向均有优先级和验证路径：机会方向二标注为'已验证的真实需求'（基于用户反馈），机会方向一标注为'基于创始人观察'（推断），并给出了验证方式（如'通过用户访谈验证状态切换需求'）。有'如果X则Y'的决策逻辑（如'如果验证通过，则聚焦情绪引导方向'）。但缺少完整的行动框架：未明确所需资源、进入路径，也未标注时间窗口。故扣1分。",
+        "improvements": [
+          "为每个机会方向补充所需资源（如'需要用户调研预算'）和进入路径（如'先开发试用装进行种子用户测试'）",
+          "标注关键时间窗口（如'若在Q3前验证，可赶上年底礼品季'）"
+        ]
+      },
+      {
+        "dimension": "evidence",
+        "score": 3,
+        "weight": 0.35,
+        "weightedScore": 21,
+        "reason": "来源方面：引用了报告大厅2025年数据和智研咨询报告，包含具体数据点（181.5亿元、24.25%、82.6%等），可验证。可信度方面：来源基本可信，但均为行业报告，缺乏独立来源交叉验证，且未标注数据时效性（2025年报告可能基于2023年数据）。推理链方面：机会方向一有清晰推理链（创始人观察+行业数据→机会），但机会方向二标注为'已验证'，实际依据是对话中的用户反馈，未明确区分数据支撑和推断。整体符合3分标准，但未达5分（缺少多源交叉验证和完整推理链）。",
+        "improvements": [
+          "增加至少一个独立来源（如用户调研数据或电商平台消费数据）交叉验证关键判断",
+          "明确标注每个数据点的收集时间和样本代表性，区分'有数据支撑'和'基于推断'的判断"
+        ]
+      }
+    ],
+    "totalScore": 73,
+    "issues": [
+      {
+        "dimension": "evidence",
+        "severity": "major",
+        "description": "机会方向二标注为'已验证'，但实际依据是对话中的用户反馈，未提供具体数据来源或样本量，可信度不足",
+        "suggestion": "补充用户反馈的具体来源（如访谈记录、问卷数据），并明确样本量和代表性",
+        "issueType": "data_gap"
+      },
+      {
+        "dimension": "actionability",
+        "severity": "minor",
+        "description": "机会方向缺少时间窗口标注和所需资源说明，无法直接指导后续阶段执行",
+        "suggestion": "为每个机会方向补充时间窗口（如'若在Q3前验证'）和所需资源（如'用户调研预算'）",
+        "issueType": "expression"
+      },
+      {
+        "dimension": "specificity",
+        "severity": "minor",
+        "description": "部分趋势描述仍偏常识（如'健康意识提升'），缺乏具体行为数据支撑",
+        "suggestion": "用具体数据替换常识性表述，如'天然有机产品搜索量增长X%'",
+        "issueType": "expression"
+      }
+    ],
+    "gateRecommendation": "advance",
+    "needsHumanReview": false,
+    "crossStageSemantics": {
+      "hasIssues": false,
+      "issues": []
+    }
+  },
+  "gateDecision": "advance",
+  "allIssues": [
+    {
+      "dimension": "evidence",
+      "severity": "major",
+      "description": "机会方向二标注为'已验证'，但实际依据是对话中的用户反馈，未提供具体数据来源或样本量，可信度不足",
+      "suggestion": "补充用户反馈的具体来源（如访谈记录、问卷数据），并明确样本量和代表性",
+      "issueType": "data_gap"
+    },
+    {
+      "dimension": "actionability",
+      "severity": "minor",
+      "description": "机会方向缺少时间窗口标注和所需资源说明，无法直接指导后续阶段执行",
+      "suggestion": "为每个机会方向补充时间窗口（如'若在Q3前验证'）和所需资源（如'用户调研预算'）",
+      "issueType": "expression"
+    },
+    {
+      "dimension": "specificity",
+      "severity": "minor",
+      "description": "部分趋势描述仍偏常识（如'健康意识提升'），缺乏具体行为数据支撑",
+      "suggestion": "用具体数据替换常识性表述，如'天然有机产品搜索量增长X%'",
+      "issueType": "expression"
+    }
+  ],
+  "referenceIssues": [
+    {
+      "severity": "warning",
+      "currentStage": 3,
+      "upstreamStage": 1,
+      "upstreamField": "confirmedProblems",
+      "message": "依赖的上游字段 [S1] confirmedProblems 不存在于 Decision Memory 中——上游阶段可能尚未完成或未产出该字段",
+      "userMessage": "S1 用户访谈中的确认的核心问题尚未产出，建议先回到 S1 确认该部分内容，再继续当前阶段",
+      "dependencyPath": "S1.confirmedProblems → S3.opportunityDirections"
+    }
+  ],
+  "needsHumanReview": false,
+  "executedAt": "2026-08-04T02:17:59.411Z"
+}

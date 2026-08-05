@@ -1,0 +1,154 @@
+{
+  "projectId": "n8gJp1ysMBKBnZOI",
+  "stageNumber": 2,
+  "ruleCheck": {
+    "passed": true,
+    "issues": []
+  },
+  "crossStage": {
+    "referenceIssues": [
+      {
+        "severity": "warning",
+        "currentStage": 2,
+        "upstreamStage": 1,
+        "upstreamField": "founderMotivation.content",
+        "message": "businessBackground.marketContext 中未检测到对 [S1] founderMotivation.content 具体内容的关键词引用——引用可能流于形式",
+        "userMessage": "S2对S1 用户访谈中创始人动机的引用不够具体——建议展开说明上游发现对当前判断的影响，而非仅提及概念",
+        "dependencyPath": "S1.founderMotivation.content → S2.businessBackground.marketContext"
+      }
+    ],
+    "semanticIssues": [],
+    "referenceIntegrityPassed": true
+  },
+  "aiAudit": {
+    "stageNumber": 2,
+    "dimensionScores": [
+      {
+        "dimension": "specificity",
+        "score": 4,
+        "weight": 0.3,
+        "weightedScore": 24,
+        "reason": "商业模式描述具体到产品形态（手工调配香薰、扩香器、睡前喷雾、蜡烛）、收入来源（未明确但隐含产品销售收入）、交付方式（手工调配、口碑传播）和当前阶段（起步阶段、依赖口碑）。战略挑战具体到可操作层面，如外部挑战提到'用户反馈只是香、没有实际感受'、'替代方案因坚持门槛高而难以持续'，内部挑战提到'缺乏规模化获客渠道'、'供应链和生产能力有待验证'。行业信息包含具体数字：2023年市场规模约181.5亿元、同比增长约24%、预计2025年突破254亿元、女性占比64%。但商业模式未给出客单价、毛利率等具体数字，收入模型推演缺失，战略挑战未明确优先级排序。",
+        "improvements": [
+          "补充产品定价、毛利率或渠道结构等具体商业数据，进行收入模型推演",
+          "对战略挑战进行优先级排序，明确哪些是当前最需要解决的瓶颈"
+        ]
+      },
+      {
+        "dimension": "differentiation",
+        "score": 4,
+        "weight": 0.1,
+        "weightedScore": 8,
+        "reason": "方向假设体现了创始人独特认知：'以情绪场景配方为核心差异化，区别于市场主流的香氛装饰逻辑'，与S1创始人心理咨询师背景和芳香疗法经验有明确逻辑关联。战略叙事自洽：从创始人发现来访者需求（压力大、睡不好）到调配精油香薰，再到朋友反馈'感觉这一天终于属于自己'，形成'经验+问题+资源→选择情绪场景配方而非装饰香氛'的完整链条。明确了一个不做的方向：不做装饰性香氛，而是做功能性情绪调节。但未明确提及'不做'的其他具体方向（如不做大众市场、不做低价产品等），差异化叙事可更完整。",
+        "improvements": [
+          "进一步明确'不做什么'，例如不追求大众市场、不做低价竞争，以强化差异化边界",
+          "补充创始人独特资源（如咨询师洞察、配方逻辑）如何转化为可持续竞争优势的说明"
+        ]
+      },
+      {
+        "dimension": "actionability",
+        "score": 4,
+        "weight": 0.35,
+        "weightedScore": 28,
+        "reason": "待验证假设有优先级排序：工作优先级第一条为'验证核心产品配方在不同情绪场景下的实际效果与用户感知差异'，第二条为'梳理目标用户画像与典型使用场景'，第三条为'探索获客路径'，顺序合理。每个方向都有验证说明，如'积累可复制的产品开发方法论'、'建立首批种子用户反馈闭环'，可转化为S3研究问题。但缺少清晰的战略选择逻辑（如约束分析），未说明在资源有限情况下如何取舍，项目边界和阶段目标不够明确。",
+        "improvements": [
+          "增加约束分析，如资源、时间、资金限制，明确在有限条件下优先选择哪个方向",
+          "为每个工作优先级设定明确的阶段目标和成功标准，便于后续阶段评估"
+        ]
+      },
+      {
+        "dimension": "evidence",
+        "score": 3,
+        "weight": 0.25,
+        "weightedScore": 15,
+        "reason": "证据来源：引用了用户反馈（'只是香、没有实际感受'、'感觉这一天终于属于自己'）、创始人经验（五年咨询师经验）和行业数据（市场规模、增长率），区分了已验证（用户反馈、行业数据）与待验证（方向假设）。可信度：行业数据有具体数字（181.5亿元、24%），但未标注来源报告名称和年份，可验证性有限；用户反馈为定性描述，缺乏具体样本量或代表性说明。推理链：存在'现有X→约束Y→所以应该Z'的链条，如'用户反馈产品效果不足→现有解决方案难以持续→所以需要情绪场景配方'，但部分推理链（如从行业趋势到战略方向）缺乏事实锚点。",
+        "improvements": [
+          "为行业数据补充具体报告名称和年份，增强可验证性",
+          "补充用户反馈的样本来源和代表性说明，如访谈人数、反馈收集方式",
+          "强化推理链，明确从行业趋势到战略方向选择的推导依据"
+        ]
+      }
+    ],
+    "totalScore": 75,
+    "issues": [
+      {
+        "dimension": "specificity",
+        "severity": "minor",
+        "description": "商业模式未给出客单价、毛利率等具体数字，收入模型推演缺失",
+        "suggestion": "补充产品定价、成本结构或渠道占比等数据，进行简单的收入模型推演",
+        "issueType": "data_gap"
+      },
+      {
+        "dimension": "differentiation",
+        "severity": "minor",
+        "description": "未明确'不做什么'的其他具体方向，差异化边界不够清晰",
+        "suggestion": "明确不做的方向，如不做大众市场、不做低价竞争，以强化差异化叙事",
+        "issueType": "expression"
+      },
+      {
+        "dimension": "actionability",
+        "severity": "minor",
+        "description": "缺少清晰的战略选择逻辑和约束分析，项目边界和阶段目标不明确",
+        "suggestion": "增加资源、时间、资金等约束分析，为每个工作优先级设定阶段目标和成功标准",
+        "issueType": "expression"
+      },
+      {
+        "dimension": "evidence",
+        "severity": "major",
+        "description": "行业数据未标注来源报告名称和年份，可验证性不足",
+        "suggestion": "补充具体报告名称和年份，如'艾瑞咨询2023年香薰行业报告'",
+        "issueType": "data_gap"
+      }
+    ],
+    "gateRecommendation": "advance",
+    "needsHumanReview": false,
+    "crossStageSemantics": {
+      "hasIssues": false,
+      "issues": []
+    }
+  },
+  "gateDecision": "advance",
+  "allIssues": [
+    {
+      "dimension": "specificity",
+      "severity": "minor",
+      "description": "商业模式未给出客单价、毛利率等具体数字，收入模型推演缺失",
+      "suggestion": "补充产品定价、成本结构或渠道占比等数据，进行简单的收入模型推演",
+      "issueType": "data_gap"
+    },
+    {
+      "dimension": "differentiation",
+      "severity": "minor",
+      "description": "未明确'不做什么'的其他具体方向，差异化边界不够清晰",
+      "suggestion": "明确不做的方向，如不做大众市场、不做低价竞争，以强化差异化叙事",
+      "issueType": "expression"
+    },
+    {
+      "dimension": "actionability",
+      "severity": "minor",
+      "description": "缺少清晰的战略选择逻辑和约束分析，项目边界和阶段目标不明确",
+      "suggestion": "增加资源、时间、资金等约束分析，为每个工作优先级设定阶段目标和成功标准",
+      "issueType": "expression"
+    },
+    {
+      "dimension": "evidence",
+      "severity": "major",
+      "description": "行业数据未标注来源报告名称和年份，可验证性不足",
+      "suggestion": "补充具体报告名称和年份，如'艾瑞咨询2023年香薰行业报告'",
+      "issueType": "data_gap"
+    }
+  ],
+  "referenceIssues": [
+    {
+      "severity": "warning",
+      "currentStage": 2,
+      "upstreamStage": 1,
+      "upstreamField": "founderMotivation.content",
+      "message": "businessBackground.marketContext 中未检测到对 [S1] founderMotivation.content 具体内容的关键词引用——引用可能流于形式",
+      "userMessage": "S2对S1 用户访谈中创始人动机的引用不够具体——建议展开说明上游发现对当前判断的影响，而非仅提及概念",
+      "dependencyPath": "S1.founderMotivation.content → S2.businessBackground.marketContext"
+    }
+  ],
+  "needsHumanReview": false,
+  "executedAt": "2026-08-04T02:11:59.633Z"
+}

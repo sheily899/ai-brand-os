@@ -1,0 +1,130 @@
+{
+  "projectId": "test-reopt-1785809206624",
+  "stageNumber": 3,
+  "ruleCheck": {
+    "passed": true,
+    "issues": []
+  },
+  "crossStage": null,
+  "aiAudit": {
+    "stageNumber": 3,
+    "dimensionScores": [
+      {
+        "dimension": "specificity",
+        "score": 2,
+        "weight": 0.25,
+        "weightedScore": 10,
+        "reason": "市场范围仅给出规模约200亿元和增速约20%，但均标注待验证，且未明确品类细分（如香薰蜡烛、精油等各自规模）和地域范围。趋势描述为'情绪消费趋势明显'，属于常识性表述，缺乏具体行为或数据变化。体验缺口虽有两个，但第一个'气味持久度不足'未具体到用户场景（谁在什么情况下遇到），第二个'品牌故事和情感连接不足'也较笼统。整体缺乏具体数据支撑和场景化描述。",
+        "improvements": [
+          "明确市场细分，如香薰蜡烛、精油、扩香器各自的规模、增速和地域分布。",
+          "将趋势具体化，例如引用具体数据说明情绪消费的增长，如'某报告显示2023年情绪香氛产品销售额增长30%'。",
+          "将体验缺口具体到用户场景，如'在办公室长时间工作的白领，使用香薰蜡烛2小时后气味明显减弱，需要频繁更换'。"
+        ]
+      },
+      {
+        "dimension": "differentiation",
+        "score": 2,
+        "weight": 0.2,
+        "weightedScore": 8,
+        "reason": "市场方向'情绪出口'和'情绪价值'是行业常见表述，缺乏独特性。未提供非显性发现或对品类的独特解读。与战略方向的逻辑衔接不明确。整体判断属于品类常识，任何品牌都能得出类似结论。",
+        "improvements": [
+          "挖掘非显性发现，例如'数据显示香薰消费者中男性占比上升，但现有品牌多针对女性，存在性别缺口'。",
+          "构建独特品类理解框架，如重新定义香薰为'情绪管理工具'而非'家居装饰品'。",
+          "提供排他性判断，如'大多数人认为香薰是奢侈品，但数据显示大众市场增速更快'。"
+        ]
+      },
+      {
+        "dimension": "actionability",
+        "score": 2,
+        "weight": 0.2,
+        "weightedScore": 8,
+        "reason": "仅有一个机会方向，且未给出优先级和验证路径。缺乏'如果X则Y'的决策逻辑。未提供行动框架，无法直接指导后续阶段。机会方向与品牌决策的连接较弱。",
+        "improvements": [
+          "列出多个机会方向并标注优先级，如'优先验证情绪出口方向，因为其与趋势数据关联最强，验证方式为消费者访谈'。",
+          "提供验证路径和所需资源，如'通过社交媒体广告测试反应，预算5万元'。",
+          "标注时间窗口，如'该机会在2024年内有效，因为情绪消费趋势正在上升'。"
+        ]
+      },
+      {
+        "dimension": "evidence",
+        "score": 1,
+        "weight": 0.35,
+        "weightedScore": 7,
+        "reason": "数据来源仅有一个示例来源，无实际数据。所有关键数据（市场规模、增速、趋势）均标注待验证或基于推断，无具体报告名称、年份或数据点。推理链缺失，无法从数据到机会方向形成清晰逻辑。证据可信度极低，几乎全部为AI常识推断。",
+        "improvements": [
+          "补充具体行业报告名称、年份和数据点，如'根据艾瑞咨询2023年报告，中国香薰市场规模为200亿元'。",
+          "提供可验证的数据来源，如搜索趋势关键词或消费数据平台。",
+          "明确区分有数据支撑的判断和基于推断的假设，并标注推断边界。"
+        ]
+      }
+    ],
+    "totalScore": 33,
+    "issues": [
+      {
+        "dimension": "specificity",
+        "severity": "major",
+        "description": "市场描述过于笼统，缺乏具体细分和场景化信息。",
+        "suggestion": "细化市场范围，包括品类细分、地域和规模量级，并将趋势和缺口具体到用户场景。",
+        "issueType": "expression"
+      },
+      {
+        "dimension": "differentiation",
+        "severity": "major",
+        "description": "市场方向为行业常识，缺乏独特判断。",
+        "suggestion": "挖掘非显性发现，构建独特品类理解框架，提供排他性判断。",
+        "issueType": "expression"
+      },
+      {
+        "dimension": "actionability",
+        "severity": "major",
+        "description": "机会方向未提供优先级和验证路径，无法指导后续行动。",
+        "suggestion": "列出多个机会方向，标注优先级，提供验证方式和资源需求。",
+        "issueType": "expression"
+      },
+      {
+        "dimension": "evidence",
+        "severity": "critical",
+        "description": "所有关键数据均无可靠来源，标注待验证，无法支撑市场判断。",
+        "suggestion": "补充具体行业报告名称、年份和数据点，或使用搜索趋势等可验证数据。",
+        "issueType": "data_gap"
+      }
+    ],
+    "gateRecommendation": "block",
+    "needsHumanReview": true,
+    "crossStageSemantics": null
+  },
+  "gateDecision": "reoptimize",
+  "allIssues": [
+    {
+      "dimension": "specificity",
+      "severity": "major",
+      "description": "市场描述过于笼统，缺乏具体细分和场景化信息。",
+      "suggestion": "细化市场范围，包括品类细分、地域和规模量级，并将趋势和缺口具体到用户场景。",
+      "issueType": "expression"
+    },
+    {
+      "dimension": "differentiation",
+      "severity": "major",
+      "description": "市场方向为行业常识，缺乏独特判断。",
+      "suggestion": "挖掘非显性发现，构建独特品类理解框架，提供排他性判断。",
+      "issueType": "expression"
+    },
+    {
+      "dimension": "actionability",
+      "severity": "major",
+      "description": "机会方向未提供优先级和验证路径，无法指导后续行动。",
+      "suggestion": "列出多个机会方向，标注优先级，提供验证方式和资源需求。",
+      "issueType": "expression"
+    },
+    {
+      "dimension": "evidence",
+      "severity": "critical",
+      "description": "所有关键数据均无可靠来源，标注待验证，无法支撑市场判断。",
+      "suggestion": "补充具体行业报告名称、年份和数据点，或使用搜索趋势等可验证数据。",
+      "issueType": "data_gap"
+    }
+  ],
+  "referenceIssues": [],
+  "needsHumanReview": false,
+  "executedAt": "2026-08-04T02:06:56.354Z"
+}

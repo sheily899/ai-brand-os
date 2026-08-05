@@ -1,0 +1,125 @@
+{
+  "projectId": "dX5qcK1NKYY89CNF",
+  "stageNumber": 3,
+  "ruleCheck": {
+    "passed": true,
+    "issues": []
+  },
+  "crossStage": {
+    "referenceIssues": [
+      {
+        "severity": "warning",
+        "currentStage": 3,
+        "upstreamStage": 1,
+        "upstreamField": "confirmedProblems",
+        "message": "opportunityDirections 中未检测到对 [S1] confirmedProblems 具体内容的关键词引用——引用可能流于形式",
+        "userMessage": "S3对S1 用户访谈中确认的核心问题的引用不够具体——建议展开说明上游发现对当前判断的影响，而非仅提及概念",
+        "dependencyPath": "S1.confirmedProblems → S3.opportunityDirections"
+      }
+    ],
+    "semanticIssues": [],
+    "referenceIntegrityPassed": true
+  },
+  "aiAudit": {
+    "stageNumber": 3,
+    "dimensionScores": [
+      {
+        "dimension": "specificity",
+        "score": 3,
+        "weight": 0.25,
+        "weightedScore": 15,
+        "reason": "市场范围明确了品类边界（家居收纳用品）、渠道结构（线上超60%）和规模量级（1500亿元），但数据来源标注为待验证。趋势描述包含具体行为变化（如'使用一两年后出现变形、发霉、起皮'），但多数趋势标注为'基于行业趋势分析，需进一步数据验证'，缺乏具体数据支撑。体验缺口具体到用户场景（厨房、阳台、卫生间）和问题（挂油擦不净、隔板歪斜），但部分缺口描述仍较笼统，如'视觉质感不满'未明确具体场景。整体达到3分标准，但未达到5分要求的≥2个趋势有外部来源+具体数字。",
+        "improvements": [
+          "补充具体行业报告名称、年份和数据点，验证市场规模和增速数据",
+          "为每个趋势提供具体行为数据或用户调研样本量，增强具体度",
+          "将体验缺口进一步细化到具体用户画像和场景，明确'谁在什么情况下遇到什么问题'"
+        ]
+      },
+      {
+        "dimension": "differentiation",
+        "score": 3,
+        "weight": 0.2,
+        "weightedScore": 12,
+        "reason": "输出包含非显性发现，如'消费者对实木材质存在认知偏差，普遍将实木与高价划等号'和'部分消费者在功能未损坏时因视觉质感不佳而更换产品'，这些判断区别于行业常识。与S2战略方向（以实木工艺为核心、传递品质价值）有逻辑衔接。但未构建独特的品类理解框架，也未形成≥2个排他性判断（如'大多数人认为X，但数据显示Y'）。整体达到3分标准，但未达到5分要求的独特框架和排他性判断。",
+        "improvements": [
+          "构建独特的品类理解框架，如重新定义收纳用品的分类维度（功能驱动vs情绪驱动）",
+          "增加排他性判断，明确'大多数人认为X，但数据显示Y'的对比",
+          "进一步区分与S2战略方向的独特衔接点，避免重复表述"
+        ]
+      },
+      {
+        "dimension": "actionability",
+        "score": 3,
+        "weight": 0.2,
+        "weightedScore": 12,
+        "reason": "输出提供了两个机会方向，每个方向有明确的目标人群和核心价值主张，并标注了证据层级（推断）。但缺乏优先级排序和验证路径，未说明'优先验证哪个机会'及'如何验证'。没有'如果X则Y'的决策逻辑，也未标注时间窗口。整体达到3分标准，但未达到5分要求的完整行动框架。",
+        "improvements": [
+          "为两个机会方向设定优先级，并说明排序依据",
+          "为每个机会提供具体的验证方式（如小批量试销、预售测试）和所需资源",
+          "标注机会的时间窗口，如'未来6个月内验证'"
+        ]
+      },
+      {
+        "dimension": "evidence",
+        "score": 2,
+        "weight": 0.35,
+        "weightedScore": 14,
+        "reason": "证据来源方面，市场规模和增速数据标注为'待验证'，未提供具体报告名称和年份；趋势分析标注为'基于行业趋势分析，需进一步数据验证'，缺乏可验证的数据点；体验缺口主要基于S1用户访谈观察，但样本量有限。可信度方面，数据来源不明确，无法验证权威性和时效性，且未说明数据局限。推理链方面，部分推理链清晰（如'低价产品使用一两年后出现问题→用户更换意愿→实木耐用性机会'），但多数判断未区分有数据支撑和基于推断。整体未达到3分标准，因为缺乏≥2个有具体来源标注的判断和≥1个可直接验证的数据点。",
+        "improvements": [
+          "补充具体行业报告名称、年份和数据点，确保数据可验证",
+          "为趋势判断提供具体调研数据或用户样本量，增强可信度",
+          "明确区分有数据支撑的判断和基于推断的判断，并标注数据局限"
+        ]
+      }
+    ],
+    "totalScore": 53,
+    "issues": [
+      {
+        "dimension": "evidence",
+        "severity": "major",
+        "description": "核心市场规模数据（1500亿元、增速25%）标注为'待验证'，未提供具体报告名称和年份，无法验证数据真实性",
+        "suggestion": "补充具体行业报告名称、发布年份和关键数据点，或明确标注为推断数据"
+      },
+      {
+        "dimension": "actionability",
+        "severity": "major",
+        "description": "两个机会方向均未提供优先级排序和验证路径，无法指导后续阶段行动",
+        "suggestion": "为每个机会方向设定优先级，并明确验证方式（如小批量试销、预售测试）和所需资源"
+      }
+    ],
+    "gateRecommendation": "block",
+    "needsHumanReview": true,
+    "crossStageSemantics": {
+      "hasIssues": false,
+      "issues": []
+    }
+  },
+  "gateDecision": "block",
+  "allIssues": [
+    {
+      "dimension": "evidence",
+      "severity": "major",
+      "description": "核心市场规模数据（1500亿元、增速25%）标注为'待验证'，未提供具体报告名称和年份，无法验证数据真实性",
+      "suggestion": "补充具体行业报告名称、发布年份和关键数据点，或明确标注为推断数据"
+    },
+    {
+      "dimension": "actionability",
+      "severity": "major",
+      "description": "两个机会方向均未提供优先级排序和验证路径，无法指导后续阶段行动",
+      "suggestion": "为每个机会方向设定优先级，并明确验证方式（如小批量试销、预售测试）和所需资源"
+    }
+  ],
+  "referenceIssues": [
+    {
+      "severity": "warning",
+      "currentStage": 3,
+      "upstreamStage": 1,
+      "upstreamField": "confirmedProblems",
+      "message": "opportunityDirections 中未检测到对 [S1] confirmedProblems 具体内容的关键词引用——引用可能流于形式",
+      "userMessage": "S3对S1 用户访谈中确认的核心问题的引用不够具体——建议展开说明上游发现对当前判断的影响，而非仅提及概念",
+      "dependencyPath": "S1.confirmedProblems → S3.opportunityDirections"
+    }
+  ],
+  "needsHumanReview": true,
+  "executedAt": "2026-08-03T18:16:44.666Z"
+}

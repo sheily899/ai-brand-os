@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-08-04T15:08:38.580Z",
+  "summary": {
+    "totalCalls": 0,
+    "totalInputTokens": 0,
+    "totalOutputTokens": 0,
+    "totalTokens": 0,
+    "estimatedCostUSD": 0
+  },
+  "stageCosts": [],
+  "callTypeCosts": [],
+  "promptOverheads": [],
+  "redundancyFlags": []
+}

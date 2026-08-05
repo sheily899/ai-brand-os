@@ -1,0 +1,12 @@
+{
+  "totalScore": 60,
+  "gateRecommendation": "advance",
+  "issues": [
+    {
+      "dimension": "specificity",
+      "issueType": "expression",
+      "severity": "minor",
+      "description": "AI Quality Audit 执行失败：Cannot read properties of undefined (reading 'chat')"
+    }
+  ]
+}

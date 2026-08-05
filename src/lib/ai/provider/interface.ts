@@ -47,7 +47,7 @@ export interface LLMProvider {
   /** 非流式对话 — Convergence 用。异常时抛出错误。 */
   chat(
     messages: ChatMessage[],
-    options?: { temperature?: number; maxTokens?: number; responseFormat?: "json_object"; model?: string }
+    options?: { temperature?: number; maxTokens?: number; responseFormat?: "json_object"; model?: string; seed?: number }
   ): Promise<string>;
 
   /**

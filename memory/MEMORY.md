@@ -1,0 +1,11 @@
+- [Phase1/2 E2E 测试报告 (2026-08-01)](e2e-test-phase1-2-2026-08-01.md) — 5案例 S1→S8 全链路，6个问题发现，P0-P3 分级
+- [Phase 3 E2E 测试报告 (2026-08-01)](e2e-test-phase3-2026-08-01.md) — 慢象咖啡 S1→S8 + Audit Engine 全链路，7个问题发现
+- [可编辑报告经验总结 (2026-08-04)](editable-report-lessons-learned.md) — 需求定义、9个踩坑记录、架构决策、可复用checklist
+- [Token 消耗 E2E 测试 (2026-08-04)](token-e2e-test-2026-08-04.md) — S1-S8 完整 Token 基线，72次调用686K tokens，搜索阶段4倍消耗
+- [Prompt Cache 验证实验 (2026-08-05)](prompt-cache-experiment-2026-08-05.md) — DeepSeek disk cache 节省93-97% billable input token，H1/H2 通过
+- [H3 质量验证 V2 (2026-08-05)](h3-quality-validation-v2-2026-08-05.md) — A/B对照实验(N=5)，Frozen Input消除confound，验证Cache不影响同一输入输出质量
+- [H4 生产环境 Cache 效率 (2026-08-05)](h4-production-cache-efficiency-2026-08-05.md) — 真实生产链路(含Search Context+Decision Memory)，跨项目首次调用节省69.6%，质量零影响
+- [S3 H4 生产环境 Cache 效率 (2026-08-05)](s3-h4-production-cache-2026-08-05.md) — S3市场机会分析H4验证，跨项目首次节省72.9%，质量零影响，与S8结论一致
+- [S2 H4 生产环境 Cache 效率 (2026-08-05)](s2-h4-production-cache-2026-08-05.md) — S2商业背景分析H4验证，节省76.4%，Warm质量高于Cold
+- [S5 H4 生产环境 Cache 效率 (2026-08-05)](s5-h4-production-cache-2026-08-05.md) — S5竞争判断H4验证，节省72.4%，Cold=Warm=77(10/10零方差)，最干净的验证
+- [Token 优化五机会分析 (2026-08-05)](token-optimization-five-opportunities-analysis.md) — 四步重新校准：机会5改为确定性规则、测试集缺口、机会4逐条审查、机会1/5兼容性与实施顺序

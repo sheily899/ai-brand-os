@@ -53,6 +53,7 @@ export function createDeepSeekProvider(): LLMProvider {
                 response_format: options?.responseFormat
                   ? { type: options.responseFormat as "json_object" }
                   : undefined,
+                seed: options?.seed,
               }),
         },
         { signal: AbortSignal.timeout(timeoutMs) }

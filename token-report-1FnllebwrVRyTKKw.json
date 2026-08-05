@@ -1,0 +1,169 @@
+{
+  "generatedAt": "2026-08-04T15:55:14.626Z",
+  "projectId": "1FnllebwrVRyTKKw",
+  "summary": {
+    "totalCalls": 21,
+    "totalInputTokens": 179317,
+    "totalOutputTokens": 5479,
+    "totalTokens": 184796,
+    "estimatedCostUSD": 0.0544
+  },
+  "stageCosts": [
+    {
+      "stageNumber": 1,
+      "totalCalls": 9,
+      "totalInputTokens": 32049,
+      "totalOutputTokens": 1587,
+      "totalTokens": 33636,
+      "avgTokensPerCall": 3737,
+      "breakdown": [
+        {
+          "callType": "audit",
+          "calls": 1,
+          "inputTokens": 3607,
+          "outputTokens": 1037,
+          "totalTokens": 4644
+        },
+        {
+          "callType": "consultation",
+          "calls": 8,
+          "inputTokens": 28442,
+          "outputTokens": 550,
+          "totalTokens": 28992
+        }
+      ]
+    },
+    {
+      "stageNumber": 2,
+      "totalCalls": 12,
+      "totalInputTokens": 147268,
+      "totalOutputTokens": 3892,
+      "totalTokens": 151160,
+      "avgTokensPerCall": 12597,
+      "breakdown": [
+        {
+          "callType": "audit",
+          "calls": 2,
+          "inputTokens": 9289,
+          "outputTokens": 2201,
+          "totalTokens": 11490
+        },
+        {
+          "callType": "consultation",
+          "calls": 9,
+          "inputTokens": 124061,
+          "outputTokens": 723,
+          "totalTokens": 124784
+        },
+        {
+          "callType": "opening",
+          "calls": 1,
+          "inputTokens": 13918,
+          "outputTokens": 968,
+          "totalTokens": 14886
+        }
+      ]
+    }
+  ],
+  "callTypeCosts": [
+    {
+      "callType": "consultation",
+      "totalCalls": 17,
+      "totalInputTokens": 152503,
+      "totalOutputTokens": 1273,
+      "totalTokens": 153776,
+      "percentage": 83.2,
+      "stageCount": 2
+    },
+    {
+      "callType": "audit",
+      "totalCalls": 3,
+      "totalInputTokens": 12896,
+      "totalOutputTokens": 3238,
+      "totalTokens": 16134,
+      "percentage": 8.7,
+      "stageCount": 2
+    },
+    {
+      "callType": "opening",
+      "totalCalls": 1,
+      "totalInputTokens": 13918,
+      "totalOutputTokens": 968,
+      "totalTokens": 14886,
+      "percentage": 8.1,
+      "stageCount": 1
+    }
+  ],
+  "promptOverheads": [
+    {
+      "stageNumber": 1,
+      "callType": "audit",
+      "systemRatio": 72,
+      "conversationRatio": 28.2,
+      "avgSystemPromptTokens": 2596,
+      "avgConversationTokens": 1017,
+      "avgInputTokens": 3607,
+      "sampleCount": 1
+    },
+    {
+      "stageNumber": 1,
+      "callType": "consultation",
+      "systemRatio": 78.5,
+      "conversationRatio": 13,
+      "avgSystemPromptTokens": 2790,
+      "avgConversationTokens": 461,
+      "avgInputTokens": 3555,
+      "sampleCount": 8
+    },
+    {
+      "stageNumber": 2,
+      "callType": "audit",
+      "systemRatio": 55.9,
+      "conversationRatio": 40.4,
+      "avgSystemPromptTokens": 2596,
+      "avgConversationTokens": 1877,
+      "avgInputTokens": 4645,
+      "sampleCount": 2
+    },
+    {
+      "stageNumber": 2,
+      "callType": "consultation",
+      "systemRatio": 85.2,
+      "conversationRatio": 11,
+      "avgSystemPromptTokens": 11746,
+      "avgConversationTokens": 1522,
+      "avgInputTokens": 13785,
+      "sampleCount": 9
+    },
+    {
+      "stageNumber": 2,
+      "callType": "opening",
+      "systemRatio": 96.6,
+      "conversationRatio": 0.2,
+      "avgSystemPromptTokens": 13446,
+      "avgConversationTokens": 33,
+      "avgInputTokens": 13918,
+      "sampleCount": 1
+    }
+  ],
+  "redundancyFlags": [
+    {
+      "type": "large_system_prompt",
+      "severity": "medium",
+      "stageNumber": 1,
+      "callType": "consultation",
+      "detail": "Stage 1 consultation 的 system prompt 占 input 的 78.5%（平均 2790 tokens）。系统指令/搜索协议/方法论等固定内容占比偏高。",
+      "estimatedSavingPct": 19,
+      "recommendation": "考虑将固定方法论内容拆分到可缓存前缀，或精简 Stage 1 consultation 的 prompt 模板。"
+    },
+    {
+      "type": "large_system_prompt",
+      "severity": "high",
+      "stageNumber": 2,
+      "callType": "consultation",
+      "detail": "Stage 2 consultation 的 system prompt 占 input 的 85.2%（平均 11746 tokens）。系统指令/搜索协议/方法论等固定内容占比偏高。",
+      "estimatedSavingPct": 23,
+      "recommendation": "考虑将固定方法论内容拆分到可缓存前缀，或精简 Stage 2 consultation 的 prompt 模板。"
+    }
+  ]
+}

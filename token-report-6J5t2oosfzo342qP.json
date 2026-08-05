@@ -1,0 +1,598 @@
+{
+  "generatedAt": "2026-08-04T16:15:51.413Z",
+  "projectId": "6J5t2oosfzo342qP",
+  "summary": {
+    "totalCalls": 72,
+    "totalInputTokens": 664046,
+    "totalOutputTokens": 21777,
+    "totalTokens": 685823,
+    "estimatedCostUSD": 0.2032
+  },
+  "stageCosts": [
+    {
+      "stageNumber": 1,
+      "totalCalls": 9,
+      "totalInputTokens": 31245,
+      "totalOutputTokens": 1669,
+      "totalTokens": 32914,
+      "avgTokensPerCall": 3657,
+      "breakdown": [
+        {
+          "callType": "consultation",
+          "calls": 8,
+          "inputTokens": 27589,
+          "outputTokens": 414,
+          "totalTokens": 28003
+        },
+        {
+          "callType": "audit",
+          "calls": 1,
+          "inputTokens": 3656,
+          "outputTokens": 1255,
+          "totalTokens": 4911
+        }
+      ]
+    },
+    {
+      "stageNumber": 2,
+      "totalCalls": 8,
+      "totalInputTokens": 110856,
+      "totalOutputTokens": 3042,
+      "totalTokens": 113898,
+      "avgTokensPerCall": 14237,
+      "breakdown": [
+        {
+          "callType": "consultation",
+          "calls": 6,
+          "inputTokens": 92143,
+          "outputTokens": 767,
+          "totalTokens": 92910
+        },
+        {
+          "callType": "opening",
+          "calls": 1,
+          "inputTokens": 13939,
+          "outputTokens": 967,
+          "totalTokens": 14906
+        },
+        {
+          "callType": "audit",
+          "calls": 1,
+          "inputTokens": 4774,
+          "outputTokens": 1308,
+          "totalTokens": 6082
+        }
+      ]
+    },
+    {
+      "stageNumber": 3,
+      "totalCalls": 8,
+      "totalInputTokens": 121958,
+      "totalOutputTokens": 2732,
+      "totalTokens": 124690,
+      "avgTokensPerCall": 15586,
+      "breakdown": [
+        {
+          "callType": "audit",
+          "calls": 1,
+          "inputTokens": 6713,
+          "outputTokens": 1121,
+          "totalTokens": 7834
+        },
+        {
+          "callType": "opening",
+          "calls": 1,
+          "inputTokens": 15091,
+          "outputTokens": 1000,
+          "totalTokens": 16091
+        },
+        {
+          "callType": "consultation",
+          "calls": 6,
+          "inputTokens": 100154,
+          "outputTokens": 611,
+          "totalTokens": 100765
+        }
+      ]
+    },
+    {
+      "stageNumber": 4,
+      "totalCalls": 16,
+      "totalInputTokens": 93304,
+      "totalOutputTokens": 5467,
+      "totalTokens": 98771,
+      "avgTokensPerCall": 6173,
+      "breakdown": [
+        {
+          "callType": "audit",
+          "calls": 3,
+          "inputTokens": 18459,
+          "outputTokens": 3364,
+          "totalTokens": 21823
+        },
+        {
+          "callType": "opening",
+          "calls": 1,
+          "inputTokens": 4326,
+          "outputTokens": 108,
+          "totalTokens": 4434
+        },
+        {
+          "callType": "consultation",
+          "calls": 12,
+          "inputTokens": 70519,
+          "outputTokens": 1995,
+          "totalTokens": 72514
+        }
+      ]
+    },
+    {
+      "stageNumber": 5,
+      "totalCalls": 8,
+      "totalInputTokens": 80579,
+      "totalOutputTokens": 2119,
+      "totalTokens": 82698,
+      "avgTokensPerCall": 10337,
+      "breakdown": [
+        {
+          "callType": "consultation",
+          "calls": 6,
+          "inputTokens": 61664,
+          "outputTokens": 668,
+          "totalTokens": 62332
+        },
+        {
+          "callType": "opening",
+          "calls": 1,
+          "inputTokens": 9607,
+          "outputTokens": 74,
+          "totalTokens": 9681
+        },
+        {
+          "callType": "audit",
+          "calls": 1,
+          "inputTokens": 9308,
+          "outputTokens": 1377,
+          "totalTokens": 10685
+        }
+      ]
+    },
+    {
+      "stageNumber": 6,
+      "totalCalls": 9,
+      "totalInputTokens": 59249,
+      "totalOutputTokens": 2807,
+      "totalTokens": 62056,
+      "avgTokensPerCall": 6895,
+      "breakdown": [
+        {
+          "callType": "opening",
+          "calls": 1,
+          "inputTokens": 5363,
+          "outputTokens": 281,
+          "totalTokens": 5644
+        },
+        {
+          "callType": "audit",
+          "calls": 1,
+          "inputTokens": 8305,
+          "outputTokens": 1419,
+          "totalTokens": 9724
+        },
+        {
+          "callType": "consultation",
+          "calls": 7,
+          "inputTokens": 45581,
+          "outputTokens": 1107,
+          "totalTokens": 46688
+        }
+      ]
+    },
+    {
+      "stageNumber": 7,
+      "totalCalls": 7,
+      "totalInputTokens": 42158,
+      "totalOutputTokens": 1637,
+      "totalTokens": 43795,
+      "avgTokensPerCall": 6256,
+      "breakdown": [
+        {
+          "callType": "opening",
+          "calls": 1,
+          "inputTokens": 5196,
+          "outputTokens": 156,
+          "totalTokens": 5352
+        },
+        {
+          "callType": "audit",
+          "calls": 1,
+          "inputTokens": 8273,
+          "outputTokens": 1066,
+          "totalTokens": 9339
+        },
+        {
+          "callType": "consultation",
+          "calls": 5,
+          "inputTokens": 28689,
+          "outputTokens": 415,
+          "totalTokens": 29104
+        }
+      ]
+    },
+    {
+      "stageNumber": 8,
+      "totalCalls": 7,
+      "totalInputTokens": 124697,
+      "totalOutputTokens": 2304,
+      "totalTokens": 127001,
+      "avgTokensPerCall": 18143,
+      "breakdown": [
+        {
+          "callType": "opening",
+          "calls": 1,
+          "inputTokens": 18675,
+          "outputTokens": 471,
+          "totalTokens": 19146
+        },
+        {
+          "callType": "consultation",
+          "calls": 5,
+          "inputTokens": 98082,
+          "outputTokens": 778,
+          "totalTokens": 98860
+        },
+        {
+          "callType": "audit",
+          "calls": 1,
+          "inputTokens": 7940,
+          "outputTokens": 1055,
+          "totalTokens": 8995
+        }
+      ]
+    }
+  ],
+  "callTypeCosts": [
+    {
+      "callType": "consultation",
+      "totalCalls": 55,
+      "totalInputTokens": 524421,
+      "totalOutputTokens": 6755,
+      "totalTokens": 531176,
+      "percentage": 77.5,
+      "stageCount": 8
+    },
+    {
+      "callType": "audit",
+      "totalCalls": 10,
+      "totalInputTokens": 67428,
+      "totalOutputTokens": 11965,
+      "totalTokens": 79393,
+      "percentage": 11.6,
+      "stageCount": 8
+    },
+    {
+      "callType": "opening",
+      "totalCalls": 7,
+      "totalInputTokens": 72197,
+      "totalOutputTokens": 3057,
+      "totalTokens": 75254,
+      "percentage": 11,
+      "stageCount": 7
+    }
+  ],
+  "promptOverheads": [
+    {
+      "stageNumber": 1,
+      "callType": "audit",
+      "systemRatio": 71,
+      "conversationRatio": 29.3,
+      "avgSystemPromptTokens": 2596,
+      "avgConversationTokens": 1070,
+      "avgInputTokens": 3656,
+      "sampleCount": 1
+    },
+    {
+      "stageNumber": 1,
+      "callType": "consultation",
+      "systemRatio": 80.9,
+      "conversationRatio": 11.2,
+      "avgSystemPromptTokens": 2790,
+      "avgConversationTokens": 386,
+      "avgInputTokens": 3449,
+      "sampleCount": 8
+    },
+    {
+      "stageNumber": 2,
+      "callType": "audit",
+      "systemRatio": 54.4,
+      "conversationRatio": 41.4,
+      "avgSystemPromptTokens": 2596,
+      "avgConversationTokens": 1977,
+      "avgInputTokens": 4774,
+      "sampleCount": 1
+    },
+    {
+      "stageNumber": 2,
+      "callType": "consultation",
+      "systemRatio": 87.6,
+      "conversationRatio": 8.3,
+      "avgSystemPromptTokens": 13453,
+      "avgConversationTokens": 1269,
+      "avgInputTokens": 15357,
+      "sampleCount": 6
+    },
+    {
+      "stageNumber": 2,
+      "callType": "opening",
+      "systemRatio": 96.5,
+      "conversationRatio": 0.2,
+      "avgSystemPromptTokens": 13453,
+      "avgConversationTokens": 33,
+      "avgInputTokens": 13939,
+      "sampleCount": 1
+    },
+    {
+      "stageNumber": 3,
+      "callType": "audit",
+      "systemRatio": 39.9,
+      "conversationRatio": 56.4,
+      "avgSystemPromptTokens": 2678,
+      "avgConversationTokens": 3785,
+      "avgInputTokens": 6713,
+      "sampleCount": 1
+    },
+    {
+      "stageNumber": 3,
+      "callType": "consultation",
+      "systemRatio": 85.9,
+      "conversationRatio": 8.5,
+      "avgSystemPromptTokens": 14342,
+      "avgConversationTokens": 1420,
+      "avgInputTokens": 16692,
+      "sampleCount": 6
+    },
+    {
+      "stageNumber": 3,
+      "callType": "opening",
+      "systemRatio": 95,
+      "conversationRatio": 0.2,
+      "avgSystemPromptTokens": 14342,
+      "avgConversationTokens": 33,
+      "avgInputTokens": 15091,
+      "sampleCount": 1
+    },
+    {
+      "stageNumber": 4,
+      "callType": "audit",
+      "systemRatio": 43.7,
+      "conversationRatio": 48.3,
+      "avgSystemPromptTokens": 2690,
+      "avgConversationTokens": 2972,
+      "avgInputTokens": 6153,
+      "sampleCount": 3
+    },
+    {
+      "stageNumber": 4,
+      "callType": "consultation",
+      "systemRatio": 64.8,
+      "conversationRatio": 21.5,
+      "avgSystemPromptTokens": 3810,
+      "avgConversationTokens": 1262,
+      "avgInputTokens": 5877,
+      "sampleCount": 12
+    },
+    {
+      "stageNumber": 4,
+      "callType": "opening",
+      "systemRatio": 88.1,
+      "conversationRatio": 0.8,
+      "avgSystemPromptTokens": 3810,
+      "avgConversationTokens": 36,
+      "avgInputTokens": 4326,
+      "sampleCount": 1
+    },
+    {
+      "stageNumber": 5,
+      "callType": "audit",
+      "systemRatio": 29.1,
+      "conversationRatio": 78.1,
+      "avgSystemPromptTokens": 2712,
+      "avgConversationTokens": 7273,
+      "avgInputTokens": 9308,
+      "sampleCount": 1
+    },
+    {
+      "stageNumber": 5,
+      "callType": "consultation",
+      "systemRatio": 89.1,
+      "conversationRatio": 5.3,
+      "avgSystemPromptTokens": 9159,
+      "avgConversationTokens": 549,
+      "avgInputTokens": 10277,
+      "sampleCount": 6
+    },
+    {
+      "stageNumber": 5,
+      "callType": "opening",
+      "systemRatio": 95.3,
+      "conversationRatio": 0.2,
+      "avgSystemPromptTokens": 9159,
+      "avgConversationTokens": 19,
+      "avgInputTokens": 9607,
+      "sampleCount": 1
+    },
+    {
+      "stageNumber": 6,
+      "callType": "audit",
+      "systemRatio": 34,
+      "conversationRatio": 57.3,
+      "avgSystemPromptTokens": 2822,
+      "avgConversationTokens": 4762,
+      "avgInputTokens": 8305,
+      "sampleCount": 1
+    },
+    {
+      "stageNumber": 6,
+      "callType": "consultation",
+      "systemRatio": 69.9,
+      "conversationRatio": 15.1,
+      "avgSystemPromptTokens": 4550,
+      "avgConversationTokens": 982,
+      "avgInputTokens": 6512,
+      "sampleCount": 7
+    },
+    {
+      "stageNumber": 6,
+      "callType": "opening",
+      "systemRatio": 84.8,
+      "conversationRatio": 0.7,
+      "avgSystemPromptTokens": 4550,
+      "avgConversationTokens": 36,
+      "avgInputTokens": 5363,
+      "sampleCount": 1
+    },
+    {
+      "stageNumber": 7,
+      "callType": "audit",
+      "systemRatio": 32.9,
+      "conversationRatio": 57.6,
+      "avgSystemPromptTokens": 2722,
+      "avgConversationTokens": 4765,
+      "avgInputTokens": 8273,
+      "sampleCount": 1
+    },
+    {
+      "stageNumber": 7,
+      "callType": "consultation",
+      "systemRatio": 75.4,
+      "conversationRatio": 8,
+      "avgSystemPromptTokens": 4328,
+      "avgConversationTokens": 457,
+      "avgInputTokens": 5738,
+      "sampleCount": 5
+    },
+    {
+      "stageNumber": 7,
+      "callType": "opening",
+      "systemRatio": 83.3,
+      "conversationRatio": 0.7,
+      "avgSystemPromptTokens": 4328,
+      "avgConversationTokens": 36,
+      "avgInputTokens": 5196,
+      "sampleCount": 1
+    },
+    {
+      "stageNumber": 8,
+      "callType": "audit",
+      "systemRatio": 33.8,
+      "conversationRatio": 57.7,
+      "avgSystemPromptTokens": 2681,
+      "avgConversationTokens": 4582,
+      "avgInputTokens": 7940,
+      "sampleCount": 1
+    },
+    {
+      "stageNumber": 8,
+      "callType": "consultation",
+      "systemRatio": 86.8,
+      "conversationRatio": 4.2,
+      "avgSystemPromptTokens": 17018,
+      "avgConversationTokens": 825,
+      "avgInputTokens": 19616,
+      "sampleCount": 5
+    },
+    {
+      "stageNumber": 8,
+      "callType": "opening",
+      "systemRatio": 91.1,
+      "conversationRatio": 0.2,
+      "avgSystemPromptTokens": 17018,
+      "avgConversationTokens": 33,
+      "avgInputTokens": 18675,
+      "sampleCount": 1
+    }
+  ],
+  "redundancyFlags": [
+    {
+      "type": "large_system_prompt",
+      "severity": "high",
+      "stageNumber": 1,
+      "callType": "consultation",
+      "detail": "Stage 1 consultation 的 system prompt 占 input 的 80.9%（平均 2790 tokens）。系统指令/搜索协议/方法论等固定内容占比偏高。",
+      "estimatedSavingPct": 20,
+      "recommendation": "考虑将固定方法论内容拆分到可缓存前缀，或精简 Stage 1 consultation 的 prompt 模板。"
+    },
+    {
+      "type": "large_system_prompt",
+      "severity": "high",
+      "stageNumber": 2,
+      "callType": "consultation",
+      "detail": "Stage 2 consultation 的 system prompt 占 input 的 87.6%（平均 13453 tokens）。系统指令/搜索协议/方法论等固定内容占比偏高。",
+      "estimatedSavingPct": 24,
+      "recommendation": "考虑将固定方法论内容拆分到可缓存前缀，或精简 Stage 2 consultation 的 prompt 模板。"
+    },
+    {
+      "type": "large_system_prompt",
+      "severity": "high",
+      "stageNumber": 3,
+      "callType": "consultation",
+      "detail": "Stage 3 consultation 的 system prompt 占 input 的 85.9%（平均 14342 tokens）。系统指令/搜索协议/方法论等固定内容占比偏高。",
+      "estimatedSavingPct": 23,
+      "recommendation": "考虑将固定方法论内容拆分到可缓存前缀，或精简 Stage 3 consultation 的 prompt 模板。"
+    },
+    {
+      "type": "large_system_prompt",
+      "severity": "medium",
+      "stageNumber": 4,
+      "callType": "consultation",
+      "detail": "Stage 4 consultation 的 system prompt 占 input 的 64.8%（平均 3810 tokens）。系统指令/搜索协议/方法论等固定内容占比偏高。",
+      "estimatedSavingPct": 12,
+      "recommendation": "考虑将固定方法论内容拆分到可缓存前缀，或精简 Stage 4 consultation 的 prompt 模板。"
+    },
+    {
+      "type": "large_system_prompt",
+      "severity": "high",
+      "stageNumber": 5,
+      "callType": "consultation",
+      "detail": "Stage 5 consultation 的 system prompt 占 input 的 89.1%（平均 9159 tokens）。系统指令/搜索协议/方法论等固定内容占比偏高。",
+      "estimatedSavingPct": 25,
+      "recommendation": "考虑将固定方法论内容拆分到可缓存前缀，或精简 Stage 5 consultation 的 prompt 模板。"
+    },
+    {
+      "type": "large_system_prompt",
+      "severity": "medium",
+      "stageNumber": 6,
+      "callType": "consultation",
+      "detail": "Stage 6 consultation 的 system prompt 占 input 的 69.9%（平均 4550 tokens）。系统指令/搜索协议/方法论等固定内容占比偏高。",
+      "estimatedSavingPct": 15,
+      "recommendation": "考虑将固定方法论内容拆分到可缓存前缀，或精简 Stage 6 consultation 的 prompt 模板。"
+    },
+    {
+      "type": "large_system_prompt",
+      "severity": "medium",
+      "stageNumber": 7,
+      "callType": "consultation",
+      "detail": "Stage 7 consultation 的 system prompt 占 input 的 75.4%（平均 4328 tokens）。系统指令/搜索协议/方法论等固定内容占比偏高。",
+      "estimatedSavingPct": 18,
+      "recommendation": "考虑将固定方法论内容拆分到可缓存前缀，或精简 Stage 7 consultation 的 prompt 模板。"
+    },
+    {
+      "type": "large_system_prompt",
+      "severity": "high",
+      "stageNumber": 8,
+      "callType": "consultation",
+      "detail": "Stage 8 consultation 的 system prompt 占 input 的 86.8%（平均 17018 tokens）。系统指令/搜索协议/方法论等固定内容占比偏高。",
+      "estimatedSavingPct": 23,
+      "recommendation": "考虑将固定方法论内容拆分到可缓存前缀，或精简 Stage 8 consultation 的 prompt 模板。"
+    },
+    {
+      "type": "duplicate_injection",
+      "severity": "medium",
+      "stageNumber": 4,
+      "callType": "consultation",
+      "detail": "Stage 4 的 consultation 共 12 次调用，system prompt 平均占 64.8%。每轮都重复注入搜索协议和 Decision Memory，累积浪费显著。",
+      "estimatedSavingPct": 19,
+      "recommendation": "将搜索协议和 Decision Memory 移动到可缓存前缀，避免每轮都完整发送。12 轮 × 3810 tokens = 45,720 tokens 潜在节省。"
+    }
+  ]
+}

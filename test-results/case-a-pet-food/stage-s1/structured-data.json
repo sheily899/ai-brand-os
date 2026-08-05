@@ -1,0 +1,64 @@
+{
+  "founderType": "creation_driven",
+  "founderMotivation": {
+    "content": "我家里三只猫两只狗，之前买零食踩过不少坑，要么诱食剂太重，要么配料表写得含糊。有一次我买了个所谓进口零食，我家猫吃了直接吐了。我当时就想，我做了八年快消，为什么不自己做一款让我自己敢喂的零食？",
+    "source": "founder_statement"
+  },
+  "observations": [
+    {
+      "subject": "创始人",
+      "context": "购买进口零食后猫呕吐",
+      "behavior": "上网查那个牌子的配料表，发现里面写了'禽肉及其副产品'，觉得'副产品'很微妙",
+      "result": "感到难受，决定自己试着做冻干鸡胸肉",
+      "source": "founder_observation"
+    },
+    {
+      "subject": "创始人",
+      "context": "第一次做冻干鸡胸肉",
+      "behavior": "自己先尝了一口，给三只猫各分了一小块",
+      "result": "猫吃得特别快，连平时最挑食的那只都吃完了；老婆说'你看，这才叫零食'",
+      "source": "founder_observation"
+    },
+    {
+      "subject": "创始人",
+      "context": "把多做的零食分给朋友家的猫狗试",
+      "behavior": "分给朋友家的猫狗试吃",
+      "result": "反馈都不错，有人问卖不卖，开始认真想这事",
+      "source": "founder_observation"
+    },
+    {
+      "subject": "创始人",
+      "context": "对比市面同类产品时",
+      "behavior": "认为市面零食配料表密密麻麻，不知道是什么肉、什么部位、加了什么；自己的产品就是一块鸡胸肉切条、冻干，没了",
+      "result": "觉得自己看得懂，敢给自己家猫狗吃，这种'敢'的感觉是最不一样的地方",
+      "source": "founder_observation"
+    },
+    {
+      "subject": "创始人",
+      "context": "看市面产品配料表时",
+      "behavior": "先看前三位，第一位是'鸡肉'而不是'鲜鸡肉'就判断是肉粉；看到'风味剂''诱食剂'直接放下；配料表超过五行基本不考虑",
+      "result": "形成自己的判断标准：配料表要短，短到能念出来",
+      "source": "founder_observation"
+    },
+    {
+      "subject": "创始人",
+      "context": "研发产品时",
+      "behavior": "给自己定规矩：配料表里不能出现自己都不知道是什么的东西，念不出来就不该让别人的猫狗吃",
+      "result": "冻干鸡胸肉配料表是'鸡胸肉'三个字，磨牙棒是'牛骨'或'牛皮'两个字，营养膏五六种成分且每种都知道用途",
+      "source": "founder_observation"
+    },
+    {
+      "subject": "创始人",
+      "context": "研发营养膏时",
+      "behavior": "认为市面大多数营养膏为适口性加很多糖浆和诱食剂，猫爱吃但营养虚；找做宠物营养的朋友帮忙调配方，试了大概十几版",
+      "result": "才敢拿出来卖",
+      "source": "founder_observation"
+    }
+  ],
+  "confirmedProblems": [],
+  "constraints": {
+    "budget": "",
+    "team": "",
+    "timeline": ""
+  }
+}

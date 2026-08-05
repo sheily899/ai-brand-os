@@ -168,6 +168,7 @@ export async function runSearch(input: RunSearchInput): Promise<RunSearchOutput>
   });
 
   // Step 3: URL Ranking
+  const searchTopK = process.env.SEARCH_CONTEXT_MODE === "baseline" ? 5 : 3;
   const ranked = uniqueResults.length > 0
     ? await rankURLs({
         stage,
@@ -175,7 +176,7 @@ export async function runSearch(input: RunSearchInput): Promise<RunSearchOutput>
         brandName,
         category,
         objective: intent.objective,
-        topK: 5,
+        topK: searchTopK,
       })
     : [];
 

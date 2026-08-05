@@ -1,0 +1,12 @@
+{
+  "success": false,
+  "errors": [
+    "当前阶段没有结构化输出，无法优化"
+  ],
+  "retriesUsed": 0,
+  "needsHumanReview": true,
+  "supplementarySearchAttempted": false,
+  "supplementarySearchHadResults": false,
+  "hasDataGapIssues": false,
+  "circuitBreakerTriggered": false
+}

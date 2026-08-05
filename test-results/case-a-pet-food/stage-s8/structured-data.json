@@ -1,0 +1,72 @@
+{
+  "coreDirection": "围绕养宠日常中的情感瞬间与真实困扰，与用户建立懂我、同频的长期连接",
+  "contentValueSystem": [
+    {
+      "userStage": "awareness",
+      "userProblem": "养宠人感到孤独，觉得自己的情感和付出不被理解",
+      "contentValue": "替用户说出说不出口的话，让用户感到被理解、被共情"
+    },
+    {
+      "userStage": "interest",
+      "userProblem": "用户想持续关注，但不确定这个品牌是否真的懂养宠生活",
+      "contentValue": "呈现真实养宠日常与情感瞬间，让用户觉得这个账号和自己是一伙的"
+    },
+    {
+      "userStage": "trust",
+      "userProblem": "用户面临具体的养宠困扰，需要可信赖的解决方案",
+      "contentValue": "给出具体可操作的真实解决方案，让用户学到东西、解决问题"
+    },
+    {
+      "userStage": "decision",
+      "userProblem": "用户需要确认这个品牌的产品值得信任和尝试",
+      "contentValue": "让用户通过内容建立信任，自然产生尝试产品的意愿"
+    }
+  ],
+  "themeDirections": [
+    {
+      "pillar": "情感共鸣",
+      "corePurpose": "替用户说出养宠生活中说不出口的情感瞬间，建立同频连接",
+      "topicDirections": [
+        "加班回家毛孩子等待的瞬间",
+        "养宠人说不出口的愧疚与焦虑",
+        "毛孩子那些让人心头一暖的小举动"
+      ]
+    },
+    {
+      "pillar": "养宠解决方案",
+      "corePurpose": "针对用户真实养宠困扰给出具体可操作的解决方法",
+      "topicDirections": [
+        "换牙期乱咬家具怎么办",
+        "挑食猫咪的喂养技巧",
+        "换毛季的毛发护理方法",
+        "多猫家庭的相处引导"
+      ]
+    },
+    {
+      "pillar": "产品透明教育",
+      "corePurpose": "帮助用户建立判断宠物食品品质的能力，传递配料表透明的价值",
+      "topicDirections": [
+        "看懂宠物零食配料表",
+        "冻干工艺与营养保留",
+        "常见添加剂的识别与避坑"
+      ]
+    }
+  ],
+  "channelStrategy": [
+    {
+      "platform": "xiaohongshu",
+      "contentFormat": "图文笔记与短视频结合，以真实生活场景和情感故事为主",
+      "expressionFocus": "用第一人称讲述养宠日常，突出情感共鸣和真实感，让用户觉得这个账号懂自己"
+    },
+    {
+      "platform": "douyin",
+      "contentFormat": "竖屏短视频，以问题解决过程和真实养宠场景记录为主",
+      "expressionFocus": "用具体可操作的解决方案吸引用户，展示真实过程而非精致摆拍，让用户学到东西"
+    },
+    {
+      "platform": "wechat",
+      "contentFormat": "长图文与深度内容，以产品透明教育和养宠知识科普为主",
+      "expressionFocus": "用系统化的知识帮助用户建立判断能力，传递品牌对配料表透明的坚持"
+    }
+  ]
+}

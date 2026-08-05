@@ -1,0 +1,136 @@
+{
+  "projectId": "n8gJp1ysMBKBnZOI",
+  "stageNumber": 1,
+  "ruleCheck": {
+    "passed": true,
+    "issues": [
+      {
+        "field": "founderMotivation.content",
+        "message": "创始人类型为 creation_driven，但 motivation 中未检测到创造/打造类表述",
+        "severity": "warning"
+      }
+    ]
+  },
+  "crossStage": {
+    "referenceIssues": [],
+    "semanticIssues": null,
+    "referenceIntegrityPassed": true
+  },
+  "aiAudit": {
+    "stageNumber": 1,
+    "dimensionScores": [
+      {
+        "dimension": "specificity",
+        "score": 4,
+        "weight": 0.35,
+        "weightedScore": 28,
+        "reason": "创始动机包含具体触发事件（心理咨询师经历、朋友反馈原话），观察含具体人物（苏晚、朋友、来访者）、情境（下班后车里、睡前）、行为（调配精油、反馈）和结果，但约束条件缺失，未覆盖资源/时间/能力等维度。",
+        "improvements": [
+          "补充约束条件：预算、团队规模、时间规划等具体信息。",
+          "进一步明确目标用户画像，如年龄、职业、消费习惯等。"
+        ]
+      },
+      {
+        "dimension": "differentiation",
+        "score": 3,
+        "weight": 0.1,
+        "weightedScore": 6,
+        "reason": "创始人类型判断有行为证据（凭嗅觉调配、无商业逻辑），差异化方向初步显现（提供'喘息缝隙'而非解决问题），但未明确标注信息可信度层级，且差异化假设缺乏独特资源支撑。",
+        "improvements": [
+          "标注每个判断的信息来源类型（已验证事实/创始人推断/待验证假设）。",
+          "挖掘创始人独特资源（如心理咨询师背景、芳香疗法专业知识）如何支撑差异化。"
+        ]
+      },
+      {
+        "dimension": "actionability",
+        "score": 3,
+        "weight": 0.3,
+        "weightedScore": 18,
+        "reason": "观察中隐含多个可验证假设（如用户需要'属于自己的空间'），但未显式提炼为假设列表，也未标注验证路径，约束条件缺失导致项目边界不清晰。",
+        "improvements": [
+          "将观察转化为明确的假设，并标注验证阶段（如S3验证用户需求，S4验证产品概念）。",
+          "补充约束条件以定义项目边界。"
+        ]
+      },
+      {
+        "dimension": "evidence",
+        "score": 4,
+        "weight": 0.25,
+        "weightedScore": 20,
+        "reason": "所有观察均标注来源（创始人观察），包含具体人物、情境和原话，可信度高；推理链完整（经历→观察→洞察），但缺少外部验证数据（如用户调研、销售数据），且未区分创始人陈述与推断。",
+        "improvements": [
+          "补充外部证据，如用户访谈记录、市场数据或销售数据。",
+          "明确区分创始人亲身经历与个人推断。"
+        ]
+      }
+    ],
+    "totalScore": 72,
+    "issues": [
+      {
+        "dimension": "specificity",
+        "severity": "major",
+        "description": "约束条件（预算、团队、时间）完全缺失，无法定义项目边界。",
+        "suggestion": "在访谈中主动询问创始人的资源限制，并记录具体数值。",
+        "issueType": "data_gap"
+      },
+      {
+        "dimension": "differentiation",
+        "severity": "minor",
+        "description": "未标注信息可信度层级，无法区分已验证事实与创始人推断。",
+        "suggestion": "为每个判断添加来源类型标签，如'已验证'、'创始人推断'、'待验证'。",
+        "issueType": "expression"
+      },
+      {
+        "dimension": "actionability",
+        "severity": "major",
+        "description": "未提炼出明确的假设列表，后续阶段难以直接使用。",
+        "suggestion": "将观察转化为可验证的假设，并标注验证阶段。",
+        "issueType": "expression"
+      },
+      {
+        "dimension": "evidence",
+        "severity": "minor",
+        "description": "证据来源单一（均为创始人观察），缺乏外部验证。",
+        "suggestion": "补充用户访谈、市场数据或销售记录等外部证据。",
+        "issueType": "data_gap"
+      }
+    ],
+    "gateRecommendation": "advance",
+    "needsHumanReview": false,
+    "crossStageSemantics": null
+  },
+  "gateDecision": "advance",
+  "allIssues": [
+    {
+      "dimension": "specificity",
+      "severity": "major",
+      "description": "约束条件（预算、团队、时间）完全缺失，无法定义项目边界。",
+      "suggestion": "在访谈中主动询问创始人的资源限制，并记录具体数值。",
+      "issueType": "data_gap"
+    },
+    {
+      "dimension": "differentiation",
+      "severity": "minor",
+      "description": "未标注信息可信度层级，无法区分已验证事实与创始人推断。",
+      "suggestion": "为每个判断添加来源类型标签，如'已验证'、'创始人推断'、'待验证'。",
+      "issueType": "expression"
+    },
+    {
+      "dimension": "actionability",
+      "severity": "major",
+      "description": "未提炼出明确的假设列表，后续阶段难以直接使用。",
+      "suggestion": "将观察转化为可验证的假设，并标注验证阶段。",
+      "issueType": "expression"
+    },
+    {
+      "dimension": "evidence",
+      "severity": "minor",
+      "description": "证据来源单一（均为创始人观察），缺乏外部验证。",
+      "suggestion": "补充用户访谈、市场数据或销售记录等外部证据。",
+      "issueType": "data_gap"
+    }
+  ],
+  "referenceIssues": [],
+  "needsHumanReview": false,
+  "executedAt": "2026-08-04T02:08:35.063Z"
+}

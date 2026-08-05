@@ -40,6 +40,10 @@ const TARGET_CASE = argVal("--case") ? parseInt(argVal("--case")!) : undefined;
 const TARGET_STAGE = argVal("--stage") ? parseInt(argVal("--stage")!) : undefined;
 const DRY_RUN = args.includes("--dry-run");
 const MAX_ROUNDS = argVal("--max-rounds") ? parseInt(argVal("--max-rounds")!) : 10;
+/** A/B 测试阶段列表：只对这些阶段执行 reoptimize 循环，其余阶段跳过优化直接 advance */
+const AB_TEST_STAGES: number[] | undefined = argVal("--ab-test-stages")
+  ? argVal("--ab-test-stages")!.split(",").map(s => parseInt(s.trim()))
+  : undefined;
 
 // ── 常量 ──────────────────────────────────────────────────
 
@@ -350,7 +354,7 @@ async function runCase(
   const { createProject } = await import("../src/lib/db/project-repo");
   const { initStageRecord } = await import("../src/lib/workflow/workflow");
   const { sendMessage } = await import("../src/lib/ai/consultation");
-  const { runStage, advanceToNextStage } = await import("../src/lib/stage/stage-engine");
+  const { runStage, advanceToNextStage, reOptimizeStage } = await import("../src/lib/stage/stage-engine");
   const { saveConsultationMessages } = await import("../src/lib/db/stage-repo");
   const { buildMemoryContext } = await import("../src/lib/memory/decision-memory");
 
@@ -396,11 +400,15 @@ async function runCase(
 
   // ── S1→S8 逐阶段运行 ───────────────────────────────
   for (let stage = 1; stage <= 8; stage++) {
-    // 支持 --stage 参数跳过阶段
-    if (TARGET_STAGE !== undefined && stage !== TARGET_STAGE) continue;
+    // --stage N: fast-forward S1..S(N-1) with 1 round, full at S(N), skip after
+    if (TARGET_STAGE !== undefined) {
+      if (stage > TARGET_STAGE) continue;
+    }
+    const isFastForward = TARGET_STAGE !== undefined && stage < TARGET_STAGE;
 
-    const maxRounds = STAGE_MAX_ROUNDS[stage] ?? 5;
-    console.log(`\n  ── Stage ${stage} (${STAGE_NAMES[stage]}) ──`);
+    const maxRounds = isFastForward ? 1 : (STAGE_MAX_ROUNDS[stage] ?? 5);
+    const label = isFastForward ? "⚡快进" : "";
+    console.log(`\n  ── Stage ${stage} (${STAGE_NAMES[stage]}) ${label} ──`);
 
     if (DRY_RUN) {
       stages.push({
@@ -418,6 +426,27 @@ async function runCase(
 
     // 初始化阶段
     await initStageRecord(project.id, stage);
+
+    // ── 单阶段模式：强制搜索（目标阶段本身，非快进阶段）────
+    if (!isFastForward && [2, 3, 5, 8].includes(stage) && !searchContext) {
+      console.log(`    🔍 单阶段模式：强制触发搜索...`);
+      try {
+        const { runSearch } = await import("../src/lib/ai/search");
+        const memoryCtx = await buildMemoryContext(project.id, stage);
+        const searchOutput = await runSearch({
+          stage,
+          brandName: profile.brandName,
+          category: profile.category || "",
+          decisionMemoryContext: memoryCtx || undefined,
+        });
+        searchContext = searchOutput.formatted.contextText;
+        const srcCount = searchOutput.retrieved.length;
+        console.log(`    🔍 搜索完成：${srcCount} 个来源，${searchContext.length} chars`);
+      } catch (e: any) {
+        console.log(`    ⚠️ 强制搜索失败: ${e.message}`);
+        searchContext = `⚠️ 搜索未能完成：${e.message}。请基于已有信息继续。`;
+      }
+    }
 
     // ── Consultation 循环 ──────────────────────────────
     const history: Array<{ role: "user" | "assistant"; content: string }> = [];
@@ -565,7 +594,7 @@ async function runCase(
       convergeErrors = [e.message];
     }
 
-    // ── Step: Advance ──────────────────────────────────
+    // ── Step: Advance（含 Reoptimize 循环）────────────────
     console.log(`    触发 Advance...`);
     let advanceSuccess = false;
     let advanceGate: string | undefined;
@@ -575,10 +604,12 @@ async function runCase(
     let auditRefIssues = 0;
     let auditAIScore: number | undefined;
     let auditAIGate = "—";
+    let reoptimizeCount = 0;
+    const MAX_REOPTIMIZE = 3;
 
     try {
       if (convergeSuccess && stageOutput) {
-        const advanceResult = await advanceToNextStage({
+        let advanceResult = await advanceToNextStage({
           projectId: project.id,
           currentStage: stage,
           stageOutput,
@@ -588,6 +619,62 @@ async function runCase(
 
         advanceSuccess = advanceResult.advanced;
         advanceGate = advanceResult.gateDecision;
+
+        // ── Reoptimize 循环（仅对 A/B 测试阶段执行）──────
+        const shouldReoptimize = !AB_TEST_STAGES || AB_TEST_STAGES.includes(stage);
+        while (shouldReoptimize && advanceGate === "reoptimize" && reoptimizeCount < MAX_REOPTIMIZE) {
+          reoptimizeCount++;
+          console.log(`    ⚠️ Gate=reoptimize，触发智能优化 (${reoptimizeCount}/${MAX_REOPTIMIZE})...`);
+
+          try {
+            const reoptResult = await reOptimizeStage(
+              project.id,
+              stage,
+              SCHEMAS[stage],
+              advanceResult.auditReport!,
+              profile.brandName,
+              profile.category || ""
+            );
+
+            if (!reoptResult.success || !reoptResult.output) {
+              console.log(`    ❌ Reoptimize 失败: ${reoptResult.errors?.join("; ") ?? "无输出"}`);
+              if (reoptResult.circuitBreakerTriggered) {
+                console.log(`    ⚡ 熔断触发: 全部为 data_gap 问题且搜索无果，停止优化`);
+              }
+              break;
+            }
+
+            console.log(`    ✅ Reoptimize 成功，重新审计...`);
+
+            // 用优化后的输出重新推进
+            advanceResult = await advanceToNextStage({
+              projectId: project.id,
+              currentStage: stage,
+              stageOutput: reoptResult.output,
+              brandName: profile.brandName,
+              category: profile.category || "",
+            });
+
+            advanceSuccess = advanceResult.advanced;
+            advanceGate = advanceResult.gateDecision;
+
+            if (advanceSuccess) {
+              console.log(`    ✅ Reoptimize 后 Advance 成功`);
+            } else if (advanceGate === "reoptimize") {
+              console.log(`    ⚠️ 仍需优化 (gate=${advanceGate})`);
+            } else {
+              console.log(`    ❌ Reoptimize 后仍被阻止 (gate=${advanceGate})`);
+            }
+          } catch (e: any) {
+            console.log(`    ❌ Reoptimize 异常: ${e.message}`);
+            break;
+          }
+        }
+
+        if (advanceGate === "reoptimize" && reoptimizeCount >= MAX_REOPTIMIZE) {
+          console.log(`    ⚠️ Reoptimize 已达最大次数 (${MAX_REOPTIMIZE})，接受当前状态`);
+        }
+
         searchExecuted = advanceResult.searchExecuted;
         openingMessage = advanceResult.openingMessage;
         searchContext = advanceResult.searchContext;
@@ -613,7 +700,7 @@ async function runCase(
         } else {
           console.log(`    ❌ Advance 被阻止 (gate: ${advanceGate})`);
         }
-        console.log(`      审计: Gate=${auditGate} | Rule=${auditRuleIssues} issue(s) | Ref=${auditRefIssues} issue(s) | AI Score=${auditAIScore ?? "N/A"} | AI Gate=${auditAIGate}`);
+        console.log(`      审计: Gate=${auditGate} | Rule=${auditRuleIssues} issue(s) | Ref=${auditRefIssues} issue(s) | AI Score=${auditAIScore ?? "N/A"} | AI Gate=${auditAIGate} | Reopt=${reoptimizeCount}`);
       } else {
         console.log(`    ⏭️ 跳过 Advance（Converge 失败）`);
       }
@@ -641,6 +728,68 @@ async function runCase(
     });
 
     // 阶段失败不阻塞后续（下一阶段可能因依赖检查失败）
+    // ⚠️ 但如果 advance 失败（gate=reoptimize/block），无法进入下一阶段
+    if (!advanceSuccess) {
+      // A/B 测试模式：非测试阶段强制推进（跳过 Quality Gate）
+      const isABTestStage = !AB_TEST_STAGES || AB_TEST_STAGES.includes(stage);
+      if (!isABTestStage) {
+        console.log(`    ⚡ 非测试阶段，强制 Advance（原 gate=${advanceGate}）...`);
+        try {
+          const { handleGateDecision, setStageStatus } = await import("../src/lib/workflow/workflow");
+          const forced = await handleGateDecision(project.id, stage, "advance");
+          if (forced.nextStage && forced.nextStage <= 8) {
+            await initStageRecord(project.id, forced.nextStage);
+            await setStageStatus(project.id, forced.nextStage, "active");
+            // 搜索
+            let forcedMemoryCtx = "";
+            if ([2, 3, 5, 8].includes(forced.nextStage)) {
+              try {
+                const { runSearch } = await import("../src/lib/ai/search");
+                forcedMemoryCtx = await buildMemoryContext(project.id, forced.nextStage);
+                const searchOutput = await runSearch({
+                  stage: forced.nextStage, brandName: profile.brandName,
+                  category: profile.category || "",
+                  decisionMemoryContext: forcedMemoryCtx || undefined,
+                });
+                searchContext = searchOutput.formatted.contextText;
+                searchExecuted = searchOutput.retrieved.length > 0;
+              } catch (e: any) {
+                searchContext = `⚠️ 搜索失败: ${e.message}`;
+              }
+            }
+            // 开场消息
+            try {
+              if (!forcedMemoryCtx) forcedMemoryCtx = await buildMemoryContext(project.id, forced.nextStage);
+              const triggerMsg = searchExecuted
+                ? "（系统自动触发）请基于以上搜索发现，先向用户展示搜索成果覆盖情况，然后提出本阶段的第一个咨询问题。"
+                : "（系统自动触发）请基于前序阶段的战略资产，向用户总结当前阶段的目标和已知信息，然后提出本阶段的第一个咨询问题。";
+              const ctx = {
+                stage: forced.nextStage, history: [] as Array<{ role: "user" | "assistant"; content: string }>,
+                variables: { 品牌名: profile.brandName, 品类: profile.category },
+                decisionMemoryContext: forcedMemoryCtx || undefined,
+                searchContext, includeSearchProtocol: [2, 3, 5, 8].includes(forced.nextStage),
+                tracking: { projectId: project.id, callType: "opening" as const },
+              };
+              openingMessage = await sendMessage(ctx, triggerMsg);
+              if (openingMessage) {
+                await saveConsultationMessages(project.id, forced.nextStage, [
+                  { role: "assistant", content: openingMessage, timestamp: new Date().toISOString() },
+                ]);
+              }
+            } catch (e: any) {
+              openingMessage = `欢迎进入 Stage ${forced.nextStage}。`;
+            }
+            advanceSuccess = true; // 标记为成功以继续循环
+          }
+        } catch (e: any) {
+          console.log(`    ❌ 强制 Advance 失败: ${e.message}`);
+          break;
+        }
+      } else {
+        console.log(`    ⛔ Stage ${stage} 未成功推进，跳过后续阶段`);
+        break;
+      }
+    }
   }
 
   return {

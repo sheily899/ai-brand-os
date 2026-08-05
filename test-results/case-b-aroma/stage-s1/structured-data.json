@@ -1,0 +1,57 @@
+{
+  "founderType": "creation_driven",
+  "founderMotivation": {
+    "content": "我做心理咨询师那几年，发现很多来访者的问题没那么深，就是工作压力大、睡不好、情绪烦躁，但找不到一个简单的出口。我自己学了芳香疗法，试着调配精油香薰，朋友用后反馈特别好——有个朋友说，点上蜡烛那一刻，感觉这一天终于属于自己了。这句话让我特别触动。",
+    "source": "founder_statement"
+  },
+  "observations": [
+    {
+      "subject": "苏晚",
+      "context": "做心理咨询师期间",
+      "behavior": "发现很多来访者的问题没那么深，就是工作压力大、睡不好、情绪烦躁，但找不到一个简单的出口",
+      "result": "意识到需要一种更简单的出口，开始学芳香疗法并调配精油香薰",
+      "source": "founder_observation"
+    },
+    {
+      "subject": "苏晚的朋友",
+      "context": "使用苏晚调配的精油香薰时",
+      "behavior": "反馈说点上蜡烛那一刻，感觉这一天终于属于自己了",
+      "result": "苏晚被这句话触动，觉得做的不是产品，是在给她们一个喘息的缝隙",
+      "source": "founder_observation"
+    },
+    {
+      "subject": "来访者（32岁项目经理）",
+      "context": "每天下班后坐在车里那十分钟",
+      "behavior": "既不想上楼，也不想再开走，就只想在黑暗里坐一会儿",
+      "result": "苏晚意识到她要的不是心理咨询，是一个真正属于自己的空间",
+      "source": "founder_observation"
+    },
+    {
+      "subject": "苏晚",
+      "context": "最初调配精油香薰时",
+      "behavior": "买各种精油回来配，闻着觉得'对'就记下来，形态也是慢慢摸索出来的，白天做扩香器、晚上做睡前喷雾，蜡烛是后来朋友说要个更有仪式感的东西才做的",
+      "result": "完全没想过商业逻辑，纯粹凭嗅觉和直觉",
+      "source": "founder_observation"
+    },
+    {
+      "subject": "苏晚",
+      "context": "调配睡前喷雾「夜航」时",
+      "behavior": "用了薰衣草、雪松和一点橙花，薰衣草让人放松，雪松有被包裹住的踏实感，橙花能让思绪慢下来",
+      "result": "朋友反馈说喷在枕头上的时候，感觉像有人在旁边说'没事了，可以睡了'",
+      "source": "founder_observation"
+    },
+    {
+      "subject": "苏晚",
+      "context": "做心理咨询时",
+      "behavior": "经常在最后对来访者说'今天到这里就可以了，剩下的交给时间'",
+      "result": "那种'允许自己停下来'的许可，是她一直想传递的东西，也体现在「夜航」这个名字里——不是要解决问题，就是陪你度过这一段夜路",
+      "source": "founder_observation"
+    }
+  ],
+  "confirmedProblems": [],
+  "constraints": {
+    "budget": "",
+    "team": "",
+    "timeline": ""
+  }
+}

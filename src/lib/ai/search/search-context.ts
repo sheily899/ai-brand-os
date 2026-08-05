@@ -9,6 +9,12 @@
  * 注入格式遵循 shared-search-protocol.md Section 四"四段式展示"。
  */
 
+/** Search Context 预算控制 — 检索→排序→摘要→受控注入 */
+const SEARCH_CONTEXT_MODE = process.env.SEARCH_CONTEXT_MODE === "baseline" ? "baseline" : "optimized";
+const MAX_CHARS_PER_SOURCE = SEARCH_CONTEXT_MODE === "baseline" ? 3000 : 800;
+const MAX_TOTAL_CONTEXT_CHARS = SEARCH_CONTEXT_MODE === "baseline" ? 15000 : 2500; // baseline: 5×3000 足够
+const MAX_DATASOURCE_SUMMARY = 300;   // dataSources 摘要上限（A/B 共用）
+
 import type {
   SearchContextInput,
   FormattedSearchContext,
@@ -40,8 +46,8 @@ export function formatSearchContext(input: SearchContextInput): FormattedSearchC
     if (c.fallbackReason) {
       contextParts.push(`- ⚠️ ${c.fallbackReason}`);
     }
-    contextParts.push(`\n${c.content.slice(0, 3000)}\n`);
-    if (c.content.length > 3000) {
+    contextParts.push(`\n${c.content.slice(0, MAX_CHARS_PER_SOURCE)}\n`);
+    if (c.content.length > MAX_CHARS_PER_SOURCE) {
       contextParts.push("...(内容已截断，完整内容请参考原链接)");
     }
     contextParts.push("");
@@ -55,7 +61,13 @@ export function formatSearchContext(input: SearchContextInput): FormattedSearchC
     contextParts.push(`- ${icon} ${dim.name}${note}`);
   }
 
-  const contextText = contextParts.join("\n");
+  let contextText = contextParts.join("\n");
+
+  // 全局上限：防止异常搜索结果拖垮上下文
+  if (contextText.length > MAX_TOTAL_CONTEXT_CHARS) {
+    contextText = contextText.slice(0, MAX_TOTAL_CONTEXT_CHARS);
+    contextText += `\n\n...(搜索上下文已截断至 ${MAX_TOTAL_CONTEXT_CHARS} 字符预算上限)`;
+  }
 
   // ── coverageReport：AI 开场白摘要 ────────────────────
   const coveredCount = coverage.filter((d) => d.status === "covered").length;
@@ -86,7 +98,7 @@ export function formatSearchContext(input: SearchContextInput): FormattedSearchC
     url: c.url,
     title: c.title,
     type: c.sourceType === "fulltext" ? "full_text" as const : "snippet" as const,
-    summary: c.content.slice(0, 300),
+    summary: c.content.slice(0, MAX_DATASOURCE_SUMMARY),
   }));
 
   return { contextText, coverageReport, dataSources };

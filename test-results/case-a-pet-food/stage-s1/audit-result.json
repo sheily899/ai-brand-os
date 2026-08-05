@@ -1,0 +1,104 @@
+{
+  "projectId": "ir08uG0NmfH-oD6U",
+  "stageNumber": 1,
+  "ruleCheck": {
+    "passed": true,
+    "issues": [
+      {
+        "field": "founderMotivation.content",
+        "message": "创始人类型为 creation_driven，但 motivation 中未检测到创造/打造类表述",
+        "severity": "warning"
+      }
+    ]
+  },
+  "crossStage": {
+    "referenceIssues": [],
+    "semanticIssues": null,
+    "referenceIntegrityPassed": true
+  },
+  "aiAudit": {
+    "stageNumber": 1,
+    "dimensionScores": [
+      {
+        "dimension": "specificity",
+        "score": 5,
+        "weight": 0.35,
+        "weightedScore": 35,
+        "reason": "创始动机包含完整叙事链：具体触发事件（购买进口零食后猫呕吐）→反思（查配料表发现'禽肉及其副产品'）→决定（自己做冻干鸡胸肉）。观察共7条，每条均含四要素（主体、情境、行为、结果），如'把多做的零食分给朋友家的猫狗试，反馈都不错，有人问卖不卖'。约束条件虽未填写，但观察中隐含了约束（如'配料表不能出现自己都不知道是什么的东西'、'试了大概十几版才敢拿出来卖'），覆盖了产品标准和研发投入维度。",
+        "improvements": [
+          "补充明确的资源约束（预算、团队规模、时间节点），以便后续阶段评估可行性",
+          "增加用户问题维度的具体观察（如目标用户对现有产品的抱怨场景），当前观察集中于创始人自身经历"
+        ]
+      },
+      {
+        "dimension": "differentiation",
+        "score": 4,
+        "weight": 0.1,
+        "weightedScore": 8,
+        "reason": "所有判断均标注了来源类型（创始人观察），可信度层级清晰。差异化方向明确且有个人经历支撑：'配料表要短，短到能念出来'这一标准源于创始人八年快消经验和踩坑经历。创始人类型判断（创作驱动）有行为证据：'自己先尝了一口'、'给自己定规矩'等行为表明其以产品品质为驱动。但未明确区分已验证事实与待验证假设，如'市面大多数营养膏为适口性加很多糖浆和诱食剂'是创始人推断，未标注为待验证。",
+        "improvements": [
+          "将创始人推断（如市面营养膏普遍加糖浆）明确标注为待验证假设，并设计验证方法",
+          "补充创始人独特资源（八年快消经验、宠物营养朋友）如何转化为可持续竞争优势的说明"
+        ]
+      },
+      {
+        "dimension": "actionability",
+        "score": 4,
+        "weight": 0.3,
+        "weightedScore": 24,
+        "reason": "输出包含多个可被后续阶段消费的明确假设：'配料表短到能念出来'可作为价值主张核心，'冻干鸡胸肉配料表是鸡胸肉三个字'可作为产品差异化卖点。约束条件可转化为项目边界（如产品线必须符合'配料表短'原则）。但假设的验证路径标注不足，如'猫吃得特别快'这一观察未明确标注为待验证假设（需在更大样本中验证），也未说明哪些假设需在第三阶段或第四阶段验证。",
+        "improvements": [
+          "为每个核心假设标注验证路径（如'配料表短'假设需在第三阶段用户访谈中验证，'猫爱吃'需在第四阶段产品测试中验证）",
+          "将观察转化为可直接测试的假设清单，如'配料表超过五行用户会放弃购买'"
+        ]
+      },
+      {
+        "dimension": "evidence",
+        "score": 4,
+        "weight": 0.25,
+        "weightedScore": 20,
+        "reason": "证据来源明确：所有观察均标注为创始人观察，且包含具体时间、情境和行为记录（如'购买进口零食后猫呕吐'、'试了大概十几版'）。可信度高：来源多元（个人经历、朋友反馈、产品研发记录），可追溯。推理链完整：创始人经历（踩坑）→用户问题（市面零食配料表不透明）→初始假设（配料表短的产品有市场）形成因果链，每层均有证据锚点。但缺少外部验证（如用户访谈数据、销售数据），且'市面大多数营养膏加糖浆'这一推断无直接证据支撑。",
+        "improvements": [
+          "补充外部证据来源，如目标用户的访谈记录或市场调研数据，以验证'配料表短'的市场需求",
+          "将创始人推断（如市面产品普遍不透明）标注为待验证假设，并设计验证方法"
+        ]
+      }
+    ],
+    "totalScore": 87,
+    "issues": [
+      {
+        "dimension": "actionability",
+        "severity": "major",
+        "description": "核心假设未标注验证路径，后续阶段无法直接消费这些假设",
+        "suggestion": "为每个假设添加验证阶段标注（如第三阶段验证用户需求、第四阶段验证产品接受度）"
+      },
+      {
+        "dimension": "differentiation",
+        "severity": "minor",
+        "description": "创始人推断与已验证事实未明确区分，如'市面大多数营养膏加糖浆'是推断但未标注",
+        "suggestion": "在输出中增加字段区分已验证事实、创始人推断和待验证假设"
+      }
+    ],
+    "gateRecommendation": "advance",
+    "needsHumanReview": false,
+    "crossStageSemantics": null
+  },
+  "gateDecision": "advance",
+  "allIssues": [
+    {
+      "dimension": "actionability",
+      "severity": "major",
+      "description": "核心假设未标注验证路径，后续阶段无法直接消费这些假设",
+      "suggestion": "为每个假设添加验证阶段标注（如第三阶段验证用户需求、第四阶段验证产品接受度）"
+    },
+    {
+      "dimension": "differentiation",
+      "severity": "minor",
+      "description": "创始人推断与已验证事实未明确区分，如'市面大多数营养膏加糖浆'是推断但未标注",
+      "suggestion": "在输出中增加字段区分已验证事实、创始人推断和待验证假设"
+    }
+  ],
+  "referenceIssues": [],
+  "needsHumanReview": false,
+  "executedAt": "2026-08-03T17:40:37.372Z"
+}

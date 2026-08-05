@@ -1,0 +1,87 @@
+{
+  "stageNumber": 3,
+  "dimensionScores": [
+    {
+      "dimension": "specificity",
+      "score": 2,
+      "weight": 0.25,
+      "weightedScore": 10,
+      "reason": "市场范围有规模量级（约1500亿元）和增速（25%），但均标注待验证，且未明确品类细分、地域范围。趋势描述较具体（如实木认知偏差、使用一两年后变形），但缺乏具体数据支撑。体验缺口具体到场景（厨房收纳产品挂油擦不净），但未明确用户人群和现有方案细节。整体具体度不足，未达到3分标准。",
+      "improvements": [
+        "明确市场细分（如厨房收纳、衣柜收纳）和地域范围（如一线城市、二线城市）",
+        "为趋势补充具体数据点，如引用报告中的百分比或用户调研数据",
+        "细化体验缺口，补充用户画像（如年轻家庭主妇）和现有方案的不足"
+      ]
+    },
+    {
+      "dimension": "differentiation",
+      "score": 3,
+      "weight": 0.2,
+      "weightedScore": 12,
+      "reason": "包含非显性发现，如消费者对实木的认知偏差（将实木与高价划等号），这不同于行业常识。机会方向（实木工艺为核心的中高端产品）与S2战略方向有逻辑衔接。但缺乏对品类边界的重新定义或排他性判断，差异化程度中等。",
+      "improvements": [
+        "构建独特的品类理解框架，如重新定义收纳用品的分类维度",
+        "增加排他性判断，如'大多数人认为实木昂贵，但数据显示中端实木产品有市场'",
+        "强化与S2战略方向的衔接，明确如何差异化竞争"
+      ]
+    },
+    {
+      "dimension": "actionability",
+      "score": 2,
+      "weight": 0.2,
+      "weightedScore": 8,
+      "reason": "机会方向有优先级（第一个为推断，第二个为假设），但缺乏明确的验证路径和决策逻辑。没有提供'如果X则Y'的决策框架，也未标注时间窗口。行动指导性不足，难以直接指导S4研究方向。",
+      "improvements": [
+        "为每个机会方向提供验证方法（如用户调研、小规模测试）",
+        "明确优先级排序，并给出决策条件（如'如果验证A成功，则进入B'）",
+        "标注机会的时间窗口，如'未来2年内'"
+      ]
+    },
+    {
+      "dimension": "evidence",
+      "score": 2,
+      "weight": 0.35,
+      "weightedScore": 14,
+      "reason": "数据来源仅有一个示例来源，无实际数据。市场规模和增速均标注待验证，趋势判断基于行业分析需进一步验证。推理链不完整，从数据到机会的推导缺乏证据支撑。未区分有数据支撑和基于推断的判断，整体证据支撑薄弱。",
+      "improvements": [
+        "补充具体行业报告名称、年份和数据点，如'2023年家居收纳行业报告'",
+        "为趋势和机会方向提供可验证的数据来源，或明确标注为假设",
+        "构建完整推理链：数据→趋势→机会，并区分证据等级"
+      ]
+    }
+  ],
+  "totalScore": 44,
+  "issues": [
+    {
+      "dimension": "specificity",
+      "severity": "major",
+      "description": "市场范围描述模糊，未明确细分品类和地域，规模数据待验证",
+      "suggestion": "明确细分市场（如厨房收纳）和地域（如一线城市），并补充具体数据来源",
+      "issueType": "data_gap"
+    },
+    {
+      "dimension": "differentiation",
+      "severity": "minor",
+      "description": "缺乏排他性判断和独特品类框架",
+      "suggestion": "增加'大多数人认为X，但数据显示Y'的表述，重新定义品类边界",
+      "issueType": "expression"
+    },
+    {
+      "dimension": "actionability",
+      "severity": "major",
+      "description": "机会方向缺乏验证路径和决策逻辑",
+      "suggestion": "为每个机会提供验证方法和优先级，添加'如果X则Y'的决策框架",
+      "issueType": "expression"
+    },
+    {
+      "dimension": "evidence",
+      "severity": "major",
+      "description": "数据来源缺失，市场规模和趋势均待验证，推理链不完整",
+      "suggestion": "补充具体报告名称和年份，或明确标注为假设，构建数据到机会的推理链",
+      "issueType": "data_gap"
+    }
+  ],
+  "gateRecommendation": "block",
+  "needsHumanReview": true,
+  "crossStageSemantics": null
+}

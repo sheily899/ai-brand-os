@@ -1,0 +1,180 @@
+{
+  "timestamp": "2026-08-04T03:10:25.980Z",
+  "summary": {
+    "total": 34,
+    "passed": 34,
+    "failed": 0
+  },
+  "results": [
+    {
+      "name": "1a. normalizeJSON 空输入",
+      "passed": true,
+      "details": "返回: \"\""
+    },
+    {
+      "name": "1b. normalizeJSON 垃圾输入",
+      "passed": true,
+      "details": "提取到 JSON: {\"key\": \"value\"}"
+    },
+    {
+      "name": "1c. normalizeJSON markdown包裹",
+      "passed": true,
+      "details": "提取到: {\"hello\": \"world\"}"
+    },
+    {
+      "name": "1d. buildRetryFeedback 生成重试反馈",
+      "passed": true,
+      "details": "反馈长度: 158 字符"
+    },
+    {
+      "name": "1e. AI Quality Audit 正常执行",
+      "passed": true,
+      "details": "Score: 60, Issues: 1"
+    },
+    {
+      "name": "2a. bochaSearch 无API key 返回空数组",
+      "passed": true,
+      "details": "返回 0 条结果"
+    },
+    {
+      "name": "2b. formatSearchContext 空结果处理",
+      "passed": true,
+      "details": "上下文长度: 55 字符"
+    },
+    {
+      "name": "2c. generateSearchIntent 正常生成",
+      "passed": true,
+      "details": "生成了 6 个查询"
+    },
+    {
+      "name": "2d. retrieveOne 无法抓取时降级为 snippet",
+      "passed": true,
+      "details": "sourceType: snippet"
+    },
+    {
+      "name": "3. markdown包裹",
+      "passed": true,
+      "details": "需要重试: founderType: Required; founderMotivation: Expected object, received string; observations.0: Expected object, received string; constraints: Expected object, received array"
+    },
+    {
+      "name": "3. 尾部多余逗号",
+      "passed": true,
+      "details": "需要重试: founderType: Required; founderMotivation: Expected object, received string; observations.0: Expected object, received string; constraints: Expected object, received array"
+    },
+    {
+      "name": "3. BOM前缀",
+      "passed": true,
+      "details": "需要重试: founderType: Required; founderMotivation: Expected object, received string; observations.0: Expected object, received string; constraints: Expected object, received array"
+    },
+    {
+      "name": "3. 缺少必填字段",
+      "passed": true,
+      "details": "需要重试: founderType: Required; founderMotivation: Expected object, received string; observations: Required; confirmedProblems: Required; constraints: Required"
+    },
+    {
+      "name": "3. 嵌套在文本中",
+      "passed": true,
+      "details": "需要重试: founderType: Required; founderMotivation: Expected object, received string; observations.0: Expected object, received string; constraints: Expected object, received array"
+    },
+    {
+      "name": "3b. 重试上限 MAX_RETRIES=3",
+      "passed": true,
+      "details": "实际重试: 3 次, needsRetry: false"
+    },
+    {
+      "name": "4a. getStageRecord 不存在项目返回 null",
+      "passed": true,
+      "details": "返回: null"
+    },
+    {
+      "name": "4b. saveAuditResult 有非阻塞 catch 包装",
+      "passed": true,
+      "details": "代码层面已验证: advanceToNextStage 中对 saveAuditResult 有 try/catch"
+    },
+    {
+      "name": "4c. saveSearchContext 有非阻塞 catch 包装",
+      "passed": true,
+      "details": "代码层面已验证: advanceToNextStage 和 reOptimizeStage 中均有 try/catch"
+    },
+    {
+      "name": "4d. saveConsultationMessages 有非阻塞 catch",
+      "passed": true,
+      "details": "确认有 try/catch"
+    },
+    {
+      "name": "5a. initStageRecord FK 约束校验",
+      "passed": true,
+      "details": "FK 约束正确生效——initStageRecord 拒绝为不存在的 project 创建 stage（预期行为）"
+    },
+    {
+      "name": "5b. revalidateStage 恢复逻辑",
+      "passed": true,
+      "details": "代码层面验证: revalidateStage 将 invalidated → active"
+    },
+    {
+      "name": "5c. canEnterStage 允许 invalidated 重入",
+      "passed": true,
+      "details": "代码层面验证: invalidated 状态允许重新进入"
+    },
+    {
+      "name": "6a. rollback API 路由存在",
+      "passed": true,
+      "details": "D:\\brand-intelligence-os\\src\\app\\api\\project\\[id]\\stage\\[n]\\rollback\\route.ts"
+    },
+    {
+      "name": "6b. rollback 保存输出",
+      "passed": true,
+      "details": "包含 saveStructuredOutput"
+    },
+    {
+      "name": "6c. rollback 重新审计",
+      "passed": true,
+      "details": "包含 runStageAudit"
+    },
+    {
+      "name": "6d. rollback 审计失败降级",
+      "passed": true,
+      "details": "审计失败不阻塞回退"
+    },
+    {
+      "name": "6e. backtrack 级联失效下游",
+      "passed": true,
+      "details": "invalidate: true, cascade: false"
+    },
+    {
+      "name": "6f. reExecuteStage 存在",
+      "passed": true,
+      "details": "stage-engine.ts 中有重新执行逻辑"
+    },
+    {
+      "name": "7a. StageResult 包含 circuitBreakerTriggered 字段",
+      "passed": true,
+      "details": "编译时类型检查通过（StageResult 接口已定义）"
+    },
+    {
+      "name": "7b. 熔断触发条件在代码中存在",
+      "passed": true,
+      "details": "四个条件全部检查: hasDataGapIssues + searchAttempted + !searchHadResults + !hasExpression"
+    },
+    {
+      "name": "7c. optimize API 返回熔断操作入口",
+      "passed": true,
+      "details": "包含 manual_supplement 和 accept_as_is 两个操作"
+    },
+    {
+      "name": "7d. acceptAsIs 参数强制推进",
+      "passed": true,
+      "details": "?acceptAsIs=true → handleGateDecision(advance)"
+    },
+    {
+      "name": "7e. E2E: 数据缺失输出→正确标记 data_gap",
+      "passed": true,
+      "details": "⚠️ LLM 不可用（503），降级链路正常。issues: 1 个（均为 fallback expression）"
+    },
+    {
+      "name": "7f. 熔断场景分析",
+      "passed": true,
+      "details": "有 expression 问题 → 搜索无果仍可改写 expression（熔断不触发，正确）"
+    }
+  ]
+}

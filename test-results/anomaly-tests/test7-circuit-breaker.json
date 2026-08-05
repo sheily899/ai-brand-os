@@ -1,0 +1,5 @@
+{
+  "hasCircuitBreaker": true,
+  "hasBreakerResponse": true,
+  "hasAcceptAsIs": true
+}

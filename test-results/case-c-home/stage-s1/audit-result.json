@@ -1,0 +1,122 @@
+{
+  "projectId": "dX5qcK1NKYY89CNF",
+  "stageNumber": 1,
+  "ruleCheck": {
+    "passed": true,
+    "issues": []
+  },
+  "crossStage": {
+    "referenceIssues": [],
+    "semanticIssues": null,
+    "referenceIntegrityPassed": true
+  },
+  "aiAudit": {
+    "stageNumber": 1,
+    "dimensionScores": [
+      {
+        "dimension": "specificity",
+        "score": 4,
+        "weight": 0.35,
+        "weightedScore": 28,
+        "reason": "创始动机包含具体触发事件（卖场年轻客户问'能放什么'），且有时间情境（25年代工经历）。观察包含具体人物（年轻客户、小红书博主）、情境（卖场、小红书）、行为（拿起置物架问问题）和结果（犹豫放下不买）。约束条件未收集，但整体具体度较高。",
+        "improvements": [
+          "补充约束条件的具体信息，如预算、团队规模、时间计划。",
+          "进一步细化用户画像，如年龄、居住环境、购买力等。"
+        ]
+      },
+      {
+        "dimension": "differentiation",
+        "score": 3,
+        "weight": 0.1,
+        "weightedScore": 6,
+        "reason": "创始人类型判断为问题驱动型，有个人经历支撑（25年代工、卖场观察）。但差异化方向不够明确，未形成独特判断，多数为创始人个人推断，未标注可信度层级。",
+        "improvements": [
+          "明确差异化方向，如'从用户使用场景出发'，并标注其与行业通用表述的区别。",
+          "对创始人推断进行可信度标注，区分已验证事实与待验证假设。"
+        ]
+      },
+      {
+        "dimension": "actionability",
+        "score": 4,
+        "weight": 0.3,
+        "weightedScore": 24,
+        "reason": "确认的问题可转化为后续阶段的假设，如'用户关心产品能否解决自己家的问题'，可指导价值主张设计。但未明确标注每个假设的验证路径，约束条件缺失影响项目边界设定。",
+        "improvements": [
+          "为每个确认的问题标注验证路径，如通过用户调研或原型测试验证。",
+          "补充约束条件，明确项目边界，便于后续阶段执行。"
+        ]
+      },
+      {
+        "dimension": "evidence",
+        "score": 4,
+        "weight": 0.25,
+        "weightedScore": 20,
+        "reason": "来源标注清晰，创始人观察和陈述均有标注。可信度较高，观察包含具体情境和行为。推理链完整：创始人经历（25年代工）→用户问题（用户问'能放什么'）→初始假设（用户关心使用场景）。但来源类型单一，均为创始人观察，缺少外部数据或用户反馈原文。",
+        "improvements": [
+          "补充用户反馈原文或销售数据，增加证据多元性。",
+          "对创始人推断进行标注，区分已验证事实与待验证假设。"
+        ]
+      }
+    ],
+    "totalScore": 78,
+    "issues": [
+      {
+        "dimension": "specificity",
+        "severity": "major",
+        "description": "约束条件完全缺失，预算、团队、时间均未填写，影响后续阶段的项目边界设定。",
+        "suggestion": "在访谈中补充收集创始人的资源限制，如预算范围、团队规模、时间计划等。"
+      },
+      {
+        "dimension": "differentiation",
+        "severity": "major",
+        "description": "差异化方向不明确，未形成独特判断，多为行业通用表述。",
+        "suggestion": "引导创始人提炼独特资源或视角，如'25年代工经验'如何转化为品牌差异化，并标注可信度。"
+      },
+      {
+        "dimension": "actionability",
+        "severity": "minor",
+        "description": "假设未标注验证路径，约束条件缺失影响可执行性。",
+        "suggestion": "为每个确认的问题标注验证方法，并补充约束条件。"
+      },
+      {
+        "dimension": "evidence",
+        "severity": "minor",
+        "description": "证据来源单一，均为创始人观察，缺少外部验证。",
+        "suggestion": "收集用户反馈原文或销售数据，增加证据多元性。"
+      }
+    ],
+    "gateRecommendation": "advance",
+    "needsHumanReview": false,
+    "crossStageSemantics": null
+  },
+  "gateDecision": "advance",
+  "allIssues": [
+    {
+      "dimension": "specificity",
+      "severity": "major",
+      "description": "约束条件完全缺失，预算、团队、时间均未填写，影响后续阶段的项目边界设定。",
+      "suggestion": "在访谈中补充收集创始人的资源限制，如预算范围、团队规模、时间计划等。"
+    },
+    {
+      "dimension": "differentiation",
+      "severity": "major",
+      "description": "差异化方向不明确，未形成独特判断，多为行业通用表述。",
+      "suggestion": "引导创始人提炼独特资源或视角，如'25年代工经验'如何转化为品牌差异化，并标注可信度。"
+    },
+    {
+      "dimension": "actionability",
+      "severity": "minor",
+      "description": "假设未标注验证路径，约束条件缺失影响可执行性。",
+      "suggestion": "为每个确认的问题标注验证方法，并补充约束条件。"
+    },
+    {
+      "dimension": "evidence",
+      "severity": "minor",
+      "description": "证据来源单一，均为创始人观察，缺少外部验证。",
+      "suggestion": "收集用户反馈原文或销售数据，增加证据多元性。"
+    }
+  ],
+  "referenceIssues": [],
+  "needsHumanReview": false,
+  "executedAt": "2026-08-03T18:10:44.138Z"
+}
