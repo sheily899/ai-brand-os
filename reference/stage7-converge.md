@@ -120,6 +120,24 @@
 - 不出现"对应品牌人格中的X"这类内部推导语言
 - 避免使用引号、破折号做强调
 
+## Section Summaries（报告正文来源）
+
+除结构化字段外，**将 AI 顾问对话末尾确认总结的每个 section 原文完整保存**。
+从 AI 顾问对话末尾的确认总结中，按以下 section 名称提取完整原文段落，
+存入 `sectionSummaries`：
+
+| section 名称 | 对应 AI 总结段落 |
+|---|---|
+| 视觉核心概念 | AI 总结"视觉核心概念"段落全文 |
+| 视觉关键词 | AI 总结"视觉关键词"段落全文（含每个关键词的理由说明） |
+| 视觉语言系统 | AI 总结"视觉语言系统"段落全文（含五维度整体叙述） |
+| 视觉禁区 | AI 总结"视觉禁区"段落全文（含每条禁区及其排除理由） |
+
+**关键规则**：
+- 原文照搬，不精简、不添加标签、不改写
+- AI 顾问已完成口语→报告语言的转换，你只需原文搬运
+- 此字段供报告 06 章直接引用，是报告正文的唯一来源
+
 ## JSON Schema
 
 ```json
@@ -132,38 +150,24 @@
     }
   ],
   "visualSystem": {
-    "form": {
-      "choice": "形态方向",
-      "exclusions": "应避免的形态",
-      "perceptualTone": "感知基调"
-    },
-    "color": {
-      "choice": "色彩方向",
-      "exclusions": "应避免的色彩",
-      "perceptualTone": "感知基调"
-    },
-    "typography": {
-      "choice": "字体方向",
-      "exclusions": "应避免的字体风格",
-      "perceptualTone": "感知基调"
-    },
-    "imagery": {
-      "choice": "图像方向",
-      "exclusions": "应避免的图像风格",
-      "perceptualTone": "感知基调"
-    },
-    "material": {
-      "choice": "材质方向",
-      "exclusions": "应避免的材质",
-      "perceptualTone": "感知基调"
-    }
+    "form": { "choice": "形态方向", "exclusions": "应避免的形态", "perceptualTone": "感知基调" },
+    "color": { "choice": "色彩方向", "exclusions": "应避免的色彩", "perceptualTone": "感知基调" },
+    "typography": { "choice": "字体方向", "exclusions": "应避免的字体风格", "perceptualTone": "感知基调" },
+    "imagery": { "choice": "图像方向", "exclusions": "应避免的图像风格", "perceptualTone": "感知基调" },
+    "material": { "choice": "材质方向", "exclusions": "应避免的材质", "perceptualTone": "感知基调" }
   },
   "restrictions": [
     {
       "exclusion": "视觉禁区方向",
       "strategicRationale": "排除的战略理由"
     }
-  ]
+  ],
+  "sectionSummaries": {
+    "视觉核心概念": "AI 确认总结中'视觉核心概念'部分的完整原文段落",
+    "视觉关键词": "AI 确认总结中'视觉关键词'部分的完整原文段落",
+    "视觉语言系统": "AI 确认总结中'视觉语言系统'部分的完整原文段落",
+    "视觉禁区": "AI 确认总结中'视觉禁区'部分的完整原文段落"
+  }
 }
 ```
 

@@ -431,7 +431,7 @@ Stage Orchestrator（触发搜索）
     ↓
 Search Intent Generator（根据阶段+品牌+品类+Context 生成搜索关键词）
     ↓
-Brave Search API（搜索 → 返回 URL + title + snippet）
+博查 Web Search API（搜索 → 返回 URL + title + snippet）
     ↓
 URL Ranking（AI 筛选 Top 3-5：权威性/相关度/数据密度）
     ↓
@@ -448,7 +448,7 @@ Search Context 注入 Consultation system prompt
 **Implementation Scope**：
 
 新建文件：
-- `src/lib/ai/search.ts` — Brave Search API 封装 + 搜索协议接入 + 失败降级
+- `src/lib/ai/search.ts` — 博查 Web Search API 封装 + 搜索协议接入 + 失败降级
 - `src/lib/ai/search-intent.ts` — Search Intent Generator（阶段 → 搜索关键词）
 - `src/lib/ai/url-ranking.ts` — URL 排名（权威性/相关度/数据密度 → Top 3-5）
 - `src/lib/ai/retrieval.ts` — Web Retrieval Layer（Jina → fetch+cheerio → snippet 三级回退）
@@ -477,7 +477,7 @@ Search Context 注入 Consultation system prompt
 
 **Acceptance Criteria**：
 1. Search Intent Generator 根据阶段+品牌+品类正确生成搜索关键词
-2. Brave Search API 正确调用并返回结构化结果
+2. 博查 Web Search API 正确调用并返回结构化结果
 3. URL Ranking 正确筛选 Top 3-5 高价值 URL
 4. Jina Reader 成功抓取 → fallback → 降级三级回退正常
 5. dataSources 区分标注"全文引用"vs"摘要引用"
@@ -673,7 +673,7 @@ Search Context 注入 Consultation system prompt
 
 ### Phase 2 Checkpoint
 
-**验证动作**：运行 S1→S6 完整流程（至少 2 个案例），收集 S1-S6 全部输出。
+**验证动作**：运行 S1→S6 完整流程（至少 2 个案例），收集 S1-S6 全部输出。额外验证：通过 Task 2.8 的 API 修改一个前序决策，验证下游阶段正确标记为 invalidated 并支持重执行。
 
 **通过标准**：
 - **搜索自动触发验证（新增）**：
@@ -692,6 +692,7 @@ Search Context 注入 Consultation system prompt
 - 对照测试：有 Context 的 S6 输出 vs 无 Context 的 S6 输出存在显著差异
 - 所有阶段的 Schema Validation 通过
 - S2-S8 的 AI 开场白（Opening Message）正确触发
+- **决策回溯（2.8 新增）**：修改 S3 的 `marketOverview.marketSize` → S6 标记为 `invalidated`；修改不影响下游的字段 → 无阶段被误标记
 
 ### Task 2.7：Knowledge Base 基础设施
 
@@ -734,6 +735,105 @@ interface KnowledgeRetriever {
 - 单元测试：embeddings.ts 生成向量维度正确（DeepSeek 默认 1024 维）
 - 单元测试：retriever.ts 空库查询返回空数组
 - 集成测试：手动放入 1 篇测试文档 → seed → 语义检索 → 验证召回
+
+---
+
+### Task 2.8 ★：Decision Traceability & Impact Propagation（决策回溯与影响传播）
+
+**Purpose**：实现"用户在后续阶段发现前序阶段决策存在问题 → 定位到具体历史阶段 → 修改已确认的决策 → 系统自动评估下游影响"的完整链路。这是 SPEC 1.3"可回溯修改任一阶段"的引擎层实现。
+
+所有硬依赖均在 Phase 1（`dependency-graph.ts` 的 `requiredFor` 反向遍历、`decision-memory.ts` 的条目读写、`workflow.ts` 的状态机、`stage-engine.ts` 的单阶段执行），因此放在 Phase 2 末尾。Phase 3 的 Audit Engine（Cross Stage Check 的前向比对、Quality Gate 的 Reoptimize 机制）与此 Task 是平行关系——2.8 提供"让用户改"，Phase 3 提供"让系统审"。
+
+**核心概念**：
+
+```
+用户在 S6 咨询中发现 S3 的市场规模判断有误
+        ↓
+定位到 S3 的对应 Decision Memory 条目 → 修改值
+        ↓
+Impact Analyzer 前向遍历依赖图
+  ├── S4: identityNeed 不引用 marketSize → no_impact
+  ├── S5: competitiveGap 部分引用 marketSize → needs_review
+  └── S6: reasoning.marketOpportunityReference 直接引用 marketSize → invalidated
+        ↓
+生成 ImpactReport：受影响阶段 + 严重程度 + 建议操作
+        ↓
+用户确认 → 受影响下游阶段标记为 invalidated
+        ↓
+用户可选择重新进入失效阶段：
+  - 保留原有对话历史
+  - 注入更新后的 Decision Memory Context
+  - AI 基于新 Context 重新 Consultation/Convergence
+```
+
+**Implementation Scope**：
+
+新建文件：
+- `src/lib/audit/impact-analyzer.ts` — 影响分析引擎
+  - `analyzeImpact(projectId, modifiedEntryId, newValue)` → `ImpactReport`
+  - 前向遍历字段级依赖图，逐阶段比对被修改字段与下游阶段的 convergenceOutput
+  - 输出三级影响：`no_impact` / `needs_review` / `invalidated`
+  - 注：放在 `audit/` 目录下而非独立目录，因为影响分析在语义上属于审计家族，且 Phase 3 的 Cross Stage Check 会复用它的前向遍历逻辑
+- `src/lib/memory/decision-version.ts` — Decision Memory 版本管理
+  - `updateEntry(entryId, newValue, modifiedBy)` — 更新条目并保留历史版本
+  - `getVersionHistory(entryId)` — 查询变更历史
+  - 数据模型：`{ previousValue, newValue, modifiedBy: 'user'|'ai', modifiedAt }`
+
+修改文件：
+- `src/lib/memory/decision-memory.ts`（Task 1.5）— 扩展
+  - 新增 `updateEntry()` 函数
+  - 新增 `getEntriesByStage(projectId, stageNumber)` — 按阶段筛选决策
+- `src/lib/memory/dependency-graph.ts`（Task 1.3）— 扩展
+  - 新增 `FIELD_FORWARD_DEPENDENCIES`：字段级前向依赖定义
+  - 新增 `getDownstreamFields(stage: number, fieldPath: string)` → `AffectedField[]`
+  - MVP 覆盖 S3→S6、S4→S6、S5→S6、S4→S7、S4→S8 的核心引用路径
+- `src/lib/workflow/workflow.ts`（Task 1.3）— 扩展
+  - `StageStatus` 新增 `"invalidated"` 状态
+  - 新增 `invalidateDownstream(projectId, modifiedStage)` — 将受影响的下游阶段标记为 `invalidated`
+  - 新增 `revalidateStage(projectId, stageNumber)` — 重置失效阶段为 `active`
+  - 修改 `canEnterStage()` — 允许重新进入 `invalidated` 阶段
+- `src/lib/stage/stage-engine.ts`（Task 1.4）— 扩展
+  - 新增 `reExecuteStage(projectId, stageNumber)` — 重新执行失效阶段
+  - 保留原有 `consultationMessages` 作为历史参考，注入更新后的 Decision Memory Context
+- `src/lib/db/schema.ts`（Task 1.1）— 追加
+  - `decision_memory_entries` 表增加 `previousVersionId`（nullable text）和 `modifiedBy`（nullable text）列
+
+API 路由（新建/修改）：
+- `GET /api/project/[id]/decisions` — 列出项目全部决策（按阶段分组）
+- `PUT /api/project/[id]/decisions/[entryId]` — 修改一条决策
+- `POST /api/project/[id]/decisions/[entryId]/impact` — 影响预评估
+- `POST /api/project/[id]/stage/[n]/revalidate` — 重新进入失效阶段
+- 修改 `POST /api/project/[id]/stage/[n]/message`（Task 1.4）— 增加活跃阶段校验
+
+不包含：
+- 完整版本树和分支管理（SPEC 6.1 明确不做）
+- 自动批量重跑所有受影响阶段（用户手动确认后逐一重跑）
+- 字段级依赖的全量覆盖（MVP 先覆盖 S3/S4/S5 → S6/S7/S8 的核心引用路径）
+- 前端决策编辑/影响评估 UI（Task 4.1/4.2 实现）
+
+**Dependencies**：Task 1.3（Workflow Engine 状态机 + dependency-graph）、Task 1.4（Stage Engine）、Task 1.5（Decision Memory）
+
+**Acceptance Criteria**：
+1. 用户可通过 API 查看所有前序阶段的 Decision Memory 条目（按阶段分组）
+2. 用户修改 S3 的 `marketOverview.marketSize` → Impact Analyzer 前向遍历 → 输出 ImpactReport：
+   - S4（不引用市场规模）→ `no_impact`
+   - S5（competitiveGap 部分引用市场规模）→ `needs_review`
+   - S6（reasoning 直接引用市场规模）→ `invalidated`
+3. ImpactReport 明确标注每个受影响阶段的严重程度和建议操作
+4. 用户确认影响评估后，受影响的下游阶段自动标记为 `invalidated`
+5. 用户可重新进入 `invalidated` 阶段，系统保留原有对话历史但注入更新后的决策上下文
+6. Decision Memory 条目保留版本历史（旧值 → 新值、修改人、修改时间）
+7. 修改 S4 的 `identityNeed` → S6/S7/S8 均受影响（验证跨多级传播）
+8. 修改不影响下游的字段 → 无阶段被误标记
+9. 向非活跃阶段发送消息 → 返回 403（活跃阶段校验生效）
+
+**Testing Strategy**：
+- 单元测试：`impact-analyzer.ts` — 修改 S3 某字段 → 验证只有引用该字段的下游阶段受影响
+- 单元测试：`invalidateDownstream()` — 修改 S4 identityNeed → S6/S7/S8 标记为 invalidated，S5 不受影响
+- 单元测试：`FIELD_FORWARD_DEPENDENCIES` — 验证字段级依赖定义与 S6.reasoning 的引用路径一致
+- 集成测试：S1→S6 完整流程 → 修改 S3 市场规模 → S6 invalidated → 重新进入 S6 → S6 输出反映修改后的数据
+- 集成测试：修改"无下游引用"的字段 → 验证无阶段被误标记
+- 此集成测试覆盖 Task 5.2 中的"回退修改"测试场景
 
 ---
 
@@ -908,7 +1008,7 @@ Gate Decision 规则：
 
 ### Phase 3 Checkpoint
 
-**验证动作**：用 Phase 2 输出跑 Audit Engine，并故意制造一个跨阶段矛盾（如修改 S2 的品类定义，让 S6 的品牌定位与 S2 冲突）。
+**验证动作**：用 Phase 2 输出跑 Audit Engine，并故意制造一个跨阶段矛盾（如修改 S2 的品类定义，让 S6 的品牌定位与 S2 冲突）。验证 Audit Engine 与 Task 2.8 的集成——当 2.8 的影响分析标记下游阶段为 invalidated 后，Phase 3 的 Cross Stage Check 能正确检测重执行后的修复结果。
 
 **通过标准**：
 - Rule Check 能发现至少一类结构性错误
@@ -916,6 +1016,7 @@ Gate Decision 规则：
 - **Cross Stage Context Check（核心）**：能发现 S2/S6 等关键阶段的引用缺失和事实冲突
 - Layer B 不产生独立 LLM 调用（代码审查确认）
 - Quality Gate 正确驱动阶段推进/回退
+- **与 2.8 集成**：2.8 标记 invalidated 的阶段在重新执行后，Audit Engine 能正确审计新输出并通过 Gate
 
 ### Task 3.5：Report Engine + Final Audit
 
@@ -980,46 +1081,91 @@ Report Assemble
 
 ---
 
-### Task 4.1：品牌咨询工作台实现
+### Task 4.1：品牌咨询工作台实现（含 8 阶段独立切换）
 
-**Purpose**：实现 SPEC 3.9.3 定义的工作台——三区域布局（阶段导航侧边栏 + 主对话区 + 顶部栏）。
+**Purpose**：实现 SPEC 3.9.3 定义的工作台——顶部 8 阶段 Tab 导航 + 侧边栏 + 主对话区 + 顶部栏。核心能力：**8 阶段独立切换**——用户通过顶部 Tab 或侧边栏切换阶段后，主视图只展示该阶段的 AI 咨询内容、完整对话历史、阶段目标和阶段内进度。不同阶段的对话和上下文完全隔离，但共享品牌项目信息（品牌名、品类、Decision Memory）。
+
+**8 阶段独立切换设计**：
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│  顶部栏                                                           │
+│  [← 返回]  宠物食品品牌  ·  [S1│S2│S3●│S4│S5│S6│S7│S8]  [报告 ↗] │
+├──────────────┬───────────────────────────────────────────────────┤
+│              │  阶段目标: 分析宠物食品市场机会，识别可进入的细分赛道     │
+│  阶段导航     │  阶段进度: 对话 5 轮 · 未收束 · 搜索已完成              │
+│  (侧边栏)    │                                                    │
+│              │  ┌────────────────────────────────────────────┐   │
+│  ✓ S1 用户访谈│  │              完整对话历史                    │   │
+│  ✓ S2 商业背景│  │  AI: ...            (仅展示当前选中阶段)      │   │
+│  ● S3 市场机会│  │  用户: ...                                 │   │
+│  ⚠ S4 消费者  │  │  AI: ...                                   │   │
+│    S5 竞争    │  └────────────────────────────────────────────┘   │
+│    S6 品牌战略│                                                    │
+│    S7 视觉    │  ┌────────────────────────────────────────────┐   │
+│    S8 内容    │  │ 💬 输入框（仅活跃阶段可输入）       📎 🔍   │   │
+│              │  └────────────────────────────────────────────┘   │
+└──────────────┴───────────────────────────────────────────────────┘
+```
+
+- **顶部 Tab 栏**：S1-S8 横排切换，当前选中高亮，✓/●/⚠/🔒 状态区分
+- **阶段视图隔离**：切换到某阶段 → 主视图只加载该阶段的 consultationMessages + 目标 + 进度
+- **交互权限**：仅当前活跃阶段可发送消息，其他阶段只读浏览
+- **失效标识**：`invalidated` 阶段侧边栏和 Tab 显示 ⚠，点击可查看原有内容但提示"上游决策已修改，建议重新运行本阶段"
 
 **Implementation Scope**：
 
 新建文件：
 - `src/app/project/[id]/page.tsx` — 工作台页面（替换占位页）
-- `src/components/workspace/WorkspaceLayout.tsx` — 三区域布局容器
-- `src/components/workspace/StageSidebar.tsx` — 阶段导航（S1-S8 + ✓/●/🔒 状态）
-- `src/components/workspace/TopBar.tsx` — 顶部栏（品牌名、进度条、返回、报告入口）
-- `src/components/workspace/ChatView.tsx` — 主对话容器
+- `src/components/workspace/WorkspaceLayout.tsx` — 布局容器（顶部 Tab + 侧边栏 + 主对话 + 顶部栏）
+- `src/components/workspace/StageTabs.tsx` — **新增**：顶部 8 阶段 Tab 导航条（S1-S8 横排，状态图标 + 阶段名，点击切换）
+- `src/components/workspace/StageView.tsx` — **新增**：单阶段独立视图容器（加载该阶段完整数据：对话历史 + 目标 + 进度 + 小结 + 搜索发现）
+- `src/components/workspace/StageGoal.tsx` — **新增**：阶段目标卡片（展示当前阶段的核心任务和目标描述）
+- `src/components/workspace/StageProgress.tsx` — **新增**：阶段内进度条（对话轮次 / 是否已搜索 / 是否已收束 / 审计状态）
+- `src/components/workspace/StageSidebar.tsx` — 阶段导航侧边栏（S1-S8 + ✓/●/⚠/🔒 状态，点击切换阶段）
+- `src/components/workspace/TopBar.tsx` — 顶部栏（品牌名、返回、报告入口；嵌入 StageTabs）
+- `src/components/workspace/ChatView.tsx` — 主对话容器（接收 `stageNumber` 参数，只加载对应阶段消息）
 - `src/components/workspace/MessageBubble.tsx` — 消息气泡（Markdown 渲染）
-- `src/components/workspace/InputArea.tsx` — 输入区（文本 + 附件按钮 + 搜索按钮）
+- `src/components/workspace/InputArea.tsx` — 输入区（仅活跃阶段可输入，非活跃显示"本阶段为只读浏览"）
 - `src/components/workspace/StageSummary.tsx` — 阶段小结卡片
 - `src/components/workspace/SearchResult.tsx` — 搜索发现三段式展示
+
+修改文件：
+- `POST /api/project/[id]/stage/[n]/message` — 增加活跃阶段校验：仅 `currentStage === n` 且 `status === 'active'` 时允许发送消息，否则返回 403
+- `GET /api/project/[id]/stage/[n]` — 响应增加 `goal` 字段（阶段目标描述）和 `progress` 字段（对话轮次/搜索状态/收束状态/审计状态）
+- `src/lib/ai/loader.ts` — 新增 `getStageGoal(stage)` 函数，从 Prompt 模板提取阶段目标描述
 
 不包含：
 - 审计卡片（Task 4.2）
 - 报告页（Task 4.3）
 - 文件上传/粘贴（Task 4.4）
+- 决策回溯编辑 UI（Task 3.6 提供后端，UI 扩展在 Task 4.2 的审计卡片中配合）
 
-**Dependencies**：Phase 3（Audit 可用，工作台需要展示审计结果）
+**Dependencies**：Phase 3（Audit 可用，工作台需要展示审计结果和失效状态）、Task 2.8（invalidated 状态已定义）
 
 **Acceptance Criteria**：
-1. 侧边栏正确显示 S1-S8 状态标识
-2. 已完成阶段点击可查看阶段小结（只读），未完成阶段不可进入
-3. 对话区正确渲染 Markdown + 搜索结果三段式
-4. 顶部栏显示品牌名、当前阶段、进度条
-5. 输入区发送消息 → SSE 流式显示回复
-6. 用户确认阶段完成后可触发收束
-7. **状态恢复**：刷新页面/重新打开浏览器 → 恢复到当前阶段和对话历史
-   - **实现方案**：WorkflowState 在每次状态变更时持久化到 StageRecord.status 字段（数据库级别，非 localStorage）
-   - **恢复流程**：页面加载 → `GET /api/project/[id]` 返回 `currentStage` + `stageSubState` → 侧边栏定位到正确阶段 → `GET /api/project/[id]/stage/[n]` 回读 `consultationMessages` 渲染对话历史
-   - **流式消息中断恢复**：SSE 断开时，已接收的消息片段已写入 StageRecord.consultationMessages，刷新后完整渲染
-   - 不使用 localStorage 存储对话内容（数据量大且不可靠），对话历史以数据库为准
+1. 顶部 Tab 栏展示 S1-S8，当前选中高亮，已完成 ✓ / 进行中 ● / 已失效 ⚠ / 未解锁 🔒 视觉区分
+2. 点击任意已完成或进行中阶段的 Tab 或侧边栏 → 主视图切换为该阶段的**完整对话历史 + 目标 + 进度**（不仅仅是小结卡片）
+3. **阶段内容隔离**：切换阶段时对话区完全替换，不残留其他阶段的对话或状态
+4. 未解锁阶段 Tab 灰色，hover 提示依赖关系（如"请先完成 S1-S3"）
+5. **交互隔离**：仅当前活跃阶段允许发送消息，其他阶段只读浏览，输入区显示"本阶段为只读浏览"
+6. `invalidated` 阶段显示 ⚠，点击可查看原有对话内容，但顶部提示"上游决策已修改，建议重新运行本阶段"并提供重新运行按钮
+7. 侧边栏与顶部 Tab 状态同步
+8. 顶部栏始终显示品牌名称和品类（跨阶段共享项目信息）
+9. 对话区正确渲染 Markdown + 搜索结果三段式
+10. 输入区发送消息 → SSE 流式显示回复
+11. 用户确认阶段完成后可触发收束
+12. **状态恢复**：刷新页面/重新打开浏览器 → 恢复到当前阶段和对话历史
+    - **实现方案**：WorkflowState 持久化到 StageRecord.status（数据库级别，非 localStorage）
+    - **恢复流程**：页面加载 → `GET /api/project/[id]` 返回 `currentStage` + `stageSubState` → Tab 定位到正确阶段 → `GET /api/project/[id]/stage/[n]` 回读 `consultationMessages` 渲染对话历史
+    - **流式消息中断恢复**：SSE 断开时已接收片段已写入 StageRecord.consultationMessages，刷新后完整渲染
 
 **Testing Strategy**：
-- 手动端到端测试：完整 S1 流程 UI 交互
-- 状态恢复测试：S1 进行中 → 关闭浏览器 → 重新打开 → 验证状态恢复
+- 手动端到端测试：完整 S1 流程 UI 交互 + 阶段切换
+- 阶段切换测试：S1→S2 完成后切换回 S1 → 验证只显示 S1 对话，不含 S2 内容
+- 交互隔离测试：S2（只读）输入框禁用 → S3（活跃）输入框可用
+- 状态恢复测试：S1 进行中 → 关闭浏览器 → 重新打开 → 验证恢复到 S1
+- 失效状态测试：S6 标记为 invalidated → 切换到 S6 → 验证 ⚠ 提示和重新运行按钮
 - 验证 Markdown 渲染（标题、列表、加粗、链接）
 
 ---
@@ -1112,7 +1258,7 @@ Report Assemble
 
 ### Phase 4 Checkpoint
 
-**验证动作**：完成一次完整的用户旅程——创建项目 → S1-S8 咨询（含搜索） → 审计反馈 → 报告查看 → PDF 导出。中途关闭浏览器 → 重新打开 → 验证恢复。
+**验证动作**：完成一次完整的用户旅程——创建项目 → S1-S8 咨询（含搜索） → 审计反馈 → 报告查看 → PDF 导出。中途关闭浏览器 → 重新打开 → 验证恢复。额外验证：8 阶段独立切换 + 决策回溯修改 → 影响传播 → 阶段重执行。
 
 **通过标准**：
 - 全流程 UI 操作无报错
@@ -1120,6 +1266,8 @@ Report Assemble
 - 审计卡片正确嵌入对话流
 - 报告页不包含审计元数据
 - PDF 导出成功，结构完整
+- **8 阶段独立切换（4.1 新增）**：顶部 Tab 切换阶段 → 对话区只展示该阶段内容；非活跃阶段输入框禁用
+- **决策回溯（2.8+4.1 新增）**：修改 S3 决策 → 影响评估卡片展示受影响阶段 → S6 标记 ⚠ → 重新运行 S6 → 输出反映更新后的上游数据
 
 ---
 
@@ -1387,6 +1535,8 @@ Phase 2: 八阶段战略链路          │
                                                       │
   2.7 Knowledge Base ←────────────────────────────────┘ [依赖 2.0，独立于串行链]
     │
+  2.8 ★ Decision Traceability & Impact Propagation ←┘ [依赖 1.3+1.4+1.5；与 2.1-2.7 平行，可独立实现]
+    │
 Phase 3: Audit Engine + Report    │
   3.1 Rule Check 增强 ←───────────┘ [依赖 Phase 2 所有 Stage Schema]
     └── 3.2 AI Quality Audit
@@ -1395,16 +1545,16 @@ Phase 3: Audit Engine + Report    │
                       └── 3.5 Report Engine + Final Audit
                             │
 Phase 4: 完整产品体验            │
-  4.1 工作台 UI ←────────────────┘
+  4.1 工作台 UI（含8阶段独立切换）←┘ [依赖 Phase 3 Audit + 2.8 的 invalidated 状态]
     ├── 4.2 审计卡片
     ├── 4.3 报告页 UI
     └── 4.4 文件上传
           │
 Phase 5: 质量验证                │
   5.1 单元测试 ←─────────────────┘
-    └── 5.2 集成测试
-          │
-  5.3 三案例质量测试 ★ ←───────── [依赖 Phase 4 全流程可用，可与 5.1/5.2 并行]
+    ├── 5.2 集成测试（含回退修改场景，验证 2.8 影响传播链路）
+    │         │
+  5.3 三案例质量测试 ★ ←─────────┘ [依赖 Phase 4 全流程可用，可与 5.1/5.2 并行]
     │
 Phase 6: 成本优化                │
   6.1 Token 追踪分析 ←───────────┘ [依赖 Phase 5 模块稳定]

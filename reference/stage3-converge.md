@@ -206,56 +206,40 @@ AI 顾问的确认总结应已完成口语到报告语言的转换。
 措辞本身体现（"初步判断""有待验证""基于创始人观察""据艾瑞咨询数据"），
 而非通过附加元数据标签。
 
+## Section Summaries（报告正文来源）
+
+除结构化字段外，**将 AI 顾问对话末尾三段式确认总结的每个 section 原文完整保存**。
+从 AI 顾问对话末尾的确认总结中，按以下 section 名称提取完整原文段落，
+存入 `sectionSummaries`：
+
+| section 名称 | 对应 AI 总结段落 |
+|---|---|
+| 品类现状 | AI 总结"品类现状"段落全文（含市场规模、用户需求、供给格局的变化趋势） |
+| 当前体验不足 | AI 总结"当前体验不足"段落全文（含体验缺口描述、替代方案） |
+| 品牌机会方向 | AI 总结"品牌机会方向"段落全文（含机会方向描述、判断依据） |
+
+**关键规则**：
+- 原文照搬，不精简、不添加标签、不改写
+- AI 顾问已完成口语→报告语言的转换，你只需原文搬运
+- 此字段供报告 02 章直接引用，是报告正文的唯一来源
+
 ## JSON Schema
 
 ```json
 {
-  "marketOverview": {
-    "marketSize": "市场规模描述（含数据来源，如'根据艾瑞咨询2024年报告，中国宠物食品市场规模约XXX亿元'），未搜到则标注'搜索范围内未找到'",
-    "growthRate": "近3年增速描述（含趋势方向），未搜到则标注'搜索范围内未找到'",
-    "marketStage": "赛道发展阶段判断：萌芽期 / 增长期 / 成熟期 / 红海衰退期",
-    "channelStructure": ["线上渠道结构描述", "线下渠道结构描述"]
-  },
-  "industryTrend": {
-    "currentTrends": ["当前流行趋势1", "当前流行趋势2"],
-    "longTermTrends": ["长期演变趋势1"]
-  },
-  "channelAnalysis": {
-    "mainChannels": ["主流售卖渠道及特征"],
-    "trafficRules": ["流量获取方式、平台规则要点"],
-    "acquisitionPatterns": ["同赛道新品牌起盘路径案例"]
-  },
-  "regulatoryEnvironment": {
-    "policies": ["行业监管要求、准入限制"],
-    "risks": ["合规红线、政策风险点"]
-  },
-  "categoryStatus": {
-    "definition": "品类明确定义与边界描述",
-    "currentState": "供给格局特征描述，排除竞品名称",
-    "trends": ["趋势变化1", "趋势变化2", "趋势变化3"]
-  },
-  "experienceGaps": [
-    {
-      "gap": "具体的功能、情感或社会维度的供需错配点",
-      "currentAlternative": "用户当前的替代或变通解决方案",
-      "severity": "critical 或 major 或 minor"
-    }
-  ],
-  "opportunityDirections": [
-    {
-      "direction": "可选择占据的差异化空间",
-      "rationale": "战略判断依据",
-      "evidenceLevel": "verified 或 inferred 或 hypothesis"
-    }
-  ],
-  "dataSources": [
-    {
-      "url": "来源URL",
-      "title": "来源标题或名称",
-      "type": "full_text | snippet",
-      "summary": "该来源提供的与本阶段分析相关的关键信息摘要"
-    }
-  ]
+  "marketOverview": { ... },
+  "industryTrend": { ... },
+  "channelAnalysis": { ... },
+  "regulatoryEnvironment": { ... },
+  "categoryStatus": { ... },
+  "experienceGaps": [ ... ],
+  "opportunityDirections": [ ... ],
+  "dataSources": [ ... ],
+  "sectionSummaries": {
+    "品类现状": "AI 三段式总结中'品类现状'部分的完整原文段落",
+    "当前体验不足": "AI 三段式总结中'当前体验不足'部分的完整原文段落",
+    "品牌机会方向": "AI 三段式总结中'品牌机会方向'部分的完整原文段落"
+  }
 }
 ```
 

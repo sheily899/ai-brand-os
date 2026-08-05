@@ -73,7 +73,7 @@ Phase 3 把 AI Quality Audit + Cross Stage Check 插入 Step 3-4 之间。
 
 - [x] **2.0 ★ Search Intelligence Layer**（共享基础能力，S2/S3/S5/S8 共用）
   - **Search Intent Generator**：根据阶段 + 品牌信息 + 品类 + Decision Memory Context，自动生成搜索关键词和方向
-  - **Brave Search API 封装**：调用 Brave Search，返回结构化结果（URL + title + snippet）
+  - **博查 Web Search API 封装**：调用 博查 Web Search，返回结构化结果（URL + title + snippet）
   - **URL Ranking**：AI 根据权威性/相关度/数据密度筛选 Top 3-5 URL
   - **Web Retrieval**：Jina Reader（`r.jina.ai`）→ fetch + cheerio fallback → 搜索摘要兜底
   - **Source Credibility**：四阶段分来源信任权重（官方数据 > 行业报告 > 媒体报道 > 社媒内容）
@@ -143,6 +143,19 @@ Phase 3 把 AI Quality Audit + Cross Stage Check 插入 Step 3-4 之间。
   - `knowledge-docs/` 目录为空，仅建管道不做数据播种
   - 验证：embedding 生成、检索 API 可用、空库不阻塞流程
 
+- [x] **2.8 ★** Decision Traceability & Impact Propagation（决策回溯与影响传播）
+  - `impact-analyzer.ts`：前向遍历字段级依赖图 → 比对被修改字段与下游 convergenceOutput → 输出 ImpactReport（no_impact / needs_review / invalidated）
+  - `decision-version.ts`：Decision Memory 条目更新时保留版本历史（previousValue → newValue + modifiedBy + modifiedAt）
+  - `dependency-graph.ts`（Task 1.3 扩展）：新增 `FIELD_FORWARD_DEPENDENCIES` 字段级前向依赖定义（MVP 覆盖 S3/S4/S5→S6/S7/S8 核心引用路径）+ `getDownstreamFields()`
+  - `decision-memory.ts`（Task 1.5 扩展）：新增 `updateEntry()` + `getEntriesByStage()`
+  - `workflow.ts`（Task 1.3 扩展）：新增 `invalidated` 状态 + `invalidateDownstream()` + `revalidateStage()` + `canEnterStage()` 允许重新进入失效阶段
+  - `stage-engine.ts`（Task 1.4 扩展）：新增 `reExecuteStage()`（保留原有对话历史，注入更新后的 Decision Memory Context）
+  - `db/schema.ts`（Task 1.1 扩展）：`decision_memory_entries` 表追加 `previousVersionId` + `modifiedBy` 列
+  - API：`GET /api/project/[id]/decisions` + `PUT /api/project/[id]/decisions/[id]` + `POST /api/project/[id]/decisions/[id]/impact` + `POST /api/project/[id]/stage/[n]/revalidate`
+  - 修改 `POST /api/project/[id]/stage/[n]/message`（Task 1.4 扩展）：增加活跃阶段校验
+  - **红线**：不做完整版本树（SPEC 6.1）；不自动批量重跑受影响阶段（用户手动确认后逐一重跑）
+  - 验证：修改 S3 marketSize → S6 invalidated；修改 S4 identityNeed → S6/S7/S8 均受影响；修改无下游引用字段 → 无阶段误标记；非活跃阶段发消息 → 403
+
 ---
 
 ## Phase 3：Audit Engine（增强 Phase 2 轻量审查）
@@ -162,31 +175,31 @@ Phase 3 在此基础上增强为完整 Audit Engine，并在 Orchestrator 的 St
   → 推进 → 搜索 → 开场白
 ```
 
-- [ ] **3.1** Rule Check 增强（纯代码，增强 Phase 2 已有组件）
+- [x] **3.1** Rule Check 增强（纯代码，增强 Phase 2 已有组件）
   - Phase 2 已有：字段完整性 / Schema 完整性
   - Phase 3 新增：基础逻辑冲突检测（如"高端定位"+"低价策略"同时出现）、字段间一致性（如 targetAudience 与 userPersona 矛盾）
   - 禁止 LLM
   - 验证：能发现结构错误 + 逻辑冲突，不误报
 
-- [ ] **3.2** AI Quality Audit（LLM，新增组件）
+- [x] **3.2** AI Quality Audit（LLM，新增组件）
   - 四维评估：Specificity / Differentiation / Evidence / Executability
   - 每阶段独立权重和阈值（S1 侧重 Specificity，S6 侧重 Differentiation）
   - 验证：评分与人工判断偏差 < 1 分
 
-- [ ] **3.3 ★** Cross Stage Context Check（新增组件）
+- [x] **3.3 ★** Cross Stage Context Check（新增组件）
   - Layer A：Fact Reference Check（纯代码，依赖图驱动，**含 S6 字段级依赖**：reasoning → S3/S4/S5 具体字段）
   - Layer B：Strategic Continuity Check（复用 AI Quality Audit 同次调用）
   - **红线**：Layer B 不产生独立 LLM 调用
   - 验证：能发现 S2/S6 事实冲突 + S6 reasoning 引用缺失/不匹配，不误判文案差异
 
-- [ ] **3.4** Quality Gate 增强（增强 Phase 2 已有组件）
+- [x] **3.4** Quality Gate 增强（增强 Phase 2 已有组件）
   - Phase 2 已有：简单 Advance/Block（基于 Rule Check 结果）
   - Phase 3 增强：Advance → 下一阶段 / Reoptimize → 回到 ACTIVE / Block → 必须手动修复
   - 评分阈值驱动：Block阈值 < Reoptimize区间 < Advance阈值
   - 集成到 Stage Orchestrator 的 Step 3-4 之间
   - 验证：Gate Decision 正确驱动阶段推进/回退
 
-- [ ] **3.5** Report Engine + Final Audit
+- [x] **3.5** Report Engine + Final Audit
   - assemble.ts（八阶段输出 → 报告）+ quality.ts（违规检测 + 术语一致性）+ pdf-generate.ts（含中文字体注册）
   - Final Audit：组装前遍历完整依赖图 → Layer A Fact Reference Check → error 级暂停组装
   - 可通过 `run-stage.ts --mode assemble` 独立测试（不依赖 UI）
@@ -198,8 +211,14 @@ Phase 3 在此基础上增强为完整 Audit Engine，并在 Orchestrator 的 St
 
 ### Checkpoint：状态恢复 + 用户流程是否完整？
 
-- [ ] **4.1** 品牌咨询工作台
-  - 三区域布局：侧边栏（✓/●/🔒）+ 对话区（Markdown + SSE + 搜索三段式）+ 顶部栏
+- [ ] **4.1** 品牌咨询工作台（含 8 阶段独立切换）
+  - **8 阶段 Tab 导航**：顶部横排 S1-S8 Tab（✓/●/⚠/🔒 状态区分），点击切换阶段 + 侧边栏同步
+  - **阶段视图隔离**：选中某阶段 → 主视图只展示该阶段的完整对话历史 + 目标 + 进度（不只是小结卡片）
+  - **交互隔离**：仅当前活跃阶段可发送消息，其他阶段只读（输入区禁用并提示）
+  - **失效标识**：`invalidated` 阶段显示 ⚠，点击可查看原有对话 + 提示"上游决策已修改，建议重新运行"
+  - 新增组件：`StageTabs` / `StageView` / `StageGoal` / `StageProgress`
+  - 修改组件：`ChatView` 接收 stageNumber 参数 / `InputArea` 按活跃状态禁用 / `StageSidebar` 状态同步 / `TopBar` 嵌入 Tabs
+  - 修改 API：`POST message` 增加活跃阶段校验（非活跃阶段返回 403）；`GET stage` 增加 goal + progress 字段
   - **状态恢复**：WorkflowState 持久化到 StageRecord.status → 页面加载从 API re-fetch
   - 对话历史以 DB 为准（非 localStorage），SSE 中断后可恢复已接收片段
 

@@ -47,6 +47,12 @@ export const businessContextSchema = z.object({
   businessBackground: businessBackgroundSchema,
   coreChallenges: coreChallengesSchema,
   strategicDirection: strategicDirectionSchema,
+  /**
+   * AI 顾问确认总结的原文段落，按 section 名存储。
+   * 供报告直接引用，保留精炼的叙述性语言。
+   * 预期 key：商业背景 / 核心挑战 / 品牌战略方向
+   */
+  sectionSummaries: z.record(z.string(), z.string()).optional(),
   /** 搜索数据来源记录（由 Search Intelligence Layer 注入） */
   dataSources: z
     .array(

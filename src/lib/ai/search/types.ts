@@ -1,7 +1,7 @@
 /**
  * Search Intelligence Layer — 共享类型定义
  *
- * 被 search-intent / brave-search / url-ranking / retrieval /
+ * 被 search-intent / bocha-search / url-ranking / retrieval /
  * source-credibility / search-context 共同使用。
  */
 
@@ -49,6 +49,10 @@ export interface SearchResult {
   source: string;
   /** 排名位置（1-based，搜索引擎返回顺序） */
   position: number;
+  /** 来源匹配类型：direct=直达权威源，reprint=转载/非权威源 */
+  sourceMatch?: "direct" | "reprint";
+  /** 匹配到的权威源名称（如 "艾瑞咨询"） */
+  matchedAuthority?: string;
 }
 
 export interface RankedURL {

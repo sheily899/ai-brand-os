@@ -22,10 +22,12 @@ import { getDependencies } from "@/lib/memory/dependency-graph";
 export type StageStatus =
   | "draft"           // 尚未开始
   | "active"          // 咨询中
+  | "converging"      // 退出条件满足，AI 正在输出确认总结
   | "waiting_confirm" // 等待用户确认
   | "completed"       // 审核通过，推进到下一阶段
   | "failed"          // 审核不通过
   | "blocked"         // 被前置阶段阻塞
+  | "invalidated"     // 上游决策变更导致过期
   | "archived";       // 已归档
 
 export type GateDecision = "advance" | "reoptimize" | "block";
@@ -57,6 +59,27 @@ export async function getStageStatus(
   return (rows[0]?.status as StageStatus) ?? "draft";
 }
 
+/** 批量获取项目全部 8 个阶段的状态——1 次 DB 查询替代 8 次 */
+export async function getAllStageStatuses(
+  projectId: string
+): Promise<Map<number, StageStatus>> {
+  const rows = await db
+    .select({ stageNumber: stageRecord.stageNumber, status: stageRecord.status })
+    .from(stageRecord)
+    .where(eq(stageRecord.projectId, projectId));
+
+  const map = new Map<number, StageStatus>();
+  for (let i = 1; i <= 8; i++) {
+    map.set(i, "draft");
+  }
+  for (const row of rows) {
+    if (row.stageNumber) {
+      map.set(row.stageNumber, row.status as StageStatus);
+    }
+  }
+  return map;
+}
+
 /** 获取所有已完成阶段 */
 export async function getCompletedStages(projectId: string): Promise<number[]> {
   const rows = await db
@@ -74,7 +97,7 @@ export async function getCompletedStages(projectId: string): Promise<number[]> {
 
 // ── 阶段推进验证 ──────────────────────────────────────
 
-/** 验证是否允许进入目标阶段 */
+/** 验证是否允许进入目标阶段（包括重新进入 invalidated 阶段） */
 export async function canEnterStage(
   projectId: string,
   targetStage: number
@@ -82,7 +105,6 @@ export async function canEnterStage(
   const deps = getDependencies(targetStage);
 
   if (deps.length === 0) {
-    // S1 无依赖，始终可进入
     return { allowed: true };
   }
 
@@ -95,6 +117,12 @@ export async function canEnterStage(
         reason: `Stage ${dep} 尚未完成，无法进入 Stage ${targetStage}`,
       };
     }
+  }
+
+  // 额外检查：如果目标阶段状态是 invalidated，允许重新进入
+  const status = await getStageStatus(projectId, targetStage);
+  if (status === "invalidated") {
+    return { allowed: true };
   }
 
   return { allowed: true };
@@ -117,6 +145,14 @@ export async function initStageRecord(
   projectId: string,
   stageNumber: number
 ): Promise<void> {
+  // ── 依赖守卫：禁止跳过前序阶段 ──────────────────────
+  if (stageNumber > 1) {
+    const canEnter = await canEnterStage(projectId, stageNumber);
+    if (!canEnter.allowed) {
+      throw new Error(canEnter.reason ?? `Stage ${stageNumber} 的前序阶段尚未完成，无法进入`);
+    }
+  }
+
   const existing = await db
     .select({ id: stageRecord.id })
     .from(stageRecord)
@@ -202,4 +238,40 @@ export async function getWorkflowState(
     stageStatus: status,
     completedStages: completed,
   };
+}
+
+// ── 影响传播 ──────────────────────────────────────────
+
+/**
+ * 将受影响的下游阶段标记为 invalidated。
+ *
+ * 由 impact-analyzer 调用，在用户确认修改后执行。
+ * 只标记被分析为 invalidated 或 needs_review 的阶段。
+ * 已经 completed 的阶段会被降级为 invalidated。
+ */
+export async function invalidateDownstream(
+  projectId: string,
+  stageNumbers: number[]
+): Promise<void> {
+  for (const stage of stageNumbers) {
+    const status = await getStageStatus(projectId, stage);
+    // 只对已完成或已失效的阶段标记（不覆盖 active 中的阶段——那个由前端确认流程处理）
+    if (status === "completed" || status === "invalidated") {
+      await setStageStatus(projectId, stage, "invalidated");
+    }
+  }
+}
+
+/**
+ * 重新进入失效阶段：将状态从 invalidated 重置为 active，
+ * 保留原有 consultationMessages 作为历史参考。
+ */
+export async function revalidateStage(
+  projectId: string,
+  stageNumber: number
+): Promise<void> {
+  const status = await getStageStatus(projectId, stageNumber);
+  if (status === "invalidated") {
+    await setStageStatus(projectId, stageNumber, "active");
+  }
 }

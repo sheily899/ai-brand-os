@@ -115,6 +115,12 @@ export const brandStrategySchema = z.object({
    * 供 Phase 3 Cross Stage Context Check 验证推导链
    */
   reasoning: reasoningSchema,
+  /**
+   * AI 顾问确认总结的原文段落，按 section 名存储。
+   * 供报告直接引用，保留精炼的叙述性语言。
+   * 预期 key：品牌定位 / 价值主张 / 品牌故事 / 品牌人格
+   */
+  sectionSummaries: z.record(z.string(), z.string()).optional(),
 });
 
 export type BrandStrategy = z.infer<typeof brandStrategySchema>;

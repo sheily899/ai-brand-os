@@ -1,0 +1,60 @@
+{
+  "title": "AI Quality Audit V3.1 — Part 4 (多模型) + Part 6 (回归)",
+  "timestamp": "2026-08-03T06:30:03.822Z",
+  "elapsed_minutes": 120,
+  "results": {
+    "part4": {
+      "Case A 慢象咖啡": {
+        "avgDiff": 6.225000000000001,
+        "gateMismatch": 2
+      },
+      "Case B 快享茶饮": {
+        "avgDiff": 9.350000000000001,
+        "gateMismatch": 2
+      },
+      "Case C YoungLife": {
+        "avgDiff": 4.050000000000001,
+        "gateMismatch": 0
+      }
+    },
+    "part6": {
+      "checks": [
+        {
+          "name": "Case A S6 ≤ 90 (not ceiling)",
+          "passed": false,
+          "detail": "μ=100.0"
+        },
+        {
+          "name": "Case C Evidence ≤ 2.5 avg",
+          "passed": true,
+          "detail": "μ=1.1"
+        },
+        {
+          "name": "A-C 区分度 ≥ 30",
+          "passed": true,
+          "detail": "95.2 - 23.1 = 72.1"
+        },
+        {
+          "name": "S3 Evidence: A > B (by ≥1.5)",
+          "passed": true,
+          "detail": "A=4.0 B=1.0 Δ=3.0"
+        },
+        {
+          "name": "Case A 慢象咖啡 avg ∈ [85,95]",
+          "passed": false,
+          "detail": "μ=95.2"
+        },
+        {
+          "name": "Case B 快享茶饮 avg ∈ [60,75]",
+          "passed": false,
+          "detail": "μ=52.6"
+        },
+        {
+          "name": "Case C YoungLife avg ∈ [20,40]",
+          "passed": true,
+          "detail": "μ=23.1"
+        }
+      ]
+    }
+  }
+}

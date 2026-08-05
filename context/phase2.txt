@@ -1,0 +1,367 @@
+请开始执行 Phase 2：八阶段战略链路。
+
+执行原则：
+
+1. 不修改现有 16 个 Stage Prompt 文件。
+2. 不修改 shared-search-protocol.md 搜索协议内容。
+3. 不重新设计业务流程。
+4. 仅根据当前 Phase 2 plan 实现工程能力，并确保现有 Prompt、Schema、Workflow、Search Layer 正确连接。
+5. 如果发现 Prompt、Schema、代码接口存在字段不一致，只报告问题，不自行改变业务定义。
+
+目标：
+
+完成 S1→S8 的战略链路闭环验证：
+
+阶段结束确认
+→ Convergence
+→ Decision Memory
+→ Rule Check
+→ Workflow Advance
+→ 自动搜索（需要搜索的阶段）
+→ 自动进入下一阶段 Consultation
+→ AI 主动输出第一轮内容
+→ 用户继续咨询
+
+---
+
+执行顺序：
+
+## Task 2.0 Search Intelligence Layer
+
+优先实现共享搜索基础能力。
+
+需要完成：
+
+1. Search Intent Generator
+
+输入：
+- currentStage
+- brand information
+- category
+- Decision Memory Context
+
+输出：
+- search keywords
+- search objectives
+- required coverage dimensions
+
+注意：
+搜索规则完全读取 shared-search-protocol.md。
+不要在代码中重复维护搜索优先级和覆盖矩阵。
+
+
+2. Brave Search API 封装
+
+实现：
+
+search(query)
+
+返回统一结构：
+
+- title
+- url
+- snippet
+- source
+
+
+3. URL Ranking
+
+实现 URL 筛选能力：
+
+根据：
+- 来源权威性
+- 内容相关性
+- 数据密度
+
+筛选 Top 3-5 URL。
+
+
+4. Web Retrieval Layer
+
+实现：
+
+优先：
+Jina Reader
+
+fallback：
+fetch + cheerio
+
+fallback：
+search snippet
+
+
+统一输出：
+
+- content
+- sourceType(fulltext/snippet)
+- url
+
+
+5. Source Credibility
+
+实现来源权重配置。
+
+不要写死在 Prompt。
+
+作为 Search Service 配置。
+
+
+6. Search Context 注入
+
+实现：
+
+Stage Consultation 调用时：
+
+Decision Memory Context
++
+Search Result Context
++
+Stage Prompt
+
+共同进入 LLM Context。
+
+
+7. 自动搜索触发
+
+新增 Stage Orchestrator。
+
+职责：
+
+当 Workflow 进入 ACTIVE 新阶段：
+
+判断该阶段是否需要搜索：
+
+S2 / S3 / S5 / S8：
+
+执行 Search Intelligence Layer
+
+S4 / S6 / S7：
+
+跳过搜索
+
+
+8. 自动阶段启动
+
+不要新增 Opening Message Prompt。
+
+实现：
+
+进入阶段后自动触发 Consultation Engine。
+
+第一轮 AI 回复由对应 Stage Prompt 自然生成。
+
+要求：
+
+AI 可以先展示搜索发现，然后继续提问。
+
+不要额外创建 opening-message.ts。
+
+
+---
+
+## Task 2.1 S2 商业背景分析
+
+实现：
+
+- business-context.ts
+- Search Context 注入
+- Decision Memory 读取
+
+验证：
+
+进入 S2：
+
+自动搜索行业背景
+
+搜索结果进入 Consultation Context
+
+AI 主动展示搜索发现
+
+最终生成 BusinessContext JSON
+
+
+---
+
+## Task 2.2 S3 市场机会分析
+
+实现：
+
+market-insights.ts
+
+保持两层结构：
+
+搜索数据层：
+
+marketOverview
+industryTrend
+channelAnalysis
+regulatoryEnvironment
+dataSources
+
+
+AI 分析层：
+
+categoryStatus
+experienceGaps
+opportunityDirections
+
+
+验证：
+
+搜索数据不会直接进入报告。
+
+必须经过 AI 分析。
+
+
+---
+
+## Task 2.3 S4 消费者洞察
+
+实现：
+
+consumer-insight.ts
+
+要求：
+
+读取：
+
+S1 Decision Memory
+S3 MarketInsights
+
+
+输出：
+
+原始信息
+→ 行为事实
+→ 消费者洞察
+
+
+重点：
+
+identityNeeds 字段必须保留，
+供 S6 使用。
+
+
+---
+
+## Task 2.4 S5 竞争判断
+
+实现：
+
+competitive.ts
+
+
+要求：
+
+竞品结构：
+
+competitors[]
+
+每个竞品包含：
+
+positioning
+slogan
+priceRange
+heroProducts
+visualSystem
+communication
+userPraise
+userComplaints
+strengths
+weaknesses
+opportunityGap
+sources
+
+
+至少支持：
+
+3 个竞品
+
+
+competitiveGap 必须可以追溯：
+
+竞品信息
++
+用户反馈
++
+产品缺口
+
+
+---
+
+## Task 2.5 S6 品牌核心战略
+
+实现：
+
+brand-strategy.ts
+
+
+重点验证：
+
+S6 是否引用：
+
+S3 opportunityDirections
+
+S4 identityNeeds
+
+S5 competitiveGap
+
+
+reasoning 字段保存引用关系。
+
+
+---
+
+## Task 2.6 S7 + S8
+
+实现：
+
+visual-strategy.ts
+
+content-strategy.ts
+
+
+S8：
+
+复用 Search Intelligence Layer。
+
+
+---
+
+## Task 2.7 Knowledge Base
+
+只实现基础设施：
+
+pgvector
+
+embedding pipeline
+
+retriever API
+
+
+不要：
+
+- 添加知识库内容
+- 修改 Prompt
+- 引入额外知识管理流程
+
+
+---
+
+## 测试要求
+
+每完成一个 Task：
+
+输出：
+
+1. 修改文件列表
+2. 实现内容
+3. 验证方式
+4. 当前阻塞问题
+
+
+禁止：
+
+一次性修改大量文件后再验证。
+
+按 Task 2.0 → 2.7 顺序执行。

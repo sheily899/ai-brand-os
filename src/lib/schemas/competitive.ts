@@ -149,6 +149,12 @@ export const competitiveInsightsSchema = z.object({
   competitors: z.array(competitorSchema).min(1, "competitors 至少 1 个（建议 3+）"),
   competitiveGap: competitiveGapSchema,
   dataSources: z.array(dataSourceSchema).min(1, "dataSources 至少 1 条"),
+  /**
+   * AI 顾问确认总结的原文段落，按 section 名存储。
+   * 供报告直接引用，保留精炼的叙述性语言。
+   * 预期 key：竞争方向 / 竞品分析
+   */
+  sectionSummaries: z.record(z.string(), z.string()).optional(),
 });
 
 export type CompetitiveInsights = z.infer<typeof competitiveInsightsSchema>;

@@ -51,6 +51,12 @@ export const consumerInsightSchema = z.object({
   targetConsumer: targetConsumerSchema,
   existingSolutions: z.array(existingSolutionSchema).min(1, "existingSolutions 至少 1 个"),
   deepNeeds: deepNeedsSchema,
+  /**
+   * AI 顾问确认总结的原文段落，按 section 名存储。
+   * 供报告直接引用，保留精炼的叙述性语言。
+   * 预期 key：目标消费者定义 / 当前解决方案与不足 / 深层需求分析
+   */
+  sectionSummaries: z.record(z.string(), z.string()).optional(),
 });
 
 export type ConsumerInsight = z.infer<typeof consumerInsightSchema>;

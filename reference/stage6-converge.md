@@ -143,44 +143,38 @@ AI 顾问的确认总结应已完成口语到报告语言的转换。
 - **避免使用**：品牌关系（Kapferer 术语）、品牌识别棱镜
 - **替代表达**：不说"建立品牌关系"，直接描述品牌和消费者之间具体是什么样的互动方式
 
+## Section Summaries（报告正文来源）
+
+除结构化字段外，**将 AI 顾问对话末尾四段式确认总结的每个 section 原文完整保存**。
+从 AI 顾问对话末尾的确认总结中，按以下 section 名称提取完整原文段落，
+存入 `sectionSummaries`：
+
+| section 名称 | 对应 AI 总结段落 |
+|---|---|
+| 品牌定位 | AI 总结"品牌定位"段落全文（含定位陈述句 + 支撑理由） |
+| 价值主张 | AI 总结"价值主张拆解"段落全文（含三层价值 + 推导逻辑的叙述） |
+| 品牌故事 | AI 总结"品牌故事"段落全文（四层递进完整叙事） |
+| 品牌人格 | AI 总结"品牌人格"段落全文（含人格描述 + 行为表现 + 行为边界） |
+
+**关键规则**：
+- 原文照搬，不精简、不添加标签、不改写
+- AI 顾问已完成口语→报告语言的转换，你只需原文搬运
+- 此字段供报告 05 章直接引用，是报告正文的唯一来源
+
 ## JSON Schema
 
 ```json
 {
-  "positioning": "完整定位陈述句：对于[目标消费者]而言，本品牌是[品类/场景]中能够实现[核心价值]的选择，因为[支撑理由]",
-  "valuePropositions": [
-    {
-      "proposition": "10-15字价值主张",
-      "level": "functional",
-      "soWhatDerivation": "两层 So What 推导逻辑"
-    },
-    {
-      "proposition": "10-15字价值主张",
-      "level": "emotional",
-      "soWhatDerivation": "两层 So What 推导逻辑"
-    },
-    {
-      "proposition": "10-15字价值主张",
-      "level": "social",
-      "soWhatDerivation": "两层 So What 推导逻辑"
-    }
-  ],
-  "brandStory": {
-    "struggleMoment": "消费者面临的困境",
-    "brandAction": "品牌的战略行动",
-    "brandRelationship": "品牌与消费者建立的互动关系"
-  },
-  "brandPersonality": [
-    {
-      "trait": "人格关键词",
-      "dos": "会如何行动与沟通",
-      "donts": "绝不如何行动与表达"
-    }
-  ],
-  "reasoning": {
-    "marketOpportunityReference": "本品牌定位引用了 S3 MarketInsights 中的哪个市场机会方向或市场缺口的具体判断。格式：'引用自 S3 [字段名]：[具体判断内容]'",
-    "consumerInsightReference": "本品牌定位引用了 S4 ConsumerInsight 中的哪个身份认同需求或功能需求的具体判断。格式：'引用自 S4 [字段名]：[具体判断内容]'",
-    "competitiveGapReference": "本品牌定位引用了 S5 CompetitiveInsights 中的哪个竞争空位或竞品机会缺口的具体判断。格式：'引用自 S5 [字段名]：[具体判断内容]'"
+  "positioning": "完整定位陈述句",
+  "valuePropositions": [ ... ],
+  "brandStory": { ... },
+  "brandPersonality": [ ... ],
+  "reasoning": { ... },
+  "sectionSummaries": {
+    "品牌定位": "AI 四段式总结中'品牌定位'部分的完整原文段落",
+    "价值主张": "AI 四段式总结中'价值主张拆解'部分的完整原文段落",
+    "品牌故事": "AI 四段式总结中'品牌故事'部分的完整原文段落",
+    "品牌人格": "AI 四段式总结中'品牌人格'部分的完整原文段落"
   }
 }
 ```

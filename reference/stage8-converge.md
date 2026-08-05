@@ -113,57 +113,38 @@
 - 避免使用"认知资产""用户关系资产"等资产化表述
 - 语气像在帮创始人规划可执行的内容计划，不是写内容资产管理框架
 
+## Section Summaries（报告正文来源）
+
+除结构化字段外，**将 AI 顾问对话末尾确认总结的每个 section 原文完整保存**。
+从 AI 顾问对话末尾的确认总结中，按以下 section 名称提取完整原文段落，
+存入 `sectionSummaries`：
+
+| section 名称 | 对应 AI 总结段落 |
+|---|---|
+| 内容核心方向 | AI 总结"内容核心方向"段落全文 |
+| 内容价值体系 | AI 总结"内容价值体系"段落全文（含四阶段用户问题与内容价值的叙述） |
+| 内容主题方向 | AI 总结"内容主题方向"段落全文（含各内容支柱的核心目的与选题方向） |
+| 渠道表达策略 | AI 总结"渠道表达策略"段落全文（含三平台内容形式与表达重点的叙述） |
+
+**关键规则**：
+- 原文照搬，不精简、不添加标签、不改写
+- AI 顾问已完成口语→报告语言的转换，你只需原文搬运
+- 此字段供报告 07 章直接引用，是报告正文的唯一来源
+
 ## JSON Schema
 
 ```json
 {
   "coreDirection": "一句话内容核心方向",
-  "contentValueSystem": [
-    {
-      "userStage": "awareness",
-      "userProblem": "该阶段用户面临的问题",
-      "contentValue": "内容为该阶段提供的价值"
-    },
-    {
-      "userStage": "interest",
-      "userProblem": "该阶段用户面临的问题",
-      "contentValue": "内容为该阶段提供的价值"
-    },
-    {
-      "userStage": "trust",
-      "userProblem": "该阶段用户面临的问题",
-      "contentValue": "内容为该阶段提供的价值"
-    },
-    {
-      "userStage": "decision",
-      "userProblem": "该阶段用户面临的问题",
-      "contentValue": "内容为该阶段提供的价值"
-    }
-  ],
-  "themeDirections": [
-    {
-      "pillar": "内容支柱名称",
-      "corePurpose": "该支柱的核心目的",
-      "topicDirections": ["选题方向1", "选题方向2"]
-    }
-  ],
-  "channelStrategy": [
-    {
-      "platform": "xiaohongshu",
-      "contentFormat": "该平台适合的内容形式",
-      "expressionFocus": "该平台的表达重点"
-    },
-    {
-      "platform": "douyin",
-      "contentFormat": "该平台适合的内容形式",
-      "expressionFocus": "该平台的表达重点"
-    },
-    {
-      "platform": "wechat",
-      "contentFormat": "该平台适合的内容形式",
-      "expressionFocus": "该平台的表达重点"
-    }
-  ]
+  "contentValueSystem": [ ... ],
+  "themeDirections": [ ... ],
+  "channelStrategy": [ ... ],
+  "sectionSummaries": {
+    "内容核心方向": "AI 确认总结中'内容核心方向'部分的完整原文段落",
+    "内容价值体系": "AI 确认总结中'内容价值体系'部分的完整原文段落",
+    "内容主题方向": "AI 确认总结中'内容主题方向'部分的完整原文段落",
+    "渠道表达策略": "AI 确认总结中'渠道表达策略'部分的完整原文段落"
+  }
 }
 ```
 

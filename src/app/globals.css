@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ── 报告打印样式（PDF 导出用） ──────────────────────── */
+@media print {
+  @page {
+    size: A4;
+    margin: 20mm;
+    @top-center {
+      content: "品牌战略报告";
+      font-size: 9pt;
+      color: #999;
+    }
+    @bottom-center {
+      content: "第 " counter(page) " 页";
+      font-size: 9pt;
+      color: #999;
+    }
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* 章节分页 */
+  .print\:break-before-page {
+    break-before: page;
+  }
+
+  /* 隐藏打印时不需要的元素 */
+  .print\:hidden {
+    display: none !important;
+  }
+}

@@ -89,6 +89,12 @@ export const contentStrategySchema = z.object({
       })
     )
     .optional(),
+  /**
+   * AI 顾问确认总结的原文段落，按 section 名存储。
+   * 供报告直接引用，保留精炼的叙述性语言。
+   * 预期 key：内容核心方向 / 内容价值体系 / 内容主题方向 / 渠道表达策略
+   */
+  sectionSummaries: z.record(z.string(), z.string()).optional(),
 });
 
 export type ContentStrategy = z.infer<typeof contentStrategySchema>;

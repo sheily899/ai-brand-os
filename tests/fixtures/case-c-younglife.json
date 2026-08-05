@@ -1,0 +1,271 @@
+{
+  "meta": {
+    "caseId": "case-c",
+    "brandName": "YoungLife",
+    "founderName": "小李",
+    "category": "生活方式",
+    "qualityLevel": "low",
+    "expectedScoreRange": [20, 40],
+    "description": "低质量品牌案例——典型创业者早期模糊想法，无具体用户定义、无市场数据、无竞争分析、无执行策略。用于验证审计系统对低质量内容的识别能力。"
+  },
+  "stages": {
+    "1": {
+      "founderMotivation": {
+        "content": "一直想创业，看到身边很多朋友都在做自己的品牌。觉得年轻人市场很大，想做一个年轻人喜欢的生活方式品牌。",
+        "source": "founder_statement",
+        "confidence": "confirmed_fact"
+      },
+      "observations": [
+        {
+          "subject": "年轻人",
+          "context": "日常生活中的观察",
+          "behavior": "年轻人喜欢新鲜事物，喜欢在社交媒体上分享生活",
+          "result": "年轻人有消费力，喜欢有调性的品牌",
+          "evidenceType": "casual_observation"
+        }
+      ],
+      "constraints": {
+        "budget": "有一些积蓄，可以先投一点试试",
+        "team": "目前就自己一个人",
+        "timeline": "不着急，先摸索方向"
+      },
+      "founderType": "problem_driven",
+      "confirmedProblems": [
+        "年轻人需要一个属于他们的品牌",
+        "市面上的品牌都不够懂年轻人"
+      ]
+    },
+    "2": {
+      "businessModel": {
+        "productForm": "一个年轻人的生活方式品牌，可能做服装、配饰、生活用品等等，具体还没定",
+        "revenueModel": "卖产品赚钱，线上线下都可以做",
+        "deliveryMethod": "线上开店+社交媒体推广",
+        "currentStage": "idea阶段——还在想名字和方向"
+      },
+      "marketContext": "年轻人消费市场很大，他们喜欢新品牌，喜欢有个性的东西。现在的年轻人消费力强，愿意为自己喜欢的东西花钱。",
+      "drivingForces": [
+        {
+          "force": "年轻人市场在增长",
+          "evidence": "感觉年轻人都在消费，大家生活水平提高了"
+        }
+      ],
+      "strategicWindow": "现在年轻人市场很活跃，应该尽快进入",
+      "externalChallenges": ["市场上品牌太多，竞争激烈"],
+      "internalChallenges": ["一个人做，能力有限", "资金不多"],
+      "directionHypothesis": "做一个年轻人会喜欢的品牌"
+    },
+    "3": {
+      "categoryStatus": {
+        "definition": "年轻人的生活方式品牌，覆盖吃喝玩乐穿用等等",
+        "currentState": "年轻人消费力强，生活方式品牌有机会。市面上有很多做年轻人的品牌，有的做得好有的不好。",
+        "trends": [
+          {
+            "trend": "年轻人喜欢尝试新品牌",
+            "source": "常识"
+          },
+          {
+            "trend": "社交媒体改变了消费方式",
+            "source": "常识"
+          }
+        ]
+      },
+      "experienceGaps": [
+        {
+          "gap": "市面上缺少年轻人真正喜欢的生活方式品牌",
+          "currentAlternative": "传统品牌或者国外的品牌",
+          "severity": "high"
+        }
+      ],
+      "opportunityDirections": [
+        {
+          "direction": "做一个跨品类的年轻人生活方式品牌",
+          "rationale": "年轻人喜欢一站式的生活方式消费",
+          "evidenceLevel": "hypothesis"
+        }
+      ]
+    },
+    "4": {
+      "targetConsumer": {
+        "definition": "年轻人，主要是18-35岁之间，不分男女。他们喜欢新鲜事物，有消费能力，追求品质感。",
+        "behaviorPatterns": ["喜欢在社交媒体上发现新品牌", "愿意为喜欢的东西花钱"],
+        "decisionMotives": ["品牌要有感觉", "要有调性", "要能发朋友圈"]
+      },
+      "functionalNeeds": [
+        {
+          "need": "产品好用、好看",
+          "brandImplication": "做高颜值的产品"
+        }
+      ],
+      "identityNeeds": [
+        {
+          "need": "体现自己的品味和个性"
+        }
+      ],
+      "existingSolutions": [
+        {
+          "solutionType": "传统品牌",
+          "failReason": "老气，不够年轻，没有调性"
+        }
+      ],
+      "idealSelfReflection": "我是年轻人，我想买有感觉的东西"
+    },
+    "5": {
+      "competitiveLandscape": {
+        "dimensions": ["价格", "调性"],
+        "convergenceAndDivergence": "市场上有各种品牌，价格从低到高都有。现在年轻人都喜欢有调性的品牌。"
+      },
+      "directCompetitors": [
+        {
+          "name": "各种生活方式品牌",
+          "positioning": "面向年轻人的消费品品牌",
+          "keySellingPoint": "设计好看",
+          "weakness": "价格参差不齐，有的太贵有的品质不好"
+        }
+      ],
+      "whitespaceOpportunity": "做一个价格合理、调性好的年轻人品牌"
+    },
+    "6": {
+      "positioning": "YoungLife 是为年轻人打造的生活方式品牌，提供有品质、有调性的生活好物。我们懂得年轻人的审美和需求，让每一天的生活都有感觉。",
+      "valuePropositions": [
+        {
+          "level": "functional",
+          "proposition": "有品质的生活用品",
+          "soWhatDerivation": "年轻人需要好用的东西"
+        },
+        {
+          "level": "emotional",
+          "proposition": "有感觉的消费体验",
+          "soWhatDerivation": "买东西不只是买东西"
+        },
+        {
+          "level": "social",
+          "proposition": "体现年轻人的生活品味",
+          "soWhatDerivation": "年轻人需要通过消费表达自己"
+        }
+      ],
+      "brandStory": {
+        "struggleMoment": "现在的年轻人没有属于自己的品牌",
+        "brandAction": "创造一个年轻人会喜欢的品牌",
+        "brandRelationship": "和年轻人一起成长，成为他们生活的一部分"
+      },
+      "brandPersonality": [
+        {
+          "trait": "年轻",
+          "dos": "做年轻人喜欢的",
+          "donts": "不老气"
+        },
+        {
+          "trait": "潮流",
+          "dos": "紧跟潮流趋势",
+          "donts": "不做过时的东西"
+        },
+        {
+          "trait": "有调性",
+          "dos": "设计要有品味",
+          "donts": "不能太low"
+        }
+      ],
+      "reasoning": {
+        "marketOpportunityReference": "年轻人市场很大",
+        "consumerInsightReference": "年轻人喜欢有调性的品牌",
+        "competitiveGapReference": "市场上选择不够好"
+      }
+    },
+    "7": {
+      "coreConcept": "年轻有活力的视觉风格，让年轻人一看就喜欢",
+      "keywords": [
+        {
+          "keyword": "年轻",
+          "rationale": "品牌做年轻人的，视觉也要年轻"
+        },
+        {
+          "keyword": "潮流",
+          "rationale": "跟上年轻人的审美"
+        }
+      ],
+      "visualSystem": {
+        "form": {
+          "choice": "现代简约风格",
+          "exclusions": "不做过时的设计",
+          "perceptualTone": "现代时尚"
+        },
+        "color": {
+          "choice": "年轻人喜欢的颜色，亮色系为主",
+          "exclusions": "不用老气的颜色",
+          "perceptualTone": "年轻活力"
+        },
+        "typography": {
+          "choice": "现代字体，干净的排版",
+          "exclusions": "不用传统字体",
+          "perceptualTone": "简洁现代"
+        },
+        "imagery": {
+          "choice": "年轻人生活方式的照片",
+          "exclusions": "不用老气的图",
+          "perceptualTone": "生活方式感"
+        },
+        "material": {
+          "choice": "有品质感的材料",
+          "exclusions": "不用廉价材料",
+          "perceptualTone": "有质感"
+        }
+      },
+      "restrictions": [
+        {
+          "exclusion": "不能看起来老气",
+          "strategicRationale": "年轻人品牌不能显老"
+        }
+      ]
+    },
+    "8": {
+      "coreDirection": "在小红书和抖音上做内容，发年轻人喜欢的图，让更多人知道这个品牌",
+      "contentValueSystem": {
+        "awareness": {
+          "strategy": "在小红书发好看的照片吸引关注",
+          "contentTypes": ["好看的图片"]
+        },
+        "interest": {
+          "strategy": "展示产品的使用场景",
+          "contentTypes": ["产品展示"]
+        },
+        "trust": {
+          "strategy": "找一些博主推广",
+          "contentTypes": ["博主合作"]
+        },
+        "decision": {
+          "strategy": "做促销活动让大家购买",
+          "contentTypes": ["打折促销"]
+        }
+      },
+      "themeDirections": [
+        {
+          "pillar": "年轻人生活方式",
+          "corePurpose": "展示产品融入生活",
+          "topicDirections": ["日常分享"]
+        },
+        {
+          "pillar": "产品展示",
+          "corePurpose": "让大家看到产品",
+          "topicDirections": ["产品图"]
+        }
+      ],
+      "channelStrategy": {
+        "xiaohongshu": {
+          "role": "种草",
+          "reason": "年轻人都在用",
+          "contentFormat": "好看的图片"
+        },
+        "douyin": {
+          "role": "曝光",
+          "reason": "流量大",
+          "contentFormat": "短视频"
+        },
+        "wechat": {
+          "role": "卖货",
+          "reason": "方便购买",
+          "contentFormat": "小程序"
+        }
+      }
+    }
+  }
+}

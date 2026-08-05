@@ -1,0 +1,21 @@
+Phase 1/2 已完成，当前执行 todo.md 中 Phase 3 · Audit Engine。
+
+请严格基于现有实现增量开发，不要重构已有架构。
+
+执行前先检查：
+- Stage Orchestrator 当前流程
+- Rule Check 实现
+- Decision Memory 数据结构
+- Stage Schema
+- Report Engine
+
+确认现有结构后，再按照 todo.md 的 3.1 → 3.5 顺序实现。
+
+约束：
+- 不修改 S1-S8 Schema
+- 不改变已有阶段流程
+- 不新增无必要依赖
+- 优先复用已有组件
+- 每完成一个模块进行测试
+
+如果发现 todo.md 与当前代码结构存在冲突，先说明冲突原因，不要直接改架构。

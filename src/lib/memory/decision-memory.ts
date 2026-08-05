@@ -59,7 +59,7 @@ export async function saveEntry(entry: DecisionMemoryInput): Promise<void> {
   });
 }
 
-/** 批量保存阶段性提取的战略资产 */
+/** 批量保存阶段性提取的战略资产（事务：先清旧再写新，避免回溯重跑后条目残留） */
 export async function saveStageEntries(
   projectId: string,
   stageSource: number,
@@ -70,20 +70,33 @@ export async function saveStageEntries(
     evidenceLevel?: EvidenceLevel;
   }>
 ): Promise<void> {
-  const values = entries.map((e) => ({
-    id: generateId(),
-    projectId,
-    stageSource,
-    entryType: e.entryType,
-    content: e.content,
-    fieldPath: e.fieldPath,
-    evidenceLevel: e.evidenceLevel ?? "ai_inferred",
-    confirmedAt: new Date(),
-  }));
+  await db.transaction(async (tx) => {
+    // 清除该阶段旧条目，避免回溯重跑后新旧数据并存
+    await tx
+      .delete(decisionMemoryEntry)
+      .where(
+        and(
+          eq(decisionMemoryEntry.projectId, projectId),
+          eq(decisionMemoryEntry.stageSource, stageSource)
+        )
+      );
 
-  if (values.length > 0) {
-    await db.insert(decisionMemoryEntry).values(values);
-  }
+    // 写入新条目
+    if (entries.length > 0) {
+      const values = entries.map((e) => ({
+        id: generateId(),
+        projectId,
+        stageSource,
+        entryType: e.entryType,
+        content: e.content,
+        fieldPath: e.fieldPath,
+        evidenceLevel: e.evidenceLevel ?? "ai_inferred",
+        confirmedAt: new Date(),
+      }));
+
+      await tx.insert(decisionMemoryEntry).values(values);
+    }
+  });
 }
 
 // ── 读取 ──────────────────────────────────────────────
@@ -106,6 +119,24 @@ export async function getConfirmed(projectId: string): Promise<DecisionMemoryEnt
   return rows.filter(
     (r: any) => r.entryType === "confirmed_fact" || r.entryType === "confirmed_decision"
   );
+}
+
+/** 按阶段筛选 Decision Memory 条目 */
+export async function getEntriesByStage(
+  projectId: string,
+  stageNumber: number
+): Promise<DecisionMemoryEntry[]> {
+  const { and } = await import("drizzle-orm");
+  const rows = await db
+    .select()
+    .from(decisionMemoryEntry)
+    .where(
+      and(
+        eq(decisionMemoryEntry.projectId, projectId),
+        eq(decisionMemoryEntry.stageSource, stageNumber)
+      )
+    ) as any;
+  return rows;
 }
 
 /** 构建 Decision Memory Context 文本（注入后续阶段 Prompt） */
@@ -532,9 +563,11 @@ export function extractFromMarketInsights(
  * - targetConsumer.definition → confirmed_fact
  * - existingSolutions[].failReason → confirmed_fact
  * - deepNeeds.functionalNeed → confirmed_fact
- * - deepNeeds.identityNeed → confirmed_decision（S6 强制引用）
+ * - deepNeeds.identityNeed → hypothesis（AI 从行为观察推导，非创始人直接确认）
  *
- * identityNeed 是 S6 的强制引用字段，标记为 decision 级别。
+ * identityNeed 虽然是 S6 的强制引用字段，但它是从消费者行为观察中推断的
+ * 身份认同需求，属于推测性质。S6 在引用时会看到其 hypothesis 分类并相应
+ * 调整确定性判断。
  */
 export function extractFromConsumerInsight(
   projectId: string,
@@ -596,10 +629,10 @@ export function extractFromConsumerInsight(
     });
   }
 
-  // deepNeeds.identityNeed → decision（S6 强制引用）
+  // deepNeeds.identityNeed → hypothesis（AI 推断，非创始人确认）
   if (data.deepNeeds?.identityNeed) {
     entries.push({
-      entryType: "confirmed_decision",
+      entryType: "hypothesis",
       content: data.deepNeeds.identityNeed,
       fieldPath: "deepNeeds.identityNeed",
       evidenceLevel: "ai_inferred",

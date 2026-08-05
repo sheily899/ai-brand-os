@@ -1,0 +1,102 @@
+请基于 D:\brand-intelligence-os\reference\brand-domain-cases.md 中的 5 个测试案例，对当前已完成的 Phase 1、Phase 2 和 Phase 3 功能进行端到端测试。
+
+测试目标：
+验证 S1-S8 完整链路是否能够正常运行，包括：
+
+- 阶段推进
+- Decision Memory 传递
+- Search Intelligence Layer 调用与上下文延续
+- 阶段收敛
+- Rule Check
+- AI Quality Audit
+- Cross Stage Context Check
+- Quality Gate 决策
+- 最终报告生成与 Final Audit
+
+
+每个案例需要完整模拟真实用户流程。
+
+验证：
+
+1. 阶段咨询流程
+- 每个阶段是否能在合理轮次内完成（目标 10 轮以内）
+- 最后一次 AI 输出是否为总结确认形式
+- 总结内容是否能正确映射到对应 Schema
+- 是否存在重复询问、阶段提前结束、关键字段遗漏
+
+
+2. 阶段间上下文连续性
+重点检查：
+
+- S1-S8 信息是否正确传递
+- Decision Memory 是否保存关键决策
+- 搜索结果是否持续注入后续对话，而不是仅存在首轮
+- 后续阶段是否能够引用前序阶段结论
+- 是否出现阶段间战略偏移
+
+
+3. Audit Engine 验证
+
+检查：
+
+Rule Check：
+- 是否发现明显字段缺失
+- 是否发现基础逻辑冲突
+- 是否存在明显误报
+
+
+AI Quality Audit：
+- 是否正常输出四维评分：
+  Specificity / Differentiation / Evidence / Executability
+- 评分是否符合当前阶段实际质量
+- 是否生成有效优化建议
+
+
+Cross Stage Context Check：
+- Layer A 是否正确检查字段依赖和事实引用
+- Layer B 是否发现明显战略连续性问题
+- 是否避免因正常文案差异产生误判
+
+
+Quality Gate：
+验证：
+
+- 高质量输出是否正常 Advance
+- 可优化内容是否进入 Reoptimize
+- 严重错误是否 Block
+- Gate Decision 是否正确驱动阶段状态变化
+
+
+4. 最终报告验证
+
+检查：
+
+- 八章节报告结构是否正确
+- Schema 数据是否正确映射到对应章节
+- 是否出现审计元数据泄露（如 evidenceLevel、内部字段名等）
+- Final Audit 是否能够发现依赖错误
+- PDF/报告输出是否正常
+
+
+测试过程中重点关注：
+
+- 阶段链路稳定性
+- AI 输出质量
+- 搜索上下文连续性
+- Decision Memory 准确性
+- Audit 是否发现明显战略错误
+- 是否存在错误阻塞正常流程的情况
+
+
+测试完成后输出简洁测试报告，包括：
+
+- 案例名称
+- 各阶段完成轮次
+- 是否通过
+- Audit 触发情况
+- Gate Decision 分布（Advance/Reoptimize/Block）
+- 发现的问题
+- 优先级
+- 优化建议
+
+仅报告实际发现的问题，不需要输出测试过程日志。

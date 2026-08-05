@@ -64,6 +64,26 @@ export async function POST(
       );
     }
 
+    // ── 前置检查：确认总结是否存在 ──────────────────
+    const lastAssistantMsg = [...history].reverse().find((m) => m.role === "assistant");
+    const hasConfirmationSummary =
+      lastAssistantMsg &&
+      /确认|复述|理解得对|理解得对吗|如果以上内容准确|如果哪里理解得不对|如果理解有偏差/.test(
+        lastAssistantMsg.content
+      ) &&
+      lastAssistantMsg.content.length > 150;
+
+    if (!hasConfirmationSummary) {
+      return NextResponse.json(
+        {
+          error:
+            "阶段尚未完成确认总结，无法执行收束。请继续对话，当退出条件满足时 AI 会自动输出确认总结。你也可以在对话中发送「总结一下」来主动触发。",
+          code: "NO_CONFIRMATION_SUMMARY",
+        },
+        { status: 409 }
+      );
+    }
+
     // 运行 Stage Pipeline
     const result = await runStage(
       {

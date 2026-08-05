@@ -1,0 +1,4124 @@
+{
+  "title": "AI Quality Audit V3.1 — 自动化验证报告",
+  "timestamp": "2026-08-03T04:13:15.239Z",
+  "config": {
+    "runs": 5,
+    "models": [
+      "deepseek-chat"
+    ],
+    "parts": [
+      1,
+      2,
+      3,
+      4,
+      6
+    ],
+    "elapsed_minutes": 27.6
+  },
+  "results": {
+    "part1": [
+      {
+        "caseName": "Case A 慢象咖啡",
+        "stage": 1,
+        "stageName": "用户访谈",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 93,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 4,
+              "actionability": 5,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 35,
+              "differentiation": 8,
+              "actionability": 30,
+              "evidence": 20
+            },
+            "gate": "advance",
+            "issues": 2,
+            "duration": 10381
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 93,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 4,
+              "actionability": 5,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 35,
+              "differentiation": 8,
+              "actionability": 30,
+              "evidence": 20
+            },
+            "gate": "advance",
+            "issues": 2,
+            "duration": 10582
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 93,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 4,
+              "actionability": 5,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 35,
+              "differentiation": 8,
+              "actionability": 30,
+              "evidence": 20
+            },
+            "gate": "advance",
+            "issues": 2,
+            "duration": 9317
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 87,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 4,
+              "actionability": 4,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 35,
+              "differentiation": 8,
+              "actionability": 24,
+              "evidence": 20
+            },
+            "gate": "advance",
+            "issues": 3,
+            "duration": 14579
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 93,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 4,
+              "actionability": 5,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 35,
+              "differentiation": 8,
+              "actionability": 30,
+              "evidence": 20
+            },
+            "gate": "advance",
+            "issues": 2,
+            "duration": 10717
+          }
+        ],
+        "stats": {
+          "mean": 91.8,
+          "median": 93,
+          "min": 87,
+          "max": 93,
+          "stdDev": 2.4000000000000004,
+          "range": 6,
+          "dimStats": {
+            "specificity": {
+              "mean": 5,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 4,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 4.8,
+              "stdDev": 0.39999999999999997
+            },
+            "evidence": {
+              "mean": 4,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "advance": 5
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 5,
+            "stdDev": 0
+          },
+          "differentiation": {
+            "mean": 4,
+            "stdDev": 0
+          },
+          "actionability": {
+            "mean": 4.8,
+            "stdDev": 0.39999999999999997
+          },
+          "evidence": {
+            "mean": 4,
+            "stdDev": 0
+          }
+        },
+        "gateDistribution": {
+          "advance": 5
+        }
+      },
+      {
+        "caseName": "Case A 慢象咖啡",
+        "stage": 2,
+        "stageName": "商业背景",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 95,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 5,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 30,
+              "differentiation": 10,
+              "actionability": 35,
+              "evidence": 20
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 7783
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 95,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 5,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 30,
+              "differentiation": 10,
+              "actionability": 35,
+              "evidence": 20
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 9207
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 93,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 4,
+              "actionability": 5,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 30,
+              "differentiation": 8,
+              "actionability": 35,
+              "evidence": 20
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 8346
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 93,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 4,
+              "actionability": 5,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 30,
+              "differentiation": 8,
+              "actionability": 35,
+              "evidence": 20
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 10571
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 95,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 5,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 30,
+              "differentiation": 10,
+              "actionability": 35,
+              "evidence": 20
+            },
+            "gate": "advance",
+            "issues": 2,
+            "duration": 9112
+          }
+        ],
+        "stats": {
+          "mean": 94.2,
+          "median": 95,
+          "min": 93,
+          "max": 95,
+          "stdDev": 0.9797958971132712,
+          "range": 2,
+          "dimStats": {
+            "specificity": {
+              "mean": 5,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 4.6,
+              "stdDev": 0.48989794855663565
+            },
+            "actionability": {
+              "mean": 5,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 4,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "advance": 5
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 5,
+            "stdDev": 0
+          },
+          "differentiation": {
+            "mean": 4.6,
+            "stdDev": 0.48989794855663565
+          },
+          "actionability": {
+            "mean": 5,
+            "stdDev": 0
+          },
+          "evidence": {
+            "mean": 4,
+            "stdDev": 0
+          }
+        },
+        "gateDistribution": {
+          "advance": 5
+        }
+      },
+      {
+        "caseName": "Case A 慢象咖啡",
+        "stage": 3,
+        "stageName": "市场机会",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 84,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 4,
+              "actionability": 4,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 20,
+              "differentiation": 16,
+              "actionability": 16,
+              "evidence": 32
+            },
+            "gate": "advance",
+            "issues": 2,
+            "duration": 11130
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 84,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 4,
+              "actionability": 4,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 20,
+              "differentiation": 16,
+              "actionability": 16,
+              "evidence": 32
+            },
+            "gate": "advance",
+            "issues": 2,
+            "duration": 12220
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 84,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 4,
+              "actionability": 4,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 20,
+              "differentiation": 16,
+              "actionability": 16,
+              "evidence": 32
+            },
+            "gate": "advance",
+            "issues": 2,
+            "duration": 10082
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 84,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 4,
+              "actionability": 4,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 20,
+              "differentiation": 16,
+              "actionability": 16,
+              "evidence": 32
+            },
+            "gate": "advance",
+            "issues": 2,
+            "duration": 11696
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 84,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 4,
+              "actionability": 4,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 20,
+              "differentiation": 16,
+              "actionability": 16,
+              "evidence": 32
+            },
+            "gate": "advance",
+            "issues": 2,
+            "duration": 10026
+          }
+        ],
+        "stats": {
+          "mean": 84,
+          "median": 84,
+          "min": 84,
+          "max": 84,
+          "stdDev": 0,
+          "range": 0,
+          "dimStats": {
+            "specificity": {
+              "mean": 5,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 4,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 4,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 4,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "advance": 5
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 5,
+            "stdDev": 0
+          },
+          "differentiation": {
+            "mean": 4,
+            "stdDev": 0
+          },
+          "actionability": {
+            "mean": 4,
+            "stdDev": 0
+          },
+          "evidence": {
+            "mean": 4,
+            "stdDev": 0
+          }
+        },
+        "gateDistribution": {
+          "advance": 5
+        }
+      },
+      {
+        "caseName": "Case A 慢象咖啡",
+        "stage": 4,
+        "stageName": "消费者洞察",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 89,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 4,
+              "actionability": 5,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 30,
+              "differentiation": 16,
+              "actionability": 15,
+              "evidence": 28
+            },
+            "gate": "advance",
+            "issues": 2,
+            "duration": 8920
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 89,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 4,
+              "actionability": 5,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 30,
+              "differentiation": 16,
+              "actionability": 15,
+              "evidence": 28
+            },
+            "gate": "advance",
+            "issues": 2,
+            "duration": 9980
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 100,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 5,
+              "evidence": 5
+            },
+            "weighted": {
+              "specificity": 30,
+              "differentiation": 20,
+              "actionability": 15,
+              "evidence": 35
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 9038
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 93,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 5,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 30,
+              "differentiation": 20,
+              "actionability": 15,
+              "evidence": 28
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 8247
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 93,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 5,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 30,
+              "differentiation": 20,
+              "actionability": 15,
+              "evidence": 28
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 10558
+          }
+        ],
+        "stats": {
+          "mean": 92.8,
+          "median": 93,
+          "min": 89,
+          "max": 100,
+          "stdDev": 4.019950248448357,
+          "range": 11,
+          "dimStats": {
+            "specificity": {
+              "mean": 5,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 4.6,
+              "stdDev": 0.48989794855663565
+            },
+            "actionability": {
+              "mean": 5,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 4.2,
+              "stdDev": 0.39999999999999997
+            }
+          },
+          "gateDistribution": {
+            "advance": 5
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 5,
+            "stdDev": 0
+          },
+          "differentiation": {
+            "mean": 4.6,
+            "stdDev": 0.48989794855663565
+          },
+          "actionability": {
+            "mean": 5,
+            "stdDev": 0
+          },
+          "evidence": {
+            "mean": 4.2,
+            "stdDev": 0.39999999999999997
+          }
+        },
+        "gateDistribution": {
+          "advance": 5
+        }
+      },
+      {
+        "caseName": "Case A 慢象咖啡",
+        "stage": 5,
+        "stageName": "竞争判断",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 95,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 4,
+              "evidence": 5
+            },
+            "weighted": {
+              "specificity": 20,
+              "differentiation": 40,
+              "actionability": 20,
+              "evidence": 15
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 9314
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 92,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 4,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 20,
+              "differentiation": 40,
+              "actionability": 20,
+              "evidence": 12
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 10744
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 92,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 4,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 20,
+              "differentiation": 40,
+              "actionability": 20,
+              "evidence": 12
+            },
+            "gate": "advance",
+            "issues": 2,
+            "duration": 8816
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 92,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 4,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 20,
+              "differentiation": 40,
+              "actionability": 20,
+              "evidence": 12
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 10170
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 92,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 4,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 20,
+              "differentiation": 40,
+              "actionability": 20,
+              "evidence": 12
+            },
+            "gate": "advance",
+            "issues": 2,
+            "duration": 8924
+          }
+        ],
+        "stats": {
+          "mean": 92.6,
+          "median": 92,
+          "min": 92,
+          "max": 95,
+          "stdDev": 1.2,
+          "range": 3,
+          "dimStats": {
+            "specificity": {
+              "mean": 5,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 5,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 4,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 4.2,
+              "stdDev": 0.39999999999999997
+            }
+          },
+          "gateDistribution": {
+            "advance": 5
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 5,
+            "stdDev": 0
+          },
+          "differentiation": {
+            "mean": 5,
+            "stdDev": 0
+          },
+          "actionability": {
+            "mean": 4,
+            "stdDev": 0
+          },
+          "evidence": {
+            "mean": 4.2,
+            "stdDev": 0.39999999999999997
+          }
+        },
+        "gateDistribution": {
+          "advance": 5
+        }
+      },
+      {
+        "caseName": "Case A 慢象咖啡",
+        "stage": 6,
+        "stageName": "品牌战略",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 100,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 5,
+              "evidence": 5
+            },
+            "weighted": {
+              "specificity": 25,
+              "differentiation": 35,
+              "actionability": 25,
+              "evidence": 15
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 10268
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 100,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 5,
+              "evidence": 5
+            },
+            "weighted": {
+              "specificity": 25,
+              "differentiation": 35,
+              "actionability": 25,
+              "evidence": 15
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 12264
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 100,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 5,
+              "evidence": 5
+            },
+            "weighted": {
+              "specificity": 25,
+              "differentiation": 35,
+              "actionability": 25,
+              "evidence": 15
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 11015
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 100,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 5,
+              "evidence": 5
+            },
+            "weighted": {
+              "specificity": 25,
+              "differentiation": 35,
+              "actionability": 25,
+              "evidence": 15
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 9976
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 100,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 5,
+              "evidence": 5
+            },
+            "weighted": {
+              "specificity": 25,
+              "differentiation": 35,
+              "actionability": 25,
+              "evidence": 15
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 10971
+          }
+        ],
+        "stats": {
+          "mean": 100,
+          "median": 100,
+          "min": 100,
+          "max": 100,
+          "stdDev": 0,
+          "range": 0,
+          "dimStats": {
+            "specificity": {
+              "mean": 5,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 5,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 5,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 5,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "advance": 5
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 5,
+            "stdDev": 0
+          },
+          "differentiation": {
+            "mean": 5,
+            "stdDev": 0
+          },
+          "actionability": {
+            "mean": 5,
+            "stdDev": 0
+          },
+          "evidence": {
+            "mean": 5,
+            "stdDev": 0
+          }
+        },
+        "gateDistribution": {
+          "advance": 5
+        }
+      },
+      {
+        "caseName": "Case A 慢象咖啡",
+        "stage": 7,
+        "stageName": "视觉策略",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 98,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 5,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 20,
+              "differentiation": 35,
+              "actionability": 35,
+              "evidence": 8
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 10353
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 100,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 5,
+              "evidence": 5
+            },
+            "weighted": {
+              "specificity": 20,
+              "differentiation": 35,
+              "actionability": 35,
+              "evidence": 10
+            },
+            "gate": "advance",
+            "issues": 2,
+            "duration": 11353
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 100,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 5,
+              "evidence": 5
+            },
+            "weighted": {
+              "specificity": 20,
+              "differentiation": 35,
+              "actionability": 35,
+              "evidence": 10
+            },
+            "gate": "advance",
+            "issues": 2,
+            "duration": 10786
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 100,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 5,
+              "evidence": 5
+            },
+            "weighted": {
+              "specificity": 20,
+              "differentiation": 35,
+              "actionability": 35,
+              "evidence": 10
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 9167
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 100,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 5,
+              "evidence": 5
+            },
+            "weighted": {
+              "specificity": 20,
+              "differentiation": 35,
+              "actionability": 35,
+              "evidence": 10
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 10054
+          }
+        ],
+        "stats": {
+          "mean": 99.6,
+          "median": 100,
+          "min": 98,
+          "max": 100,
+          "stdDev": 0.8,
+          "range": 2,
+          "dimStats": {
+            "specificity": {
+              "mean": 5,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 5,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 5,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 4.8,
+              "stdDev": 0.39999999999999997
+            }
+          },
+          "gateDistribution": {
+            "advance": 5
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 5,
+            "stdDev": 0
+          },
+          "differentiation": {
+            "mean": 5,
+            "stdDev": 0
+          },
+          "actionability": {
+            "mean": 5,
+            "stdDev": 0
+          },
+          "evidence": {
+            "mean": 4.8,
+            "stdDev": 0.39999999999999997
+          }
+        },
+        "gateDistribution": {
+          "advance": 5
+        }
+      },
+      {
+        "caseName": "Case A 慢象咖啡",
+        "stage": 8,
+        "stageName": "内容规划",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 96,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 5,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 20,
+              "differentiation": 15,
+              "actionability": 45,
+              "evidence": 16
+            },
+            "gate": "advance",
+            "issues": 2,
+            "duration": 13086
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 96,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 5,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 20,
+              "differentiation": 15,
+              "actionability": 45,
+              "evidence": 16
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 9301
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 96,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 5,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 20,
+              "differentiation": 15,
+              "actionability": 45,
+              "evidence": 16
+            },
+            "gate": "advance",
+            "issues": 2,
+            "duration": 9902
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 96,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 5,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 20,
+              "differentiation": 15,
+              "actionability": 45,
+              "evidence": 16
+            },
+            "gate": "advance",
+            "issues": 2,
+            "duration": 11889
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 96,
+            "dims": {
+              "specificity": 5,
+              "differentiation": 5,
+              "actionability": 5,
+              "evidence": 4
+            },
+            "weighted": {
+              "specificity": 20,
+              "differentiation": 15,
+              "actionability": 45,
+              "evidence": 16
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 7495
+          }
+        ],
+        "stats": {
+          "mean": 96,
+          "median": 96,
+          "min": 96,
+          "max": 96,
+          "stdDev": 0,
+          "range": 0,
+          "dimStats": {
+            "specificity": {
+              "mean": 5,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 5,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 5,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 4,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "advance": 5
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 5,
+            "stdDev": 0
+          },
+          "differentiation": {
+            "mean": 5,
+            "stdDev": 0
+          },
+          "actionability": {
+            "mean": 5,
+            "stdDev": 0
+          },
+          "evidence": {
+            "mean": 4,
+            "stdDev": 0
+          }
+        },
+        "gateDistribution": {
+          "advance": 5
+        }
+      },
+      {
+        "caseName": "Case B 快享茶饮",
+        "stage": 1,
+        "stageName": "用户访谈",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 73,
+            "dims": {
+              "specificity": 4,
+              "differentiation": 3,
+              "actionability": 4,
+              "evidence": 3
+            },
+            "weighted": {
+              "specificity": 28,
+              "differentiation": 6,
+              "actionability": 24,
+              "evidence": 15
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 8748
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 73,
+            "dims": {
+              "specificity": 4,
+              "differentiation": 3,
+              "actionability": 4,
+              "evidence": 3
+            },
+            "weighted": {
+              "specificity": 28,
+              "differentiation": 6,
+              "actionability": 24,
+              "evidence": 15
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 9709
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 60,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 3,
+              "actionability": 3,
+              "evidence": 3
+            },
+            "weighted": {
+              "specificity": 21,
+              "differentiation": 6,
+              "actionability": 18,
+              "evidence": 15
+            },
+            "gate": "reoptimize",
+            "issues": 2,
+            "duration": 10678
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 58,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 2,
+              "actionability": 3,
+              "evidence": 3
+            },
+            "weighted": {
+              "specificity": 21,
+              "differentiation": 4,
+              "actionability": 18,
+              "evidence": 15
+            },
+            "gate": "reoptimize",
+            "issues": 2,
+            "duration": 11082
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 60,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 3,
+              "actionability": 3,
+              "evidence": 3
+            },
+            "weighted": {
+              "specificity": 21,
+              "differentiation": 6,
+              "actionability": 18,
+              "evidence": 15
+            },
+            "gate": "reoptimize",
+            "issues": 2,
+            "duration": 10037
+          }
+        ],
+        "stats": {
+          "mean": 64.8,
+          "median": 60,
+          "min": 58,
+          "max": 73,
+          "stdDev": 6.734983296193095,
+          "range": 15,
+          "dimStats": {
+            "specificity": {
+              "mean": 3.4,
+              "stdDev": 0.4898979485566356
+            },
+            "differentiation": {
+              "mean": 2.8,
+              "stdDev": 0.39999999999999997
+            },
+            "actionability": {
+              "mean": 3.4,
+              "stdDev": 0.4898979485566356
+            },
+            "evidence": {
+              "mean": 3,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "advance": 2,
+            "reoptimize": 3
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 3.4,
+            "stdDev": 0.4898979485566356
+          },
+          "differentiation": {
+            "mean": 2.8,
+            "stdDev": 0.39999999999999997
+          },
+          "actionability": {
+            "mean": 3.4,
+            "stdDev": 0.4898979485566356
+          },
+          "evidence": {
+            "mean": 3,
+            "stdDev": 0
+          }
+        },
+        "gateDistribution": {
+          "advance": 2,
+          "reoptimize": 3
+        }
+      },
+      {
+        "caseName": "Case B 快享茶饮",
+        "stage": 2,
+        "stageName": "商业背景",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 55,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 3,
+              "actionability": 3,
+              "evidence": 2
+            },
+            "weighted": {
+              "specificity": 18,
+              "differentiation": 6,
+              "actionability": 21,
+              "evidence": 10
+            },
+            "gate": "reoptimize",
+            "issues": 2,
+            "duration": 10831
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 60,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 3,
+              "actionability": 3,
+              "evidence": 3
+            },
+            "weighted": {
+              "specificity": 18,
+              "differentiation": 6,
+              "actionability": 21,
+              "evidence": 15
+            },
+            "gate": "reoptimize",
+            "issues": 2,
+            "duration": 8195
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 53,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 2,
+              "actionability": 3,
+              "evidence": 2
+            },
+            "weighted": {
+              "specificity": 18,
+              "differentiation": 4,
+              "actionability": 21,
+              "evidence": 10
+            },
+            "gate": "reoptimize",
+            "issues": 2,
+            "duration": 8579
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 67,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 3,
+              "actionability": 4,
+              "evidence": 3
+            },
+            "weighted": {
+              "specificity": 18,
+              "differentiation": 6,
+              "actionability": 28,
+              "evidence": 15
+            },
+            "gate": "reoptimize",
+            "issues": 4,
+            "duration": 10031
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 55,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 3,
+              "actionability": 3,
+              "evidence": 2
+            },
+            "weighted": {
+              "specificity": 18,
+              "differentiation": 6,
+              "actionability": 21,
+              "evidence": 10
+            },
+            "gate": "reoptimize",
+            "issues": 1,
+            "duration": 6757
+          }
+        ],
+        "stats": {
+          "mean": 58,
+          "median": 55,
+          "min": 53,
+          "max": 67,
+          "stdDev": 5.059644256269407,
+          "range": 14,
+          "dimStats": {
+            "specificity": {
+              "mean": 3,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 2.8,
+              "stdDev": 0.39999999999999997
+            },
+            "actionability": {
+              "mean": 3.2,
+              "stdDev": 0.39999999999999997
+            },
+            "evidence": {
+              "mean": 2.4,
+              "stdDev": 0.4898979485566356
+            }
+          },
+          "gateDistribution": {
+            "reoptimize": 5
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 3,
+            "stdDev": 0
+          },
+          "differentiation": {
+            "mean": 2.8,
+            "stdDev": 0.39999999999999997
+          },
+          "actionability": {
+            "mean": 3.2,
+            "stdDev": 0.39999999999999997
+          },
+          "evidence": {
+            "mean": 2.4,
+            "stdDev": 0.4898979485566356
+          }
+        },
+        "gateDistribution": {
+          "reoptimize": 5
+        }
+      },
+      {
+        "caseName": "Case B 快享茶饮",
+        "stage": 3,
+        "stageName": "市场机会",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 32,
+            "dims": {
+              "specificity": 2,
+              "differentiation": 2,
+              "actionability": 2,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 8,
+              "differentiation": 8,
+              "actionability": 8,
+              "evidence": 8
+            },
+            "gate": "block",
+            "issues": 2,
+            "duration": 9765
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 32,
+            "dims": {
+              "specificity": 2,
+              "differentiation": 2,
+              "actionability": 2,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 8,
+              "differentiation": 8,
+              "actionability": 8,
+              "evidence": 8
+            },
+            "gate": "block",
+            "issues": 3,
+            "duration": 9757
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 32,
+            "dims": {
+              "specificity": 2,
+              "differentiation": 2,
+              "actionability": 2,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 8,
+              "differentiation": 8,
+              "actionability": 8,
+              "evidence": 8
+            },
+            "gate": "block",
+            "issues": 3,
+            "duration": 10427
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 32,
+            "dims": {
+              "specificity": 2,
+              "differentiation": 2,
+              "actionability": 2,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 8,
+              "differentiation": 8,
+              "actionability": 8,
+              "evidence": 8
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 10914
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 32,
+            "dims": {
+              "specificity": 2,
+              "differentiation": 2,
+              "actionability": 2,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 8,
+              "differentiation": 8,
+              "actionability": 8,
+              "evidence": 8
+            },
+            "gate": "block",
+            "issues": 2,
+            "duration": 10261
+          }
+        ],
+        "stats": {
+          "mean": 32,
+          "median": 32,
+          "min": 32,
+          "max": 32,
+          "stdDev": 0,
+          "range": 0,
+          "dimStats": {
+            "specificity": {
+              "mean": 2,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 2,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 2,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 1,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "block": 5
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 2,
+            "stdDev": 0
+          },
+          "differentiation": {
+            "mean": 2,
+            "stdDev": 0
+          },
+          "actionability": {
+            "mean": 2,
+            "stdDev": 0
+          },
+          "evidence": {
+            "mean": 1,
+            "stdDev": 0
+          }
+        },
+        "gateDistribution": {
+          "block": 5
+        }
+      },
+      {
+        "caseName": "Case B 快享茶饮",
+        "stage": 4,
+        "stageName": "消费者洞察",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 49,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 2,
+              "actionability": 3,
+              "evidence": 2
+            },
+            "weighted": {
+              "specificity": 18,
+              "differentiation": 8,
+              "actionability": 9,
+              "evidence": 14
+            },
+            "gate": "block",
+            "issues": 2,
+            "duration": 8880
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 60,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 3,
+              "actionability": 3,
+              "evidence": 3
+            },
+            "weighted": {
+              "specificity": 15,
+              "differentiation": 15,
+              "actionability": 15,
+              "evidence": 15
+            },
+            "gate": "advance",
+            "issues": 1,
+            "duration": 10199
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 53,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 3,
+              "actionability": 3,
+              "evidence": 2
+            },
+            "weighted": {
+              "specificity": 18,
+              "differentiation": 12,
+              "actionability": 9,
+              "evidence": 14
+            },
+            "gate": "block",
+            "issues": 2,
+            "duration": 9347
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 53,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 3,
+              "actionability": 3,
+              "evidence": 2
+            },
+            "weighted": {
+              "specificity": 18,
+              "differentiation": 12,
+              "actionability": 9,
+              "evidence": 14
+            },
+            "gate": "block",
+            "issues": 2,
+            "duration": 8626
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 53,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 3,
+              "actionability": 3,
+              "evidence": 2
+            },
+            "weighted": {
+              "specificity": 18,
+              "differentiation": 12,
+              "actionability": 9,
+              "evidence": 14
+            },
+            "gate": "block",
+            "issues": 2,
+            "duration": 8495
+          }
+        ],
+        "stats": {
+          "mean": 53.6,
+          "median": 53,
+          "min": 49,
+          "max": 60,
+          "stdDev": 3.555277766926235,
+          "range": 11,
+          "dimStats": {
+            "specificity": {
+              "mean": 3,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 2.8,
+              "stdDev": 0.39999999999999997
+            },
+            "actionability": {
+              "mean": 3,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 2.2,
+              "stdDev": 0.39999999999999997
+            }
+          },
+          "gateDistribution": {
+            "block": 4,
+            "advance": 1
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 3,
+            "stdDev": 0
+          },
+          "differentiation": {
+            "mean": 2.8,
+            "stdDev": 0.39999999999999997
+          },
+          "actionability": {
+            "mean": 3,
+            "stdDev": 0
+          },
+          "evidence": {
+            "mean": 2.2,
+            "stdDev": 0.39999999999999997
+          }
+        },
+        "gateDistribution": {
+          "block": 4,
+          "advance": 1
+        }
+      },
+      {
+        "caseName": "Case B 快享茶饮",
+        "stage": 5,
+        "stageName": "竞争判断",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 37,
+            "dims": {
+              "specificity": 2,
+              "differentiation": 2,
+              "actionability": 2,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 8,
+              "differentiation": 16,
+              "actionability": 10,
+              "evidence": 3
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 9038
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 37,
+            "dims": {
+              "specificity": 2,
+              "differentiation": 2,
+              "actionability": 2,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 8,
+              "differentiation": 16,
+              "actionability": 10,
+              "evidence": 3
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 8063
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 37,
+            "dims": {
+              "specificity": 2,
+              "differentiation": 2,
+              "actionability": 2,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 8,
+              "differentiation": 16,
+              "actionability": 10,
+              "evidence": 3
+            },
+            "gate": "block",
+            "issues": 3,
+            "duration": 8835
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 37,
+            "dims": {
+              "specificity": 2,
+              "differentiation": 2,
+              "actionability": 2,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 8,
+              "differentiation": 16,
+              "actionability": 10,
+              "evidence": 3
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 8928
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 37,
+            "dims": {
+              "specificity": 2,
+              "differentiation": 2,
+              "actionability": 2,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 8,
+              "differentiation": 16,
+              "actionability": 10,
+              "evidence": 3
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 9627
+          }
+        ],
+        "stats": {
+          "mean": 37,
+          "median": 37,
+          "min": 37,
+          "max": 37,
+          "stdDev": 0,
+          "range": 0,
+          "dimStats": {
+            "specificity": {
+              "mean": 2,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 2,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 2,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 1,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "block": 5
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 2,
+            "stdDev": 0
+          },
+          "differentiation": {
+            "mean": 2,
+            "stdDev": 0
+          },
+          "actionability": {
+            "mean": 2,
+            "stdDev": 0
+          },
+          "evidence": {
+            "mean": 1,
+            "stdDev": 0
+          }
+        },
+        "gateDistribution": {
+          "block": 5
+        }
+      },
+      {
+        "caseName": "Case B 快享茶饮",
+        "stage": 6,
+        "stageName": "品牌战略",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 57,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 3,
+              "actionability": 3,
+              "evidence": 2
+            },
+            "weighted": {
+              "specificity": 15,
+              "differentiation": 21,
+              "actionability": 15,
+              "evidence": 6
+            },
+            "gate": "block",
+            "issues": 2,
+            "duration": 10304
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 57,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 3,
+              "actionability": 3,
+              "evidence": 2
+            },
+            "weighted": {
+              "specificity": 15,
+              "differentiation": 21,
+              "actionability": 15,
+              "evidence": 6
+            },
+            "gate": "block",
+            "issues": 2,
+            "duration": 11060
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 57,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 3,
+              "actionability": 3,
+              "evidence": 2
+            },
+            "weighted": {
+              "specificity": 15,
+              "differentiation": 21,
+              "actionability": 15,
+              "evidence": 6
+            },
+            "gate": "block",
+            "issues": 2,
+            "duration": 10837
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 57,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 3,
+              "actionability": 3,
+              "evidence": 2
+            },
+            "weighted": {
+              "specificity": 15,
+              "differentiation": 21,
+              "actionability": 15,
+              "evidence": 6
+            },
+            "gate": "block",
+            "issues": 2,
+            "duration": 10878
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 57,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 3,
+              "actionability": 3,
+              "evidence": 2
+            },
+            "weighted": {
+              "specificity": 15,
+              "differentiation": 21,
+              "actionability": 15,
+              "evidence": 6
+            },
+            "gate": "block",
+            "issues": 2,
+            "duration": 10268
+          }
+        ],
+        "stats": {
+          "mean": 57,
+          "median": 57,
+          "min": 57,
+          "max": 57,
+          "stdDev": 0,
+          "range": 0,
+          "dimStats": {
+            "specificity": {
+              "mean": 3,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 3,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 3,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 2,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "block": 5
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 3,
+            "stdDev": 0
+          },
+          "differentiation": {
+            "mean": 3,
+            "stdDev": 0
+          },
+          "actionability": {
+            "mean": 3,
+            "stdDev": 0
+          },
+          "evidence": {
+            "mean": 2,
+            "stdDev": 0
+          }
+        },
+        "gateDistribution": {
+          "block": 5
+        }
+      },
+      {
+        "caseName": "Case B 快享茶饮",
+        "stage": 7,
+        "stageName": "视觉策略",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 71,
+            "dims": {
+              "specificity": 4,
+              "differentiation": 3,
+              "actionability": 4,
+              "evidence": 3
+            },
+            "weighted": {
+              "specificity": 16,
+              "differentiation": 21,
+              "actionability": 28,
+              "evidence": 6
+            },
+            "gate": "reoptimize",
+            "issues": 2,
+            "duration": 9369
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 51,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 2,
+              "actionability": 3,
+              "evidence": 2
+            },
+            "weighted": {
+              "specificity": 12,
+              "differentiation": 14,
+              "actionability": 21,
+              "evidence": 4
+            },
+            "gate": "block",
+            "issues": 2,
+            "duration": 10595
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 71,
+            "dims": {
+              "specificity": 4,
+              "differentiation": 3,
+              "actionability": 4,
+              "evidence": 3
+            },
+            "weighted": {
+              "specificity": 16,
+              "differentiation": 21,
+              "actionability": 28,
+              "evidence": 6
+            },
+            "gate": "reoptimize",
+            "issues": 2,
+            "duration": 10201
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 71,
+            "dims": {
+              "specificity": 4,
+              "differentiation": 3,
+              "actionability": 4,
+              "evidence": 3
+            },
+            "weighted": {
+              "specificity": 16,
+              "differentiation": 21,
+              "actionability": 28,
+              "evidence": 6
+            },
+            "gate": "reoptimize",
+            "issues": 2,
+            "duration": 9331
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 71,
+            "dims": {
+              "specificity": 4,
+              "differentiation": 3,
+              "actionability": 4,
+              "evidence": 3
+            },
+            "weighted": {
+              "specificity": 16,
+              "differentiation": 21,
+              "actionability": 28,
+              "evidence": 6
+            },
+            "gate": "reoptimize",
+            "issues": 2,
+            "duration": 9034
+          }
+        ],
+        "stats": {
+          "mean": 67,
+          "median": 71,
+          "min": 51,
+          "max": 71,
+          "stdDev": 8,
+          "range": 20,
+          "dimStats": {
+            "specificity": {
+              "mean": 3.8,
+              "stdDev": 0.39999999999999997
+            },
+            "differentiation": {
+              "mean": 2.8,
+              "stdDev": 0.39999999999999997
+            },
+            "actionability": {
+              "mean": 3.8,
+              "stdDev": 0.39999999999999997
+            },
+            "evidence": {
+              "mean": 2.8,
+              "stdDev": 0.39999999999999997
+            }
+          },
+          "gateDistribution": {
+            "reoptimize": 4,
+            "block": 1
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 3.8,
+            "stdDev": 0.39999999999999997
+          },
+          "differentiation": {
+            "mean": 2.8,
+            "stdDev": 0.39999999999999997
+          },
+          "actionability": {
+            "mean": 3.8,
+            "stdDev": 0.39999999999999997
+          },
+          "evidence": {
+            "mean": 2.8,
+            "stdDev": 0.39999999999999997
+          }
+        },
+        "gateDistribution": {
+          "reoptimize": 4,
+          "block": 1
+        }
+      },
+      {
+        "caseName": "Case B 快享茶饮",
+        "stage": 8,
+        "stageName": "内容规划",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 69,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 3,
+              "actionability": 4,
+              "evidence": 3
+            },
+            "weighted": {
+              "specificity": 12,
+              "differentiation": 9,
+              "actionability": 36,
+              "evidence": 12
+            },
+            "gate": "reoptimize",
+            "issues": 3,
+            "duration": 9541
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 53,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 2,
+              "actionability": 3,
+              "evidence": 2
+            },
+            "weighted": {
+              "specificity": 12,
+              "differentiation": 6,
+              "actionability": 27,
+              "evidence": 8
+            },
+            "gate": "block",
+            "issues": 3,
+            "duration": 8275
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 53,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 2,
+              "actionability": 3,
+              "evidence": 2
+            },
+            "weighted": {
+              "specificity": 12,
+              "differentiation": 6,
+              "actionability": 27,
+              "evidence": 8
+            },
+            "gate": "block",
+            "issues": 3,
+            "duration": 9152
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 69,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 3,
+              "actionability": 4,
+              "evidence": 3
+            },
+            "weighted": {
+              "specificity": 12,
+              "differentiation": 9,
+              "actionability": 36,
+              "evidence": 12
+            },
+            "gate": "reoptimize",
+            "issues": 3,
+            "duration": 8888
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 60,
+            "dims": {
+              "specificity": 3,
+              "differentiation": 3,
+              "actionability": 3,
+              "evidence": 3
+            },
+            "weighted": {
+              "specificity": 12,
+              "differentiation": 9,
+              "actionability": 27,
+              "evidence": 12
+            },
+            "gate": "reoptimize",
+            "issues": 2,
+            "duration": 7489
+          }
+        ],
+        "stats": {
+          "mean": 60.8,
+          "median": 60,
+          "min": 53,
+          "max": 69,
+          "stdDev": 7.166589146867567,
+          "range": 16,
+          "dimStats": {
+            "specificity": {
+              "mean": 3,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 2.6,
+              "stdDev": 0.4898979485566356
+            },
+            "actionability": {
+              "mean": 3.4,
+              "stdDev": 0.4898979485566356
+            },
+            "evidence": {
+              "mean": 2.6,
+              "stdDev": 0.4898979485566356
+            }
+          },
+          "gateDistribution": {
+            "reoptimize": 3,
+            "block": 2
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 3,
+            "stdDev": 0
+          },
+          "differentiation": {
+            "mean": 2.6,
+            "stdDev": 0.4898979485566356
+          },
+          "actionability": {
+            "mean": 3.4,
+            "stdDev": 0.4898979485566356
+          },
+          "evidence": {
+            "mean": 2.6,
+            "stdDev": 0.4898979485566356
+          }
+        },
+        "gateDistribution": {
+          "reoptimize": 3,
+          "block": 2
+        }
+      },
+      {
+        "caseName": "Case C YoungLife",
+        "stage": 1,
+        "stageName": "用户访谈",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 7,
+              "differentiation": 2,
+              "actionability": 6,
+              "evidence": 5
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 10247
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 7,
+              "differentiation": 2,
+              "actionability": 6,
+              "evidence": 5
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 8684
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 7,
+              "differentiation": 2,
+              "actionability": 6,
+              "evidence": 5
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 10214
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 7,
+              "differentiation": 2,
+              "actionability": 6,
+              "evidence": 5
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 9887
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 7,
+              "differentiation": 2,
+              "actionability": 6,
+              "evidence": 5
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 8230
+          }
+        ],
+        "stats": {
+          "mean": 20,
+          "median": 20,
+          "min": 20,
+          "max": 20,
+          "stdDev": 0,
+          "range": 0,
+          "dimStats": {
+            "specificity": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 1,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "block": 5
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 1,
+            "stdDev": 0
+          },
+          "differentiation": {
+            "mean": 1,
+            "stdDev": 0
+          },
+          "actionability": {
+            "mean": 1,
+            "stdDev": 0
+          },
+          "evidence": {
+            "mean": 1,
+            "stdDev": 0
+          }
+        },
+        "gateDistribution": {
+          "block": 5
+        }
+      },
+      {
+        "caseName": "Case C YoungLife",
+        "stage": 2,
+        "stageName": "商业背景",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 6,
+              "differentiation": 2,
+              "actionability": 7,
+              "evidence": 5
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 10600
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 6,
+              "differentiation": 2,
+              "actionability": 7,
+              "evidence": 5
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 10915
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 6,
+              "differentiation": 2,
+              "actionability": 7,
+              "evidence": 5
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 9637
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 6,
+              "differentiation": 2,
+              "actionability": 7,
+              "evidence": 5
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 9735
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 6,
+              "differentiation": 2,
+              "actionability": 7,
+              "evidence": 5
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 9334
+          }
+        ],
+        "stats": {
+          "mean": 20,
+          "median": 20,
+          "min": 20,
+          "max": 20,
+          "stdDev": 0,
+          "range": 0,
+          "dimStats": {
+            "specificity": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 1,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "block": 5
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 1,
+            "stdDev": 0
+          },
+          "differentiation": {
+            "mean": 1,
+            "stdDev": 0
+          },
+          "actionability": {
+            "mean": 1,
+            "stdDev": 0
+          },
+          "evidence": {
+            "mean": 1,
+            "stdDev": 0
+          }
+        },
+        "gateDistribution": {
+          "block": 5
+        }
+      },
+      {
+        "caseName": "Case C YoungLife",
+        "stage": 3,
+        "stageName": "市场机会",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 4,
+              "differentiation": 4,
+              "actionability": 4,
+              "evidence": 8
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 9831
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 4,
+              "differentiation": 4,
+              "actionability": 4,
+              "evidence": 8
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 11166
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 4,
+              "differentiation": 4,
+              "actionability": 4,
+              "evidence": 8
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 10516
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 4,
+              "differentiation": 4,
+              "actionability": 4,
+              "evidence": 8
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 10451
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 4,
+              "differentiation": 4,
+              "actionability": 4,
+              "evidence": 8
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 9644
+          }
+        ],
+        "stats": {
+          "mean": 20,
+          "median": 20,
+          "min": 20,
+          "max": 20,
+          "stdDev": 0,
+          "range": 0,
+          "dimStats": {
+            "specificity": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 1,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "block": 5
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 1,
+            "stdDev": 0
+          },
+          "differentiation": {
+            "mean": 1,
+            "stdDev": 0
+          },
+          "actionability": {
+            "mean": 1,
+            "stdDev": 0
+          },
+          "evidence": {
+            "mean": 1,
+            "stdDev": 0
+          }
+        },
+        "gateDistribution": {
+          "block": 5
+        }
+      },
+      {
+        "caseName": "Case C YoungLife",
+        "stage": 4,
+        "stageName": "消费者洞察",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 6,
+              "differentiation": 4,
+              "actionability": 3,
+              "evidence": 7
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 6237
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 6,
+              "differentiation": 4,
+              "actionability": 3,
+              "evidence": 7
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 10507
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 6,
+              "differentiation": 4,
+              "actionability": 3,
+              "evidence": 7
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 6485
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 6,
+              "differentiation": 4,
+              "actionability": 3,
+              "evidence": 7
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 6759
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 6,
+              "differentiation": 4,
+              "actionability": 3,
+              "evidence": 7
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 10432
+          }
+        ],
+        "stats": {
+          "mean": 20,
+          "median": 20,
+          "min": 20,
+          "max": 20,
+          "stdDev": 0,
+          "range": 0,
+          "dimStats": {
+            "specificity": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 1,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "block": 5
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 1,
+            "stdDev": 0
+          },
+          "differentiation": {
+            "mean": 1,
+            "stdDev": 0
+          },
+          "actionability": {
+            "mean": 1,
+            "stdDev": 0
+          },
+          "evidence": {
+            "mean": 1,
+            "stdDev": 0
+          }
+        },
+        "gateDistribution": {
+          "block": 5
+        }
+      },
+      {
+        "caseName": "Case C YoungLife",
+        "stage": 5,
+        "stageName": "竞争判断",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 4,
+              "differentiation": 8,
+              "actionability": 5,
+              "evidence": 3
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 7528
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 52,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 3,
+              "actionability": 3,
+              "evidence": 3
+            },
+            "weighted": {
+              "specificity": 4,
+              "differentiation": 24,
+              "actionability": 15,
+              "evidence": 9
+            },
+            "gate": "block",
+            "issues": 0,
+            "duration": 2527
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 4,
+              "differentiation": 8,
+              "actionability": 5,
+              "evidence": 3
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 8948
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 4,
+              "differentiation": 8,
+              "actionability": 5,
+              "evidence": 3
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 7680
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 4,
+              "differentiation": 8,
+              "actionability": 5,
+              "evidence": 3
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 7171
+          }
+        ],
+        "stats": {
+          "mean": 26.4,
+          "median": 20,
+          "min": 20,
+          "max": 52,
+          "stdDev": 12.800000000000002,
+          "range": 32,
+          "dimStats": {
+            "specificity": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 1.4,
+              "stdDev": 0.8000000000000002
+            },
+            "actionability": {
+              "mean": 1.4,
+              "stdDev": 0.8000000000000002
+            },
+            "evidence": {
+              "mean": 1.4,
+              "stdDev": 0.8000000000000002
+            }
+          },
+          "gateDistribution": {
+            "block": 5
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 1,
+            "stdDev": 0
+          },
+          "differentiation": {
+            "mean": 1.4,
+            "stdDev": 0.8000000000000002
+          },
+          "actionability": {
+            "mean": 1.4,
+            "stdDev": 0.8000000000000002
+          },
+          "evidence": {
+            "mean": 1.4,
+            "stdDev": 0.8000000000000002
+          }
+        },
+        "gateDistribution": {
+          "block": 5
+        }
+      },
+      {
+        "caseName": "Case C YoungLife",
+        "stage": 6,
+        "stageName": "品牌战略",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 30,
+            "dims": {
+              "specificity": 2,
+              "differentiation": 1,
+              "actionability": 2,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 10,
+              "differentiation": 7,
+              "actionability": 10,
+              "evidence": 3
+            },
+            "gate": "block",
+            "issues": 3,
+            "duration": 11120
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 30,
+            "dims": {
+              "specificity": 2,
+              "differentiation": 1,
+              "actionability": 2,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 10,
+              "differentiation": 7,
+              "actionability": 10,
+              "evidence": 3
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 10816
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 5,
+              "differentiation": 7,
+              "actionability": 5,
+              "evidence": 3
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 11379
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 30,
+            "dims": {
+              "specificity": 2,
+              "differentiation": 1,
+              "actionability": 2,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 10,
+              "differentiation": 7,
+              "actionability": 10,
+              "evidence": 3
+            },
+            "gate": "block",
+            "issues": 3,
+            "duration": 11812
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 30,
+            "dims": {
+              "specificity": 2,
+              "differentiation": 1,
+              "actionability": 2,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 10,
+              "differentiation": 7,
+              "actionability": 10,
+              "evidence": 3
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 11662
+          }
+        ],
+        "stats": {
+          "mean": 28,
+          "median": 30,
+          "min": 20,
+          "max": 30,
+          "stdDev": 4,
+          "range": 10,
+          "dimStats": {
+            "specificity": {
+              "mean": 1.8,
+              "stdDev": 0.4
+            },
+            "differentiation": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 1.8,
+              "stdDev": 0.4
+            },
+            "evidence": {
+              "mean": 1,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "block": 5
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 1.8,
+            "stdDev": 0.4
+          },
+          "differentiation": {
+            "mean": 1,
+            "stdDev": 0
+          },
+          "actionability": {
+            "mean": 1.8,
+            "stdDev": 0.4
+          },
+          "evidence": {
+            "mean": 1,
+            "stdDev": 0
+          }
+        },
+        "gateDistribution": {
+          "block": 5
+        }
+      },
+      {
+        "caseName": "Case C YoungLife",
+        "stage": 7,
+        "stageName": "视觉策略",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 4,
+              "differentiation": 7,
+              "actionability": 7,
+              "evidence": 2
+            },
+            "gate": "block",
+            "issues": 2,
+            "duration": 8277
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 4,
+              "differentiation": 7,
+              "actionability": 7,
+              "evidence": 2
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 8848
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 4,
+              "differentiation": 7,
+              "actionability": 7,
+              "evidence": 2
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 8462
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 4,
+              "differentiation": 7,
+              "actionability": 7,
+              "evidence": 2
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 9870
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 4,
+              "differentiation": 7,
+              "actionability": 7,
+              "evidence": 2
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 9505
+          }
+        ],
+        "stats": {
+          "mean": 20,
+          "median": 20,
+          "min": 20,
+          "max": 20,
+          "stdDev": 0,
+          "range": 0,
+          "dimStats": {
+            "specificity": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 1,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "block": 5
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 1,
+            "stdDev": 0
+          },
+          "differentiation": {
+            "mean": 1,
+            "stdDev": 0
+          },
+          "actionability": {
+            "mean": 1,
+            "stdDev": 0
+          },
+          "evidence": {
+            "mean": 1,
+            "stdDev": 0
+          }
+        },
+        "gateDistribution": {
+          "block": 5
+        }
+      },
+      {
+        "caseName": "Case C YoungLife",
+        "stage": 8,
+        "stageName": "内容规划",
+        "threshold": 70,
+        "runs": [
+          {
+            "model": "deepseek-chat",
+            "run": 1,
+            "score": 37,
+            "dims": {
+              "specificity": 2,
+              "differentiation": 1,
+              "actionability": 2,
+              "evidence": 2
+            },
+            "weighted": {
+              "specificity": 8,
+              "differentiation": 3,
+              "actionability": 18,
+              "evidence": 8
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 7549
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 2,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 4,
+              "differentiation": 3,
+              "actionability": 9,
+              "evidence": 4
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 9008
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 3,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 4,
+              "differentiation": 3,
+              "actionability": 9,
+              "evidence": 4
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 8041
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 4,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 4,
+              "differentiation": 3,
+              "actionability": 9,
+              "evidence": 4
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 8660
+          },
+          {
+            "model": "deepseek-chat",
+            "run": 5,
+            "score": 20,
+            "dims": {
+              "specificity": 1,
+              "differentiation": 1,
+              "actionability": 1,
+              "evidence": 1
+            },
+            "weighted": {
+              "specificity": 4,
+              "differentiation": 3,
+              "actionability": 9,
+              "evidence": 4
+            },
+            "gate": "block",
+            "issues": 4,
+            "duration": 8467
+          }
+        ],
+        "stats": {
+          "mean": 23.4,
+          "median": 20,
+          "min": 20,
+          "max": 37,
+          "stdDev": 6.800000000000001,
+          "range": 17,
+          "dimStats": {
+            "specificity": {
+              "mean": 1.2,
+              "stdDev": 0.4000000000000001
+            },
+            "differentiation": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 1.2,
+              "stdDev": 0.4000000000000001
+            },
+            "evidence": {
+              "mean": 1.2,
+              "stdDev": 0.4000000000000001
+            }
+          },
+          "gateDistribution": {
+            "block": 5
+          }
+        },
+        "dimStats": {
+          "specificity": {
+            "mean": 1.2,
+            "stdDev": 0.4000000000000001
+          },
+          "differentiation": {
+            "mean": 1,
+            "stdDev": 0
+          },
+          "actionability": {
+            "mean": 1.2,
+            "stdDev": 0.4000000000000001
+          },
+          "evidence": {
+            "mean": 1.2,
+            "stdDev": 0.4000000000000001
+          }
+        },
+        "gateDistribution": {
+          "block": 5
+        }
+      }
+    ],
+    "part2": {
+      "s3_evidence": {
+        "noData": {
+          "mean": 20,
+          "median": 20,
+          "min": 20,
+          "max": 20,
+          "stdDev": 0,
+          "range": 0,
+          "dimStats": {
+            "specificity": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 1,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "block": 5
+          }
+        },
+        "withData": {
+          "mean": 80,
+          "median": 80,
+          "min": 80,
+          "max": 80,
+          "stdDev": 0,
+          "range": 0,
+          "dimStats": {
+            "specificity": {
+              "mean": 4,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 4,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 4,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 4,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "advance": 5
+          }
+        }
+      },
+      "s4_insight": {
+        "shallow": {
+          "mean": 20,
+          "median": 20,
+          "min": 20,
+          "max": 20,
+          "stdDev": 0,
+          "range": 0,
+          "dimStats": {
+            "specificity": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 1,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "block": 5
+          }
+        },
+        "deep": {
+          "mean": 73,
+          "median": 73,
+          "min": 73,
+          "max": 73,
+          "stdDev": 0,
+          "range": 0,
+          "dimStats": {
+            "specificity": {
+              "mean": 4,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 4,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 4,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 3,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "advance": 5
+          }
+        }
+      },
+      "s5_evidence": {
+        "noEvidence": {
+          "mean": 24.2,
+          "median": 20,
+          "min": 20,
+          "max": 37,
+          "stdDev": 6.584831053261731,
+          "range": 17,
+          "dimStats": {
+            "specificity": {
+              "mean": 1.4,
+              "stdDev": 0.4898979485566356
+            },
+            "differentiation": {
+              "mean": 1.2,
+              "stdDev": 0.4
+            },
+            "actionability": {
+              "mean": 1.2,
+              "stdDev": 0.4
+            },
+            "evidence": {
+              "mean": 1,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "block": 5
+          }
+        },
+        "withEvidence": {
+          "mean": 80,
+          "median": 80,
+          "min": 80,
+          "max": 80,
+          "stdDev": 0,
+          "range": 0,
+          "dimStats": {
+            "specificity": {
+              "mean": 4,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 4,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 4,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 4,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "advance": 5
+          }
+        }
+      },
+      "s6_chain": {
+        "noChain": {
+          "mean": 20,
+          "median": 20,
+          "min": 20,
+          "max": 20,
+          "stdDev": 0,
+          "range": 0,
+          "dimStats": {
+            "specificity": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 1,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 1,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "block": 5
+          }
+        },
+        "withChain": {
+          "mean": 80,
+          "median": 80,
+          "min": 80,
+          "max": 80,
+          "stdDev": 0,
+          "range": 0,
+          "dimStats": {
+            "specificity": {
+              "mean": 4,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 4,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 4,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 4,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "advance": 5
+          }
+        }
+      },
+      "s7_alignment": {
+        "unaligned": {
+          "mean": 55.2,
+          "median": 58,
+          "min": 51,
+          "max": 58,
+          "stdDev": 3.4292856398964497,
+          "range": 7,
+          "dimStats": {
+            "specificity": {
+              "mean": 3,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 2.6,
+              "stdDev": 0.4898979485566356
+            },
+            "actionability": {
+              "mean": 3,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 2,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "block": 5
+          }
+        },
+        "aligned": {
+          "mean": 98,
+          "median": 98,
+          "min": 98,
+          "max": 98,
+          "stdDev": 0,
+          "range": 0,
+          "dimStats": {
+            "specificity": {
+              "mean": 5,
+              "stdDev": 0
+            },
+            "differentiation": {
+              "mean": 5,
+              "stdDev": 0
+            },
+            "actionability": {
+              "mean": 5,
+              "stdDev": 0
+            },
+            "evidence": {
+              "mean": 4,
+              "stdDev": 0
+            }
+          },
+          "gateDistribution": {
+            "advance": 5
+          }
+        }
+      }
+    }
+  }
+}

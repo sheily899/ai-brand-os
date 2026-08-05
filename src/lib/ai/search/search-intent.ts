@@ -5,6 +5,7 @@
  * - 根据阶段+品牌+品类+Decision Memory Context 生成搜索意图
  * - 读取 shared-search-protocol.md 获取覆盖维度定义
  * - 使用 AI 生成结构化搜索关键词
+ * - 为权威来源自动注入 site: 直达搜索，避免转载站中介
  *
  * 搜索规则完全读取 shared-search-protocol.md，代码中不重复维护覆盖矩阵。
  */
@@ -15,6 +16,68 @@ import { getLLMProvider } from "@/lib/ai/provider";
 import type { SearchIntent, CoverageDimension } from "./types";
 
 const PROTOCOL_PATH = resolve(process.cwd(), "reference/shared-search-protocol.md");
+
+// ── 权威来源域名映射 ──────────────────────────────────
+
+/**
+ * 将 shared-search-protocol.md 中定义的优先搜索来源映射到域名。
+ * 用于生成 site: 直达搜索，确保数据来自原始权威源而非转载站。
+ *
+ * 映射规则：
+ * - 优先使用官方主域名
+ * - 对于无独立域名的平台（如"小红书聚光平台"），映射到平台主站
+ * - 对于品牌官网等非固定域名（如"品牌官网"），不在此映射
+ */
+export const AUTHORITATIVE_DOMAINS: Record<string, string> = {
+  "艾瑞咨询": "iresearch.cn",
+  "CBNData": "cbndata.com",
+  "CBNData第一财经商业数据中心": "cbndata.com",
+  "国家统计局": "stats.gov.cn",
+  "QuestMobile": "questmobile.com",
+  "36氪": "36kr.com",
+  "亿欧网": "iyiou.com",
+  "中商产业研究院": "askci.com",
+  "前瞻产业研究院": "qianzhan.com",
+  "百度指数": "index.baidu.com",
+  "小红书": "xiaohongshu.com",
+  "小红书聚光平台": "xiaohongshu.com",
+  "数英DIGITALING": "digitaling.com",
+  "SocialBeta": "socialbeta.com",
+  "巨量引擎": "oceanengine.com",
+  "微信公众平台": "mp.weixin.qq.com",
+  "B站营销中心": "bilibili.com",
+  "知乎": "zhihu.com",
+  "天猫": "tmall.com",
+  "京东": "jd.com",
+  "Google Trends": "trends.google.com",
+};
+
+/** 已知域名 → 权威源名称的反向映射 */
+function matchAuthorityFromURL(url: string): string | undefined {
+  try {
+    const hostname = new URL(url).hostname.replace(/^www\./, "");
+    for (const [name, domain] of Object.entries(AUTHORITATIVE_DOMAINS)) {
+      if (hostname === domain || hostname.endsWith("." + domain)) {
+        return name;
+      }
+    }
+  } catch {
+    // URL 无效，忽略
+  }
+  return undefined;
+}
+
+/** 判断域名是否匹配权威源 */
+export function isAuthoritativeDomain(url: string, authorityName: string): boolean {
+  const expectedDomain = AUTHORITATIVE_DOMAINS[authorityName];
+  if (!expectedDomain) return false;
+  try {
+    const hostname = new URL(url).hostname;
+    return hostname === expectedDomain || hostname.endsWith("." + expectedDomain);
+  } catch {
+    return false;
+  }
+}
 
 // ── Protocol 文件读取 ──────────────────────────────────
 
@@ -83,6 +146,14 @@ export async function generateSearchIntent(
 
   const stageSection = extractStageSection(stage);
 
+  // 构建权威源域名提示（仅包含当前阶段相关的来源）
+  const relevantDomains: string[] = [];
+  for (const [name, domain] of Object.entries(AUTHORITATIVE_DOMAINS)) {
+    if (stageSection.includes(name)) {
+      relevantDomains.push(`  - ${name} → ${domain}`);
+    }
+  }
+
   // 构建 AI prompt
   const systemPrompt = `你是一个搜索策略专家。你的任务是根据给定的品牌信息和阶段要求，生成结构化的搜索计划。
 
@@ -97,6 +168,12 @@ ${stageSection || "(搜索协议未加载，请根据常识生成搜索关键词
 - 品牌名称：${brandName}
 - 品类方向：${category}
 ${decisionMemoryContext ? `\n### 前序阶段已确认信息\n${decisionMemoryContext}` : ""}
+
+## 权威来源域名速查
+
+以下域名对应搜索协议中的优先来源。生成 site: 查询时使用这些域名：
+
+${relevantDomains.length > 0 ? relevantDomains.join("\n") : "(无特定权威源域名映射，使用通用搜索即可)"}
 
 ## 输出要求
 
@@ -123,11 +200,14 @@ ${decisionMemoryContext ? `\n### 前序阶段已确认信息\n${decisionMemoryCo
 
 规则：
 1. 覆盖矩阵中列出的每个"必须覆盖维度"都要在 coverageDimensions 中对应一项
-2. 每个维度至少生成 1 个搜索查询（queries）
-3. 关键词应包含品类名 + 搜索目的（如"宠物食品 市场规模 2024"）
+2. 每个维度至少生成 1 个搜索查询（queries），其中至少 1 条使用 site: 语法直达权威源
+3. 关键词应包含品类名 + 搜索目的 + 年份（优先 2025，其次 2024）
 4. preferredSources 从搜索协议第一节"优先搜索来源"中选择
-5. queries 数量：3-8 条（覆盖所有必须维度即可）
-6. 只输出 JSON，不要任何解释文字`;
+5. queries 数量：4-7 条（覆盖核心维度即可，site: 查询优先但不超过 3 条）
+6. site: 直达查询格式：\`site:域名 品类 关键词\`，如 \`site:iresearch.cn 咖啡 行业报告 2025\`
+7. 只有当域名在上方"权威来源域名速查"表中时，才使用 site: 语法
+8. 优先搜索当前年份（2025-2026），如无结果再放宽到 2024
+9. 只输出 JSON，不要任何解释文字`;
 
   try {
     const provider = getLLMProvider();
@@ -137,10 +217,19 @@ ${decisionMemoryContext ? `\n### 前序阶段已确认信息\n${decisionMemoryCo
     );
 
     const parsed = JSON.parse(response);
+    let queries = (parsed.queries ?? []) as Array<{
+      keyword: string;
+      dimension: string;
+      preferredSources: string[];
+    }>;
+
+    // ── 后处理：确保每个有域名映射的 preferredSource 都有 site: 查询 ──
+    queries = ensureSiteQueries(queries, brandName, category);
+
     return {
       stage,
       objective: parsed.objective ?? `Stage ${stage} 搜索`,
-      queries: parsed.queries ?? [],
+      queries,
       coverageDimensions: parsed.coverageDimensions ?? [],
     };
   } catch (e: any) {
@@ -162,6 +251,67 @@ ${decisionMemoryContext ? `\n### 前序阶段已确认信息\n${decisionMemoryCo
       })),
     };
   }
+}
+
+/**
+ * 后处理：确保每个有域名映射的 preferredSource 都有对应的 site: 查询。
+ *
+ * 逻辑：
+ * 1. 扫描 AI 生成的所有 queries，收集已覆盖的权威源名称
+ * 2. 对每个未被 site: 覆盖的权威源，补充一条 site: 直达查询
+ * 3. 避免重复：如果已有同域名的 site: 查询，不再追加
+ */
+function ensureSiteQueries(
+  queries: Array<{ keyword: string; dimension: string; preferredSources: string[] }>,
+  brandName: string,
+  category: string
+): Array<{ keyword: string; dimension: string; preferredSources: string[] }> {
+  const result = [...queries];
+
+  // 收集已有的 site: 查询覆盖的域名
+  const coveredDomains = new Set<string>();
+  for (const q of result) {
+    const siteMatch = q.keyword.match(/^site:(\S+)\s/);
+    if (siteMatch) {
+      coveredDomains.add(siteMatch[1]);
+    }
+  }
+
+  // 收集所有 preferredSources 中提到的权威源
+  const mentionedAuthorities = new Set<string>();
+  for (const q of result) {
+    for (const src of q.preferredSources) {
+      if (AUTHORITATIVE_DOMAINS[src]) {
+        mentionedAuthorities.add(src);
+      }
+    }
+  }
+
+  // 对未被 site: 覆盖的权威源，补充一条 site: 查询（最多补充 3 条，控制总查询量）
+  const MAX_SITE_QUERIES = 3;
+  let addedSiteQueries = 0;
+
+  for (const authority of mentionedAuthorities) {
+    if (addedSiteQueries >= MAX_SITE_QUERIES) break;
+    const domain = AUTHORITATIVE_DOMAINS[authority];
+    if (!domain || coveredDomains.has(domain)) continue;
+
+    // 找到引用此来源的维度
+    const parentQuery = result.find((q) =>
+      q.preferredSources.includes(authority)
+    );
+    const dimension = parentQuery?.dimension ?? "行业数据";
+
+    result.push({
+      keyword: `site:${domain} ${category} ${brandName}`,
+      dimension,
+      preferredSources: [authority],
+    });
+    coveredDomains.add(domain);
+    addedSiteQueries++;
+  }
+
+  return result;
 }
 
 /**

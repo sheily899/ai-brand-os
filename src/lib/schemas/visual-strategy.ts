@@ -68,6 +68,12 @@ export const visualStrategySchema = z.object({
   restrictions: z
     .array(visualRestrictionSchema)
     .min(3, "restrictions 至少 3 条"),
+  /**
+   * AI 顾问确认总结的原文段落，按 section 名存储。
+   * 供报告直接引用，保留精炼的叙述性语言。
+   * 预期 key：视觉核心概念 / 视觉关键词 / 视觉语言系统 / 视觉禁区
+   */
+  sectionSummaries: z.record(z.string(), z.string()).optional(),
 });
 
 export type VisualStrategy = z.infer<typeof visualStrategySchema>;

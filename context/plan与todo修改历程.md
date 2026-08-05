@@ -23,12 +23,12 @@
 
 ### 为什么修改
 
-用户要求将搜索能力从"调用 Brave Search API"升级为完整的 Search Intelligence Layer，包含 4 个子组件：Search Service → URL Ranking → Web Retrieval → Content Extraction。原始 Task 2.2 包含 4 个子组件和 10 个 AC，无法中间交付，阻塞所有下游任务。
+用户要求将搜索能力从"调用 博查 Web Search API"升级为完整的 Search Intelligence Layer，包含 4 个子组件：Search Service → URL Ranking → Web Retrieval → Content Extraction。原始 Task 2.2 包含 4 个子组件和 10 个 AC，无法中间交付，阻塞所有下游任务。
 
 ### 如何修改
 
 1. **拆分 Task 2.2 为 2.2a + 2.2b**：
-   - 2.2a：Search Service（Brave Search API）+ URL Ranking（AI 筛选 Top 3-5）
+   - 2.2a：Search Service（博查 Web Search API）+ URL Ranking（AI 筛选 Top 3-5）
    - 2.2b：Web Retrieval Layer（Jina Reader → fetch+cheerio fallback）+ Source Credibility（四阶段分来源信任权重）
 2. **依赖关系**：S4 只需 Search（依赖 2.2a），S5 需要 Search + Retrieval（依赖 2.2b）
 3. **架构图更新**：Task 2.2a 架构 ASCII 图标注"╳ Web Retrieval ← Task 2.2b 补齐"
@@ -227,7 +227,7 @@ R3 修改了 S3/S5/S6 JSON Schema，引入了新的字段名和数据结构。�
 
 | 旧编号（R5 结构） | 新编号（R6 结构） | 变更说明 |
 |---|---|---|
-| — | **2.0 ★ Search Intelligence Layer** | **新增**：共享基础，整合搜索全链路（Intent Generator → Brave Search → URL Ranking → Web Retrieval → Source Credibility → Context 注入） |
+| — | **2.0 ★ Search Intelligence Layer** | **新增**：共享基础，整合搜索全链路（Intent Generator → 博查 Web Search → URL Ranking → Web Retrieval → Source Credibility → Context 注入） |
 | 2.1 S2 + Search | 2.1 S2 商业背景 | 搜索能力改为"复用 2.0"而非自建 |
 | 2.2a S3 Search Service + URL Ranking | **合并入 2.0** | Search Service + URL Ranking 成为 2.0 子组件 |
 | 2.2b Web Retrieval + Source Credibility | **合并入 2.0** | Web Retrieval + Source Credibility 成为 2.0 子组件 |
@@ -382,7 +382,7 @@ Phase 6 (3 tasks)
 |---|---|
 | `src/lib/ai/search/types.ts` | 搜索层全部类型定义 |
 | `src/lib/ai/search/search-intent.ts` | AI 搜索意图生成，读取 shared-search-protocol.md |
-| `src/lib/ai/search/brave-search.ts` | Brave Search API 封装（无 key 优雅降级） |
+| `src/lib/ai/search/bocha-search.ts` | 博查 Web Search API 封装（无 key 优雅降级） |
 | `src/lib/ai/search/url-ranking.ts` | AI 三维评分 URL 排名（权威/相关/密度） |
 | `src/lib/ai/search/retrieval.ts` | 三级回退抓取（Jina → cheerio → snippet） |
 | `src/lib/ai/search/source-credibility.ts` | 分阶段来源可信度配置 |

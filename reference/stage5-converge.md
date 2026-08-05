@@ -171,79 +171,34 @@ AI 顾问的确认总结应已完成口语到报告语言的转换。
 清楚、平实、专业、不夸大。读起来像是在和创始人商量竞争打法，
 不是在写行业竞争分析论文。不伪装成经过完整竞品调研验证的结论。
 
+## Section Summaries（报告正文来源）
+
+除结构化字段外，**将 AI 顾问对话末尾双表格确认总结的每个 section 原文完整保存**。
+从 AI 顾问对话末尾的确认总结中，按以下 section 名称提取完整原文段落，
+存入 `sectionSummaries`：
+
+| section 名称 | 对应 AI 总结段落 |
+|---|---|
+| 竞争方向 | AI 总结"竞争方向"段落全文（竞争方向表格前/后的叙述性描述，含品类趋同与分化判断） |
+| 竞品分析 | AI 总结"竞品分析"段落全文（竞品分析表格前/后的叙述性总结，含跨竞品机会归纳） |
+
+**关键规则**：
+- 原文照搬，不精简、不添加标签、不改写
+- 如果 AI 总结以表格为主、叙述较少，提取表格前/后的总起和归纳性文字
+- 此字段供报告 04 章直接引用，是报告正文的唯一来源
+
 ## JSON Schema
 
 ```json
 {
-  "competitiveLandscape": {
-    "dimensions": [
-      {
-        "type": "竞争类型名称",
-        "representativeBrands": ["品牌1", "品牌2"],
-        "coreStrategy": "该类型品牌的核心打法描述",
-        "consumerNeed": "该类型品牌满足的消费者需求"
-      }
-    ],
-    "convergenceAndDivergence": "品类趋同点与本品牌的分化点描述"
-  },
-  "competitors": [
-    {
-      "name": "品牌名称",
-      "positioning": "品牌定位（一句话，标注来源）",
-      "slogan": "品牌Slogan或核心主张",
-      "priceRange": "价格带描述（高端 / 中端 / 平价，含具体价格区间）",
-      "heroProducts": [
-        {
-          "name": "产品名称",
-          "sellingPoint": "差异化卖点"
-        }
-      ],
-      "visualSystem": {
-        "logo": "Logo特征描述，信息不足时标注'信息不足'",
-        "color": "色彩体系描述",
-        "typography": "字体风格描述",
-        "packaging": "包装风格描述"
-      },
-      "communication": {
-        "platforms": ["主要传播平台"],
-        "contentDirection": ["内容方向与营销话术特征"],
-        "userPraise": [
-          {
-            "theme": "好评主题总结",
-            "excerpt": "用户好评原文摘录"
-          }
-        ],
-        "userComplaints": [
-          {
-            "theme": "差评主题总结",
-            "excerpt": "用户差评原文摘录"
-          }
-        ]
-      },
-      "strengths": ["竞品核心优势"],
-      "weaknesses": ["竞品短板或局限"],
-      "opportunityGap": "该竞品没有覆盖的需求或场景——这是竞品卡片最重要的字段，直接为S6的差异化方向提供输入",
-      "sources": [
-        {
-          "url": "来源URL",
-          "title": "来源名称（官网/天猫/小红书/行业报告等）",
-          "type": "full_text | snippet"
-        }
-      ]
-    }
-  ],
-  "competitiveGap": {
-    "unmetNeeds": ["跨竞品共同未满足的消费者需求"],
-    "marketOpportunity": "基于竞品空位分析的市场机会总结——现有格局给了什么但没给什么、消费者还需要什么、本品牌可能在哪里填补"
-  },
-  "dataSources": [
-    {
-      "url": "来源URL",
-      "title": "来源标题或名称",
-      "type": "full_text | snippet",
-      "summary": "该来源提供的关键信息摘要"
-    }
-  ]
+  "competitiveLandscape": { ... },
+  "competitors": [ ... ],
+  "competitiveGap": { ... },
+  "dataSources": [ ... ],
+  "sectionSummaries": {
+    "竞争方向": "AI 双表格总结中'竞争方向'部分的叙述性原文段落",
+    "竞品分析": "AI 双表格总结中'竞品分析'部分的叙述性原文段落"
+  }
 }
 ```
 

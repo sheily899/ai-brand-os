@@ -94,6 +94,12 @@ interface StageRecord {
   openingMessage?: string;
   /** openingMessage 是否具有报告语体特征 */
   openingIsReportLike: boolean;
+  /** Phase 3 audit info */
+  auditGate?: string;
+  auditRuleIssues?: number;
+  auditRefIssues?: number;
+  auditAIScore?: number;
+  auditAIGate?: string;
 }
 
 interface CaseResult {
@@ -225,7 +231,8 @@ ${profile.founderType === "problem_driven" ? "问题驱动型 — 因为看到�
 3. **不要一次性倾倒信息**：每次只回答 AI 提出的具体问题，不要在一轮对话中把背景故事全部说完。让 AI 通过追问逐步深入。
 4. **保持创业者特质**：${profile.founderType === "problem_driven" ? "你对行业痛点有深刻认知，说话务实、关注解决方案的可行性" : "你对品质有执念，说话带有专业自信，关注细节和差异化的表达"}
 5. **短回复**：每次回复控制在 50-150 字，像真实的聊天对话，不要写长篇大论。
-6. **${profile.founder.split("，")[0] ?? "创始人"}的语气**：保持你作为${profile.founder.split("，")[2]?.includes("女") ? "女性" : "男性"}创业者的真实语气。`;
+6. **${profile.founder.split("，")[0] ?? "创始人"}的语气**：保持你作为${profile.founder.split("，")[2]?.includes("女") ? "女性" : "男性"}创业者的真实语气。
+7. **自主判断收束时机**：当你觉得当前话题已经讨论充分、没有新的实质性信息可以补充时，可以自然地表达"我觉得这方面的信息已经讨论得比较充分了"或类似的收束意愿。不要强行生硬地切换话题——先正常回答问题，再自然过渡。也不要在对话刚开始不久就急着收束，确保充分交流后再表达。`;
 }
 
 /** 生成 founder 对 AI 问题的回复 */
@@ -233,8 +240,7 @@ async function simulateFounderResponse(
   profile: FounderProfile,
   stage: number,
   aiMessage: string,
-  historySoFar: Array<{ role: string; content: string }>,
-  isFinalRound: boolean
+  historySoFar: Array<{ role: string; content: string }>
 ): Promise<string> {
   if (DRY_RUN) {
     return `[DRY RUN] 这是 ${profile.brandName} 创始人对 Stage ${stage} AI 提问的模拟回复。`;
@@ -244,12 +250,8 @@ async function simulateFounderResponse(
 
   const systemPrompt = buildFounderSystemPrompt(profile, stage);
 
-  const extraInstruction = isFinalRound
-    ? "\n\n## 本轮特别指示\n\n这是本阶段的最后一轮对话。在回复 AI 的问题后，自然地表达\"我觉得这方面的信息已经讨论得比较充分了，可以进行收束了\"。不要生硬地切换话题，先回答问题再自然过渡。"
-    : "";
-
   const messages: Array<{ role: "system" | "user" | "assistant"; content: string }> = [
-    { role: "system", content: systemPrompt + extraInstruction },
+    { role: "system", content: systemPrompt },
   ];
 
   // 注入历史对话（最近 6 轮避免 token 过大）
@@ -274,9 +276,7 @@ async function simulateFounderResponse(
   } catch (e: any) {
     console.error(`[founder-sim] LLM 调用失败: ${e.message}`);
     // 降级：返回简单回复
-    return isFinalRound
-      ? `好的，我觉得关于这方面的讨论已经比较充分了，可以进行收束了。`
-      : `好的，我理解了。让我想想还有什么可以补充的。`;
+    return `好的，我理解了。让我想想还有什么可以补充的。`;
   }
 }
 
@@ -290,6 +290,7 @@ function detectReportStyle(text: string): boolean {
 
   // 报告语体信号
   const formalPatterns = [
+    // 原有
     /基于以上/,
     /综合来看/,
     /从.*维度/,
@@ -306,6 +307,14 @@ function detectReportStyle(text: string): boolean {
     /建议.*方向/,
     /本阶段/,
     /关键洞察/,
+    // 2026-08-01 新增：AI 实际高频使用的专业咨询语体模式
+    /我们进入/,
+    /前序阶段/,
+    /这个阶段/,
+    /已确认[的了]/,
+    /先回顾一下/,
+    /品牌(的|核心)/,
+    /【搜索发现】/,
   ];
 
   for (const p of formalPatterns) {
@@ -330,7 +339,7 @@ function detectReportStyle(text: string): boolean {
     if (p.test(text)) score--;
   }
 
-  return score >= 3;
+  return score >= 2;
 }
 
 // ── 单案例 S1→S8 运行 ────────────────────────────────────
@@ -383,6 +392,7 @@ async function runCase(
   console.log(`  项目 ID: ${project.id}`);
 
   let openingMessage: string | undefined;
+  let searchContext: string | undefined;
 
   // ── S1→S8 逐阶段运行 ───────────────────────────────
   for (let stage = 1; stage <= 8; stage++) {
@@ -414,8 +424,6 @@ async function runCase(
     let roundCount = 0;
 
     for (let round = 1; round <= maxRounds; round++) {
-      const isFinalRound = round === maxRounds;
-
       if (round === 1 && stage === 1 && !openingMessage) {
         // S1 首轮：创始人主动开口介绍
         const founderIntro = `你好！我是${profile.founder.split("，")[0] ?? profile.brandName + "的创始人"}，我做了一个品牌叫「${profile.brandName}」，主要做${profile.category || "消费品"}。我想系统地梳理一下品牌战略，不知道从哪里开始。`;
@@ -448,19 +456,35 @@ async function runCase(
 
         roundCount = round;
       } else if (round === 1 && openingMessage) {
-        // S2-S8 首轮：AI 已有 opening message，founder 回复它
+        // S2-S8 首轮：AI 已有 opening message，founder 回复它，AI 再跟进提问
         console.log(`    轮次 ${round}/${maxRounds}: 回复 AI 开场白...`);
 
         const founderMsg = await simulateFounderResponse(
-          profile, stage, openingMessage, [], false
+          profile, stage, openingMessage, []
         );
+
+        // 构造对话上下文并发起 AI 跟进回应
+        const round1Ctx = {
+          stage,
+          history: [
+            { role: "assistant" as const, content: openingMessage },
+            { role: "user" as const, content: founderMsg },
+          ],
+          variables: { 品牌名: profile.brandName, 品类: profile.category },
+          decisionMemoryContext: await buildMemoryContext(project.id, stage) || undefined,
+          includeSearchProtocol: [2, 3, 5, 8].includes(stage),
+          searchContext,
+        };
+
+        const aiResponse = await sendMessage(round1Ctx, founderMsg);
 
         history.push(
           { role: "assistant", content: openingMessage },
-          { role: "user", content: founderMsg }
+          { role: "user", content: founderMsg },
+          { role: "assistant", content: aiResponse }
         );
 
-        // 保存 opening + founder 回复
+        // 保存完整首轮对话
         await saveConsultationMessages(
           project.id, stage,
           history.map((m, i) => ({
@@ -477,7 +501,7 @@ async function runCase(
         console.log(`    轮次 ${round}/${maxRounds}...`);
 
         const founderMsg = await simulateFounderResponse(
-          profile, stage, lastAiMsg, history, isFinalRound
+          profile, stage, lastAiMsg, history
         );
 
         const ctx = {
@@ -485,6 +509,8 @@ async function runCase(
           history: history.map(m => ({ role: m.role as "user" | "assistant", content: m.content })),
           variables: { 品牌名: profile.brandName, 品类: profile.category },
           decisionMemoryContext: await buildMemoryContext(project.id, stage) || undefined,
+          includeSearchProtocol: [2, 3, 5, 8].includes(stage),
+          searchContext,
         };
 
         const aiResponse = await sendMessage(ctx, founderMsg);
@@ -544,6 +570,11 @@ async function runCase(
     let advanceSuccess = false;
     let advanceGate: string | undefined;
     let searchExecuted = false;
+    let auditGate = "—";
+    let auditRuleIssues = 0;
+    let auditRefIssues = 0;
+    let auditAIScore: number | undefined;
+    let auditAIGate = "—";
 
     try {
       if (convergeSuccess && stageOutput) {
@@ -559,6 +590,17 @@ async function runCase(
         advanceGate = advanceResult.gateDecision;
         searchExecuted = advanceResult.searchExecuted;
         openingMessage = advanceResult.openingMessage;
+        searchContext = advanceResult.searchContext;
+
+        // Phase 3 audit capture
+        const ar = advanceResult.auditReport;
+        if (ar) {
+          auditGate = ar.gateDecision ?? "—";
+          auditRuleIssues = ar.ruleCheck?.issues?.length ?? 0;
+          auditRefIssues = ar.referenceIssues?.length ?? 0;
+          auditAIScore = ar.aiAudit?.totalScore ?? undefined;
+          auditAIGate = ar.aiAudit?.gateRecommendation ?? "—";
+        }
 
         if (advanceSuccess) {
           const searchInfo = searchExecuted ? " 🔍" : "";
@@ -571,6 +613,7 @@ async function runCase(
         } else {
           console.log(`    ❌ Advance 被阻止 (gate: ${advanceGate})`);
         }
+        console.log(`      审计: Gate=${auditGate} | Rule=${auditRuleIssues} issue(s) | Ref=${auditRefIssues} issue(s) | AI Score=${auditAIScore ?? "N/A"} | AI Gate=${auditAIGate}`);
       } else {
         console.log(`    ⏭️ 跳过 Advance（Converge 失败）`);
       }
@@ -590,6 +633,11 @@ async function runCase(
       searchExecuted,
       openingMessage: openingMessage?.slice(0, 500),
       openingIsReportLike: detectReportStyle(openingMessage ?? ""),
+      auditGate,
+      auditRuleIssues,
+      auditRefIssues,
+      auditAIScore,
+      auditAIGate,
     });
 
     // 阶段失败不阻塞后续（下一阶段可能因依赖检查失败）
@@ -626,17 +674,20 @@ function printResults(results: CaseResult[]) {
     }
 
     console.log(`│`);
-    console.log(`│  阶段          轮次  Converge  Advance  Search  报告语体`);
-    console.log(`│  ────────────  ────  ────────  ───────  ──────  ────────`);
+    console.log(`│  阶段          轮次  Converge  Advance  Gate    Search  Audit`);
+    console.log(`│  ────────────  ────  ────────  ───────  ──────  ──────  ────────────`);
 
     for (const s of stages) {
       const convergeIcon = s.convergeSuccess ? "✅" : "❌";
       const advanceIcon = s.advanceSuccess ? "✅" : s.advanceGate === "block" ? "⛔" : "—";
       const searchIcon = s.searchExecuted ? "🔍" : "—";
-      const reportIcon = s.openingIsReportLike ? "📋" : "💬";
+      const auditInfo = s.auditGate === "advance" ? "✅通过"
+        : s.auditGate === "reoptimize" ? "⚠️优化"
+        : s.auditGate === "block" ? "⛔阻止"
+        : "—";
 
       console.log(
-        `│  S${s.stage} ${s.name.padEnd(10)}  ${String(s.rounds).padStart(3)}   ${convergeIcon}        ${advanceIcon}       ${searchIcon}      ${reportIcon}`
+        `│  S${s.stage} ${s.name.padEnd(10)}  ${String(s.rounds).padStart(3)}   ${convergeIcon}        ${advanceIcon}       ${s.advanceGate?.padEnd(5) ?? "—".padEnd(5)}  ${searchIcon}      ${auditInfo}`
       );
     }
 
@@ -644,11 +695,13 @@ function printResults(results: CaseResult[]) {
     const convergeOk = stages.filter(s => s.convergeSuccess).length;
     const advanceOk = stages.filter(s => s.advanceSuccess).length;
     const searchStages = stages.filter(s => s.searchExecuted).length;
-    const reportLike = stages.filter(s => s.openingIsReportLike).length;
+    const auditAdvance = stages.filter(s => s.auditGate === "advance").length;
+    const auditReopt = stages.filter(s => s.auditGate === "reoptimize").length;
+    const auditBlock = stages.filter(s => s.auditGate === "block").length;
 
     console.log(`│`);
     console.log(`│  📊 Converge: ${convergeOk}/${stages.length}  |  Advance: ${advanceOk}/${stages.length}`);
-    console.log(`│  📊 Search 阶段数: ${searchStages}  |  报告语体: ${reportLike}/${stages.length}`);
+    console.log(`│  📊 Search: ${searchStages}  |  Audit: ✅${auditAdvance} ⚠️${auditReopt} ⛔${auditBlock}`);
     console.log(`└${"─".repeat(77)}`);
   }
 
@@ -749,7 +802,7 @@ async function main() {
 
   console.log(`\n⚙️  每阶段最大轮数: ${MAX_ROUNDS}`);
   console.log(`⚙️  DeepSeek API Key: ${apiKey.slice(0, 8)}...`);
-  console.log(`⚙️  Brave API Key: ${process.env.BRAVE_API_KEY ? "已设置" : "未设置（搜索将降级）"}`);
+  console.log(`⚙️  博查 API Key: ${process.env.BOCHA_API_KEY ? "已设置" : "未设置（搜索将降级）"}`);
 
   // 逐案例运行
   const results: CaseResult[] = [];

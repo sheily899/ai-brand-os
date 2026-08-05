@@ -185,7 +185,7 @@ MVP 阶段新增原则：
 | 能力 | 用途 | MVP 状态 | 说明 |
 |---|---|---|---|
 | LLM API（DeepSeek） | Consultation 对话推理 + Convergence 结构化提取 + AI Quality Audit | **必须** | 核心引擎；适配器模式下可切换至 OpenAI/Anthropic |
-| 联网检索（Brave Search） | 市场数据、竞品信息、行业趋势获取（S2/S3/S5/S8） | **必须** | 免费层 2,000 次/月，MVP 测试够用 |
+| 联网检索（博查 Web Search） | 市场数据、竞品信息、行业趋势获取（S2/S3/S5/S8） | **必须** | 国内节点部署，响应快速，兼容 Bing 格式 |
 | 数据库（Supabase PostgreSQL） | Session / StageRecord / DecisionMemoryEntry / Report 持久化 | **必须** | 免费层 500MB，含 pgvector |
 | 文件存储（Supabase Storage） | 用户上传的 PDF、图片、文档 | **必须** | 免费层 50MB |
 | 向量检索（pgvector） | 知识库语义检索 | **必须** | Supabase 免费层内置 |
@@ -294,7 +294,7 @@ MVP 阶段新增原则：
                            │
 ┌──────────────────────────▼──────────────────────────────────┐
 │                     外部服务                                   │
-│  LLM API (DeepSeek) │ Search API (Brave) │ Supabase (DB/Auth) │
+│  LLM API (DeepSeek) │ Search API (博查) │ Supabase (DB/Auth) │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -1194,7 +1194,7 @@ Stage Engine.execute()
 | 文件存储 | Supabase Storage | 免费层：50MB 存储 | 用户上传的 PDF、图片、文档存储；与 Supabase Auth 集成的行级安全策略（RLS）控制文件访问权限 |
 | 认证 | Supabase Auth | 免费层：50,000 MAU | 内置邮箱/密码 + OAuth 登录；Row Level Security 直接作用在 PostgreSQL 表上，认证与授权无需独立后端服务 |
 | LLM | DeepSeek (主) / 可切换至 Claude、OpenAI 等 | DeepSeek API 按量付费，¥1-2/百万 token | DeepSeek V3 推理能力接近 Claude Sonnet 级别，API 价格仅为 Claude 的 1/50-1/70；API 格式与 OpenAI 完全兼容，通过适配器模式一天内可切换至任何 OpenAI-compatible 或 Anthropic provider；八阶段重复 system prompt 可通过 prompt caching 进一步降本 |
-| 联网搜索 | Brave Search API | 免费层：2,000 次/月查询 | 覆盖 S2/S3/S5/S8 四个阶段的联网检索需求；返回结构化搜索结果，可按 `shared-search-protocol.md` 格式重新组织展示；2,000 次/MVP 测试阶段足够 |
+| 联网搜索 | 博查 Web Search API | 国内节点，按量付费 ¥0.036/次 | 覆盖 S2/S3/S5/S8 四个阶段的联网检索需求；返回结构化搜索结果，可按 `shared-search-protocol.md` 格式重新组织展示；响应兼容 Bing 格式 |
 | PDF 生成 | @react-pdf/renderer | 开源 | 纯客户端 PDF 渲染，不消耗服务器资源；React 组件描述 PDF 布局，与报告页共享组件逻辑；输出真实 PDF（非截图），可控字体/分页/页眉页脚 |
 | 部署 | Vercel (Hobby) | 免费层：100GB 带宽、100GB-hours 函数执行 | 与 Next.js 原生 Git 集成，push 即部署；免费层对 MVP 的 10 人内测绰绰有余；后续如需扩容，一键升级至 Pro（$20/月），无架构迁移成本 |
 
@@ -1206,7 +1206,7 @@ Stage Engine.execute()
 | Supabase 数据库 | **¥0** | 500MB 数据库 + 5GB 带宽 + pgvector |
 | Supabase Auth | **¥0** | 50,000 MAU 以内免费 |
 | Supabase Storage | **¥0** | 50MB 以内免费 |
-| Brave Search API | **¥0** | 2,000 次/月，MVP 测试够用 |
+| 博查 Web Search API | **¥0** | 2,000 次/月，MVP 测试够用 |
 | LLM API (DeepSeek) | **~¥5-30/月** | 假设 50 次完整八阶段咨询/月，每次约 100K token，按 DeepSeek V3 价格 ¥2/百万 token 计算约 ¥10/月；prompt caching 可进一步降低 system prompt 重复输入成本 |
 | **合计（除 LLM 外）** | **¥0** | — |
 | **全部合计** | **~¥5-30/月** | 一杯咖啡的预算跑一个月 |
@@ -1274,7 +1274,7 @@ src/
 │   │   ├── loader.ts           # Prompt 加载 & 变量注入 & Context 拼装
 │   │   ├── consultation.ts     # Consultation 调用管理（多轮对话）
 │   │   ├── convergence.ts      # Convergence 调用管理（单次结构化提取）
-│   │   └── search.ts           # 联网检索实现（Brave Search API）
+│   │   └── search.ts           # 联网检索实现（博查 Web Search API）
 │   │
 │   ├── workflow/
 │   │   ├── workflow.ts         # Workflow Engine — 阶段状态机 & 路由
@@ -1407,7 +1407,7 @@ src/
 | **Provider** | `lib/ai/provider/` | LLM Provider 抽象（DeepSeek 主 / OpenAI + Anthropic 备），统一接口 | ❌ Prompt 内容管理 |
 | **Consultation** | `lib/ai/consultation.ts` | 多轮对话管理：发送消息、流式响应、历史上下文维护 | ❌ 结构化提取（交给 Convergence） |
 | **Convergence** | `lib/ai/convergence.ts` | 单次结构化提取调用：读取完整对话 → 输出 JSON | ❌ 多轮对话管理 |
-| **Search** | `lib/ai/search.ts` | 联网检索（Brave Search API），按搜索协议格式化结果 | ❌ 搜索结果战略判断 |
+| **Search** | `lib/ai/search.ts` | 联网检索（博查 Web Search API），按搜索协议格式化结果 | ❌ 搜索结果战略判断 |
 
 #### 审计层（Audit Layer）—— 质量保证
 
