@@ -1,0 +1,194 @@
+{
+  "experiment": "DM Layered 输出质量回归实验",
+  "timestamp": "2026-08-05T14:06:52.106Z",
+  "dataset": {
+    "totalEntries": 200,
+    "fullCount": 115,
+    "sumCount": 85,
+    "fullChars": 121004,
+    "layeredChars": 74097,
+    "compressionRate": "38.8%"
+  },
+  "results": [
+    {
+      "task": "S6",
+      "stage": 6,
+      "mode": "full",
+      "inputChars": 121004,
+      "estimatedTokens": 30251,
+      "audit": {
+        "totalScore": 77,
+        "dimensionScores": [
+          {
+            "dimension": "specificity",
+            "score": 4
+          },
+          {
+            "dimension": "differentiation",
+            "score": 4
+          },
+          {
+            "dimension": "actionability",
+            "score": 4
+          },
+          {
+            "dimension": "evidence",
+            "score": 3
+          }
+        ],
+        "gateRecommendation": "advance"
+      },
+      "outputPreview": "{\"positioning\":\"对于追求科学护肤的都市女性而言，本品牌是功能性护肤品类中能够实现'先修护再功效'的选择，因为我们从皮肤屏障修复出发建立产品体系，而非跟随成分热点。\",\"valuePropositions\":[{\"proposition\":\"科学修护皮肤屏障\",\"level\":\"functional\",\"soWhatDerivation\":\"基于S4消费者对安全有效的渴望，以及S5竞争空位（专业+温度缺失），我们提供以屏障修复为核心的功效护肤，解决消费者因成分滥用导致的皮肤问题。\"},{\"proposition\":\"重获肌肤健康自信\",\"level\":\"emotional\",\"soWhatDerivation\":\"从S4消费者对信任的渴望出发，品牌通过科学数据和真实故事建立信任，让消费者在护肤过程中感到安心和自信，不再焦虑于信息矛盾。\"},{\"proposition\":\"推动理性护肤文化\",\"level\":\"social\",\"soWhatDerivation\":\"基于S5竞争空位（行业缺乏价值观沟通），品牌倡导科学护肤、拒绝盲目追浓度，引领消费者成为理性护肤的倡导者，提升"
+    },
+    {
+      "task": "S6",
+      "stage": 6,
+      "mode": "layered",
+      "inputChars": 74097,
+      "estimatedTokens": 18524,
+      "audit": {
+        "totalScore": 77,
+        "dimensionScores": [
+          {
+            "dimension": "specificity",
+            "score": 4
+          },
+          {
+            "dimension": "differentiation",
+            "score": 4
+          },
+          {
+            "dimension": "actionability",
+            "score": 4
+          },
+          {
+            "dimension": "evidence",
+            "score": 3
+          }
+        ],
+        "gateRecommendation": "advance"
+      },
+      "outputPreview": "{\"positioning\":\"对于追求科学护肤的都市女性而言，本品牌是功能性护肤品类中能够实现'先修护再功效'的选择，因为我们从皮肤屏障修复出发建立产品体系，而非跟随成分热点。\",\"valuePropositions\":[{\"proposition\":\"科学修护皮肤屏障\",\"level\":\"functional\",\"soWhatDerivation\":\"消费者因成分浓度竞争导致皮肤屏障受损，需要科学、温和的修护方案。\"},{\"proposition\":\"重获肌肤健康自信\",\"level\":\"emotional\",\"soWhatDerivation\":\"消费者在信息过载中感到焦虑，渴望信任与安心，品牌提供可靠支持，缓解焦虑。\"},{\"proposition\":\"推动行业透明科学\",\"level\":\"social\",\"soWhatDerivation\":\"消费者希望成为理性、有知识的护肤者，品牌倡导科学护肤，提升社会认同。\"}],\"brandStory\":{\"struggleMoment\":\"消费者面对海量护肤信息，难以辨别真伪，担心产品伤害皮肤，缺乏信任。\",\"brandAction\""
+    },
+    {
+      "task": "S7",
+      "stage": 7,
+      "mode": "full",
+      "inputChars": 121004,
+      "estimatedTokens": 30251,
+      "audit": {
+        "totalScore": 78,
+        "dimensionScores": [
+          {
+            "dimension": "specificity",
+            "score": 4
+          },
+          {
+            "dimension": "differentiation",
+            "score": 4
+          },
+          {
+            "dimension": "actionability",
+            "score": 4
+          },
+          {
+            "dimension": "evidence",
+            "score": 3
+          }
+        ],
+        "gateRecommendation": "advance"
+      },
+      "outputPreview": "{\"coreConcept\":\"以科学修护为内核，以透明层次为视觉语言，传递专业与温度并存的品牌感知\",\"keywords\":[{\"keyword\":\"科学修护\",\"rationale\":\"品牌定位强调先修护再功效，视觉需体现科学严谨与修复的温和感\"},{\"keyword\":\"透明层次\",\"rationale\":\"品牌核心价值是成分透明与供应链透明，视觉需通过层次感表达信息的清晰与深度\"},{\"keyword\":\"专业温度\",\"rationale\":\"品牌人格兼具专业与亲和，视觉需平衡理性与情感，避免冷冰或过度热情\"}],\"visualSystem\":{\"form\":{\"choice\":\"简洁、圆润、有机的形态，结合几何秩序感\",\"exclusions\":\"尖锐、复杂、过度装饰的形态\",\"perceptualTone\":\"柔和、可靠、现代\"},\"color\":{\"choice\":\"以纯净白、柔和米色为主，搭配低饱和度的蓝色或绿色作为辅助色\",\"exclusions\":\"高饱和荧光色、暗沉色调\",\"perceptualTone\":\"洁净、舒缓、专业\"},\"typography\":{\"ch"
+    },
+    {
+      "task": "S7",
+      "stage": 7,
+      "mode": "layered",
+      "inputChars": 74097,
+      "estimatedTokens": 18524,
+      "audit": {
+        "totalScore": 78,
+        "dimensionScores": [
+          {
+            "dimension": "specificity",
+            "score": 4
+          },
+          {
+            "dimension": "differentiation",
+            "score": 4
+          },
+          {
+            "dimension": "actionability",
+            "score": 4
+          },
+          {
+            "dimension": "evidence",
+            "score": 3
+          }
+        ],
+        "gateRecommendation": "advance"
+      },
+      "outputPreview": "{\"coreConcept\":\"以透明层次构建科学护肤的信任感，让每一层成分与功效都清晰可见\",\"keywords\":[{\"keyword\":\"透明\",\"rationale\":\"品牌定位强调成分透明和科学沟通，透明视觉传递真实与信任\"},{\"keyword\":\"层次\",\"rationale\":\"产品体系从屏障修复到功效递进，层次感体现科学护肤的逻辑\"},{\"keyword\":\"专业\",\"rationale\":\"品牌人格中的专业性，通过精准的视觉语言和严谨的排版呈现\"},{\"keyword\":\"温度\",\"rationale\":\"消费者反馈品牌距离感强，需通过柔和色调和真实图像增加亲和力\"}],\"visualSystem\":{\"form\":{\"choice\":\"简洁、圆润、有机形态，强调柔和与包容\",\"exclusions\":\"尖锐、硬朗、几何感过强的形态\",\"perceptualTone\":\"温和、安全、可亲近\"},\"color\":{\"choice\":\"以白色、浅米色、淡绿色为主，辅以透明质感的浅蓝\",\"exclusions\":\"高饱和、荧光色、暗沉色调\",\"perceptualTone"
+    },
+    {
+      "task": "S8",
+      "stage": 8,
+      "mode": "full",
+      "inputChars": 121004,
+      "estimatedTokens": 30251,
+      "audit": {
+        "totalScore": 73,
+        "dimensionScores": [
+          {
+            "dimension": "specificity",
+            "score": 4
+          },
+          {
+            "dimension": "differentiation",
+            "score": 3
+          },
+          {
+            "dimension": "actionability",
+            "score": 4
+          },
+          {
+            "dimension": "evidence",
+            "score": 3
+          }
+        ],
+        "gateRecommendation": "advance"
+      },
+      "outputPreview": "{\"coreDirection\":\"以科学修护为基石，通过透明供应链和真实用户故事，建立专业且有温度的品牌信任。\",\"contentValueSystem\":[{\"userStage\":\"awareness\",\"userProblem\":\"面对海量护肤信息，难以辨别真伪，担心选错产品导致皮肤问题。\",\"contentValue\":\"提供科学护肤知识科普和成分解析，帮助用户建立辨别信息的能力，缓解焦虑。\"},{\"userStage\":\"interest\",\"userProblem\":\"对品牌产生好奇，但不确定产品是否适合自己，需要更多了解。\",\"contentValue\":\"展示品牌背后的故事和研发理念，通过真实用户案例和产品体验分享，激发兴趣。\"},{\"userStage\":\"trust\",\"userProblem\":\"担心产品效果和安全，需要权威背书和真实反馈。\",\"contentValue\":\"提供皮肤科医生和专业机构的认证，展示供应链透明度和质量检测报告，增强信任。\"},{\"userStage\":\"decision\",\"userProblem\":\"在多个品牌间犹豫，需要明确的选择"
+    },
+    {
+      "task": "S8",
+      "stage": 8,
+      "mode": "layered",
+      "inputChars": 74097,
+      "estimatedTokens": 18524,
+      "audit": {
+        "totalScore": 73,
+        "dimensionScores": [
+          {
+            "dimension": "specificity",
+            "score": 4
+          },
+          {
+            "dimension": "differentiation",
+            "score": 3
+          },
+          {
+            "dimension": "actionability",
+            "score": 4
+          },
+          {
+            "dimension": "evidence",
+            "score": 3
+          }
+        ],
+        "gateRecommendation": "advance"
+      },
+      "outputPreview": "{\"coreDirection\":\"以科学护肤真相和透明供应链为核心，建立专业与温度兼具的品牌信任资产\",\"contentValueSystem\":[{\"userStage\":\"awareness\",\"userProblem\":\"面对海量护肤信息，难以辨别真伪，担心被夸大宣传误导\",\"contentValue\":\"提供科学护肤知识科普和行业真相揭露，帮助用户建立辨别能力\"},{\"userStage\":\"interest\",\"userProblem\":\"对品牌好奇但不确定是否值得关注，需要更多深度信息\",\"contentValue\":\"展示品牌故事、研发理念和供应链透明化过程，激发兴趣和认同\"},{\"userStage\":\"trust\",\"userProblem\":\"担心产品效果和安全，需要权威背书和真实案例\",\"contentValue\":\"提供成分解析、临床数据、专家证言和真实用户故事，建立专业信任\"},{\"userStage\":\"decision\",\"userProblem\":\"在众多品牌中犹豫，需要明确的价值主张和购买信心\",\"contentValue\":\"提供产品对比、使用指南"
+    }
+  ]
+}

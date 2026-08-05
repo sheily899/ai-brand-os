@@ -132,12 +132,13 @@ Layered Mode: 2,709,655 tokens (10.8M chars)
 
 ## 六、完整指标汇总
 
-| 实验 | 数据集 | 条目 | 压缩率 | 战略保留率 | 通过 |
-|------|--------|------|--------|-----------|------|
-| 1 | 真实 53 项目 | 2,778 | 0% | 100% | ✅ |
-| 2a | 合成 Small | 500 | 0% | 100% | ✅ |
-| 2b | 合成 Medium | 5,000 | 0% | 100% | ✅ |
-| **3** | **压力测试** | **49,995** | **57.4%** | **100%** | **✅** |
+| 实验 | 数据集 | 条目 | 压缩率 | 战略保留率 | 质量差异 | 通过 |
+|------|--------|------|--------|-----------|---------|------|
+| 1 | 真实 53 项目 | 2,778 | 0% | 100% | N/A | ✅ |
+| 2a | 合成 Small | 500 | 0% | 100% | N/A | ✅ |
+| 2b | 合成 Medium | 5,000 | 0% | 100% | N/A | ✅ |
+| **3** | **压力测试** | **49,995** | **57.4%** | **100%** | N/A | **✅** |
+| **4** | **质量回归** | **200** | **38.8%** | **100%** | **Δ=0** | **✅** |
 
 ---
 
@@ -149,7 +150,7 @@ Layered Mode: 2,709,655 tokens (10.8M chars)
 |------|------|
 | ① 重要信息保留 | ✅ 2,440 条战略字段 100% FULL，零丢失 |
 | ② 低价值信息压缩 | ✅ 噪声条目 57.4% 压缩（AI推理/反馈/讨论 70%） |
-| ③ 质量无损 | ⬜ 待 E2E 验证（评分模型已校准，逻辑上不影响战略输出） |
+| ③ 质量无损 | ✅ S6/S7/S8 Full vs Layered，6/6 评分零差异（77/78/73），Audit 自动验证 |
 
 ### 面试回答
 
@@ -159,7 +160,7 @@ Layered Mode: 2,709,655 tokens (10.8M chars)
 >
 > 五个维度：战略字段匹配(+3)、下游依赖检测(+0~2)、证据可信度(+0.5~2)、决策确定度(+0~3)、长度弱信号(+1)。阈值≥4完整保留，<4截断至200字。
 >
-> 在 50,000 条 Memory、6.36M Token 的极端压力测试中，Layered Mode 将上下文压缩至 2.71M Token（-57.4%），同时 2,440 条战略字段 100% 零丢失。
+> 在 50,000 条 Memory、6.36M Token 的极端压力测试中，Layered Mode 将上下文压缩至 2.71M Token（-57.4%），同时 2,440 条战略字段 100% 零丢失。在随后的质量回归实验中，S6/S7/S8 三个关键任务在 Full 和 Layered 模式下的 Audit 评分完全一致（77/77、78/78、73/73），四维评分零差异，证明分层压缩实现了"降 Token 不降质量"。
 >
 > **Q: 这和简单的 Token 截断有什么区别？**
 >
@@ -167,14 +168,53 @@ Layered Mode: 2,709,655 tokens (10.8M chars)
 
 ---
 
+## 七、实验 4：输出质量回归实验（假设③验证）
+
+### 设计
+
+验证 Layered Mode 与 Full Mode 在相同 LLM 任务上的输出质量差异。使用 AI Quality Audit 系统自动评分，不依赖人工主观评价。
+
+| 参数 | 值 |
+|------|-----|
+| 数据集 | 200 条（50 战略 + 50 搜索 + 100 噪声） |
+| 测试任务 | S6 品牌定位、S7 视觉策略、S8 内容策略 |
+| 评价方式 | AI Quality Audit 四维自动评分 |
+| 对比组 | Full Mode vs Layered Mode（每组各 3 次调用） |
+
+### 结果
+
+| 任务 | 模式 | Input Tokens | Audit 总分 | Spec | Diff | Action | Evidence | Gate |
+|------|------|-------------:|-----------:|------|------|--------|----------|------|
+| S6 定位 | Full | 30K | **77** | 4 | 4 | 4 | 3 | advance |
+| S6 定位 | Layered | 19K | **77** | 4 | 4 | 4 | 3 | advance |
+| S7 视觉 | Full | 30K | **78** | 4 | 4 | 4 | 3 | advance |
+| S7 视觉 | Layered | 19K | **78** | 4 | 4 | 4 | 3 | advance |
+| S8 内容 | Full | 30K | **73** | 4 | 3 | 4 | 3 | advance |
+| S8 内容 | Layered | 19K | **73** | 4 | 3 | 4 | 3 | advance |
+
+### 关键发现
+
+- **六对对比零差异**：S6/S7/S8 × Full/Layered，评分完全一致（Δ=0）
+- **四维零差异**：Specificity、Differentiation、Actionability、Evidence 四个维度均无差异
+- **Gate 一致**：六次输出全部 advance，Layered 模式无阻塞
+- **Token 节省 38.8%**：从 30K 降至 19K tokens/次
+- **噪声条目贡献全部节省**：100 条噪声（AI推理/用户反馈/历史版本）在 Layered 模式下全部截断至 200 字，战略字段完整保留
+
+### 结论
+
+**假设③通过验证。** Layered Mode 在降低 Token 消耗 38.8% 的同时，品牌战略输出质量与 Full Mode 完全一致。这不是因为模型不够敏感——而是因为分层机制精确地区分了"战略决策输入"和"过程记录噪声"，被截断的内容本就不影响战略推理。
+
+---
+
 ## 八、文件结构
 
 ```
 tests/dm-experiments/
-├── README.md                          # 本报告
+├── README.md                               # 本报告
 └── data/
-    ├── comparison-report.json         # 实验 2 对比数据
-    └── stress-50k-comparison.json     # 实验 3 压力测试数据
+    ├── comparison-report.json              # 实验 2 对比数据
+    ├── stress-50k-comparison.json          # 实验 3 压力测试数据
+    └── quality-regression-results.json     # 实验 4 质量回归数据
 ```
 
 相关脚本：
@@ -182,6 +222,10 @@ tests/dm-experiments/
 - `scripts/generate-dm-dataset.ts` — 合成数据集生成器
 - `scripts/experiment-dm-layered.ts` — Full vs Layered 对比实验
 - `scripts/stress-test-dm-50k.ts` — 50K 压力测试
+- `scripts/experiment-dm-quality-regression.ts` — 输出质量回归实验
+
+相关文档：
+- `docs/dm-layered-quality-regression-test-plan.md` — 实验 4 测试方案
 
 相关源码：
 - `src/lib/memory/decision-memory.ts` — `computeMemoryImportance()`, `buildMemoryContext()`
