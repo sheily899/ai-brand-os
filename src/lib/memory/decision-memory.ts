@@ -13,6 +13,7 @@
 import { db, decisionMemoryEntry } from "@/lib/db";
 import { eq, and } from "drizzle-orm";
 import { generateId } from "@/lib/utils/id";
+import { getDownstreamAffected } from "./dependency-graph";
 
 // ── 类型定义 ──────────────────────────────────────────
 
@@ -139,11 +140,142 @@ export async function getEntriesByStage(
   return rows;
 }
 
-/** 构建 Decision Memory Context 文本（注入后续阶段 Prompt） */
+// ── Memory Layer Rules（机会 1：DM 双层结构）──────────────────
+
+/**
+ * 核心战略字段列表 — 命中这些 fieldPath 的条目获得 +3 战略优先级加分。
+ *
+ * 设计原则（2026-08-05 修正）：
+ * Memory 是否完整保留，不只看"真实性"（entryType + evidenceLevel），
+ * 更看"是否影响后续战略推理"。因此战略字段匹配权重最高，
+ * hypothesis + ai_inferred 不再为 0，下游强依赖自动加分。
+ *
+ * 这些字段是品牌战略的"锚点"：S6 定位推导必须引用 S4 深层需求、
+ * S5 竞争空位，S7/S8 必须追溯至 S6 战略枢纽。
+ */
+const CORE_STRATEGIC_FIELDS = [
+  // S1 创始层
+  "founderMotivation.content",
+  // S4 消费者深层需求
+  "deepNeeds.identityNeed",
+  "deepNeeds.functionalNeed",
+  // S5 竞争锚点（注意：extractor 使用 competitiveGap.marketOpportunity，dependency-graph key 为 whitespaceOpportunity）
+  "whitespaceOpportunity",
+  "competitiveGap.marketOpportunity",
+  // S6 战略枢纽
+  "positioning",
+  "brandStory.struggleMoment",
+  "brandStory.brandAction",
+  "brandStory.brandRelationship",
+  // S7 视觉核心
+  "coreConcept",
+  // S8 内容核心
+  "coreDirection",
+];
+
+/**
+ * extractor fieldPath → dependency-graph key 的别名映射。
+ *
+ * FIELD_FORWARD_DEPENDENCIES 中的 key 与 saveStageEntries 中使用的
+ * fieldPath 存在不一致（如 whitespaceOpportunity vs competitiveGap.marketOpportunity），
+ * 通过别名桥接避免下游依赖检测遗漏。
+ */
+const FIELD_PATH_ALIASES: Record<string, string> = {
+  "competitiveGap.marketOpportunity": "whitespaceOpportunity",
+};
+
+/** S6/S7/S8 — 核心战略输出阶段，被这些阶段引用的字段获得最高下游依赖加分 */
+const CORE_DOWNSTREAM_STAGES = [6, 7, 8];
+
+/** 低重要性条目在 layered 模式下的内容截断长度 */
+const SUMMARY_MAX_LENGTH = 200;
+
+/** 内容长度阈值：超过此长度仅作弱信号，不能决定战略价值 */
+const LENGTH_THRESHOLD = 300;
+
+/**
+ * 计算 Decision Memory 条目的战略重要性分数（纯确定性规则，不调用 AI）。
+ *
+ * 评分模型（2026-08-05 v2）：
+ * 战略依赖优先 > 证据质量 > 决策状态 > 内容特征
+ *
+ * 五个维度：
+ * 1. Strategic Priority — 是否命中核心战略字段？是否被 S6/S7/S8 强依赖？
+ *    CORE_STRATEGIC_FIELDS → +3，下游强依赖 → +1 额外
+ * 2. Downstream Dependency — 该字段在 FIELD_FORWARD_DEPENDENCIES 中被多少阶段引用？
+ *    无引用 0，1+ 阶段 +1，S6/S7/S8 引用 +2
+ * 3. Evidence Quality — 数据来源可信度
+ *    search_backed +2, search_snippet +1, ai_inferred +0.5
+ * 4. Decision State — 条目的决策确定程度
+ *    confirmed_decision +3, confirmed_fact +2, hypothesis +0.5, unresolved 0
+ * 5. Length Signal — 内容长度弱加分（不能决定战略价值）
+ *    >300 chars +1
+ *
+ * 阈值 ≥4 → 完整注入（FULL），<4 → 仅摘要（SUMMARY）。
+ */
+export function computeMemoryImportance(entry: {
+  entryType: string;
+  evidenceLevel?: string;
+  fieldPath?: string;
+  content?: string;
+}): number {
+  let score = 0;
+  const fp = entry.fieldPath ?? "";
+
+  // ── 1. Strategic Priority（战略字段保护，权重最高）────
+  const isStrategicField = CORE_STRATEGIC_FIELDS.some((f) => fp.includes(f));
+  if (isStrategicField) {
+    score += 3;
+    // 额外 +1：该战略字段被 S6/S7/S8 强依赖
+    const aliasKey = FIELD_PATH_ALIASES[fp] ?? fp;
+    const strategicAffected = getDownstreamAffected(aliasKey);
+    if (strategicAffected.some((s) => CORE_DOWNSTREAM_STAGES.includes(s))) {
+      score += 1;
+    }
+  }
+
+  // ── 2. Downstream Dependency（下游引用，适用所有字段）─
+  const aliasKey = FIELD_PATH_ALIASES[fp] ?? fp;
+  const downstream = getDownstreamAffected(aliasKey);
+  if (downstream.length > 0) {
+    const hasCoreRef = downstream.some((s) => CORE_DOWNSTREAM_STAGES.includes(s));
+    score += hasCoreRef ? 2 : 1;
+  }
+
+  // ── 3. Evidence Quality（来源可信度）─────────────────
+  if (entry.evidenceLevel === "search_backed") score += 2;
+  else if (entry.evidenceLevel === "search_snippet") score += 1;
+  else score += 0.5; // ai_inferred 或缺失 — 分析推理不是低价值
+
+  // ── 4. Decision State（决策确定程度）─────────────────
+  if (entry.entryType === "confirmed_decision") score += 3;
+  else if (entry.entryType === "confirmed_fact") score += 2;
+  else if (entry.entryType === "hypothesis") score += 0.5;
+  // unresolved_question: 0
+
+  // ── 5. Length Signal（弱信号，不能决定战略价值）───────
+  if (entry.content && entry.content.length > LENGTH_THRESHOLD) score += 1;
+
+  return score;
+}
+
+export interface MemoryContextOptions {
+  /** "full"（默认）= 当前行为，所有条目完整注入；"layered" = 低分截断，高分完整 */
+  mode?: "full" | "layered";
+}
+
+/**
+ * 构建 Decision Memory Context 文本（注入后续阶段 Prompt）。
+ *
+ * mode: "full" — 所有条目注入完整 content（当前默认行为）
+ * mode: "layered" — 低重要性条目截断至 SUMMARY_MAX_LENGTH，高重要性条目完整注入
+ */
 export async function buildMemoryContext(
   projectId: string,
-  targetStage: number
+  targetStage: number,
+  options: MemoryContextOptions = {}
 ): Promise<string> {
+  const mode = options.mode ?? "full";
   const all = await getEntries(projectId);
 
   // 只注入当前阶段之前的资产
@@ -155,26 +287,43 @@ export async function buildMemoryContext(
   const hypotheses = relevant.filter((e: any) => e.entryType === "hypothesis");
   const unresolved = relevant.filter((e: any) => e.entryType === "unresolved_question");
 
+  /** 根据模式决定注入 content 的格式 */
+  const formatEntry = (e: any): string => {
+    if (mode === "full") return `- [S${e.stageSource}] ${e.content}`;
+
+    // layered mode: 评分决定截断还是完整
+    const importance = computeMemoryImportance(e);
+    if (importance >= 4) {
+      return `- [S${e.stageSource}] ${e.content}`;
+    }
+    // 低重要性：截断至 SUMMARY_MAX_LENGTH
+    const truncated =
+      e.content.length > SUMMARY_MAX_LENGTH
+        ? e.content.slice(0, SUMMARY_MAX_LENGTH) + "…"
+        : e.content;
+    return `- [S${e.stageSource}] ${truncated}`;
+  };
+
   const lines: string[] = [];
 
   if (facts.length > 0) {
     lines.push("### 已确认事实");
-    facts.forEach((f: any) => lines.push(`- [S${f.stageSource}] ${f.content}`));
+    facts.forEach((f: any) => lines.push(formatEntry(f)));
   }
 
   if (decisions.length > 0) {
     lines.push("\n### 已确认决策");
-    decisions.forEach((d: any) => lines.push(`- [S${d.stageSource}] ${d.content}`));
+    decisions.forEach((d: any) => lines.push(formatEntry(d)));
   }
 
   if (hypotheses.length > 0) {
     lines.push("\n### 待验证假设");
-    hypotheses.forEach((h: any) => lines.push(`- [S${h.stageSource}] ${h.content}`));
+    hypotheses.forEach((h: any) => lines.push(formatEntry(h)));
   }
 
   if (unresolved.length > 0) {
     lines.push("\n### 未解决问题");
-    unresolved.forEach((u: any) => lines.push(`- [S${u.stageSource}] ${u.content}`));
+    unresolved.forEach((u: any) => lines.push(formatEntry(u)));
   }
 
   return lines.join("\n");

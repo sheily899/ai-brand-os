@@ -1,0 +1,5002 @@
+[
+  {
+    "id": "synth_b36nxmihmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品服务缺口相关数据和分析结论，基于1个来源交叉验证，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "competitors[3].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-27T01:34:27.334Z"
+  },
+  {
+    "id": "synth_ye1hw3x4msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "hypothesis",
+    "content": "差异化切入点相关数据和分析结论，基于2个来源交叉验证，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "opportunityDirections[2].direction",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-30T20:13:56.892Z"
+  },
+  {
+    "id": "synth_mo48wx3mmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉关键词相关数据和分析结论，基于3个来源交叉验证",
+    "fieldPath": "keywords",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-29T10:49:05.452Z"
+  },
+  {
+    "id": "synth_ppwkfossmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "情感需求未被满足相关数据和分析结论，基于4个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "experienceGaps[3].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-13T08:03:02.748Z"
+  },
+  {
+    "id": "synth_mcfewctnmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "复合增长率相关数据和分析结论，基于5个来源交叉验证，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "marketOverview.growthRate",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-05-16T06:51:32.319Z"
+  },
+  {
+    "id": "synth_s5atm0zpmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "供给端特征相关数据和分析结论，基于6个来源交叉验证。进一步的用户调研显示这一趋势具有持续性。进一步的用户调研显示这一趋势具有持续性，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "categoryStatus.currentState",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-11T12:55:26.288Z"
+  },
+  {
+    "id": "synth_vux3yvxpmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "消费趋势变化正在从高端向高端转变，消费者从关注价格转向关注体验质量，从功能性需求升级为情感性需求",
+    "fieldPath": "industryTrend.currentTrends[4].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-05-14T07:45:35.110Z"
+  },
+  {
+    "id": "synth_nhxq1vp8msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "运营效率相关数据和分析结论，基于8个来源交叉验证",
+    "fieldPath": "coreChallenges.internalChallenges[3].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-19T02:46:38.331Z"
+  },
+  {
+    "id": "synth_u4sym0swmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "市场供给缺口相关数据和分析结论，基于9个来源交叉验证",
+    "fieldPath": "competitiveGap.unmetNeeds[2].need",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-16T07:51:08.039Z"
+  },
+  {
+    "id": "synth_m2g602fumsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 8,
+    "entryType": "confirmed_decision",
+    "content": "内容支柱主题相关数据和分析结论，基于10个来源交叉验证",
+    "fieldPath": "themeDirections[0].pillar",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-30T15:53:34.969Z"
+  },
+  {
+    "id": "synth_1frli2samsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "直播带货渠道相关数据和分析结论，基于11个来源交叉验证",
+    "fieldPath": "channelAnalysis.mainChannels[3].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-03-30T08:40:56.486Z"
+  },
+  {
+    "id": "synth_bmdm6h4nmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 8,
+    "entryType": "confirmed_decision",
+    "content": "内容系列方向相关数据和分析结论，基于12个来源交叉验证",
+    "fieldPath": "themeDirections[4].pillar",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-08T05:31:12.585Z"
+  },
+  {
+    "id": "synth_n7d24c2lmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品服务缺口相关数据和分析结论，基于13个来源交叉验证，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "competitors[2].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-08-02T09:20:08.556Z"
+  },
+  {
+    "id": "synth_xjk51th4msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "品牌认知度低相关数据和分析结论，基于14个来源交叉验证，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "coreChallenges.internalChallenges[2].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-27T01:35:20.906Z"
+  },
+  {
+    "id": "synth_odvjhgh9msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "购买决策过程相关数据和分析结论，基于15个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "observations[3].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-11T07:51:46.117Z"
+  },
+  {
+    "id": "synth_o7xv3bzhmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "情感需求未被满足相关数据和分析结论，基于16个来源交叉验证",
+    "fieldPath": "experienceGaps[1].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-12T21:49:15.046Z"
+  },
+  {
+    "id": "synth_0p1k7llzmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "hypothesis",
+    "content": "市场机会方向相关数据和分析结论，基于17个来源交叉验证，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "opportunityDirections[2].direction",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-20T04:19:02.975Z"
+  },
+  {
+    "id": "synth_psvn5dfgmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "政策不确定性相关数据和分析结论，基于18个来源交叉验证",
+    "fieldPath": "coreChallenges.externalChallenges[0].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-02T02:33:21.383Z"
+  },
+  {
+    "id": "synth_a9uvl4ammsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "品牌认知度低相关数据和分析结论，基于19个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "coreChallenges.internalChallenges[3].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-27T23:19:09.183Z"
+  },
+  {
+    "id": "synth_bf82r14bmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "预算约束相关数据和分析结论，基于20个来源交叉验证",
+    "fieldPath": "constraints.budget",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-02T12:55:46.879Z"
+  },
+  {
+    "id": "synth_ky2929bzmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "核心视觉概念相关数据和分析结论，基于21个来源交叉验证",
+    "fieldPath": "coreConcept",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-13T09:30:11.424Z"
+  },
+  {
+    "id": "synth_ced9r6bwmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "竞品优势评估相关数据和分析结论，基于22个来源交叉验证。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "competitors[0].info",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-02-11T04:41:24.392Z"
+  },
+  {
+    "id": "synth_daerqimfmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "直播带货渠道相关数据和分析结论，基于23个来源交叉验证",
+    "fieldPath": "channelAnalysis.mainChannels[2].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-05-01T07:46:18.582Z"
+  },
+  {
+    "id": "synth_im2qr83wmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "目标市场容量相关数据和分析结论，基于24个来源交叉验证，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "marketOverview.marketSize",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-02-21T03:34:12.005Z"
+  },
+  {
+    "id": "synth_bzipipp1msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "消费趋势变化正在从性价比向个性化转变，消费者从关注价格转向关注体验质量，从功能性需求升级为情感性需求",
+    "fieldPath": "industryTrend.currentTrends[4].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-22T07:28:11.576Z"
+  },
+  {
+    "id": "synth_j5wenei7msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "服务流程断点相关数据和分析结论，基于26个来源交叉验证",
+    "fieldPath": "experienceGaps[4].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-31T05:04:43.866Z"
+  },
+  {
+    "id": "synth_tkjrehb8msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "资金限制相关数据和分析结论，基于27个来源交叉验证",
+    "fieldPath": "coreChallenges.internalChallenges[4].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-07T04:17:43.371Z"
+  },
+  {
+    "id": "synth_lwyzuawumsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "人口结构变化相关数据和分析结论，基于28个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[4].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-16T04:09:39.397Z"
+  },
+  {
+    "id": "synth_fwab4uvjmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "使用习惯洞察相关数据和分析结论，基于29个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "observations[3].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-23T17:54:50.009Z"
+  },
+  {
+    "id": "synth_p7s9gkjsmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "创业初心相关数据和分析结论，基于30个来源交叉验证，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "founderMotivation.content",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-13T12:50:22.877Z"
+  },
+  {
+    "id": "synth_8y1y2sx7msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "行业观察相关数据和分析结论，基于31个来源交叉验证。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "founderMotivation.content",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-30T09:04:54.336Z"
+  },
+  {
+    "id": "synth_isv9fq0qmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "供应链风险相关数据和分析结论，基于32个来源交叉验证，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "coreChallenges.externalChallenges[3].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-25T12:26:52.140Z"
+  },
+  {
+    "id": "synth_ue9czanfmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "品类现状相关数据和分析结论，基于33个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "categoryStatus.currentState",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-13T18:11:53.740Z"
+  },
+  {
+    "id": "synth_f7nknxz7msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "政策监管影响相关数据和分析结论，基于34个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "businessBackground.drivingForces[1].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-14T22:21:24.760Z"
+  },
+  {
+    "id": "synth_pq614jjtmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "情感价值主张相关数据和分析结论，基于35个来源交叉验证",
+    "fieldPath": "valuePropositions[3].vp",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-17T22:57:31.980Z"
+  },
+  {
+    "id": "synth_u6joawihmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "在用户行为观察方面，用户实际行为与自我报告的偏好存在差距，具体表现为体验和效率之间的不一致。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "observations[3].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-25T01:04:15.647Z"
+  },
+  {
+    "id": "synth_a5h8ygp6msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "消费趋势变化正在从差异化向审美转变，消费者从关注价格转向关注体验质量，从功能性需求升级为情感性需求",
+    "fieldPath": "industryTrend.currentTrends[1].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-02-11T06:07:16.839Z"
+  },
+  {
+    "id": "synth_1vfdq6u9msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "服务缺陷相关数据和分析结论，基于38个来源交叉验证",
+    "fieldPath": "confirmedProblems[1].problem",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-12T07:05:24.292Z"
+  },
+  {
+    "id": "synth_28l5dd5vmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "渠道变革相关数据和分析结论，基于39个来源交叉验证，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "industryTrend.currentTrends[2].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-02-22T15:05:24.109Z"
+  },
+  {
+    "id": "synth_3h6srxk2msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "行业弊端相关数据和分析结论，基于40个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "confirmedProblems[2].problem",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-23T00:37:10.562Z"
+  },
+  {
+    "id": "synth_haikz21umsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费者在用户行为观察时表现出明显的体验倾向，与行业常见的便捷假设形成反差，这表明用户真正的需求可能是体验而非健康。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "observations[0].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-25T21:11:46.588Z"
+  },
+  {
+    "id": "synth_vu4p6zoumsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "市场切入假设相关数据和分析结论，基于42个来源交叉验证。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "strategicDirection.directionHypothesis",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-03T17:56:16.637Z"
+  },
+  {
+    "id": "synth_8z7b2zwdmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "为品牌定位声明提供健康解决方案，通过差异化方式实现健康价值，让用户在差异化场景下获得信任体验，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "positioning",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-19T01:27:05.480Z"
+  },
+  {
+    "id": "synth_35nbkniemsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "品牌认知度低相关数据和分析结论，基于44个来源交叉验证",
+    "fieldPath": "coreChallenges.internalChallenges[1].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-08T08:46:53.786Z"
+  },
+  {
+    "id": "synth_lie33hykmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "品类现状相关数据和分析结论，基于45个来源交叉验证，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "categoryStatus.currentState",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-30T11:03:30.337Z"
+  },
+  {
+    "id": "synth_hmjen15emsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "在当前竞争格局中，心智空位判断维度存在明显的用户期待与实际供给之间的落差，消费者渴望审美但市场上无人提供，这构成了品牌可以占据的心智空位。进一步的用户调研显示这一趋势具有持续性。进一步的用户调研显示这一趋势具有持续性。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "competitiveGap.marketOpportunity",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-14T15:17:29.095Z"
+  },
+  {
+    "id": "synth_qdalodgemsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "产品功能缺失相关数据和分析结论，基于47个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "experienceGaps[1].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-17T04:51:44.623Z"
+  },
+  {
+    "id": "synth_14cveivvmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 8,
+    "entryType": "confirmed_decision",
+    "content": "内容策略主线相关数据和分析结论，基于48个来源交叉验证",
+    "fieldPath": "coreDirection",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-28T05:46:32.714Z"
+  },
+  {
+    "id": "synth_ru0s18c2msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "竞争趋同分析相关数据和分析结论，基于49个来源交叉验证。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "competitiveLandscape.convergenceAndDivergence",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-13T22:53:56.838Z"
+  },
+  {
+    "id": "synth_a1yspi2amsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "复合增长率相关数据和分析结论，基于50个来源交叉验证，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "marketOverview.growthRate",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-03-10T02:41:09.767Z"
+  },
+  {
+    "id": "synth_aib26l7mmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "产品功能缺失相关数据和分析结论，基于51个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "experienceGaps[2].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-19T02:24:17.670Z"
+  },
+  {
+    "id": "synth_bcnu0grmmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "在当前竞争格局中，心智空位判断维度存在明显的用户期待与实际供给之间的落差，消费者渴望创新但市场上无人提供，这构成了品牌可以占据的心智空位，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "competitiveGap.marketOpportunity",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-18T21:04:08.409Z"
+  },
+  {
+    "id": "synth_tmztvvdxmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "品牌的选择与承诺相关数据和分析结论，基于53个来源交叉验证，预计未来12个月内该趋势将进一步强化，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "brandStory.brandAction",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-23T04:58:27.571Z"
+  },
+  {
+    "id": "synth_r415jw7dmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "服务缺陷相关数据和分析结论，基于54个来源交叉验证",
+    "fieldPath": "confirmedProblems[0].problem",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-02T04:05:00.109Z"
+  },
+  {
+    "id": "synth_at1dpiw6msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 8,
+    "entryType": "confirmed_decision",
+    "content": "内容核心方向相关数据和分析结论，基于55个来源交叉验证",
+    "fieldPath": "coreDirection",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-16T09:51:46.045Z"
+  },
+  {
+    "id": "synth_dmj7gmhmmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "消费者期望与现实的差距相关数据和分析结论，基于56个来源交叉验证",
+    "fieldPath": "competitiveGap.unmetNeeds[0].need",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-08T00:31:08.292Z"
+  },
+  {
+    "id": "synth_ypk45v0emsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "confirmed_fact",
+    "content": "功能性深层需求相关数据和分析结论，基于57个来源交叉验证，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "deepNeeds.functionalNeed",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-22T12:02:06.462Z"
+  },
+  {
+    "id": "synth_6xrp155dmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "市场窗口期相关数据和分析结论，基于58个来源交叉验证，预计未来12个月内该趋势将进一步强化，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "businessBackground.strategicWindow",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-12T19:11:13.258Z"
+  },
+  {
+    "id": "synth_cqmsa1vtmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "使用习惯洞察相关数据和分析结论，基于59个来源交叉验证，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "observations[4].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-30T20:05:50.169Z"
+  },
+  {
+    "id": "synth_lkj8rfoumsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品覆盖不到的细分相关数据和分析结论，基于60个来源交叉验证，预计未来12个月内该趋势将进一步强化，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "competitors[4].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-27T15:04:37.350Z"
+  },
+  {
+    "id": "synth_y8o2vqunmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "线上电商渠道相关数据和分析结论，基于61个来源交叉验证",
+    "fieldPath": "channelAnalysis.mainChannels[3].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-04-18T04:50:11.886Z"
+  },
+  {
+    "id": "synth_5ybgnfsrmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "资金限制相关数据和分析结论，基于62个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "coreChallenges.internalChallenges[3].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-17T22:56:03.586Z"
+  },
+  {
+    "id": "synth_syck551xmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "资源分配优先级相关数据和分析结论，基于63个来源交叉验证",
+    "fieldPath": "strategicDirection.workingPriorities[0].priority",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-16T16:15:59.407Z"
+  },
+  {
+    "id": "synth_7wniyuynmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "情感需求未被满足相关数据和分析结论，基于64个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "experienceGaps[4].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-11T18:15:17.780Z"
+  },
+  {
+    "id": "synth_wgxdeo3dmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "直播带货渠道相关数据和分析结论，基于65个来源交叉验证",
+    "fieldPath": "channelAnalysis.mainChannels[1].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-03-08T18:18:51.305Z"
+  },
+  {
+    "id": "synth_lyimmk5omsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品产品缺陷相关数据和分析结论，基于66个来源交叉验证，与竞品在该维度的表现形成显著差异，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "competitors[1].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-06T19:15:52.779Z"
+  },
+  {
+    "id": "synth_alyjvfyjmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "消费趋势变化正在从专业向体验转变，消费者从关注价格转向关注体验质量，从功能性需求升级为情感性需求",
+    "fieldPath": "industryTrend.currentTrends[2].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-03-14T04:23:05.985Z"
+  },
+  {
+    "id": "synth_itdux3tkmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "政策不确定性相关数据和分析结论，基于68个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "coreChallenges.externalChallenges[1].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-02T13:45:36.102Z"
+  },
+  {
+    "id": "synth_2qhr7jmsmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 8,
+    "entryType": "confirmed_decision",
+    "content": "内容系列方向相关数据和分析结论，基于69个来源交叉验证",
+    "fieldPath": "themeDirections[4].pillar",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-18T14:37:40.992Z"
+  },
+  {
+    "id": "synth_lj7ub5mkmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "社会文化趋势相关数据和分析结论，基于70个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[1].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-21T19:44:12.575Z"
+  },
+  {
+    "id": "synth_2tphhha6msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "品牌人格特质组合相关数据和分析结论，基于71个来源交叉验证",
+    "fieldPath": "brandPersonality",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-04T04:59:51.176Z"
+  },
+  {
+    "id": "synth_iy0f03hemsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "技术变革推动相关数据和分析结论，基于72个来源交叉验证，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "businessBackground.drivingForces[3].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-11T11:33:39.389Z"
+  },
+  {
+    "id": "synth_uelm9s7rmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "理想自我投射相关数据和分析结论，基于73个来源交叉验证，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "targetConsumer.idealSelfReflection",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-07T04:27:37.721Z"
+  },
+  {
+    "id": "synth_1lztpsaxmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "服务流程断点相关数据和分析结论，基于74个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "experienceGaps[4].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-13T12:15:31.663Z"
+  },
+  {
+    "id": "synth_6kjeitrmmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "资源分配优先级相关数据和分析结论，基于75个来源交叉验证",
+    "fieldPath": "strategicDirection.workingPriorities[0].priority",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-22T23:21:37.136Z"
+  },
+  {
+    "id": "synth_hmk281urmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "消费升级驱动相关数据和分析结论，基于76个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "businessBackground.drivingForces[3].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-12T11:30:18.463Z"
+  },
+  {
+    "id": "synth_cz93728tmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "品牌差异化切入机会相关数据和分析结论，基于77个来源交叉验证。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值。这一发现对品牌战略方向选择具有关键参考价值。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "competitiveGap.marketOpportunity",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-08T13:49:12.414Z"
+  },
+  {
+    "id": "synth_uvibndlsmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "竞品定价策略相关数据和分析结论，基于78个来源交叉验证，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "competitors[1].info",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-15T12:42:18.341Z"
+  },
+  {
+    "id": "synth_twnu7c02msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "为品牌定位声明提供审美解决方案，通过个性化方式实现便捷价值，让用户在健康场景下获得创新体验。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "positioning",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-12T02:24:05.895Z"
+  },
+  {
+    "id": "synth_125877k1msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "情感需求未被满足相关数据和分析结论，基于80个来源交叉验证",
+    "fieldPath": "experienceGaps[2].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-23T01:43:46.114Z"
+  },
+  {
+    "id": "synth_sv277pv2msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "市场供给缺口相关数据和分析结论，基于81个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "competitiveGap.unmetNeeds[1].need",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-07T08:08:30.180Z"
+  },
+  {
+    "id": "synth_ozd5evabmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "目标人群+品类+价值+理由相关数据和分析结论，基于82个来源交叉验证。进一步的用户调研显示这一趋势具有持续性，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "positioning",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-08T18:38:22.404Z"
+  },
+  {
+    "id": "synth_jc3o7iizmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "用户痛点发现相关数据和分析结论，基于83个来源交叉验证，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "observations[4].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-30T21:15:40.944Z"
+  },
+  {
+    "id": "synth_li1ghlwgmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "社区团购渠道相关数据和分析结论，基于84个来源交叉验证",
+    "fieldPath": "channelAnalysis.mainChannels[4].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-05-08T09:31:03.872Z"
+  },
+  {
+    "id": "synth_v76e42nemsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "购买决策过程相关数据和分析结论，基于85个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "observations[4].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-10T09:12:10.289Z"
+  },
+  {
+    "id": "synth_rp6eqfc4msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "外部竞争压力相关数据和分析结论，基于86个来源交叉验证",
+    "fieldPath": "coreChallenges.externalChallenges[0].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-21T15:52:00.032Z"
+  },
+  {
+    "id": "synth_ahe8fcr2msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "竞品优势评估相关数据和分析结论，基于87个来源交叉验证。进一步的用户调研显示这一趋势具有持续性，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "competitors[3].info",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-03-25T15:20:06.388Z"
+  },
+  {
+    "id": "synth_p7ne68n9msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "行业弊端相关数据和分析结论，基于88个来源交叉验证",
+    "fieldPath": "confirmedProblems[4].problem",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-30T06:40:36.896Z"
+  },
+  {
+    "id": "synth_3plkli5lmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品服务缺口相关数据和分析结论，基于89个来源交叉验证，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "competitors[4].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-11T08:05:32.206Z"
+  },
+  {
+    "id": "synth_k3wmgnrsmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "产品差异化不足相关数据和分析结论，基于90个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "coreChallenges.internalChallenges[4].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-19T12:47:28.332Z"
+  },
+  {
+    "id": "synth_cwmrvgfamsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品体验盲区相关数据和分析结论，基于91个来源交叉验证。进一步的用户调研显示这一趋势具有持续性，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "competitors[0].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-28T16:11:40.159Z"
+  },
+  {
+    "id": "synth_ycbkw606msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉关键词相关数据和分析结论，基于92个来源交叉验证",
+    "fieldPath": "keywords",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-23T21:21:36.558Z"
+  },
+  {
+    "id": "synth_o9zuev99msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "用户体验缺口相关数据和分析结论，基于93个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "experienceGaps[4].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-23T22:56:56.658Z"
+  },
+  {
+    "id": "synth_qpkd8d56msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "用户体验升级相关数据和分析结论，基于94个来源交叉验证，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "industryTrend.currentTrends[0].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-03-21T17:14:47.102Z"
+  },
+  {
+    "id": "synth_zy61tcuhmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "产品差异化不足相关数据和分析结论，基于95个来源交叉验证，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "coreChallenges.internalChallenges[1].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-07T04:38:18.180Z"
+  },
+  {
+    "id": "synth_ned176ommsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "能力建设顺序相关数据和分析结论，基于96个来源交叉验证",
+    "fieldPath": "strategicDirection.workingPriorities[3].priority",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-13T21:32:16.927Z"
+  },
+  {
+    "id": "synth_rl0efidzmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉关键词相关数据和分析结论，基于97个来源交叉验证",
+    "fieldPath": "keywords",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-25T09:27:11.682Z"
+  },
+  {
+    "id": "synth_pknzasa8msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "服务缺陷相关数据和分析结论，基于98个来源交叉验证",
+    "fieldPath": "confirmedProblems[3].problem",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-15T07:05:01.791Z"
+  },
+  {
+    "id": "synth_jx7d7oq7msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "市场供给缺口相关数据和分析结论，基于99个来源交叉验证",
+    "fieldPath": "competitiveGap.unmetNeeds[4].need",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-12T15:02:52.538Z"
+  },
+  {
+    "id": "synth_a3cl90ngmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "产品差异化不足相关数据和分析结论，基于100个来源交叉验证，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "coreChallenges.internalChallenges[4].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-20T00:24:25.085Z"
+  },
+  {
+    "id": "synth_rkme9go9msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "消费升级驱动相关数据和分析结论，基于101个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[3].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-06T11:39:29.295Z"
+  },
+  {
+    "id": "synth_jxj6ck1zmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "市场切入假设相关数据和分析结论，基于102个来源交叉验证，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性，与竞品在该维度的表现形成显著差异，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "strategicDirection.directionHypothesis",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-17T16:31:35.623Z"
+  },
+  {
+    "id": "synth_i5ljrfllmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "用户痛点发现相关数据和分析结论，基于103个来源交叉验证。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "observations[0].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-24T10:27:29.154Z"
+  },
+  {
+    "id": "synth_kp2qknbvmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "能力建设顺序相关数据和分析结论，基于104个来源交叉验证",
+    "fieldPath": "strategicDirection.workingPriorities[1].priority",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-22T23:53:22.793Z"
+  },
+  {
+    "id": "synth_ddpbg94amsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "产品问题相关数据和分析结论，基于105个来源交叉验证",
+    "fieldPath": "confirmedProblems[4].problem",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-29T10:35:25.492Z"
+  },
+  {
+    "id": "synth_g6tfw8gfmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "市场环境分析相关数据和分析结论，基于106个来源交叉验证，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "businessBackground.marketContext",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-11T02:29:51.394Z"
+  },
+  {
+    "id": "synth_y5qzzgc5msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "可持续消费相关数据和分析结论，基于107个来源交叉验证",
+    "fieldPath": "industryTrend.currentTrends[0].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-04-11T08:59:00.858Z"
+  },
+  {
+    "id": "synth_9j2uh4mbmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "用户痛点发现相关数据和分析结论，基于108个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "observations[3].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-13T19:08:07.233Z"
+  },
+  {
+    "id": "synth_i9t6v1zemsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "品牌认知度低相关数据和分析结论，基于109个来源交叉验证",
+    "fieldPath": "coreChallenges.internalChallenges[3].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-10T22:31:36.969Z"
+  },
+  {
+    "id": "synth_v1rg0scvmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "竞品用户口碑相关数据和分析结论，基于110个来源交叉验证",
+    "fieldPath": "competitors[3].info",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-04-10T20:52:13.002Z"
+  },
+  {
+    "id": "synth_yyboegu0msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "行业观察相关数据和分析结论，基于111个来源交叉验证，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "founderMotivation.content",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-02T06:05:53.399Z"
+  },
+  {
+    "id": "synth_4z7jfe8amsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "hypothesis",
+    "content": "未被满足的需求场景相关数据和分析结论，基于112个来源交叉验证",
+    "fieldPath": "opportunityDirections[3].direction",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-04T01:02:02.622Z"
+  },
+  {
+    "id": "synth_csd5oratmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品服务缺口相关数据和分析结论，基于113个来源交叉验证，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "competitors[0].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-23T15:00:29.587Z"
+  },
+  {
+    "id": "synth_nwkseosgmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "个性化定制相关数据和分析结论，基于114个来源交叉验证",
+    "fieldPath": "industryTrend.currentTrends[0].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-06-09T16:03:56.132Z"
+  },
+  {
+    "id": "synth_7lv9ymnumsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "差异化方向推测相关数据和分析结论，基于115个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "strategicDirection.directionHypothesis",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-30T08:00:59.479Z"
+  },
+  {
+    "id": "synth_5lquuin0msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "在用户行为观察方面，用户实际行为与自我报告的偏好存在差距，具体表现为价值和价值之间的不一致。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "observations[0].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-17T01:15:59.607Z"
+  },
+  {
+    "id": "synth_uzgw2b0omsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "渠道变革相关数据和分析结论，基于117个来源交叉验证",
+    "fieldPath": "industryTrend.currentTrends[0].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-05-30T07:18:55.337Z"
+  },
+  {
+    "id": "synth_zwsvf63bmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "在当前竞争格局中，心智空位判断维度存在明显的用户期待与实际供给之间的落差，消费者渴望体验但市场上无人提供，这构成了品牌可以占据的心智空位。这一发现对品牌战略方向选择具有关键参考价值。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "competitiveGap.marketOpportunity",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-19T18:37:57.861Z"
+  },
+  {
+    "id": "synth_vk4xwqvrmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "情感价值主张相关数据和分析结论，基于119个来源交叉验证",
+    "fieldPath": "valuePropositions[3].vp",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-18T07:04:41.346Z"
+  },
+  {
+    "id": "synth_r232ps9omsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_fact",
+    "content": "品牌起源的冲突相关数据和分析结论，基于120个来源交叉验证。进一步的用户调研显示这一趋势具有持续性。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "brandStory.struggleMoment",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-02T10:01:08.691Z"
+  },
+  {
+    "id": "synth_9vk4s5szmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "线上电商渠道相关数据和分析结论，基于121个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "channelAnalysis.mainChannels[4].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-02-13T04:57:45.034Z"
+  },
+  {
+    "id": "synth_lufw0gytmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "资金限制相关数据和分析结论，基于122个来源交叉验证",
+    "fieldPath": "coreChallenges.internalChallenges[3].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-21T20:14:23.166Z"
+  },
+  {
+    "id": "synth_qgosrelvmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "竞品定价调整相关数据和分析结论，基于123个来源交叉验证，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "competitorUpdate.newMove[2].action",
+    "evidenceLevel": "search_snippet",
+    "confirmedAt": "2026-07-21T00:45:18.914Z"
+  },
+  {
+    "id": "synth_0pfwpd6fmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "私域运营渠道相关数据和分析结论，基于124个来源交叉验证",
+    "fieldPath": "channelAnalysis.mainChannels[3].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-19T07:16:40.744Z"
+  },
+  {
+    "id": "synth_nmcq9eh1msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "情感价值主张相关数据和分析结论，基于125个来源交叉验证",
+    "fieldPath": "valuePropositions[1].vp",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-26T10:14:08.218Z"
+  },
+  {
+    "id": "synth_xanay47ymsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "服务缺陷相关数据和分析结论，基于126个来源交叉验证",
+    "fieldPath": "confirmedProblems[4].problem",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-14T13:02:05.948Z"
+  },
+  {
+    "id": "synth_4z4eg61xmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品体验盲区相关数据和分析结论，基于127个来源交叉验证，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "competitors[4].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-24T13:13:25.976Z"
+  },
+  {
+    "id": "synth_isvnk3hymsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "人口结构变化相关数据和分析结论，基于128个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[0].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-23T13:26:49.275Z"
+  },
+  {
+    "id": "synth_9f7b5zbkmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "政策监管影响相关数据和分析结论，基于129个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[4].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-27T11:09:27.370Z"
+  },
+  {
+    "id": "synth_g9l7vn7rmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "服务流程断点相关数据和分析结论，基于130个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "experienceGaps[1].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-18T02:02:54.240Z"
+  },
+  {
+    "id": "synth_cef25c66msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "体验痛点相关数据和分析结论，基于131个来源交叉验证",
+    "fieldPath": "confirmedProblems[2].problem",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-14T04:29:06.903Z"
+  },
+  {
+    "id": "synth_mivgruo7msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "竞品优势评估相关数据和分析结论，基于132个来源交叉验证",
+    "fieldPath": "competitors[2].info",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-08-01T02:58:30.890Z"
+  },
+  {
+    "id": "synth_lvvrt3vmmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "人口结构变化相关数据和分析结论，基于133个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[0].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-22T11:59:49.631Z"
+  },
+  {
+    "id": "synth_3ew34munmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "技术应用趋势相关数据和分析结论，基于134个来源交叉验证，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "industryTrend.currentTrends[0].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-02-06T17:02:52.108Z"
+  },
+  {
+    "id": "synth_qq52s9whmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "跨品类消费者相关数据和分析结论，基于135个来源交叉验证。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "audienceSegment.secondarySegment[3].insight",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-23T20:52:34.306Z"
+  },
+  {
+    "id": "synth_k2tbh4j5msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "品类边界定义相关数据和分析结论，基于136个来源交叉验证，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "categoryStatus.definition",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-22T16:54:11.736Z"
+  },
+  {
+    "id": "synth_0onm0od4msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "产品问题相关数据和分析结论，基于137个来源交叉验证",
+    "fieldPath": "confirmedProblems[4].problem",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-07T06:40:56.570Z"
+  },
+  {
+    "id": "synth_7gyrghnxmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "服务缺陷相关数据和分析结论，基于138个来源交叉验证",
+    "fieldPath": "confirmedProblems[4].problem",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-27T13:45:54.260Z"
+  },
+  {
+    "id": "synth_ypvon49qmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "行业观察相关数据和分析结论，基于139个来源交叉验证，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性，与竞品在该维度的表现形成显著差异，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "founderMotivation.content",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-06T01:30:52.991Z"
+  },
+  {
+    "id": "synth_se2eofhamsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "转型期相关数据和分析结论，基于140个来源交叉验证",
+    "fieldPath": "marketOverview.marketStage",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-19T18:24:49.253Z"
+  },
+  {
+    "id": "synth_q9yrcdqqmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "团队能力缺口相关数据和分析结论，基于141个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "coreChallenges.internalChallenges[3].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-23T23:30:42.469Z"
+  },
+  {
+    "id": "synth_efxvzd07msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "创业初心相关数据和分析结论，基于142个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "founderMotivation.content",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-18T02:06:42.862Z"
+  },
+  {
+    "id": "synth_ejtz8jo1msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "需求端特征相关数据和分析结论，基于143个来源交叉验证，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "categoryStatus.currentState",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-16T16:29:27.081Z"
+  },
+  {
+    "id": "synth_oihlhu5hmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉关键词相关数据和分析结论，基于144个来源交叉验证",
+    "fieldPath": "keywords",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-17T09:23:09.295Z"
+  },
+  {
+    "id": "synth_f22idxkpmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "品类边界定义相关数据和分析结论，基于145个来源交叉验证，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "categoryStatus.definition",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-28T21:28:38.814Z"
+  },
+  {
+    "id": "synth_yw93zm6kmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "差异化方向相关数据和分析结论，基于146个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "competitiveLandscape.convergenceAndDivergence",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-03-15T07:23:59.289Z"
+  },
+  {
+    "id": "synth_l82mfkynmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "品类范围界定相关数据和分析结论，基于147个来源交叉验证，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "categoryStatus.definition",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-29T04:21:09.125Z"
+  },
+  {
+    "id": "synth_b1e8m1momsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "市场规模数据相关数据和分析结论，基于148个来源交叉验证。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "marketOverview.marketSize",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-03-01T02:49:17.760Z"
+  },
+  {
+    "id": "synth_0seh46v5msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "品牌差异化切入机会相关数据和分析结论，基于149个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性，与竞品在该维度的表现形成显著差异，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "competitiveGap.marketOpportunity",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-06T18:24:19.933Z"
+  },
+  {
+    "id": "synth_fc6hw96wmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "个性化定制相关数据和分析结论，基于150个来源交叉验证",
+    "fieldPath": "industryTrend.currentTrends[2].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-02-08T01:51:16.391Z"
+  },
+  {
+    "id": "synth_5lbr2eajmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "消费升级驱动相关数据和分析结论，基于151个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[4].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-06T23:24:49.386Z"
+  },
+  {
+    "id": "synth_59fullxymsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "社交媒体渠道相关数据和分析结论，基于152个来源交叉验证",
+    "fieldPath": "channelAnalysis.mainChannels[1].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-04-12T22:02:22.755Z"
+  },
+  {
+    "id": "synth_7tcveetsmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "政策不确定性相关数据和分析结论，基于153个来源交叉验证",
+    "fieldPath": "coreChallenges.externalChallenges[3].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-24T07:07:06.613Z"
+  },
+  {
+    "id": "synth_wxklq3z8msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品产品缺陷相关数据和分析结论，基于154个来源交叉验证。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "competitors[2].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-25T16:35:00.742Z"
+  },
+  {
+    "id": "synth_yh0zbv2lmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "直播带货渠道相关数据和分析结论，基于155个来源交叉验证",
+    "fieldPath": "channelAnalysis.mainChannels[2].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-04-01T20:46:24.352Z"
+  },
+  {
+    "id": "synth_e1s7a059msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "竞品渠道扩张相关数据和分析结论，基于156个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "competitorUpdate.newMove[0].action",
+    "evidenceLevel": "search_snippet",
+    "confirmedAt": "2026-03-25T00:01:21.124Z"
+  },
+  {
+    "id": "synth_09jcmmaamsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "未被竞品满足的需求相关数据和分析结论，基于157个来源交叉验证",
+    "fieldPath": "competitiveGap.unmetNeeds[1].need",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-07T04:56:50.294Z"
+  },
+  {
+    "id": "synth_3js082owmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "最新行业报告数据相关数据和分析结论，基于158个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "marketUpdate.quarterlyGrowth[1].data",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-16T05:48:03.499Z"
+  },
+  {
+    "id": "synth_fmqrxv52msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "行业同质化程度相关数据和分析结论，基于159个来源交叉验证，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "competitiveLandscape.convergenceAndDivergence",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-08-02T12:52:39.164Z"
+  },
+  {
+    "id": "synth_y75vt9w1msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "行业弊端相关数据和分析结论，基于160个来源交叉验证",
+    "fieldPath": "confirmedProblems[1].problem",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-07T09:49:31.744Z"
+  },
+  {
+    "id": "synth_egn450xnmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品服务缺口相关数据和分析结论，基于161个来源交叉验证。进一步的用户调研显示这一趋势具有持续性。进一步的用户调研显示这一趋势具有持续性，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "competitors[4].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-04T19:30:59.971Z"
+  },
+  {
+    "id": "synth_hfezu8cgmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉关键词相关数据和分析结论，基于162个来源交叉验证",
+    "fieldPath": "keywords",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-08T18:11:30.955Z"
+  },
+  {
+    "id": "synth_30a1odmlmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "人口结构变化相关数据和分析结论，基于163个来源交叉验证，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "businessBackground.drivingForces[4].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-04T05:21:24.308Z"
+  },
+  {
+    "id": "synth_2cvb14zhmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "政策监管影响相关数据和分析结论，基于164个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "businessBackground.drivingForces[4].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-01T09:23:42.176Z"
+  },
+  {
+    "id": "synth_tecgflsamsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 8,
+    "entryType": "confirmed_decision",
+    "content": "内容系列方向相关数据和分析结论，基于165个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "themeDirections[1].pillar",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-21T09:48:11.208Z"
+  },
+  {
+    "id": "synth_bdtubt9lmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "市场规模数据相关数据和分析结论，基于166个来源交叉验证。进一步的用户调研显示这一趋势具有持续性。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "marketOverview.marketSize",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-02T16:44:20.788Z"
+  },
+  {
+    "id": "synth_8wk08qtmmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "成熟期相关数据和分析结论，基于167个来源交叉验证",
+    "fieldPath": "marketOverview.marketStage",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-03-04T17:10:54.082Z"
+  },
+  {
+    "id": "synth_uhzg8rbrmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "个性化定制相关数据和分析结论，基于168个来源交叉验证",
+    "fieldPath": "industryTrend.currentTrends[0].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-03-31T19:59:32.741Z"
+  },
+  {
+    "id": "synth_18kn8vohmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品服务缺口相关数据和分析结论，基于169个来源交叉验证。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "competitors[4].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-29T21:49:05.517Z"
+  },
+  {
+    "id": "synth_4u14kq6dmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "品牌差异化切入机会相关数据和分析结论，基于170个来源交叉验证，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性，与竞品在该维度的表现形成显著差异，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "competitiveGap.marketOpportunity",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-10T17:14:52.957Z"
+  },
+  {
+    "id": "synth_5b2ying1msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费者在用户行为观察时表现出明显的创新倾向，与行业常见的信任假设形成反差，这表明用户真正的需求可能是性价比而非可持续，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "observations[0].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-01T18:37:06.936Z"
+  },
+  {
+    "id": "synth_oud5796mmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费场景记录相关数据和分析结论，基于172个来源交叉验证。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "observations[2].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-31T21:21:00.702Z"
+  },
+  {
+    "id": "synth_38ku5le1msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉关键词相关数据和分析结论，基于173个来源交叉验证",
+    "fieldPath": "keywords",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-12T16:10:54.843Z"
+  },
+  {
+    "id": "synth_czpgdjtmmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "confirmed_fact",
+    "content": "竞品的核心缺陷相关数据和分析结论，基于174个来源交叉验证，与竞品在该维度的表现形成显著差异，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "existingSolutions[3].failReason",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-30T19:53:30.863Z"
+  },
+  {
+    "id": "synth_dfo6u0mgmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "竞品用户口碑相关数据和分析结论，基于175个来源交叉验证",
+    "fieldPath": "competitors[2].info",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-05-30T07:01:32.551Z"
+  },
+  {
+    "id": "synth_i75a4u0kmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "confirmed_fact",
+    "content": "替代方案的局限性相关数据和分析结论，基于176个来源交叉验证。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "existingSolutions[4].failReason",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-25T21:07:11.853Z"
+  },
+  {
+    "id": "synth_aq6xrldgmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "优先验证方向相关数据和分析结论，基于177个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "strategicDirection.workingPriorities[1].priority",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-23T14:12:36.711Z"
+  },
+  {
+    "id": "synth_4s9h76znmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "市场窗口期相关数据和分析结论，基于178个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值。这一发现对品牌战略方向选择具有关键参考价值。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "businessBackground.strategicWindow",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-25T05:58:56.946Z"
+  },
+  {
+    "id": "synth_3dhwejtnmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "直播带货渠道相关数据和分析结论，基于179个来源交叉验证",
+    "fieldPath": "channelAnalysis.mainChannels[4].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-03-18T01:57:59.358Z"
+  },
+  {
+    "id": "synth_nbtwl69lmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "品类范围界定相关数据和分析结论，基于180个来源交叉验证，预计未来12个月内该趋势将进一步强化，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "categoryStatus.definition",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-17T00:37:59.425Z"
+  },
+  {
+    "id": "synth_5oz3rmyrmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费者在用户行为观察时表现出明显的品质倾向，与行业常见的性价比假设形成反差，这表明用户真正的需求可能是品质而非体验。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "observations[2].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-14T02:17:28.455Z"
+  },
+  {
+    "id": "synth_ysnwg0oamsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉关键词相关数据和分析结论，基于182个来源交叉验证",
+    "fieldPath": "keywords",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-02T03:47:14.187Z"
+  },
+  {
+    "id": "synth_en4oafwcmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "渠道变革相关数据和分析结论，基于183个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "industryTrend.currentTrends[1].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-14T12:31:47.546Z"
+  },
+  {
+    "id": "synth_bkpsaoacmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "情感需求未被满足相关数据和分析结论，基于184个来源交叉验证，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "experienceGaps[0].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-07T00:51:42.882Z"
+  },
+  {
+    "id": "synth_iccid1ismsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "核心视觉概念相关数据和分析结论，基于185个来源交叉验证",
+    "fieldPath": "coreConcept",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-13T23:30:03.254Z"
+  },
+  {
+    "id": "synth_2eynzxpmmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "市场供给缺口相关数据和分析结论，基于186个来源交叉验证",
+    "fieldPath": "competitiveGap.unmetNeeds[0].need",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-01T11:05:25.256Z"
+  },
+  {
+    "id": "synth_ofiyu9pwmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "线上电商渠道相关数据和分析结论，基于187个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "channelAnalysis.mainChannels[2].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-20T03:37:24.820Z"
+  },
+  {
+    "id": "synth_ezrjs1h3msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "品类竞争格局相关数据和分析结论，基于188个来源交叉验证。进一步的用户调研显示这一趋势具有持续性。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "categoryStatus.currentState",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-18T19:51:04.818Z"
+  },
+  {
+    "id": "synth_vdyd70vhmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "confirmed_fact",
+    "content": "内容疲劳迹象相关数据和分析结论，基于189个来源交叉验证，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "contentFeedback.underperformer[4].reason",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-27T08:06:30.373Z"
+  },
+  {
+    "id": "synth_lbvi9nmkmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "服务缺陷相关数据和分析结论，基于190个来源交叉验证",
+    "fieldPath": "confirmedProblems[3].problem",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-18T03:29:00.729Z"
+  },
+  {
+    "id": "synth_a18ewgexmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品体验盲区相关数据和分析结论，基于191个来源交叉验证，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "competitors[2].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-20T08:55:40.832Z"
+  },
+  {
+    "id": "synth_fl889lykmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "社区团购渠道相关数据和分析结论，基于192个来源交叉验证",
+    "fieldPath": "channelAnalysis.mainChannels[4].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-08T19:17:19.554Z"
+  },
+  {
+    "id": "synth_dvjvff5wmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "优先验证方向相关数据和分析结论，基于193个来源交叉验证，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "strategicDirection.workingPriorities[1].priority",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-27T23:23:19.225Z"
+  },
+  {
+    "id": "synth_n5082tqbmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "技术应用趋势相关数据和分析结论，基于194个来源交叉验证",
+    "fieldPath": "industryTrend.currentTrends[0].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-10T20:41:00.785Z"
+  },
+  {
+    "id": "synth_y1ss5f1imsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "confirmed_fact",
+    "content": "效率提升需求相关数据和分析结论，基于195个来源交叉验证，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "deepNeeds.functionalNeed",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-24T20:19:54.123Z"
+  },
+  {
+    "id": "synth_dgvh23fmmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "市场规模数据相关数据和分析结论，基于196个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "marketOverview.marketSize",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-02-14T17:16:17.995Z"
+  },
+  {
+    "id": "synth_itsv8086msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "供应链风险相关数据和分析结论，基于197个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "coreChallenges.externalChallenges[1].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-05T07:34:08.409Z"
+  },
+  {
+    "id": "synth_901s9va8msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "用户痛点发现相关数据和分析结论，基于198个来源交叉验证，预计未来12个月内该趋势将进一步强化，预计未来12个月内该趋势将进一步强化，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "observations[2].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-15T09:05:29.899Z"
+  },
+  {
+    "id": "synth_fqq12qr7msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "产品功能缺失相关数据和分析结论，基于199个来源交叉验证。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "experienceGaps[3].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-26T19:34:12.197Z"
+  },
+  {
+    "id": "synth_egqhmr1xmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "hypothesis",
+    "content": "未被满足的需求场景相关数据和分析结论，基于200个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "opportunityDirections[4].direction",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-11T05:23:57.504Z"
+  },
+  {
+    "id": "synth_0wxww30dmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品服务缺口相关数据和分析结论，基于201个来源交叉验证，与竞品在该维度的表现形成显著差异，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "competitors[3].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-13T21:33:06.435Z"
+  },
+  {
+    "id": "synth_ru8quo9emsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "confirmed_fact",
+    "content": "实用价值诉求相关数据和分析结论，基于202个来源交叉验证，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "deepNeeds.functionalNeed",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-03T15:35:51.039Z"
+  },
+  {
+    "id": "synth_ad3fpwi4msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "hypothesis",
+    "content": "新兴细分市场相关数据和分析结论，基于203个来源交叉验证",
+    "fieldPath": "opportunityDirections[0].direction",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-27T06:20:12.626Z"
+  },
+  {
+    "id": "synth_h71f0ylpmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "使用习惯洞察相关数据和分析结论，基于204个来源交叉验证，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "observations[2].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-18T03:28:14.356Z"
+  },
+  {
+    "id": "synth_a7imdcltmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "技术替代威胁相关数据和分析结论，基于205个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "coreChallenges.externalChallenges[4].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-10T02:54:56.605Z"
+  },
+  {
+    "id": "synth_rr5jblc9msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "外部竞争压力相关数据和分析结论，基于206个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "coreChallenges.externalChallenges[4].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-23T06:22:35.289Z"
+  },
+  {
+    "id": "synth_6j9hlvg7msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "技术变革推动相关数据和分析结论，基于207个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[3].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-01T11:01:22.575Z"
+  },
+  {
+    "id": "synth_z9h15qbumsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "品类竞争格局相关数据和分析结论，基于208个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "categoryStatus.currentState",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-08T08:17:58.712Z"
+  },
+  {
+    "id": "synth_cebdjba4msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "进入时机判断相关数据和分析结论，基于209个来源交叉验证，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "businessBackground.strategicWindow",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-18T01:16:25.880Z"
+  },
+  {
+    "id": "synth_ewv7lu9cmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "增长期相关数据和分析结论，基于210个来源交叉验证",
+    "fieldPath": "marketOverview.marketStage",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-06-14T01:23:35.972Z"
+  },
+  {
+    "id": "synth_oxed1r17msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "线上电商渠道相关数据和分析结论，基于211个来源交叉验证",
+    "fieldPath": "channelAnalysis.mainChannels[0].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-05-30T19:06:58.640Z"
+  },
+  {
+    "id": "synth_r65ivcssmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 8,
+    "entryType": "confirmed_decision",
+    "content": "内容栏目规划相关数据和分析结论，基于212个来源交叉验证",
+    "fieldPath": "themeDirections[4].pillar",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-03T11:36:39.773Z"
+  },
+  {
+    "id": "synth_2m6omyo5msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "政策不确定性相关数据和分析结论，基于213个来源交叉验证",
+    "fieldPath": "coreChallenges.externalChallenges[2].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-08-04T12:28:30.467Z"
+  },
+  {
+    "id": "synth_q65mkij4msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "品牌认知度低相关数据和分析结论，基于214个来源交叉验证",
+    "fieldPath": "coreChallenges.internalChallenges[3].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-28T12:51:05.681Z"
+  },
+  {
+    "id": "synth_7hqip7nfmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "竞品用户口碑相关数据和分析结论，基于215个来源交叉验证，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "competitors[3].info",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-02-21T21:50:05.550Z"
+  },
+  {
+    "id": "synth_nq7l4po6msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "个性化定制相关数据和分析结论，基于216个来源交叉验证",
+    "fieldPath": "industryTrend.currentTrends[3].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-06-09T00:28:16.209Z"
+  },
+  {
+    "id": "synth_56iovgh1msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "优先验证方向相关数据和分析结论，基于217个来源交叉验证",
+    "fieldPath": "strategicDirection.workingPriorities[1].priority",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-28T02:25:04.365Z"
+  },
+  {
+    "id": "synth_msj8hvv9msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "行业产值统计相关数据和分析结论，基于218个来源交叉验证。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "marketOverview.marketSize",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-03-08T08:02:50.566Z"
+  },
+  {
+    "id": "synth_dsguue9cmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "行业观察相关数据和分析结论，基于219个来源交叉验证。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值。进一步的用户调研显示这一趋势具有持续性，与竞品在该维度的表现形成显著差异，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "founderMotivation.content",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-25T14:25:21.455Z"
+  },
+  {
+    "id": "synth_19lnw407msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "confirmed_fact",
+    "content": "质量保障需求相关数据和分析结论，基于220个来源交叉验证，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "deepNeeds.functionalNeed",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-09T03:06:35.315Z"
+  },
+  {
+    "id": "synth_lps94vq9msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "创始人在创始动机过程中，发现行业普遍存在体验问题，决定通过便捷方式解决用户的价值痛点，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "founderMotivation.content",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-25T00:16:29.122Z"
+  },
+  {
+    "id": "synth_m98pemp1msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉关键词相关数据和分析结论，基于222个来源交叉验证",
+    "fieldPath": "keywords",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-07T08:03:47.776Z"
+  },
+  {
+    "id": "synth_9w9mlmf8msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "产品功能缺失相关数据和分析结论，基于223个来源交叉验证",
+    "fieldPath": "experienceGaps[1].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-07T17:52:02.442Z"
+  },
+  {
+    "id": "synth_w7spror5msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "能力建设顺序相关数据和分析结论，基于224个来源交叉验证",
+    "fieldPath": "strategicDirection.workingPriorities[0].priority",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-08T14:34:05.111Z"
+  },
+  {
+    "id": "synth_jganythlmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "竞品用户口碑相关数据和分析结论，基于225个来源交叉验证，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "competitors[3].info",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-05-06T23:21:17.542Z"
+  },
+  {
+    "id": "synth_tmcsi5tumsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "差异化方向相关数据和分析结论，基于226个来源交叉验证，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "competitiveLandscape.convergenceAndDivergence",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-19T18:25:16.875Z"
+  },
+  {
+    "id": "synth_wrntlxyemsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "消费者通过品牌选择表达身份认同需求的身份认同，渴望被认可为效率类型的人，希望品牌帮助他们成为理想中的品质形象，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "targetConsumer.idealSelfReflection",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-05T18:28:05.062Z"
+  },
+  {
+    "id": "synth_aglc6uwamsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "品类竞争格局相关数据和分析结论，基于228个来源交叉验证，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "categoryStatus.currentState",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-24T08:18:19.505Z"
+  },
+  {
+    "id": "synth_x42xar90msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "线上电商渠道相关数据和分析结论，基于229个来源交叉验证",
+    "fieldPath": "channelAnalysis.mainChannels[4].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-16T21:14:18.388Z"
+  },
+  {
+    "id": "synth_podhzecumsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "产品差异化不足相关数据和分析结论，基于230个来源交叉验证",
+    "fieldPath": "coreChallenges.internalChallenges[0].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-19T16:29:33.901Z"
+  },
+  {
+    "id": "synth_xpecr9rgmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 8,
+    "entryType": "confirmed_decision",
+    "content": "内容系列方向相关数据和分析结论，基于231个来源交叉验证",
+    "fieldPath": "themeDirections[4].pillar",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-17T13:00:58.015Z"
+  },
+  {
+    "id": "synth_frouxv0qmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品覆盖不到的细分相关数据和分析结论，基于232个来源交叉验证，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "competitors[1].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-07T14:06:44.687Z"
+  },
+  {
+    "id": "synth_n3lpei11msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "消费者期望与现实的差距相关数据和分析结论，基于233个来源交叉验证",
+    "fieldPath": "competitiveGap.unmetNeeds[3].need",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-18T21:28:40.235Z"
+  },
+  {
+    "id": "synth_9bde2op4msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品产品缺陷相关数据和分析结论，基于234个来源交叉验证，与竞品在该维度的表现形成显著差异，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "competitors[2].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-28T23:11:15.700Z"
+  },
+  {
+    "id": "synth_pg5amef3msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "差异化方向推测相关数据和分析结论，基于235个来源交叉验证。进一步的用户调研显示这一趋势具有持续性，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "strategicDirection.directionHypothesis",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-28T08:25:32.463Z"
+  },
+  {
+    "id": "synth_unpr0cwumsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "消费升级驱动相关数据和分析结论，基于236个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "businessBackground.drivingForces[3].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-06T15:42:56.962Z"
+  },
+  {
+    "id": "synth_rt6khq9hmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "技术变革推动相关数据和分析结论，基于237个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[3].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-18T08:03:50.097Z"
+  },
+  {
+    "id": "synth_6rgd7w7emsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉关键词相关数据和分析结论，基于238个来源交叉验证",
+    "fieldPath": "keywords",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-04T05:18:18.964Z"
+  },
+  {
+    "id": "synth_v35w9p7smsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "confirmed_fact",
+    "content": "效率提升需求相关数据和分析结论，基于239个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "deepNeeds.functionalNeed",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-02T05:22:32.674Z"
+  },
+  {
+    "id": "synth_wmognwlvmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "confirmed_fact",
+    "content": "替代方案的局限性相关数据和分析结论，基于240个来源交叉验证，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "existingSolutions[1].failReason",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-13T05:06:26.477Z"
+  },
+  {
+    "id": "synth_lwbjl3i9msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "消费升级驱动相关数据和分析结论，基于241个来源交叉验证，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "businessBackground.drivingForces[3].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-18T05:37:54.489Z"
+  },
+  {
+    "id": "synth_nx0evyhymsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "资金限制相关数据和分析结论，基于242个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "coreChallenges.internalChallenges[4].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-08T04:45:17.792Z"
+  },
+  {
+    "id": "synth_fa89kqy0msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "confirmed_fact",
+    "content": "效率提升需求相关数据和分析结论，基于243个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "deepNeeds.functionalNeed",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-14T12:17:11.400Z"
+  },
+  {
+    "id": "synth_6c8x4j7vmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "使用习惯洞察相关数据和分析结论，基于244个来源交叉验证，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "observations[4].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-17T00:19:46.131Z"
+  },
+  {
+    "id": "synth_kiddw48hmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "confirmed_fact",
+    "content": "现有方案未满足的需求相关数据和分析结论，基于245个来源交叉验证，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "existingSolutions[4].failReason",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-03T05:55:11.982Z"
+  },
+  {
+    "id": "synth_ja70szslmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "增速变化趋势相关数据和分析结论，基于246个来源交叉验证。进一步的用户调研显示这一趋势具有持续性。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "marketOverview.growthRate",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-06-08T12:54:29.363Z"
+  },
+  {
+    "id": "synth_czbrfec4msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "产品功能缺失相关数据和分析结论，基于247个来源交叉验证。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "experienceGaps[0].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-21T16:01:05.395Z"
+  },
+  {
+    "id": "synth_9pw9zblzmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "品牌差异化切入机会相关数据和分析结论，基于248个来源交叉验证。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "competitiveGap.marketOpportunity",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-07T19:45:10.924Z"
+  },
+  {
+    "id": "synth_es7ruaicmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "市场供给缺口相关数据和分析结论，基于249个来源交叉验证",
+    "fieldPath": "competitiveGap.unmetNeeds[3].need",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-26T14:57:45.298Z"
+  },
+  {
+    "id": "synth_n9uvbbjpmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "市场切入假设相关数据和分析结论，基于250个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "strategicDirection.directionHypothesis",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-29T03:50:07.157Z"
+  },
+  {
+    "id": "synth_cqd73bximsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "行业同质化程度相关数据和分析结论，基于251个来源交叉验证。进一步的用户调研显示这一趋势具有持续性，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "competitiveLandscape.convergenceAndDivergence",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-11T22:25:16.509Z"
+  },
+  {
+    "id": "synth_yid0k827msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "个人经历相关数据和分析结论，基于252个来源交叉验证，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "founderMotivation.content",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-21T05:59:23.125Z"
+  },
+  {
+    "id": "synth_96k3fnx8msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "用户体验缺口相关数据和分析结论，基于253个来源交叉验证，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "experienceGaps[0].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-11T10:49:17.682Z"
+  },
+  {
+    "id": "synth_92i7h6dxmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "社交媒体渠道相关数据和分析结论，基于254个来源交叉验证，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "channelAnalysis.mainChannels[4].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-02-23T20:26:21.623Z"
+  },
+  {
+    "id": "synth_lzz6c7ytmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "购买决策过程相关数据和分析结论，基于255个来源交叉验证，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "observations[2].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-25T10:56:23.230Z"
+  },
+  {
+    "id": "synth_xupucha0msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "用户体验升级相关数据和分析结论，基于256个来源交叉验证",
+    "fieldPath": "industryTrend.currentTrends[1].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-03-22T08:26:57.069Z"
+  },
+  {
+    "id": "synth_cpatcbs2msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "核心视觉概念相关数据和分析结论，基于257个来源交叉验证，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "coreConcept",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-27T14:24:59.238Z"
+  },
+  {
+    "id": "synth_20o4wslnmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉关键词相关数据和分析结论，基于258个来源交叉验证",
+    "fieldPath": "keywords",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-02T14:03:44.575Z"
+  },
+  {
+    "id": "synth_q546tzl4msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "年增长率相关数据和分析结论，基于259个来源交叉验证，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "marketOverview.growthRate",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-06T04:55:26.743Z"
+  },
+  {
+    "id": "synth_wyn35pz7msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品覆盖不到的细分相关数据和分析结论，基于260个来源交叉验证，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "competitors[2].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-01T21:27:24.185Z"
+  },
+  {
+    "id": "synth_3jkqbqdamsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "用户体验缺口相关数据和分析结论，基于261个来源交叉验证，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "experienceGaps[0].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-08T14:45:25.631Z"
+  },
+  {
+    "id": "synth_65pzkqsimsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "年增长率相关数据和分析结论，基于262个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "marketOverview.growthRate",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-02-18T20:10:10.369Z"
+  },
+  {
+    "id": "synth_saopqanlmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "运营效率相关数据和分析结论，基于263个来源交叉验证",
+    "fieldPath": "coreChallenges.internalChallenges[0].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-30T20:36:40.390Z"
+  },
+  {
+    "id": "synth_3ur8a0ulmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "个人经历相关数据和分析结论，基于264个来源交叉验证，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "founderMotivation.content",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-29T23:07:10.815Z"
+  },
+  {
+    "id": "synth_fzykzavgmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "消费趋势变化正在从高端向高端转变，消费者从关注价格转向关注体验质量，从功能性需求升级为情感性需求",
+    "fieldPath": "industryTrend.currentTrends[2].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-05-11T12:57:15.535Z"
+  },
+  {
+    "id": "synth_gpss8pv2msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "消费者期望与现实的差距相关数据和分析结论，基于266个来源交叉验证",
+    "fieldPath": "competitiveGap.unmetNeeds[1].need",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-15T04:58:31.084Z"
+  },
+  {
+    "id": "synth_42fghwsimsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品体验盲区相关数据和分析结论，基于267个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "competitors[3].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-27T21:21:14.341Z"
+  },
+  {
+    "id": "synth_x0esh77bmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "能力建设顺序相关数据和分析结论，基于268个来源交叉验证",
+    "fieldPath": "strategicDirection.workingPriorities[2].priority",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-11T11:37:15.369Z"
+  },
+  {
+    "id": "synth_q1z6pcdwmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "政策监管影响相关数据和分析结论，基于269个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[3].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-20T15:10:48.738Z"
+  },
+  {
+    "id": "synth_6c7lhee7msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "社会文化趋势相关数据和分析结论，基于270个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[1].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-08-02T01:49:01.020Z"
+  },
+  {
+    "id": "synth_18x597jzmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉关键词相关数据和分析结论，基于271个来源交叉验证",
+    "fieldPath": "keywords",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-03T13:43:06.615Z"
+  },
+  {
+    "id": "synth_4095p5jqmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉关键词相关数据和分析结论，基于272个来源交叉验证",
+    "fieldPath": "keywords",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-14T21:48:23.219Z"
+  },
+  {
+    "id": "synth_1zimarbimsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "产品问题相关数据和分析结论，基于273个来源交叉验证",
+    "fieldPath": "confirmedProblems[2].problem",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-02T12:44:20.319Z"
+  },
+  {
+    "id": "synth_uqg0gmfpmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉关键词相关数据和分析结论，基于274个来源交叉验证",
+    "fieldPath": "keywords",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-18T21:30:27.555Z"
+  },
+  {
+    "id": "synth_mqdn8n4bmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "产品差异化不足相关数据和分析结论，基于275个来源交叉验证",
+    "fieldPath": "coreChallenges.internalChallenges[3].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-05T15:16:42.205Z"
+  },
+  {
+    "id": "synth_dinzwyhymsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 8,
+    "entryType": "confirmed_decision",
+    "content": "内容系列方向相关数据和分析结论，基于276个来源交叉验证，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "themeDirections[0].pillar",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-02T06:52:48.173Z"
+  },
+  {
+    "id": "synth_3kz3t966msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "技术变革推动相关数据和分析结论，基于277个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[2].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-20T12:24:56.166Z"
+  },
+  {
+    "id": "synth_8vhmvdefmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "社交媒体渠道相关数据和分析结论，基于278个来源交叉验证",
+    "fieldPath": "channelAnalysis.mainChannels[3].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-13T22:30:52.385Z"
+  },
+  {
+    "id": "synth_kkyz5otimsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 8,
+    "entryType": "confirmed_decision",
+    "content": "内容核心方向相关数据和分析结论，基于279个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "coreDirection",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-03T23:53:39.991Z"
+  },
+  {
+    "id": "synth_djyjd714msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "差异化机会空间相关数据和分析结论，基于280个来源交叉验证，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "competitiveLandscape.convergenceAndDivergence",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-08-02T22:48:27.102Z"
+  },
+  {
+    "id": "synth_lyw85910msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "竞品: 竞品定位分析 — 定位: 面向审美人群的信任品类，主打效率差异化，核心卖点为创新",
+    "fieldPath": "competitors[0].info",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-08-01T08:40:58.083Z"
+  },
+  {
+    "id": "synth_bdcfzivmmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "个性化定制相关数据和分析结论，基于282个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "industryTrend.currentTrends[3].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-04-24T00:46:23.396Z"
+  },
+  {
+    "id": "synth_40zo3ghrmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "政策不确定性相关数据和分析结论，基于283个来源交叉验证，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "coreChallenges.externalChallenges[4].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-26T00:43:05.507Z"
+  },
+  {
+    "id": "synth_fspul4bkmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "行业弊端相关数据和分析结论，基于284个来源交叉验证",
+    "fieldPath": "confirmedProblems[2].problem",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-21T04:24:48.751Z"
+  },
+  {
+    "id": "synth_unvfi6kvmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "创始人在创始动机过程中，发现行业普遍存在创新问题，决定通过创新方式解决用户的高端痛点。这一发现对品牌战略方向选择具有关键参考价值。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "founderMotivation.content",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-20T14:56:33.536Z"
+  },
+  {
+    "id": "synth_nvfxv1iamsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "confirmed_fact",
+    "content": "实用价值诉求相关数据和分析结论，基于286个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "deepNeeds.functionalNeed",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-08T21:47:50.115Z"
+  },
+  {
+    "id": "synth_erb1yq89msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "团队规模相关数据和分析结论，基于287个来源交叉验证",
+    "fieldPath": "constraints.team",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-22T20:21:39.031Z"
+  },
+  {
+    "id": "synth_e4zo9u7imsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "竞争格局变化信号相关数据和分析结论，基于288个来源交叉验证，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "marketUpdate.quarterlyGrowth[3].data",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-06-19T15:51:30.558Z"
+  },
+  {
+    "id": "synth_0jn1gayimsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 8,
+    "entryType": "confirmed_decision",
+    "content": "内容核心方向相关数据和分析结论，基于289个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "coreDirection",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-21T17:08:52.969Z"
+  },
+  {
+    "id": "synth_g6r0n88cmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "社交媒体渠道相关数据和分析结论，基于290个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "channelAnalysis.mainChannels[4].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-15T19:02:55.510Z"
+  },
+  {
+    "id": "synth_1aezzsitmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "confirmed_fact",
+    "content": "消费者未被解决的问题相关数据和分析结论，基于291个来源交叉验证，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "existingSolutions[3].failReason",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-28T11:21:47.194Z"
+  },
+  {
+    "id": "synth_46qe5mo1msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "私域运营渠道相关数据和分析结论，基于292个来源交叉验证",
+    "fieldPath": "channelAnalysis.mainChannels[0].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-20T16:52:42.251Z"
+  },
+  {
+    "id": "synth_gn4yizk7msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "情感价值主张相关数据和分析结论，基于293个来源交叉验证",
+    "fieldPath": "valuePropositions[0].vp",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-13T06:37:24.861Z"
+  },
+  {
+    "id": "synth_tqu4tho2msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "服务缺陷相关数据和分析结论，基于294个来源交叉验证，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "confirmedProblems[1].problem",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-08T17:31:16.711Z"
+  },
+  {
+    "id": "synth_3cbhoxp8msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "品类发展趋势相关数据和分析结论，基于295个来源交叉验证，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值。这一发现对品牌战略方向选择具有关键参考价值。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "businessBackground.marketContext",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-28T11:56:42.480Z"
+  },
+  {
+    "id": "synth_iohfukyfmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "竞品定位分析品牌以审美为切入点，在专业维度建立了较强的用户认知，但在创新方面存在明显弱点",
+    "fieldPath": "competitors[3].info",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-05-19T15:12:36.159Z"
+  },
+  {
+    "id": "synth_pnam9jrwmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "用户体验缺口相关数据和分析结论，基于297个来源交叉验证",
+    "fieldPath": "experienceGaps[4].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-10T06:04:08.359Z"
+  },
+  {
+    "id": "synth_jiym1qgvmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "未被竞品满足的需求相关数据和分析结论，基于298个来源交叉验证",
+    "fieldPath": "competitiveGap.unmetNeeds[1].need",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-31T02:21:01.064Z"
+  },
+  {
+    "id": "synth_izhi8u23msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "核心视觉概念相关数据和分析结论，基于299个来源交叉验证",
+    "fieldPath": "coreConcept",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-19T12:56:05.716Z"
+  },
+  {
+    "id": "synth_e71cf9k1msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "confirmed_fact",
+    "content": "消费者行为特征相关数据和分析结论，基于300个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值。进一步的用户调研显示这一趋势具有持续性。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "targetConsumer.definition",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-16T21:11:42.005Z"
+  },
+  {
+    "id": "synth_od1jp0mfmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "产品问题相关数据和分析结论，基于301个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "confirmedProblems[2].problem",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-07T02:56:07.651Z"
+  },
+  {
+    "id": "synth_ye2yo9sxmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "品类框架描述相关数据和分析结论，基于302个来源交叉验证，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "categoryStatus.definition",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-10T01:21:40.536Z"
+  },
+  {
+    "id": "synth_e2c88ihvmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "体验痛点相关数据和分析结论，基于303个来源交叉验证",
+    "fieldPath": "confirmedProblems[4].problem",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-08T14:33:07.145Z"
+  },
+  {
+    "id": "synth_s0l096x9msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "使用习惯洞察相关数据和分析结论，基于304个来源交叉验证，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "observations[1].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-02T09:52:41.588Z"
+  },
+  {
+    "id": "synth_cpel0e1wmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "品类现状相关数据和分析结论，基于305个来源交叉验证，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "categoryStatus.currentState",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-01T06:51:04.721Z"
+  },
+  {
+    "id": "synth_ilrorymamsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉关键词相关数据和分析结论，基于306个来源交叉验证",
+    "fieldPath": "keywords",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-19T18:11:46.520Z"
+  },
+  {
+    "id": "synth_vuay5fndmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "资源分配优先级相关数据和分析结论，基于307个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "strategicDirection.workingPriorities[1].priority",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-01T19:38:00.681Z"
+  },
+  {
+    "id": "synth_ix9zky0nmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "差异化机会空间相关数据和分析结论，基于308个来源交叉验证，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "competitiveLandscape.convergenceAndDivergence",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-08-04T04:05:04.807Z"
+  },
+  {
+    "id": "synth_cq31h3x9msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "消费者需求变化相关数据和分析结论，基于309个来源交叉验证",
+    "fieldPath": "coreChallenges.externalChallenges[2].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-22T07:53:32.392Z"
+  },
+  {
+    "id": "synth_3otd8xscmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "理想自我投射相关数据和分析结论，基于310个来源交叉验证，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值。这一发现对品牌战略方向选择具有关键参考价值。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "targetConsumer.idealSelfReflection",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-28T21:22:08.834Z"
+  },
+  {
+    "id": "synth_gpa5tcf9msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费者在用户行为观察时表现出明显的专业倾向，与行业常见的性价比假设形成反差，这表明用户真正的需求可能是价值而非高端。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "observations[4].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-14T09:54:03.021Z"
+  },
+  {
+    "id": "synth_w0ufz2pjmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "技术变革推动相关数据和分析结论，基于312个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[2].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-16T22:16:45.614Z"
+  },
+  {
+    "id": "synth_cftld0kzmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "线上电商渠道相关数据和分析结论，基于313个来源交叉验证",
+    "fieldPath": "channelAnalysis.mainChannels[4].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-04-18T12:34:52.016Z"
+  },
+  {
+    "id": "synth_ectdrx4rmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "短期工作重点相关数据和分析结论，基于314个来源交叉验证",
+    "fieldPath": "strategicDirection.workingPriorities[3].priority",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-13T10:00:25.185Z"
+  },
+  {
+    "id": "synth_2d32py5qmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "购买决策过程相关数据和分析结论，基于315个来源交叉验证，与竞品在该维度的表现形成显著差异，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "observations[1].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-07T06:56:46.050Z"
+  },
+  {
+    "id": "synth_7x55f8z3msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "在用户行为观察方面，用户实际行为与自我报告的偏好存在差距，具体表现为个性化和可持续之间的不一致，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "observations[3].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-18T12:00:04.507Z"
+  },
+  {
+    "id": "synth_ay9dfq4vmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 8,
+    "entryType": "confirmed_decision",
+    "content": "内容核心方向相关数据和分析结论，基于317个来源交叉验证",
+    "fieldPath": "coreDirection",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-06T21:35:00.375Z"
+  },
+  {
+    "id": "synth_p0kqfjs4msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "短期工作重点相关数据和分析结论，基于318个来源交叉验证",
+    "fieldPath": "strategicDirection.workingPriorities[3].priority",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-12T16:34:57.758Z"
+  },
+  {
+    "id": "synth_7ga1tln1msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品体验盲区相关数据和分析结论，基于319个来源交叉验证，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "competitors[2].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-22T22:28:13.038Z"
+  },
+  {
+    "id": "synth_fieptjb5msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "情感价值主张相关数据和分析结论，基于320个来源交叉验证",
+    "fieldPath": "valuePropositions[4].vp",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-17T19:59:12.244Z"
+  },
+  {
+    "id": "synth_qwn2iv99msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "线下实体渠道相关数据和分析结论，基于321个来源交叉验证",
+    "fieldPath": "channelAnalysis.mainChannels[0].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-06-24T15:07:57.655Z"
+  },
+  {
+    "id": "synth_s382z9kkmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "竞品优势评估相关数据和分析结论，基于322个来源交叉验证",
+    "fieldPath": "competitors[2].info",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-05-05T02:46:15.173Z"
+  },
+  {
+    "id": "synth_zolalfp0msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "团队规模相关数据和分析结论，基于323个来源交叉验证",
+    "fieldPath": "constraints.team",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-20T20:50:57.792Z"
+  },
+  {
+    "id": "synth_xkds6uwdmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "社区团购渠道相关数据和分析结论，基于324个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "channelAnalysis.mainChannels[2].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-04T07:30:23.142Z"
+  },
+  {
+    "id": "synth_0d96hgicmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "hypothesis",
+    "content": "市场机会方向相关数据和分析结论，基于325个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "opportunityDirections[4].direction",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-29T01:21:45.210Z"
+  },
+  {
+    "id": "synth_tri02h7qmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "社交媒体渠道相关数据和分析结论，基于326个来源交叉验证",
+    "fieldPath": "channelAnalysis.mainChannels[2].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-06-29T18:02:06.619Z"
+  },
+  {
+    "id": "synth_buz8337wmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "消费者渴望成为的样子相关数据和分析结论，基于327个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "targetConsumer.idealSelfReflection",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-21T16:06:15.320Z"
+  },
+  {
+    "id": "synth_5qr17wxsmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "市场窗口期相关数据和分析结论，基于328个来源交叉验证，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "businessBackground.strategicWindow",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-31T18:33:21.635Z"
+  },
+  {
+    "id": "synth_qm8uzpp4msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "hypothesis",
+    "content": "市场机会方向相关数据和分析结论，基于329个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "opportunityDirections[2].direction",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-16T00:46:11.197Z"
+  },
+  {
+    "id": "synth_ee1qa8zsmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "购买决策过程相关数据和分析结论，基于330个来源交叉验证，与竞品在该维度的表现形成显著差异，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "observations[0].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-28T13:48:02.210Z"
+  },
+  {
+    "id": "synth_792tfxu7msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "confirmed_fact",
+    "content": "消费者决策动机相关数据和分析结论，基于331个来源交叉验证，预计未来12个月内该趋势将进一步强化，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "targetConsumer.definition",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-20T09:36:31.504Z"
+  },
+  {
+    "id": "synth_j0tdo1l0msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "社交媒体渠道相关数据和分析结论，基于332个来源交叉验证",
+    "fieldPath": "channelAnalysis.mainChannels[0].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-06-17T07:23:40.441Z"
+  },
+  {
+    "id": "synth_0yafa42tmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "品类范围界定相关数据和分析结论，基于333个来源交叉验证，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "categoryStatus.definition",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-12T08:57:58.547Z"
+  },
+  {
+    "id": "synth_4lqkl2hwmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "竞品渠道策略相关数据和分析结论，基于334个来源交叉验证",
+    "fieldPath": "competitors[3].info",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-04-29T23:41:30.792Z"
+  },
+  {
+    "id": "synth_b4g6sn34msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 8,
+    "entryType": "confirmed_decision",
+    "content": "内容核心方向相关数据和分析结论，基于335个来源交叉验证",
+    "fieldPath": "coreDirection",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-12T00:02:57.614Z"
+  },
+  {
+    "id": "synth_3vlzzv5tmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "能力建设顺序相关数据和分析结论，基于336个来源交叉验证",
+    "fieldPath": "strategicDirection.workingPriorities[2].priority",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-20T12:26:33.203Z"
+  },
+  {
+    "id": "synth_f3uk8m4imsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "用户体验缺口相关数据和分析结论，基于337个来源交叉验证",
+    "fieldPath": "experienceGaps[3].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-08T18:29:44.132Z"
+  },
+  {
+    "id": "synth_npa4zozqmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "hypothesis",
+    "content": "差异化切入点相关数据和分析结论，基于338个来源交叉验证",
+    "fieldPath": "opportunityDirections[1].direction",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-29T05:29:11.075Z"
+  },
+  {
+    "id": "synth_16quwiv3msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "渠道变革相关数据和分析结论，基于339个来源交叉验证",
+    "fieldPath": "industryTrend.currentTrends[1].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-04-07T23:03:18.393Z"
+  },
+  {
+    "id": "synth_gmta0fsxmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "产品差异化不足相关数据和分析结论，基于340个来源交叉验证",
+    "fieldPath": "coreChallenges.internalChallenges[2].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-04T17:15:49.323Z"
+  },
+  {
+    "id": "synth_mmtv8naqmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "竞品: 竞品定位分析 — 定位: 面向个性化人群的可持续品类，主打差异化差异化，核心卖点为性价比",
+    "fieldPath": "competitors[3].info",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-02-08T05:22:15.943Z"
+  },
+  {
+    "id": "synth_lzkadlsamsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "供给端特征相关数据和分析结论，基于342个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "categoryStatus.currentState",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-18T21:07:18.986Z"
+  },
+  {
+    "id": "synth_xxs4o10vmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "人口结构变化相关数据和分析结论，基于343个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[3].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-13T23:11:17.238Z"
+  },
+  {
+    "id": "synth_ebfroxvqmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "使用习惯洞察相关数据和分析结论，基于344个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "observations[3].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-04T05:16:32.954Z"
+  },
+  {
+    "id": "synth_nr7mryiomsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "优先验证方向相关数据和分析结论，基于345个来源交叉验证",
+    "fieldPath": "strategicDirection.workingPriorities[0].priority",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-08T12:51:12.327Z"
+  },
+  {
+    "id": "synth_90aaquodmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "hypothesis",
+    "content": "差异化切入点相关数据和分析结论，基于346个来源交叉验证，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "opportunityDirections[2].direction",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-10T09:05:57.458Z"
+  },
+  {
+    "id": "synth_ntng4nmwmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "品类框架描述相关数据和分析结论，基于347个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "categoryStatus.definition",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-16T20:26:46.086Z"
+  },
+  {
+    "id": "synth_ep806g25msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "用户痛点发现相关数据和分析结论，基于348个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "observations[4].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-17T16:03:49.368Z"
+  },
+  {
+    "id": "synth_df38kt4mmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "使用习惯洞察相关数据和分析结论，基于349个来源交叉验证，与竞品在该维度的表现形成显著差异，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "observations[4].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-28T15:36:09.594Z"
+  },
+  {
+    "id": "synth_h5dtwlwamsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "产品差异化不足相关数据和分析结论，基于350个来源交叉验证",
+    "fieldPath": "coreChallenges.internalChallenges[1].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-28T08:50:17.880Z"
+  },
+  {
+    "id": "synth_iyht3prxmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "市场供给缺口相关数据和分析结论，基于351个来源交叉验证",
+    "fieldPath": "competitiveGap.unmetNeeds[4].need",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-17T05:16:42.734Z"
+  },
+  {
+    "id": "synth_bs5yerlbmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "技术变革推动相关数据和分析结论，基于352个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[4].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-21T09:26:16.852Z"
+  },
+  {
+    "id": "synth_vjal2rpjmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "优先验证方向相关数据和分析结论，基于353个来源交叉验证",
+    "fieldPath": "strategicDirection.workingPriorities[0].priority",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-05T19:02:03.985Z"
+  },
+  {
+    "id": "synth_e25mdpkqmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "hypothesis",
+    "content": "差异化切入点相关数据和分析结论，基于354个来源交叉验证",
+    "fieldPath": "opportunityDirections[2].direction",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-25T23:43:45.374Z"
+  },
+  {
+    "id": "synth_w73zq8lgmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "体验痛点相关数据和分析结论，基于355个来源交叉验证",
+    "fieldPath": "confirmedProblems[0].problem",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-01T19:41:46.104Z"
+  },
+  {
+    "id": "synth_gfi4omqsmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "情感需求未被满足相关数据和分析结论，基于356个来源交叉验证，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "experienceGaps[2].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-11T19:01:57.767Z"
+  },
+  {
+    "id": "synth_f7brj7rnmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "优先验证方向相关数据和分析结论，基于357个来源交叉验证",
+    "fieldPath": "strategicDirection.workingPriorities[0].priority",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-05T20:30:48.333Z"
+  },
+  {
+    "id": "synth_4wqfspl9msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "政策不确定性相关数据和分析结论，基于358个来源交叉验证",
+    "fieldPath": "coreChallenges.externalChallenges[4].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-24T14:33:24.797Z"
+  },
+  {
+    "id": "synth_qzwn6bs1msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "需求端特征相关数据和分析结论，基于359个来源交叉验证。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "categoryStatus.currentState",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-08T23:47:04.761Z"
+  },
+  {
+    "id": "synth_zjl1zs5jmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "社会文化趋势相关数据和分析结论，基于360个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[0].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-26T05:16:28.447Z"
+  },
+  {
+    "id": "synth_anda48zpmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "品牌人格特质组合相关数据和分析结论，基于361个来源交叉验证",
+    "fieldPath": "brandPersonality",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-11T03:20:05.768Z"
+  },
+  {
+    "id": "synth_ti37477vmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "社会归属需求相关数据和分析结论，基于362个来源交叉验证。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "deepNeeds.identityNeed",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-26T06:16:35.882Z"
+  },
+  {
+    "id": "synth_0rb76jsymsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "政策不确定性相关数据和分析结论，基于363个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "coreChallenges.externalChallenges[1].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-23T14:42:07.981Z"
+  },
+  {
+    "id": "synth_thekzcj4msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "市场窗口期相关数据和分析结论，基于364个来源交叉验证，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "businessBackground.strategicWindow",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-20T15:03:24.665Z"
+  },
+  {
+    "id": "synth_51dut6n8msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "创始人在创始动机过程中，发现行业普遍存在专业问题，决定通过个性化方式解决用户的效率痛点，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "founderMotivation.content",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-08T21:43:18.918Z"
+  },
+  {
+    "id": "synth_5rov6uggmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "社区团购渠道相关数据和分析结论，基于366个来源交叉验证",
+    "fieldPath": "channelAnalysis.mainChannels[1].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-04-23T21:25:19.018Z"
+  },
+  {
+    "id": "synth_h6bkqsafmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "资金限制相关数据和分析结论，基于367个来源交叉验证，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "coreChallenges.internalChallenges[4].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-03T03:12:10.993Z"
+  },
+  {
+    "id": "synth_0tvpt5j1msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "行业弊端相关数据和分析结论，基于368个来源交叉验证，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "confirmedProblems[3].problem",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-20T22:30:19.680Z"
+  },
+  {
+    "id": "synth_m67i6op5msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "用户体验缺口相关数据和分析结论，基于369个来源交叉验证，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "experienceGaps[3].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-09T03:30:49.464Z"
+  },
+  {
+    "id": "synth_g8hspy5rmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "confirmed_fact",
+    "content": "竞品的核心缺陷相关数据和分析结论，基于370个来源交叉验证，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "existingSolutions[1].failReason",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-29T05:03:48.486Z"
+  },
+  {
+    "id": "synth_9vwiqxfemsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "为品牌定位声明提供个性化解决方案，通过高端方式实现差异化价值，让用户在价值场景下获得差异化体验。这一发现对品牌战略方向选择具有关键参考价值。这一发现对品牌战略方向选择具有关键参考价值。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "positioning",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-24T14:12:54.970Z"
+  },
+  {
+    "id": "synth_0l42hm0imsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉关键词相关数据和分析结论，基于372个来源交叉验证",
+    "fieldPath": "keywords",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-30T17:10:41.287Z"
+  },
+  {
+    "id": "synth_rs5lrsb2msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "功能价值主张相关数据和分析结论，基于373个来源交叉验证",
+    "fieldPath": "valuePropositions[1].vp",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-25T16:59:39.578Z"
+  },
+  {
+    "id": "synth_fm4nskmnmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "技术应用趋势相关数据和分析结论，基于374个来源交叉验证，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "industryTrend.currentTrends[2].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-04-27T22:44:30.386Z"
+  },
+  {
+    "id": "synth_mus966k8msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "技术替代威胁相关数据和分析结论，基于375个来源交叉验证",
+    "fieldPath": "coreChallenges.externalChallenges[0].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-24T03:41:42.592Z"
+  },
+  {
+    "id": "synth_oka7hougmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "消费升级驱动相关数据和分析结论，基于376个来源交叉验证，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "businessBackground.drivingForces[2].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-02T01:37:16.328Z"
+  },
+  {
+    "id": "synth_llg9mcd2msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "情感价值主张相关数据和分析结论，基于377个来源交叉验证",
+    "fieldPath": "valuePropositions[1].vp",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-02T19:06:59.673Z"
+  },
+  {
+    "id": "synth_xlrrg709msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "人口结构变化相关数据和分析结论，基于378个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[1].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-01T12:05:18.451Z"
+  },
+  {
+    "id": "synth_szs6nxvzmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉关键词相关数据和分析结论，基于379个来源交叉验证",
+    "fieldPath": "keywords",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-07T12:12:16.447Z"
+  },
+  {
+    "id": "synth_a6f7iys8msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "技术应用趋势相关数据和分析结论，基于380个来源交叉验证",
+    "fieldPath": "industryTrend.currentTrends[4].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-02-25T19:46:28.866Z"
+  },
+  {
+    "id": "synth_pn7xixdtmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "渠道变革相关数据和分析结论，基于381个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "industryTrend.currentTrends[4].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-02-12T02:05:55.121Z"
+  },
+  {
+    "id": "synth_szaat4npmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "供应链风险相关数据和分析结论，基于382个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "coreChallenges.externalChallenges[1].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-15T15:01:25.944Z"
+  },
+  {
+    "id": "synth_hv3bjw6emsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "政策不确定性相关数据和分析结论，基于383个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "coreChallenges.externalChallenges[2].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-05T23:47:54.709Z"
+  },
+  {
+    "id": "synth_1nqt9h1rmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "个性化定制相关数据和分析结论，基于384个来源交叉验证",
+    "fieldPath": "industryTrend.currentTrends[3].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-05-25T20:05:47.700Z"
+  },
+  {
+    "id": "synth_3kjnb9evmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "消费趋势变化正在从审美向体验转变，消费者从关注价格转向关注体验质量，从功能性需求升级为情感性需求",
+    "fieldPath": "industryTrend.currentTrends[2].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-05-21T07:43:15.981Z"
+  },
+  {
+    "id": "synth_fulonye2msg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "情感价值主张相关数据和分析结论，基于386个来源交叉验证",
+    "fieldPath": "valuePropositions[1].vp",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-27T23:09:47.318Z"
+  },
+  {
+    "id": "synth_20n7tfczmsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "团队规模相关数据和分析结论，基于387个来源交叉验证",
+    "fieldPath": "constraints.team",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-16T23:15:15.952Z"
+  },
+  {
+    "id": "synth_pcnt4djamsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "价值观认同相关数据和分析结论，基于388个来源交叉验证，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "deepNeeds.identityNeed",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-21T06:42:33.575Z"
+  },
+  {
+    "id": "synth_6nnfivwamsg4lqht",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "为品牌定位声明提供高端解决方案，通过性价比方式实现效率价值，让用户在体验场景下获得高端体验。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "positioning",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-30T17:17:16.413Z"
+  },
+  {
+    "id": "synth_ckvo00z6msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "竞品用户口碑相关数据和分析结论，基于390个来源交叉验证",
+    "fieldPath": "competitors[4].info",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-03-14T09:16:19.024Z"
+  },
+  {
+    "id": "synth_tyqdhmjcmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "消费趋势变化正在从品质向健康转变，消费者从关注价格转向关注体验质量，从功能性需求升级为情感性需求",
+    "fieldPath": "industryTrend.currentTrends[1].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-23T01:31:02.309Z"
+  },
+  {
+    "id": "synth_ava96mavmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "技术应用趋势相关数据和分析结论，基于392个来源交叉验证",
+    "fieldPath": "industryTrend.currentTrends[4].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-03-15T22:53:10.826Z"
+  },
+  {
+    "id": "synth_ing6k0ermsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉关键词相关数据和分析结论，基于393个来源交叉验证",
+    "fieldPath": "keywords",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-01T01:54:10.758Z"
+  },
+  {
+    "id": "synth_9yhid2limsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "短期工作重点相关数据和分析结论，基于394个来源交叉验证",
+    "fieldPath": "strategicDirection.workingPriorities[0].priority",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-13T08:25:57.297Z"
+  },
+  {
+    "id": "synth_9shkgfuhmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "产品功能缺失相关数据和分析结论，基于395个来源交叉验证",
+    "fieldPath": "experienceGaps[4].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-18T11:08:21.645Z"
+  },
+  {
+    "id": "synth_e62ebnvnmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "行业弊端相关数据和分析结论，基于396个来源交叉验证",
+    "fieldPath": "confirmedProblems[3].problem",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-16T14:53:24.719Z"
+  },
+  {
+    "id": "synth_u1qko4pvmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "消费趋势变化正在从个性化向便捷转变，消费者从关注价格转向关注体验质量，从功能性需求升级为情感性需求",
+    "fieldPath": "industryTrend.currentTrends[3].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-05-21T03:46:43.460Z"
+  },
+  {
+    "id": "synth_44q4n798msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "运营效率相关数据和分析结论，基于398个来源交叉验证",
+    "fieldPath": "coreChallenges.internalChallenges[2].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-06T07:35:10.227Z"
+  },
+  {
+    "id": "synth_9vna1xopmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "消费者需求变化相关数据和分析结论，基于399个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "coreChallenges.externalChallenges[4].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-14T22:39:07.229Z"
+  },
+  {
+    "id": "synth_go61cxcbmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "功能价值主张相关数据和分析结论，基于400个来源交叉验证",
+    "fieldPath": "valuePropositions[2].vp",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-18T16:34:51.149Z"
+  },
+  {
+    "id": "synth_gfqi4tncmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "消费者期望与现实的差距相关数据和分析结论，基于401个来源交叉验证",
+    "fieldPath": "competitiveGap.unmetNeeds[1].need",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-29T20:19:45.808Z"
+  },
+  {
+    "id": "synth_cv7v5aismsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "个性化定制相关数据和分析结论，基于402个来源交叉验证，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "industryTrend.currentTrends[0].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-05-18T06:07:37.922Z"
+  },
+  {
+    "id": "synth_pffjdgoxmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "品类边界定义相关数据和分析结论，基于403个来源交叉验证，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "categoryStatus.definition",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-27T05:39:27.980Z"
+  },
+  {
+    "id": "synth_uv1ua33hmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "技术应用趋势相关数据和分析结论，基于404个来源交叉验证",
+    "fieldPath": "industryTrend.currentTrends[4].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-06-08T21:38:56.829Z"
+  },
+  {
+    "id": "synth_vkubmlskmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉关键词相关数据和分析结论，基于405个来源交叉验证",
+    "fieldPath": "keywords",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-23T14:34:17.870Z"
+  },
+  {
+    "id": "synth_nn2bvzh9msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "竞品定位分析品牌以体验为切入点，在品质维度建立了较强的用户认知，但在价值方面存在明显弱点",
+    "fieldPath": "competitors[3].info",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-05-15T05:49:45.597Z"
+  },
+  {
+    "id": "synth_n0p4d9lsmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 8,
+    "entryType": "confirmed_decision",
+    "content": "内容核心方向相关数据和分析结论，基于407个来源交叉验证",
+    "fieldPath": "coreDirection",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-19T12:11:10.187Z"
+  },
+  {
+    "id": "synth_8bv0dlf5msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "confirmed_fact",
+    "content": "替代方案的局限性相关数据和分析结论，基于408个来源交叉验证。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "existingSolutions[1].failReason",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-07T14:39:27.447Z"
+  },
+  {
+    "id": "synth_cvqme8n5msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "在当前竞争格局中，心智空位判断维度存在明显的用户期待与实际供给之间的落差，消费者渴望品质但市场上无人提供，这构成了品牌可以占据的心智空位。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "competitiveGap.marketOpportunity",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-25T16:27:47.591Z"
+  },
+  {
+    "id": "synth_cwbay3ixmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "短期工作重点相关数据和分析结论，基于410个来源交叉验证",
+    "fieldPath": "strategicDirection.workingPriorities[3].priority",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-07T21:05:10.267Z"
+  },
+  {
+    "id": "synth_sifcuc8qmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "渠道变革相关数据和分析结论，基于411个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "industryTrend.currentTrends[3].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-04-26T18:08:27.534Z"
+  },
+  {
+    "id": "synth_wbksh7zrmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "资金限制相关数据和分析结论，基于412个来源交叉验证",
+    "fieldPath": "coreChallenges.internalChallenges[2].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-22T22:34:12.627Z"
+  },
+  {
+    "id": "synth_xuy4qzd5msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "人口结构变化相关数据和分析结论，基于413个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[0].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-05T19:14:12.734Z"
+  },
+  {
+    "id": "synth_05ot7yjmmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "政策监管影响相关数据和分析结论，基于414个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[0].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-15T19:28:05.807Z"
+  },
+  {
+    "id": "synth_cz8sjpnmmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "购买决策过程相关数据和分析结论，基于415个来源交叉验证，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "observations[1].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-16T02:01:38.333Z"
+  },
+  {
+    "id": "synth_h0ps5y0jmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "价值观认同相关数据和分析结论，基于416个来源交叉验证，与竞品在该维度的表现形成显著差异，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "deepNeeds.identityNeed",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-21T11:50:08.548Z"
+  },
+  {
+    "id": "synth_1ecauytamsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费场景记录相关数据和分析结论，基于417个来源交叉验证，预计未来12个月内该趋势将进一步强化，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "observations[2].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-24T00:18:10.750Z"
+  },
+  {
+    "id": "synth_boqlb1q4msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "竞品定价策略相关数据和分析结论，基于418个来源交叉验证",
+    "fieldPath": "competitors[4].info",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-05-10T09:19:00.394Z"
+  },
+  {
+    "id": "synth_whpna3wdmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 8,
+    "entryType": "confirmed_decision",
+    "content": "内容核心方向相关数据和分析结论，基于419个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "coreDirection",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-03T17:19:44.702Z"
+  },
+  {
+    "id": "synth_v7vz6elxmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "先发优势窗口相关数据和分析结论，基于420个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "businessBackground.strategicWindow",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-24T04:02:52.919Z"
+  },
+  {
+    "id": "synth_unwsoj1kmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "消费升级驱动相关数据和分析结论，基于421个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[2].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-19T13:06:45.633Z"
+  },
+  {
+    "id": "synth_x9cefpesmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品产品缺陷相关数据和分析结论，基于422个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "competitors[1].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-09T00:57:50.275Z"
+  },
+  {
+    "id": "synth_bqqe7jmrmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "渠道变革相关数据和分析结论，基于423个来源交叉验证",
+    "fieldPath": "industryTrend.currentTrends[2].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-02-23T03:03:30.858Z"
+  },
+  {
+    "id": "synth_4vvpo0l9msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "宏观经济影响相关数据和分析结论，基于424个来源交叉验证，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "businessBackground.marketContext",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-08T05:09:06.048Z"
+  },
+  {
+    "id": "synth_fdhsyywzmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "confirmed_fact",
+    "content": "现有方案未满足的需求相关数据和分析结论，基于425个来源交叉验证，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "existingSolutions[1].failReason",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-05T11:04:17.649Z"
+  },
+  {
+    "id": "synth_pvm6iwdfmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 8,
+    "entryType": "confirmed_decision",
+    "content": "内容系列方向相关数据和分析结论，基于426个来源交叉验证",
+    "fieldPath": "themeDirections[1].pillar",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-17T16:36:07.079Z"
+  },
+  {
+    "id": "synth_h15i6rlnmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "消费趋势变化正在从便捷向性价比转变，消费者从关注价格转向关注体验质量，从功能性需求升级为情感性需求",
+    "fieldPath": "industryTrend.currentTrends[2].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-02-15T05:29:26.885Z"
+  },
+  {
+    "id": "synth_teczo05gmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "用户痛点发现相关数据和分析结论，基于428个来源交叉验证，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "observations[3].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-09T00:37:54.548Z"
+  },
+  {
+    "id": "synth_uw0zk63emsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "用户体验缺口相关数据和分析结论，基于429个来源交叉验证",
+    "fieldPath": "experienceGaps[1].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-25T02:41:23.959Z"
+  },
+  {
+    "id": "synth_d2d9yu5wmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "用户体验升级相关数据和分析结论，基于430个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "industryTrend.currentTrends[1].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-03-03T16:31:20.753Z"
+  },
+  {
+    "id": "synth_1vgmvht6msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "直播带货渠道相关数据和分析结论，基于431个来源交叉验证",
+    "fieldPath": "channelAnalysis.mainChannels[2].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-03-29T22:37:39.238Z"
+  },
+  {
+    "id": "synth_89sh37bgmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "个性化定制相关数据和分析结论，基于432个来源交叉验证",
+    "fieldPath": "industryTrend.currentTrends[4].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-06-03T05:48:32.369Z"
+  },
+  {
+    "id": "synth_bnfzwabwmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "功能价值主张相关数据和分析结论，基于433个来源交叉验证",
+    "fieldPath": "valuePropositions[4].vp",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-21T18:19:04.151Z"
+  },
+  {
+    "id": "synth_ef9x7crjmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "情感价值主张相关数据和分析结论，基于434个来源交叉验证",
+    "fieldPath": "valuePropositions[3].vp",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-16T01:13:10.954Z"
+  },
+  {
+    "id": "synth_vle3yq5jmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉关键词相关数据和分析结论，基于435个来源交叉验证",
+    "fieldPath": "keywords",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-29T00:49:28.096Z"
+  },
+  {
+    "id": "synth_7kdgvy0tmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "用户体验升级相关数据和分析结论，基于436个来源交叉验证",
+    "fieldPath": "industryTrend.currentTrends[3].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-05-03T21:17:33.346Z"
+  },
+  {
+    "id": "synth_t963pdp1msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "产品问题相关数据和分析结论，基于437个来源交叉验证",
+    "fieldPath": "confirmedProblems[1].problem",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-07T00:53:53.472Z"
+  },
+  {
+    "id": "synth_euwpct1hmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉美学统领方向相关数据和分析结论，基于438个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "coreConcept",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-19T20:40:55.704Z"
+  },
+  {
+    "id": "synth_4yj8mcabmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "需求端特征相关数据和分析结论，基于439个来源交叉验证，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "categoryStatus.currentState",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-11T04:19:52.816Z"
+  },
+  {
+    "id": "synth_ow9bnfw7msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "竞品用户口碑相关数据和分析结论，基于440个来源交叉验证",
+    "fieldPath": "competitors[3].info",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-03-13T21:37:33.519Z"
+  },
+  {
+    "id": "synth_ewihjnqimsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "消费升级驱动相关数据和分析结论，基于441个来源交叉验证，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "businessBackground.drivingForces[3].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-27T22:33:27.942Z"
+  },
+  {
+    "id": "synth_fdebotecmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费场景记录相关数据和分析结论，基于442个来源交叉验证，与竞品在该维度的表现形成显著差异，与竞品在该维度的表现形成显著差异，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "observations[4].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-01T05:40:07.762Z"
+  },
+  {
+    "id": "synth_qzoyj4psmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "品牌人格特质组合相关数据和分析结论，基于443个来源交叉验证",
+    "fieldPath": "brandPersonality",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-03T00:26:01.403Z"
+  },
+  {
+    "id": "synth_eybokutgmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "hypothesis",
+    "content": "未被满足的需求场景相关数据和分析结论，基于444个来源交叉验证",
+    "fieldPath": "opportunityDirections[4].direction",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-08-04T02:57:09.263Z"
+  },
+  {
+    "id": "synth_4l522s31msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "产品差异化不足相关数据和分析结论，基于445个来源交叉验证",
+    "fieldPath": "coreChallenges.internalChallenges[3].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-30T18:21:01.532Z"
+  },
+  {
+    "id": "synth_88f79cj0msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "复合增长率相关数据和分析结论，基于446个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "marketOverview.growthRate",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-05-19T18:11:05.933Z"
+  },
+  {
+    "id": "synth_t1jb6bwsmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品体验盲区相关数据和分析结论，基于447个来源交叉验证，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "competitors[4].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-23T12:18:20.097Z"
+  },
+  {
+    "id": "synth_dfp8e2vemsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "hypothesis",
+    "content": "未被满足的需求场景相关数据和分析结论，基于448个来源交叉验证",
+    "fieldPath": "opportunityDirections[0].direction",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-21T20:03:50.456Z"
+  },
+  {
+    "id": "synth_kjd2wznzmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "消费者期望与现实的差距相关数据和分析结论，基于449个来源交叉验证",
+    "fieldPath": "competitiveGap.unmetNeeds[1].need",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-01T19:53:47.721Z"
+  },
+  {
+    "id": "synth_4qiwtjw9msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "社会文化趋势相关数据和分析结论，基于450个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[4].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-30T21:59:31.371Z"
+  },
+  {
+    "id": "synth_ioem9tremsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "品类发展趋势相关数据和分析结论，基于451个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "businessBackground.marketContext",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-19T04:09:00.616Z"
+  },
+  {
+    "id": "synth_dnkeexp0msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "供应链风险相关数据和分析结论，基于452个来源交叉验证",
+    "fieldPath": "coreChallenges.externalChallenges[1].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-28T22:29:06.208Z"
+  },
+  {
+    "id": "synth_ket250ffmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "战略定位空白区域相关数据和分析结论，基于453个来源交叉验证，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化，预计未来12个月内该趋势将进一步强化，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "competitiveGap.marketOpportunity",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-17T12:44:11.609Z"
+  },
+  {
+    "id": "synth_l2m80e63msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品产品缺陷相关数据和分析结论，基于454个来源交叉验证。进一步的用户调研显示这一趋势具有持续性。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "competitors[4].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-26T11:15:42.055Z"
+  },
+  {
+    "id": "synth_oy5xayofmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "产品功能缺失相关数据和分析结论，基于455个来源交叉验证",
+    "fieldPath": "experienceGaps[2].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-22T21:25:58.955Z"
+  },
+  {
+    "id": "synth_qxkcqih8msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "团队能力缺口相关数据和分析结论，基于456个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "coreChallenges.internalChallenges[3].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-22T15:04:37.125Z"
+  },
+  {
+    "id": "synth_1307ygszmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "行业宏观背景相关数据和分析结论，基于457个来源交叉验证，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值。进一步的用户调研显示这一趋势具有持续性。进一步的用户调研显示这一趋势具有持续性，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "businessBackground.marketContext",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-06T06:37:11.616Z"
+  },
+  {
+    "id": "synth_noe32xscmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "复合增长率相关数据和分析结论，基于458个来源交叉验证，与竞品在该维度的表现形成显著差异，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "marketOverview.growthRate",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-31T07:41:20.782Z"
+  },
+  {
+    "id": "synth_lv2a0u63msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "资源分配优先级相关数据和分析结论，基于459个来源交叉验证",
+    "fieldPath": "strategicDirection.workingPriorities[0].priority",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-10T17:28:13.325Z"
+  },
+  {
+    "id": "synth_9gu6g9ccmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "购买决策过程相关数据和分析结论，基于460个来源交叉验证，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "observations[3].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-15T11:21:13.637Z"
+  },
+  {
+    "id": "synth_blu9uqlbmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉关键词相关数据和分析结论，基于461个来源交叉验证",
+    "fieldPath": "keywords",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-26T09:49:48.092Z"
+  },
+  {
+    "id": "synth_r4vl8xd0msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉美学统领方向相关数据和分析结论，基于462个来源交叉验证",
+    "fieldPath": "coreConcept",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-26T03:52:32.677Z"
+  },
+  {
+    "id": "synth_j9hl4cybmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "产品功能缺失相关数据和分析结论，基于463个来源交叉验证",
+    "fieldPath": "experienceGaps[3].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-07T00:27:04.864Z"
+  },
+  {
+    "id": "synth_0wblgww2msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "品牌认知度低相关数据和分析结论，基于464个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "coreChallenges.internalChallenges[1].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-26T19:09:20.831Z"
+  },
+  {
+    "id": "synth_fy0g7pxymsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "hypothesis",
+    "content": "市场机会方向相关数据和分析结论，基于465个来源交叉验证",
+    "fieldPath": "opportunityDirections[1].direction",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-15T02:27:56.085Z"
+  },
+  {
+    "id": "synth_3swgf4nbmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "短期工作重点相关数据和分析结论，基于466个来源交叉验证",
+    "fieldPath": "strategicDirection.workingPriorities[2].priority",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-18T10:27:57.990Z"
+  },
+  {
+    "id": "synth_2b4zfbwlmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "情感价值主张相关数据和分析结论，基于467个来源交叉验证",
+    "fieldPath": "valuePropositions[3].vp",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-02T21:28:57.519Z"
+  },
+  {
+    "id": "synth_3kayamj4msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 8,
+    "entryType": "confirmed_decision",
+    "content": "内容系列方向相关数据和分析结论，基于468个来源交叉验证",
+    "fieldPath": "themeDirections[3].pillar",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-30T04:31:53.546Z"
+  },
+  {
+    "id": "synth_6wtnxkcxmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "产品问题相关数据和分析结论，基于469个来源交叉验证",
+    "fieldPath": "confirmedProblems[0].problem",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-25T15:51:44.569Z"
+  },
+  {
+    "id": "synth_fwd0paiqmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "confirmed_fact",
+    "content": "竞品的核心缺陷相关数据和分析结论，基于470个来源交叉验证。进一步的用户调研显示这一趋势具有持续性。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "existingSolutions[3].failReason",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-16T09:26:37.221Z"
+  },
+  {
+    "id": "synth_4klfjg76msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "品牌核心行为相关数据和分析结论，基于471个来源交叉验证。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "brandStory.brandAction",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-12T23:53:29.746Z"
+  },
+  {
+    "id": "synth_7ci64m5gmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉关键词相关数据和分析结论，基于472个来源交叉验证",
+    "fieldPath": "keywords",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-16T04:26:44.934Z"
+  },
+  {
+    "id": "synth_ns2oa3ndmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 7,
+    "entryType": "confirmed_decision",
+    "content": "视觉关键词相关数据和分析结论，基于473个来源交叉验证",
+    "fieldPath": "keywords",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-15T09:34:48.650Z"
+  },
+  {
+    "id": "synth_20uvt065msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品产品缺陷相关数据和分析结论，基于474个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "competitors[4].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-07T04:16:22.534Z"
+  },
+  {
+    "id": "synth_txy443e2msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "年增长率相关数据和分析结论，基于475个来源交叉验证，与竞品在该维度的表现形成显著差异，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "marketOverview.growthRate",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-26T01:51:06.846Z"
+  },
+  {
+    "id": "synth_h7wn1j9lmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 8,
+    "entryType": "confirmed_decision",
+    "content": "内容栏目规划相关数据和分析结论，基于476个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "themeDirections[4].pillar",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-15T09:15:39.497Z"
+  },
+  {
+    "id": "synth_jpl28aicmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "资金限制相关数据和分析结论，基于477个来源交叉验证",
+    "fieldPath": "coreChallenges.internalChallenges[2].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-13T22:28:28.016Z"
+  },
+  {
+    "id": "synth_qpdz34n9msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "供给端特征相关数据和分析结论，基于478个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "categoryStatus.currentState",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-16T18:28:51.325Z"
+  },
+  {
+    "id": "synth_2m4jqnj1msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "产品功能缺失相关数据和分析结论，基于479个来源交叉验证，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "experienceGaps[1].gap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-25T17:10:57.832Z"
+  },
+  {
+    "id": "synth_f3s7mkswmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "能力建设顺序相关数据和分析结论，基于480个来源交叉验证",
+    "fieldPath": "strategicDirection.workingPriorities[4].priority",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-06T03:48:48.411Z"
+  },
+  {
+    "id": "synth_y730l2wdmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "外部竞争压力相关数据和分析结论，基于481个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "coreChallenges.externalChallenges[3].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-19T18:13:20.065Z"
+  },
+  {
+    "id": "synth_304rj0u0msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "confirmed_fact",
+    "content": "竞品营销动作相关数据和分析结论，基于482个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "competitorUpdate.newMove[3].action",
+    "evidenceLevel": "search_snippet",
+    "confirmedAt": "2026-06-14T19:08:54.025Z"
+  },
+  {
+    "id": "synth_3pelx7temsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品体验盲区相关数据和分析结论，基于483个来源交叉验证。这一发现对品牌战略方向选择具有关键参考价值。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "competitors[4].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-25T15:54:32.613Z"
+  },
+  {
+    "id": "synth_ie63dfebmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "用户体验升级相关数据和分析结论，基于484个来源交叉验证，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "industryTrend.currentTrends[3].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-07-06T08:58:45.737Z"
+  },
+  {
+    "id": "synth_43l0oy09msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 6,
+    "entryType": "confirmed_decision",
+    "content": "情感价值主张相关数据和分析结论，基于485个来源交叉验证",
+    "fieldPath": "valuePropositions[1].vp",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-23T22:13:05.902Z"
+  },
+  {
+    "id": "synth_22yhsvqomsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "团队能力缺口相关数据和分析结论，基于486个来源交叉验证，预计未来12个月内该趋势将进一步强化",
+    "fieldPath": "coreChallenges.internalChallenges[4].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-13T10:23:49.196Z"
+  },
+  {
+    "id": "synth_ynd5pjnnmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "市场窗口期相关数据和分析结论，基于487个来源交叉验证，与竞品在该维度的表现形成显著差异，预计未来12个月内该趋势将进一步强化，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "businessBackground.strategicWindow",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-02T16:24:58.839Z"
+  },
+  {
+    "id": "synth_2qufp9q7msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "社交媒体渠道相关数据和分析结论，基于488个来源交叉验证",
+    "fieldPath": "channelAnalysis.mainChannels[3].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-04-22T17:36:49.151Z"
+  },
+  {
+    "id": "synth_4byjyx53msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "渠道变革相关数据和分析结论，基于489个来源交叉验证",
+    "fieldPath": "industryTrend.currentTrends[4].trend",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-05-10T11:53:05.430Z"
+  },
+  {
+    "id": "synth_biyvupdrmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "产品差异化不足相关数据和分析结论，基于490个来源交叉验证",
+    "fieldPath": "coreChallenges.internalChallenges[1].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-02-08T08:17:02.104Z"
+  },
+  {
+    "id": "synth_t0x2t2vtmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "消费升级驱动相关数据和分析结论，基于491个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[3].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-15T20:50:43.716Z"
+  },
+  {
+    "id": "synth_o4qwtwawmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 4,
+    "entryType": "confirmed_fact",
+    "content": "消费者行为特征相关数据和分析结论，基于492个来源交叉验证。进一步的用户调研显示这一趋势具有持续性。这一发现对品牌战略方向选择具有关键参考价值。进一步的用户调研显示这一趋势具有持续性。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "targetConsumer.definition",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-05T21:01:57.734Z"
+  },
+  {
+    "id": "synth_7euvf3c9msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "hypothesis",
+    "content": "优先验证方向相关数据和分析结论，基于493个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "strategicDirection.workingPriorities[1].priority",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-06-27T02:18:24.590Z"
+  },
+  {
+    "id": "synth_kzb5y94fmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "品牌差异化切入机会相关数据和分析结论，基于494个来源交叉验证，与竞品在该维度的表现形成显著差异。进一步的用户调研显示这一趋势具有持续性，预计未来12个月内该趋势将进一步强化。进一步的用户调研显示这一趋势具有持续性。进一步的用户调研显示这一趋势具有持续性，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "competitiveGap.marketOpportunity",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-07-04T00:29:48.382Z"
+  },
+  {
+    "id": "synth_18ehhox4msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 5,
+    "entryType": "hypothesis",
+    "content": "竞品体验盲区相关数据和分析结论，基于495个来源交叉验证，预计未来12个月内该趋势将进一步强化。这一发现对品牌战略方向选择具有关键参考价值",
+    "fieldPath": "competitors[2].opportunityGap",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-04-17T12:41:49.111Z"
+  },
+  {
+    "id": "synth_p5tadwe7msg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 3,
+    "entryType": "confirmed_fact",
+    "content": "私域运营渠道相关数据和分析结论，基于496个来源交叉验证",
+    "fieldPath": "channelAnalysis.mainChannels[4].channel",
+    "evidenceLevel": "search_backed",
+    "confirmedAt": "2026-06-16T12:32:17.012Z"
+  },
+  {
+    "id": "synth_eww0lmpxmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "供应链风险相关数据和分析结论，基于497个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "coreChallenges.externalChallenges[2].challenge",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-08-04T05:29:44.924Z"
+  },
+  {
+    "id": "synth_qn74lk1lmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 2,
+    "entryType": "confirmed_fact",
+    "content": "人口结构变化相关数据和分析结论，基于498个来源交叉验证",
+    "fieldPath": "businessBackground.drivingForces[0].force",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-08T17:24:52.063Z"
+  },
+  {
+    "id": "synth_k73c7wepmsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 8,
+    "entryType": "confirmed_decision",
+    "content": "内容核心方向相关数据和分析结论，基于499个来源交叉验证。进一步的用户调研显示这一趋势具有持续性",
+    "fieldPath": "coreDirection",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-03-15T17:40:15.931Z"
+  },
+  {
+    "id": "synth_pekaxhcemsg4lqhu",
+    "projectId": "proj_extended_500",
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "购买决策过程相关数据和分析结论，基于500个来源交叉验证，与竞品在该维度的表现形成显著差异。这一发现对品牌战略方向选择具有关键参考价值，与竞品在该维度的表现形成显著差异",
+    "fieldPath": "observations[4].behavior",
+    "evidenceLevel": "ai_inferred",
+    "confirmedAt": "2026-05-14T01:04:35.637Z"
+  }
+]

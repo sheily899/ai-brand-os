@@ -9,3 +9,7 @@
 - [S2 H4 生产环境 Cache 效率 (2026-08-05)](s2-h4-production-cache-2026-08-05.md) — S2商业背景分析H4验证，节省76.4%，Warm质量高于Cold
 - [S5 H4 生产环境 Cache 效率 (2026-08-05)](s5-h4-production-cache-2026-08-05.md) — S5竞争判断H4验证，节省72.4%，Cold=Warm=77(10/10零方差)，最干净的验证
 - [Token 优化五机会分析 (2026-08-05)](token-optimization-five-opportunities-analysis.md) — 四步重新校准：机会5改为确定性规则、测试集缺口、机会4逐条审查、机会1/5兼容性与实施顺序
+- [Search Context 压缩 A/B 测试设计 (2026-08-05)](search-context-compression-ab-test-design.md) — Phase 1 A/B benchmark (5案例×4阶段×2组) + Phase 2 E2E验证，含成功标准与数据采集指标（完整版，未来发表用）
+- [Search Context 压缩精简验证方案 (2026-08-05)](search-context-compression-streamlined-test.md) — 工程验证版：3案例×S3/S5×A/B×2次 + 慢象咖啡 E2E，12-16h
+- [Search Context 压缩 A/B 测试结果 (2026-08-05)](search-context-compression-ab-results-2026-08-05.md) — 2案例×5数据点，S3/S5评分零差异(73/77)，全链路无战略漂移，推荐进入生产
+- [DM 分层压缩测试方案 (2026-08-05)](dm-layered-compression-test-plan.md) — 机会1验证：3个假设、Case A/B数据设计、4个自动化测试、Token/质量/保留率三维通过标准
