@@ -1,0 +1,143 @@
+{
+  "totalEntries": 49995,
+  "priorEntries": 36940,
+  "fullMode": {
+    "chars": 25423267,
+    "estimatedTokens": 6355817
+  },
+  "layeredMode": {
+    "chars": 10838619,
+    "estimatedTokens": 2709655
+  },
+  "compressionRate": "57.4%",
+  "strategicRetention": {
+    "total": 2440,
+    "full": 2440,
+    "rate": "100.0%"
+  },
+  "scoreDistribution": {
+    "full": 6995,
+    "summary": 43000
+  },
+  "typeBreakdown": [
+    {
+      "name": "aiReasoning",
+      "count": 14000,
+      "fullChars": 9731084,
+      "layeredChars": 2926020,
+      "compressionRate": "70%"
+    },
+    {
+      "name": "userFeedback",
+      "count": 8000,
+      "fullChars": 5536562,
+      "layeredChars": 1672009,
+      "compressionRate": "70%"
+    },
+    {
+      "name": "decisionHistory",
+      "count": 5000,
+      "fullChars": 3472096,
+      "layeredChars": 2014763,
+      "compressionRate": "42%"
+    },
+    {
+      "name": "discussionNotes",
+      "count": 5000,
+      "fullChars": 3502708,
+      "layeredChars": 1045010,
+      "compressionRate": "70%"
+    },
+    {
+      "name": "marketOverview",
+      "count": 1000,
+      "fullChars": 697402,
+      "layeredChars": 697402,
+      "compressionRate": "0%"
+    },
+    {
+      "name": "marketUpdate",
+      "count": 1000,
+      "fullChars": 690086,
+      "layeredChars": 690086,
+      "compressionRate": "0%"
+    },
+    {
+      "name": "industryTrend",
+      "count": 500,
+      "fullChars": 354550,
+      "layeredChars": 354550,
+      "compressionRate": "0%"
+    },
+    {
+      "name": "channelAnalysis",
+      "count": 500,
+      "fullChars": 341857,
+      "layeredChars": 341857,
+      "compressionRate": "0%"
+    },
+    {
+      "name": "competitors",
+      "count": 500,
+      "fullChars": 350398,
+      "layeredChars": 350398,
+      "compressionRate": "0%"
+    },
+    {
+      "name": "competitiveLandscape",
+      "count": 500,
+      "fullChars": 342444,
+      "layeredChars": 342444,
+      "compressionRate": "0%"
+    },
+    {
+      "name": "competitorUpdate",
+      "count": 500,
+      "fullChars": 353339,
+      "layeredChars": 353339,
+      "compressionRate": "0%"
+    },
+    {
+      "name": "deepNeeds",
+      "count": 110,
+      "fullChars": 12966,
+      "layeredChars": 12966,
+      "compressionRate": "0%"
+    },
+    {
+      "name": "brandStory",
+      "count": 110,
+      "fullChars": 12953,
+      "layeredChars": 12953,
+      "compressionRate": "0%"
+    },
+    {
+      "name": "founderMotivation",
+      "count": 55,
+      "fullChars": 6277,
+      "layeredChars": 6277,
+      "compressionRate": "0%"
+    },
+    {
+      "name": "competitiveGap",
+      "count": 55,
+      "fullChars": 6322,
+      "layeredChars": 6322,
+      "compressionRate": "0%"
+    },
+    {
+      "name": "positioning",
+      "count": 55,
+      "fullChars": 6129,
+      "layeredChars": 6129,
+      "compressionRate": "0%"
+    },
+    {
+      "name": "coreConcept",
+      "count": 55,
+      "fullChars": 6253,
+      "layeredChars": 6253,
+      "compressionRate": "0%"
+    }
+  ]
+}

@@ -1,0 +1,702 @@
+[
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费者深层需求（身份认同）：目标用户希望通过选择的品牌来表达自己的审美品味和生活态度——理性、克制、不从众。他们不追逐潮流，但追求经得起时间考验的品质。",
+    "fieldPath": "founderMotivation.content",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "竞品心智空位：当前市场上，A类品牌主打成分浓度和专业性，B类品牌主打性价比和便捷性，但在'安全有效+情感共鸣'的交叉地带存在明显空白。消费者渴望一个既专业又温暖的品牌，而不是冷冰冰的实验室形象或过度营销的快消品形象。 (第2次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[1]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "竞品心智空位：当前市场上，A类品牌主打成分浓度和专业性，B类品牌主打性价比和便捷性，但在'安全有效+情感共鸣'的交叉地带存在明显空白。消费者渴望一个既专业又温暖的品牌，而不是冷冰冰的实验室形象或过度营销的快消品形象。 (第3次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[2]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "竞品心智空位：当前市场上，A类品牌主打成分浓度和专业性，B类品牌主打性价比和便捷性，但在'安全有效+情感共鸣'的交叉地带存在明显空白。消费者渴望一个既专业又温暖的品牌，而不是冷冰冰的实验室形象或过度营销的快消品形象。 (第4次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[3]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "竞品心智空位：当前市场上，A类品牌主打成分浓度和专业性，B类品牌主打性价比和便捷性，但在'安全有效+情感共鸣'的交叉地带存在明显空白。消费者渴望一个既专业又温暖的品牌，而不是冷冰冰的实验室形象或过度营销的快消品形象。 (第5次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[4]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费者深层需求（身份认同）：目标用户希望通过选择的品牌来表达自己的审美品味和生活态度——理性、克制、不从众。他们不追逐潮流，但追求经得起时间考验的品质。 (第6次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[5]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "内容核心方向：围绕'成分科普+真实体验+生活方式'三条主线构建内容矩阵，不追求热点和流量话题，而是持续产出对用户有长期价值的深度内容，建立品牌在专业领域的权威性和在情感层面的亲近感。 (第7次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[6]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "品牌核心视觉概念：以'自然光线下的真实质感'为核心，摒弃过度修饰和滤镜美学，用真实的材质、自然的光影和克制的色彩来传递品牌的诚实与专业。视觉系统围绕'透明感'和'层次感'两个关键词展开。 (第8次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[7]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费者深层需求（身份认同）：目标用户希望通过选择的品牌来表达自己的审美品味和生活态度——理性、克制、不从众。他们不追逐潮流，但追求经得起时间考验的品质。 (第9次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[8]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费者深层需求（功能性）：用户需要一套能够在日常生活中无缝融入的护理方案，不增加额外的时间成本，同时能够看到可感知的效果改善。他们不信任夸大宣传，但相信数据和口碑。 (第10次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[9]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "竞品心智空位：当前市场上，A类品牌主打成分浓度和专业性，B类品牌主打性价比和便捷性，但在'安全有效+情感共鸣'的交叉地带存在明显空白。消费者渴望一个既专业又温暖的品牌，而不是冷冰冰的实验室形象或过度营销的快消品形象。 (第11次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[10]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "品牌核心视觉概念：以'自然光线下的真实质感'为核心，摒弃过度修饰和滤镜美学，用真实的材质、自然的光影和克制的色彩来传递品牌的诚实与专业。视觉系统围绕'透明感'和'层次感'两个关键词展开。 (第12次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[11]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "品牌定位：面向追求品质生活的都市年轻家庭，提供以天然成分为核心的功能性个人护理产品，区别于传统化工品牌的刺激性配方，让消费者在安全呵护中感受肌肤的自然修复力。这是基于S4消费者深层需求（功能性+身份认同）和S5竞争空位（天然安全+有效性的结合点）推导的战略选择。 (第13次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[12]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "品牌核心视觉概念：以'自然光线下的真实质感'为核心，摒弃过度修饰和滤镜美学，用真实的材质、自然的光影和克制的色彩来传递品牌的诚实与专业。视觉系统围绕'透明感'和'层次感'两个关键词展开。 (第14次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[13]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "品牌核心视觉概念：以'自然光线下的真实质感'为核心，摒弃过度修饰和滤镜美学，用真实的材质、自然的光影和克制的色彩来传递品牌的诚实与专业。视觉系统围绕'透明感'和'层次感'两个关键词展开。 (第15次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[14]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费者深层需求（功能性）：用户需要一套能够在日常生活中无缝融入的护理方案，不增加额外的时间成本，同时能够看到可感知的效果改善。他们不信任夸大宣传，但相信数据和口碑。 (第16次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[15]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "内容核心方向：围绕'成分科普+真实体验+生活方式'三条主线构建内容矩阵，不追求热点和流量话题，而是持续产出对用户有长期价值的深度内容，建立品牌在专业领域的权威性和在情感层面的亲近感。 (第17次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[16]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费者深层需求（身份认同）：目标用户希望通过选择的品牌来表达自己的审美品味和生活态度——理性、克制、不从众。他们不追逐潮流，但追求经得起时间考验的品质。 (第18次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[17]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "品牌核心视觉概念：以'自然光线下的真实质感'为核心，摒弃过度修饰和滤镜美学，用真实的材质、自然的光影和克制的色彩来传递品牌的诚实与专业。视觉系统围绕'透明感'和'层次感'两个关键词展开。 (第19次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[18]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费者深层需求（身份认同）：目标用户希望通过选择的品牌来表达自己的审美品味和生活态度——理性、克制、不从众。他们不追逐潮流，但追求经得起时间考验的品质。 (第20次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[19]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费者深层需求（身份认同）：目标用户希望通过选择的品牌来表达自己的审美品味和生活态度——理性、克制、不从众。他们不追逐潮流，但追求经得起时间考验的品质。 (第21次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[20]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "竞品心智空位：当前市场上，A类品牌主打成分浓度和专业性，B类品牌主打性价比和便捷性，但在'安全有效+情感共鸣'的交叉地带存在明显空白。消费者渴望一个既专业又温暖的品牌，而不是冷冰冰的实验室形象或过度营销的快消品形象。 (第22次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[21]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "竞品心智空位：当前市场上，A类品牌主打成分浓度和专业性，B类品牌主打性价比和便捷性，但在'安全有效+情感共鸣'的交叉地带存在明显空白。消费者渴望一个既专业又温暖的品牌，而不是冷冰冰的实验室形象或过度营销的快消品形象。 (第23次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[22]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "品牌定位：面向追求品质生活的都市年轻家庭，提供以天然成分为核心的功能性个人护理产品，区别于传统化工品牌的刺激性配方，让消费者在安全呵护中感受肌肤的自然修复力。这是基于S4消费者深层需求（功能性+身份认同）和S5竞争空位（天然安全+有效性的结合点）推导的战略选择。 (第24次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[23]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "品牌定位：面向追求品质生活的都市年轻家庭，提供以天然成分为核心的功能性个人护理产品，区别于传统化工品牌的刺激性配方，让消费者在安全呵护中感受肌肤的自然修复力。这是基于S4消费者深层需求（功能性+身份认同）和S5竞争空位（天然安全+有效性的结合点）推导的战略选择。 (第25次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[24]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "品牌核心视觉概念：以'自然光线下的真实质感'为核心，摒弃过度修饰和滤镜美学，用真实的材质、自然的光影和克制的色彩来传递品牌的诚实与专业。视觉系统围绕'透明感'和'层次感'两个关键词展开。 (第26次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[25]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "内容核心方向：围绕'成分科普+真实体验+生活方式'三条主线构建内容矩阵，不追求热点和流量话题，而是持续产出对用户有长期价值的深度内容，建立品牌在专业领域的权威性和在情感层面的亲近感。 (第27次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[26]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "品牌定位：面向追求品质生活的都市年轻家庭，提供以天然成分为核心的功能性个人护理产品，区别于传统化工品牌的刺激性配方，让消费者在安全呵护中感受肌肤的自然修复力。这是基于S4消费者深层需求（功能性+身份认同）和S5竞争空位（天然安全+有效性的结合点）推导的战略选择。 (第28次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[27]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费者深层需求（身份认同）：目标用户希望通过选择的品牌来表达自己的审美品味和生活态度——理性、克制、不从众。他们不追逐潮流，但追求经得起时间考验的品质。 (第29次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[28]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "品牌核心视觉概念：以'自然光线下的真实质感'为核心，摒弃过度修饰和滤镜美学，用真实的材质、自然的光影和克制的色彩来传递品牌的诚实与专业。视觉系统围绕'透明感'和'层次感'两个关键词展开。 (第30次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[29]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "品牌定位：面向追求品质生活的都市年轻家庭，提供以天然成分为核心的功能性个人护理产品，区别于传统化工品牌的刺激性配方，让消费者在安全呵护中感受肌肤的自然修复力。这是基于S4消费者深层需求（功能性+身份认同）和S5竞争空位（天然安全+有效性的结合点）推导的战略选择。 (第31次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[30]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "竞品心智空位：当前市场上，A类品牌主打成分浓度和专业性，B类品牌主打性价比和便捷性，但在'安全有效+情感共鸣'的交叉地带存在明显空白。消费者渴望一个既专业又温暖的品牌，而不是冷冰冰的实验室形象或过度营销的快消品形象。 (第32次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[31]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费者深层需求（身份认同）：目标用户希望通过选择的品牌来表达自己的审美品味和生活态度——理性、克制、不从众。他们不追逐潮流，但追求经得起时间考验的品质。 (第33次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[32]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "内容核心方向：围绕'成分科普+真实体验+生活方式'三条主线构建内容矩阵，不追求热点和流量话题，而是持续产出对用户有长期价值的深度内容，建立品牌在专业领域的权威性和在情感层面的亲近感。 (第34次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[33]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "内容核心方向：围绕'成分科普+真实体验+生活方式'三条主线构建内容矩阵，不追求热点和流量话题，而是持续产出对用户有长期价值的深度内容，建立品牌在专业领域的权威性和在情感层面的亲近感。 (第35次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[34]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "品牌核心视觉概念：以'自然光线下的真实质感'为核心，摒弃过度修饰和滤镜美学，用真实的材质、自然的光影和克制的色彩来传递品牌的诚实与专业。视觉系统围绕'透明感'和'层次感'两个关键词展开。 (第36次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[35]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费者深层需求（身份认同）：目标用户希望通过选择的品牌来表达自己的审美品味和生活态度——理性、克制、不从众。他们不追逐潮流，但追求经得起时间考验的品质。 (第37次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[36]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费者深层需求（功能性）：用户需要一套能够在日常生活中无缝融入的护理方案，不增加额外的时间成本，同时能够看到可感知的效果改善。他们不信任夸大宣传，但相信数据和口碑。 (第38次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[37]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "竞品心智空位：当前市场上，A类品牌主打成分浓度和专业性，B类品牌主打性价比和便捷性，但在'安全有效+情感共鸣'的交叉地带存在明显空白。消费者渴望一个既专业又温暖的品牌，而不是冷冰冰的实验室形象或过度营销的快消品形象。 (第39次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[38]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费者深层需求（身份认同）：目标用户希望通过选择的品牌来表达自己的审美品味和生活态度——理性、克制、不从众。他们不追逐潮流，但追求经得起时间考验的品质。 (第40次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[39]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "品牌核心视觉概念：以'自然光线下的真实质感'为核心，摒弃过度修饰和滤镜美学，用真实的材质、自然的光影和克制的色彩来传递品牌的诚实与专业。视觉系统围绕'透明感'和'层次感'两个关键词展开。 (第41次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[40]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "竞品心智空位：当前市场上，A类品牌主打成分浓度和专业性，B类品牌主打性价比和便捷性，但在'安全有效+情感共鸣'的交叉地带存在明显空白。消费者渴望一个既专业又温暖的品牌，而不是冷冰冰的实验室形象或过度营销的快消品形象。 (第42次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[41]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "竞品心智空位：当前市场上，A类品牌主打成分浓度和专业性，B类品牌主打性价比和便捷性，但在'安全有效+情感共鸣'的交叉地带存在明显空白。消费者渴望一个既专业又温暖的品牌，而不是冷冰冰的实验室形象或过度营销的快消品形象。 (第43次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[42]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "品牌定位：面向追求品质生活的都市年轻家庭，提供以天然成分为核心的功能性个人护理产品，区别于传统化工品牌的刺激性配方，让消费者在安全呵护中感受肌肤的自然修复力。这是基于S4消费者深层需求（功能性+身份认同）和S5竞争空位（天然安全+有效性的结合点）推导的战略选择。 (第44次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[43]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "品牌核心视觉概念：以'自然光线下的真实质感'为核心，摒弃过度修饰和滤镜美学，用真实的材质、自然的光影和克制的色彩来传递品牌的诚实与专业。视觉系统围绕'透明感'和'层次感'两个关键词展开。 (第45次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[44]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "竞品心智空位：当前市场上，A类品牌主打成分浓度和专业性，B类品牌主打性价比和便捷性，但在'安全有效+情感共鸣'的交叉地带存在明显空白。消费者渴望一个既专业又温暖的品牌，而不是冷冰冰的实验室形象或过度营销的快消品形象。 (第46次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[45]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费者深层需求（身份认同）：目标用户希望通过选择的品牌来表达自己的审美品味和生活态度——理性、克制、不从众。他们不追逐潮流，但追求经得起时间考验的品质。 (第47次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[46]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费者深层需求（身份认同）：目标用户希望通过选择的品牌来表达自己的审美品味和生活态度——理性、克制、不从众。他们不追逐潮流，但追求经得起时间考验的品质。 (第48次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[47]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "内容核心方向：围绕'成分科普+真实体验+生活方式'三条主线构建内容矩阵，不追求热点和流量话题，而是持续产出对用户有长期价值的深度内容，建立品牌在专业领域的权威性和在情感层面的亲近感。 (第49次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[48]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费者深层需求（功能性）：用户需要一套能够在日常生活中无缝融入的护理方案，不增加额外的时间成本，同时能够看到可感知的效果改善。他们不信任夸大宣传，但相信数据和口碑。 (第50次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[49]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费者深层需求（身份认同）：目标用户希望通过选择的品牌来表达自己的审美品味和生活态度——理性、克制、不从众。他们不追逐潮流，但追求经得起时间考验的品质。 (第51次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[50]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "消费者深层需求（身份认同）：目标用户希望通过选择的品牌来表达自己的审美品味和生活态度——理性、克制、不从众。他们不追逐潮流，但追求经得起时间考验的品质。 (第52次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[51]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "竞品心智空位：当前市场上，A类品牌主打成分浓度和专业性，B类品牌主打性价比和便捷性，但在'安全有效+情感共鸣'的交叉地带存在明显空白。消费者渴望一个既专业又温暖的品牌，而不是冷冰冰的实验室形象或过度营销的快消品形象。 (第53次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[52]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "品牌核心视觉概念：以'自然光线下的真实质感'为核心，摒弃过度修饰和滤镜美学，用真实的材质、自然的光影和克制的色彩来传递品牌的诚实与专业。视觉系统围绕'透明感'和'层次感'两个关键词展开。 (第54次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[53]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 1,
+    "entryType": "confirmed_fact",
+    "content": "内容核心方向：围绕'成分科普+真实体验+生活方式'三条主线构建内容矩阵，不追求热点和流量话题，而是持续产出对用户有长期价值的深度内容，建立品牌在专业领域的权威性和在情感层面的亲近感。 (第55次迭代优化)",
+    "fieldPath": "founderMotivation.content.version[54]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "竞品心智空位：当前市场上，A类品牌主打成分浓度和专业性，B类品牌主打性价比和便捷性，但在'安全有效+情感共鸣'的交叉地带存在明显空白。消费者渴望一个既专业又温暖的品牌，而不是冷冰冰的实验室形象或过度营销的快消品形象。",
+    "fieldPath": "deepNeeds.identityNeed",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "消费者深层需求（身份认同）：目标用户希望通过选择的品牌来表达自己的审美品味和生活态度——理性、克制、不从众。他们不追逐潮流，但追求经得起时间考验的品质。 (第2次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[1]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "消费者深层需求（功能性）：用户需要一套能够在日常生活中无缝融入的护理方案，不增加额外的时间成本，同时能够看到可感知的效果改善。他们不信任夸大宣传，但相信数据和口碑。 (第3次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[2]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "品牌核心视觉概念：以'自然光线下的真实质感'为核心，摒弃过度修饰和滤镜美学，用真实的材质、自然的光影和克制的色彩来传递品牌的诚实与专业。视觉系统围绕'透明感'和'层次感'两个关键词展开。 (第4次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[3]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "品牌核心视觉概念：以'自然光线下的真实质感'为核心，摒弃过度修饰和滤镜美学，用真实的材质、自然的光影和克制的色彩来传递品牌的诚实与专业。视觉系统围绕'透明感'和'层次感'两个关键词展开。 (第5次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[4]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "消费者深层需求（功能性）：用户需要一套能够在日常生活中无缝融入的护理方案，不增加额外的时间成本，同时能够看到可感知的效果改善。他们不信任夸大宣传，但相信数据和口碑。 (第6次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[5]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "品牌定位：面向追求品质生活的都市年轻家庭，提供以天然成分为核心的功能性个人护理产品，区别于传统化工品牌的刺激性配方，让消费者在安全呵护中感受肌肤的自然修复力。这是基于S4消费者深层需求（功能性+身份认同）和S5竞争空位（天然安全+有效性的结合点）推导的战略选择。 (第7次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[6]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "内容核心方向：围绕'成分科普+真实体验+生活方式'三条主线构建内容矩阵，不追求热点和流量话题，而是持续产出对用户有长期价值的深度内容，建立品牌在专业领域的权威性和在情感层面的亲近感。 (第8次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[7]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "消费者深层需求（身份认同）：目标用户希望通过选择的品牌来表达自己的审美品味和生活态度——理性、克制、不从众。他们不追逐潮流，但追求经得起时间考验的品质。 (第9次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[8]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "内容核心方向：围绕'成分科普+真实体验+生活方式'三条主线构建内容矩阵，不追求热点和流量话题，而是持续产出对用户有长期价值的深度内容，建立品牌在专业领域的权威性和在情感层面的亲近感。 (第10次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[9]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "品牌定位：面向追求品质生活的都市年轻家庭，提供以天然成分为核心的功能性个人护理产品，区别于传统化工品牌的刺激性配方，让消费者在安全呵护中感受肌肤的自然修复力。这是基于S4消费者深层需求（功能性+身份认同）和S5竞争空位（天然安全+有效性的结合点）推导的战略选择。 (第11次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[10]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "竞品心智空位：当前市场上，A类品牌主打成分浓度和专业性，B类品牌主打性价比和便捷性，但在'安全有效+情感共鸣'的交叉地带存在明显空白。消费者渴望一个既专业又温暖的品牌，而不是冷冰冰的实验室形象或过度营销的快消品形象。 (第12次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[11]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "品牌定位：面向追求品质生活的都市年轻家庭，提供以天然成分为核心的功能性个人护理产品，区别于传统化工品牌的刺激性配方，让消费者在安全呵护中感受肌肤的自然修复力。这是基于S4消费者深层需求（功能性+身份认同）和S5竞争空位（天然安全+有效性的结合点）推导的战略选择。 (第13次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[12]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "竞品心智空位：当前市场上，A类品牌主打成分浓度和专业性，B类品牌主打性价比和便捷性，但在'安全有效+情感共鸣'的交叉地带存在明显空白。消费者渴望一个既专业又温暖的品牌，而不是冷冰冰的实验室形象或过度营销的快消品形象。 (第14次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[13]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "内容核心方向：围绕'成分科普+真实体验+生活方式'三条主线构建内容矩阵，不追求热点和流量话题，而是持续产出对用户有长期价值的深度内容，建立品牌在专业领域的权威性和在情感层面的亲近感。 (第15次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[14]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "品牌核心视觉概念：以'自然光线下的真实质感'为核心，摒弃过度修饰和滤镜美学，用真实的材质、自然的光影和克制的色彩来传递品牌的诚实与专业。视觉系统围绕'透明感'和'层次感'两个关键词展开。 (第16次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[15]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "消费者深层需求（功能性）：用户需要一套能够在日常生活中无缝融入的护理方案，不增加额外的时间成本，同时能够看到可感知的效果改善。他们不信任夸大宣传，但相信数据和口碑。 (第17次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[16]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "消费者深层需求（身份认同）：目标用户希望通过选择的品牌来表达自己的审美品味和生活态度——理性、克制、不从众。他们不追逐潮流，但追求经得起时间考验的品质。 (第18次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[17]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "竞品心智空位：当前市场上，A类品牌主打成分浓度和专业性，B类品牌主打性价比和便捷性，但在'安全有效+情感共鸣'的交叉地带存在明显空白。消费者渴望一个既专业又温暖的品牌，而不是冷冰冰的实验室形象或过度营销的快消品形象。 (第19次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[18]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "内容核心方向：围绕'成分科普+真实体验+生活方式'三条主线构建内容矩阵，不追求热点和流量话题，而是持续产出对用户有长期价值的深度内容，建立品牌在专业领域的权威性和在情感层面的亲近感。 (第20次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[19]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "内容核心方向：围绕'成分科普+真实体验+生活方式'三条主线构建内容矩阵，不追求热点和流量话题，而是持续产出对用户有长期价值的深度内容，建立品牌在专业领域的权威性和在情感层面的亲近感。 (第21次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[20]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "内容核心方向：围绕'成分科普+真实体验+生活方式'三条主线构建内容矩阵，不追求热点和流量话题，而是持续产出对用户有长期价值的深度内容，建立品牌在专业领域的权威性和在情感层面的亲近感。 (第22次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[21]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "内容核心方向：围绕'成分科普+真实体验+生活方式'三条主线构建内容矩阵，不追求热点和流量话题，而是持续产出对用户有长期价值的深度内容，建立品牌在专业领域的权威性和在情感层面的亲近感。 (第23次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[22]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "品牌核心视觉概念：以'自然光线下的真实质感'为核心，摒弃过度修饰和滤镜美学，用真实的材质、自然的光影和克制的色彩来传递品牌的诚实与专业。视觉系统围绕'透明感'和'层次感'两个关键词展开。 (第24次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[23]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "品牌定位：面向追求品质生活的都市年轻家庭，提供以天然成分为核心的功能性个人护理产品，区别于传统化工品牌的刺激性配方，让消费者在安全呵护中感受肌肤的自然修复力。这是基于S4消费者深层需求（功能性+身份认同）和S5竞争空位（天然安全+有效性的结合点）推导的战略选择。 (第25次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[24]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "竞品心智空位：当前市场上，A类品牌主打成分浓度和专业性，B类品牌主打性价比和便捷性，但在'安全有效+情感共鸣'的交叉地带存在明显空白。消费者渴望一个既专业又温暖的品牌，而不是冷冰冰的实验室形象或过度营销的快消品形象。 (第26次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[25]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "内容核心方向：围绕'成分科普+真实体验+生活方式'三条主线构建内容矩阵，不追求热点和流量话题，而是持续产出对用户有长期价值的深度内容，建立品牌在专业领域的权威性和在情感层面的亲近感。 (第27次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[26]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "品牌定位：面向追求品质生活的都市年轻家庭，提供以天然成分为核心的功能性个人护理产品，区别于传统化工品牌的刺激性配方，让消费者在安全呵护中感受肌肤的自然修复力。这是基于S4消费者深层需求（功能性+身份认同）和S5竞争空位（天然安全+有效性的结合点）推导的战略选择。 (第28次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[27]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "内容核心方向：围绕'成分科普+真实体验+生活方式'三条主线构建内容矩阵，不追求热点和流量话题，而是持续产出对用户有长期价值的深度内容，建立品牌在专业领域的权威性和在情感层面的亲近感。 (第29次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[28]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "内容核心方向：围绕'成分科普+真实体验+生活方式'三条主线构建内容矩阵，不追求热点和流量话题，而是持续产出对用户有长期价值的深度内容，建立品牌在专业领域的权威性和在情感层面的亲近感。 (第30次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[29]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "内容核心方向：围绕'成分科普+真实体验+生活方式'三条主线构建内容矩阵，不追求热点和流量话题，而是持续产出对用户有长期价值的深度内容，建立品牌在专业领域的权威性和在情感层面的亲近感。 (第31次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[30]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "竞品心智空位：当前市场上，A类品牌主打成分浓度和专业性，B类品牌主打性价比和便捷性，但在'安全有效+情感共鸣'的交叉地带存在明显空白。消费者渴望一个既专业又温暖的品牌，而不是冷冰冰的实验室形象或过度营销的快消品形象。 (第32次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[31]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "品牌定位：面向追求品质生活的都市年轻家庭，提供以天然成分为核心的功能性个人护理产品，区别于传统化工品牌的刺激性配方，让消费者在安全呵护中感受肌肤的自然修复力。这是基于S4消费者深层需求（功能性+身份认同）和S5竞争空位（天然安全+有效性的结合点）推导的战略选择。 (第33次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[32]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "品牌核心视觉概念：以'自然光线下的真实质感'为核心，摒弃过度修饰和滤镜美学，用真实的材质、自然的光影和克制的色彩来传递品牌的诚实与专业。视觉系统围绕'透明感'和'层次感'两个关键词展开。 (第34次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[33]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "品牌核心视觉概念：以'自然光线下的真实质感'为核心，摒弃过度修饰和滤镜美学，用真实的材质、自然的光影和克制的色彩来传递品牌的诚实与专业。视觉系统围绕'透明感'和'层次感'两个关键词展开。 (第35次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[34]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "内容核心方向：围绕'成分科普+真实体验+生活方式'三条主线构建内容矩阵，不追求热点和流量话题，而是持续产出对用户有长期价值的深度内容，建立品牌在专业领域的权威性和在情感层面的亲近感。 (第36次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[35]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "竞品心智空位：当前市场上，A类品牌主打成分浓度和专业性，B类品牌主打性价比和便捷性，但在'安全有效+情感共鸣'的交叉地带存在明显空白。消费者渴望一个既专业又温暖的品牌，而不是冷冰冰的实验室形象或过度营销的快消品形象。 (第37次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[36]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "消费者深层需求（功能性）：用户需要一套能够在日常生活中无缝融入的护理方案，不增加额外的时间成本，同时能够看到可感知的效果改善。他们不信任夸大宣传，但相信数据和口碑。 (第38次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[37]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "竞品心智空位：当前市场上，A类品牌主打成分浓度和专业性，B类品牌主打性价比和便捷性，但在'安全有效+情感共鸣'的交叉地带存在明显空白。消费者渴望一个既专业又温暖的品牌，而不是冷冰冰的实验室形象或过度营销的快消品形象。 (第39次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[38]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "消费者深层需求（身份认同）：目标用户希望通过选择的品牌来表达自己的审美品味和生活态度——理性、克制、不从众。他们不追逐潮流，但追求经得起时间考验的品质。 (第40次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[39]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "品牌核心视觉概念：以'自然光线下的真实质感'为核心，摒弃过度修饰和滤镜美学，用真实的材质、自然的光影和克制的色彩来传递品牌的诚实与专业。视觉系统围绕'透明感'和'层次感'两个关键词展开。 (第41次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[40]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "内容核心方向：围绕'成分科普+真实体验+生活方式'三条主线构建内容矩阵，不追求热点和流量话题，而是持续产出对用户有长期价值的深度内容，建立品牌在专业领域的权威性和在情感层面的亲近感。 (第42次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[41]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "品牌核心视觉概念：以'自然光线下的真实质感'为核心，摒弃过度修饰和滤镜美学，用真实的材质、自然的光影和克制的色彩来传递品牌的诚实与专业。视觉系统围绕'透明感'和'层次感'两个关键词展开。 (第43次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[42]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "竞品心智空位：当前市场上，A类品牌主打成分浓度和专业性，B类品牌主打性价比和便捷性，但在'安全有效+情感共鸣'的交叉地带存在明显空白。消费者渴望一个既专业又温暖的品牌，而不是冷冰冰的实验室形象或过度营销的快消品形象。 (第44次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[43]",
+    "evidenceLevel": "ai_inferred"
+  },
+  {
+    "stageSource": 4,
+    "entryType": "hypothesis",
+    "content": "品牌定位：面向追求品质生活的都市年轻家庭，提供以天然成分为核心的功能性个人护理产品，区别于传统化工品牌的刺激性配方，让消费者在安全呵护中感受肌肤的自然修复力。这是基于S4消费者深层需求（功能性+身份认同）和S5竞争空位（天然安全+有效性的结合点）推导的战略选择。 (第45次迭代优化)",
+    "fieldPath": "deepNeeds.identityNeed.version[44]",
+    "evidenceLevel": "ai_inferred"
+  }
+]

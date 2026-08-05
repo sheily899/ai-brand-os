@@ -1,0 +1,77 @@
+[
+  {
+    "datasetLabel": "真实数据 (2,778 条)",
+    "totalEntries": 2683,
+    "fullMode": {
+      "charCount": 195474,
+      "estimatedTokens": 48869,
+      "entryCount": 2683
+    },
+    "layeredMode": {
+      "charCount": 194942,
+      "estimatedTokens": 48736,
+      "fullEntries": 1125,
+      "summaryEntries": 1558
+    },
+    "compressionRate": "0.3",
+    "strategicRetention": {
+      "totalStrategic": 242,
+      "retainedFull": 242,
+      "retentionRate": "100.0"
+    },
+    "scoreDistribution": {
+      "FULL": 1125,
+      "SUM": 1558
+    }
+  },
+  {
+    "datasetLabel": "合成数据 Small (500 条)",
+    "totalEntries": 481,
+    "fullMode": {
+      "charCount": 30588,
+      "estimatedTokens": 7647,
+      "entryCount": 481
+    },
+    "layeredMode": {
+      "charCount": 30588,
+      "estimatedTokens": 7647,
+      "fullEntries": 211,
+      "summaryEntries": 270
+    },
+    "compressionRate": "0.0",
+    "strategicRetention": {
+      "totalStrategic": 45,
+      "retainedFull": 45,
+      "retentionRate": "100.0"
+    },
+    "scoreDistribution": {
+      "SUM": 270,
+      "FULL": 211
+    }
+  },
+  {
+    "datasetLabel": "合成数据 Large (5,000 条)",
+    "totalEntries": 4840,
+    "fullMode": {
+      "charCount": 317411,
+      "estimatedTokens": 79353,
+      "entryCount": 4840
+    },
+    "layeredMode": {
+      "charCount": 317411,
+      "estimatedTokens": 79353,
+      "fullEntries": 2028,
+      "summaryEntries": 2812
+    },
+    "compressionRate": "0.0",
+    "strategicRetention": {
+      "totalStrategic": 412,
+      "retainedFull": 412,
+      "retentionRate": "100.0"
+    },
+    "scoreDistribution": {
+      "FULL": 2028,
+      "SUM": 2812
+    }
+  }
+]
