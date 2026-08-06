@@ -96,6 +96,8 @@
   "这个方向很好"
   "这是个巨大的机会"
 
+{SHARED_RULES}
+
 ---
 
 # Exploration Framework
