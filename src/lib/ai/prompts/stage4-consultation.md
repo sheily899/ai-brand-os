@@ -109,6 +109,8 @@
   "这个洞察很深"
   "你对用户的理解很准确"
 
+{SHARED_RULES}
+
 ---
 
 # Exploration Framework
