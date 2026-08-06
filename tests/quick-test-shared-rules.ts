@@ -1,13 +1,16 @@
 /**
  * Phase 1.3 验证：共用规则注入测试
  *
- * 验证 _shared-rules.md 中的 B1-B4 + C1-C3 规则是否正确注入到
+ * 验证 _shared-rules.md 中的 符号规范 + B1-B4 + C1-C3 规则是否正确注入到
  * S1 consultation prompt 中。
  */
 
 import { loadPrompt } from "../src/lib/ai/loader";
 
 const SHARED_RULES_SIGNATURES = [
+  // 符号与格式规范
+  "符号与格式规范",
+
   // B1: 禁止二选一/多选一提问
   "禁止二选一/多选一提问",
   "是因为 A，还是因为 B？",

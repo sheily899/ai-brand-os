@@ -26,7 +26,7 @@ check("C3: S2 专属", s2.includes("在用过大的词包装有限的信息"));
 console.log("\n2. S2 original rules preserved:");
 check("Role", s2.includes("商业战略顾问"));
 check("话题边界", s2.includes("话题边界") && s2.includes("明令禁止的提问方向"));
-check("禁止二选一", s2.includes("禁止二选一或多选一提问"));
+check("禁止二选一 (B1 from shared rules)", s2.includes("禁止二选一/多选一提问"));
 check("Exploration Framework", s2.includes("行业环境") && s2.includes("为什么是现在"));
 check("Confirmation Summary", s2.includes("商业背景：") && s2.includes("核心挑战：") && s2.includes("品牌战略方向："));
 
