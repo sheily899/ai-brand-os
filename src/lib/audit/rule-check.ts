@@ -57,9 +57,10 @@ export function runRuleCheck(
     const result = schema.safeParse(output);
     if (!result.success) {
       for (const err of result.error.issues) {
+        const zodMsg = translateZodMessage(err.message, err.path.join("."));
         issues.push({
           field: err.path.join("."),
-          message: err.message,
+          message: zodMsg,
           severity: "error",
         });
       }
@@ -191,7 +192,7 @@ function checkS2Conflicts(output: Record<string, any>): RuleIssue[] {
   if (positiveWindow && allNegative) {
     issues.push({
       field: "strategicDirection.directionHypothesis",
-      message: "strategicWindow 判断时机成熟，但 externalChallenges 全部为负面描述，存在逻辑矛盾",
+      message: "战略时机判断为时机成熟，但外部挑战全部为负面描述，存在逻辑矛盾",
       severity: "warning",
     });
   }
@@ -939,4 +940,41 @@ function extractKeywords(text: string): string[] {
   }
 
   return keywords;
+}
+
+// ── Zod 错误消息中文化 ─────────────────────────────────────
+
+/** Zod 常见错误 → 用户可读中文 */
+const ZOD_MESSAGE_MAP: Record<string, string> = {
+  "Required": "必填",
+  "Invalid input": "输入格式不正确",
+  "Invalid enum value": "枚举值不在允许范围内",
+  "Expected string, received number": "应为文本，实际为数字",
+  "Expected number, received string": "应为数字，实际为文本",
+  "Expected array, received object": "应为数组，实际为对象",
+  "Expected object, received array": "应为对象，实际为数组",
+  "Expected object, received string": "应为对象，实际为文本",
+  "Expected string, received object": "应为文本，实际为对象",
+  "Expected boolean, received string": "应为布尔值，实际为文本",
+  "Expected number, received null": "应为数字，实际为空",
+  "Expected string, received null": "应为文本，实际为空",
+};
+
+/**
+ * 将 Zod 的英文错误消息转为用户可读中文。
+ * 对未知消息保留原文，因为它可能已经是中文了。
+ */
+function translateZodMessage(message: string, fieldPath: string): string {
+  // 精确匹配
+  if (ZOD_MESSAGE_MAP[message]) {
+    return `${ZOD_MESSAGE_MAP[message]}（${fieldPath}）`;
+  }
+  // 前缀匹配（如 "Expected string, received number" 会精确匹配，但有些变体）
+  for (const [en, zh] of Object.entries(ZOD_MESSAGE_MAP)) {
+    if (message.startsWith(en)) {
+      return `${zh}（${fieldPath}）`;
+    }
+  }
+  // 已经中文或其他情况，保留原文并标注字段
+  return `${message}（${fieldPath}）`;
 }

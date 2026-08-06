@@ -148,7 +148,7 @@ export default function AuditDetail({
           {aiAudit?.issues && aiAudit.issues.length > 0 && (
             <div>
               <h5 className="font-medium text-gray-600 mb-1">
-                AI 发现的问题 ({aiAudit.issues.length})
+                智能分析发现的问题 ({aiAudit.issues.length})
               </h5>
               <ul className="space-y-1">
                 {aiAudit.issues.map((issue: AuditIssue, i: number) => (

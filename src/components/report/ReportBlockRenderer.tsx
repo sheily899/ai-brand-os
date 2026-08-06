@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { renderMarkdownBlocks, renderInlineMarkdown } from "@/lib/utils/markdown";
 import EditableNode from "./EditableNode";
 import { useDocumentEditor } from "@/lib/editor/useDocumentEditor";
@@ -312,7 +312,6 @@ function ComparisonRenderer({
   const stage = getStageFromBlock(block);
   const srcField = block.sourceFields?.[0];
   const allColumns = [...block.columns, ...(block.customColumns ?? [])];
-
   const [columns, setColumns] = useState(allColumns);
   const [colDragIdx, setColDragIdx] = useState<number | null>(null);
   const [colDropTarget, setColDropTarget] = useState<number | null>(null);
@@ -422,16 +421,19 @@ function ComparisonRenderer({
     <div>
       {block.title && <BlockTitle title={block.title} blockId={block.id} />}
       <div className="overflow-x-auto">
-        <table className="w-full border-collapse">
+        <table className={`w-full border-collapse table-fixed`}>
           <thead>
             <tr className="border-b border-stone-300">
-              {canDragRows && <th className="w-6 px-0 py-2" />}
-              {columns.map((col, ci) => (
+              {canDragRows && <th className="w-6 px-0 py-2 print:hidden" />}
+              {columns.map((col, ci) => {
+                // 第一列（品牌名）固定宽度，其余均分
+                const wClass = ci === 0 ? "w-[18%]" : "";
+                return (
                 <th
                   key={col.key}
                   draggable={canDragCols}
                   {...(canDragCols ? makeColHandlers(ci) : {})}
-                  className={`text-xs tracking-[0.1em] uppercase text-stone-500 font-medium px-3 py-2 text-left select-none group/col ${
+                  className={`${wClass} text-xs tracking-[0.1em] uppercase text-stone-500 font-medium px-3 py-2 text-left select-none group/col relative ${
                     canDragCols ? "cursor-grab active:cursor-grabbing" : ""
                   } ${colDropTarget === ci && colDragIdx !== ci ? "border-l-2 border-amber-400" : ""}`}
                 >
@@ -446,11 +448,12 @@ function ComparisonRenderer({
                     </button>
                   )}
                 </th>
-              ))}
+                );
+              })}
               <th className="w-8 px-1 py-2 print:hidden">
                 <button
                   onClick={handleAddColumn}
-                  className="text-xs text-stone-400 hover:text-stone-600 hover:bg-stone-100 rounded px-1.5 py-0.5 transition-colors"
+                  className="text-xs text-stone-400 hover:text-stone-600 hover:bg-stone-100 rounded px-1.5 py-0.5 transition-colors print:hidden"
                   title="添加列"
                 >
                   +
@@ -482,7 +485,7 @@ function ComparisonRenderer({
                   // 品牌名列不可编辑
                   if (isLabelCol) {
                     return (
-                      <td key={col.key} className="px-3 py-2 text-xs text-stone-700 font-medium align-top"
+                      <td key={col.key} className={`px-3 py-2 text-xs text-stone-700 font-medium align-top`}
                         dangerouslySetInnerHTML={{ __html: renderInlineMarkdown(cleanCellText(raw)) }}
                       />
                     );
@@ -492,7 +495,7 @@ function ComparisonRenderer({
                     ? colDef.fieldPath.replace("[]", `[${ri}]`)
                     : `${srcField?.fieldPath ?? "competitors"}[${ri}].${col.key}`;
                   return (
-                    <td key={col.key} className="px-3 py-2 text-xs text-stone-700 align-top">
+                    <td key={col.key} className={`px-3 py-2 text-xs text-stone-700 align-top`}>
                       <EditableNode
                         nodeId={nodeId}
                         type="text"
@@ -551,9 +554,9 @@ function LandscapeRenderer({
   const srcField = block.sourceFields?.[0];
 
   const [columns, setColumns] = useState(block.columns);
+  const [localRows, setLocalRows] = useState(block.rows);
   const [colDragIdx, setColDragIdx] = useState<number | null>(null);
   const [colDropTarget, setColDropTarget] = useState<number | null>(null);
-  const [localRows, setLocalRows] = useState(block.rows);
   const [rowDragIdx, setRowDragIdx] = useState<number | null>(null);
   const [rowDropTarget, setRowDropTarget] = useState<number | null>(null);
 
@@ -665,14 +668,21 @@ function LandscapeRenderer({
     <div>
       {block.title && <BlockTitle title={block.title} blockId={block.id} />}
       <div className="overflow-x-auto">
-        <table className="w-full border-collapse">
+        <table className={`w-full border-collapse table-fixed`}>
           <thead>
             <tr className="border-b border-stone-300">
-              {canDragRows && <th className="w-6 px-0 py-2" />}
-              {columns.map((col, ci) => (
+              {canDragRows && <th className="w-6 px-0 py-2 print:hidden" />}
+              {columns.map((col, ci) => {
+                const wClass =
+                  col.key === "competitionType" ? "w-[15%]" :
+                  col.key === "representativeBrands" ? "w-[20%]" :
+                  col.key === "coreStrategy" ? "w-[25%]" :
+                  col.key === "consumerNeed" ? "w-[25%]" :
+                  "";
+                return (
                 <th key={col.key} draggable={canDragCols}
                   {...(canDragCols ? makeColHandlers(ci) : {})}
-                  className={`text-xs tracking-[0.1em] uppercase text-stone-500 font-medium px-3 py-2 text-left select-none group/col ${
+                  className={`${wClass} text-xs tracking-[0.1em] uppercase text-stone-500 font-medium px-3 py-2 text-left select-none group/col relative ${
                     canDragCols ? "cursor-grab active:cursor-grabbing" : ""
                   } ${colDropTarget === ci && colDragIdx !== ci ? "border-l-2 border-amber-400" : ""}`}
                 >
@@ -687,11 +697,12 @@ function LandscapeRenderer({
                     </button>
                   )}
                 </th>
-              ))}
+                );
+              })}
               <th className="w-8 px-1 py-2 print:hidden">
                 <button
                   onClick={handleAddColumn}
-                  className="text-xs text-stone-400 hover:text-stone-600 hover:bg-stone-100 rounded px-1.5 py-0.5 transition-colors"
+                  className="text-xs text-stone-400 hover:text-stone-600 hover:bg-stone-100 rounded px-1.5 py-0.5 transition-colors print:hidden"
                   title="添加列"
                 >
                   +
@@ -774,7 +785,6 @@ function LandscapeRenderer({
   );
 }
 
-
 // ═══════════════════════════════════════════════════════════
 // 6. supplyGap — 供给缺口表（动态列支持）
 // ═══════════════════════════════════════════════════════════
@@ -837,8 +847,6 @@ function SupplyGapRenderer({
     ? extraCols
     : extraKeys.map(k => ({ key: k, label: k, protected: false }));
   const allColumns = [...baseColumns, ...displayExtraCols];
-
-  // ── 本地列状态（支持拖拽重排；内容感知同步）──────────────
   const [columns, setColumns] = useState(allColumns);
   const _colVer = useRef(0);
   useEffect(() => {
@@ -925,15 +933,21 @@ function SupplyGapRenderer({
     <div>
       {block.title && <BlockTitle title={block.title} blockId={block.id} />}
       <div className="overflow-x-auto">
-        <table className="w-full border-collapse">
+        <table className={`w-full border-collapse table-fixed`}>
           <thead>
             <tr className="border-b border-stone-300">
-              {canDragRows && <th className="w-6 px-0 py-2" />}
-              {columns.map((col, ci) => (
+              {canDragRows && <th className="w-6 px-0 py-2 print:hidden" />}
+              {columns.map((col, ci) => {
+                const wClass =
+                  col.key === "dimension" ? "w-[18%]" :
+                  col.key === "currentMarket" ? "w-[30%]" :
+                  col.key === "unmetNeed" ? "w-[30%]" :
+                  "";
+                return (
                 <th key={col.key}
                   draggable={canDragCols}
                   {...(canDragCols ? makeColHandlers(ci) : {})}
-                  className={`text-xs uppercase text-stone-500 font-medium px-3 py-2 text-left select-none group/col ${
+                  className={`${wClass} text-xs uppercase text-stone-500 font-medium px-3 py-2 text-left select-none group/col relative ${
                     canDragCols ? "cursor-grab active:cursor-grabbing" : ""
                   } ${colDropTarget === ci && colDragIdx !== ci ? "border-l-2 border-amber-400" : ""}`}
                 >
@@ -948,11 +962,12 @@ function SupplyGapRenderer({
                     </button>
                   )}
                 </th>
-              ))}
+                );
+              })}
               <th className="w-8 px-1 py-2 print:hidden">
                 <button
                   onClick={handleAddColumn}
-                  className="text-xs text-stone-400 hover:text-stone-600 hover:bg-stone-100 rounded px-1.5 py-0.5 transition-colors"
+                  className="text-xs text-stone-400 hover:text-stone-600 hover:bg-stone-100 rounded px-1.5 py-0.5 transition-colors print:hidden"
                   title="添加列"
                 >
                   +
@@ -1060,10 +1075,9 @@ function MatrixRenderer({
   const [localRows, setLocalRows] = useState<MatrixRow[]>(buildRows(block));
   const [rowDragIdx, setRowDragIdx] = useState<number | null>(null);
   const [rowDropTarget, setRowDropTarget] = useState<number | null>(null);
-  const [brandCols, setBrandCols] = useState<string[]>(block.brands);
   const [colDragIdx, setColDragIdx] = useState<number | null>(null);
   const [colDropTarget, setColDropTarget] = useState<number | null>(null);
-
+  const [brandCols, setBrandCols] = useState<string[]>(block.brands);
   const _mrh = useRef(0); const _mbh = useRef("");
   useEffect(() => {
     const h = block.dimensions.join("|").length + JSON.stringify(block.cells).length;
@@ -1179,15 +1193,15 @@ function MatrixRenderer({
     <div>
       {block.title && <BlockTitle title={block.title} blockId={block.id} />}
       <div className="overflow-x-auto">
-        <table className="w-full border-collapse">
+        <table className={`w-full border-collapse table-fixed`}>
           <thead>
             <tr className="border-b border-stone-300">
-              {canDragRows && <th className="w-6 px-0 py-2" />}
-              <th className="text-xs uppercase text-stone-500 font-medium px-3 py-2 text-left w-1/4">维度</th>
+              {canDragRows && <th className="w-6 px-0 py-2 print:hidden" />}
+              <th className="w-[15%] text-xs uppercase text-stone-500 font-medium px-3 py-2 text-left">维度</th>
               {brandCols.map((brand, bi) => (
                 <th key={brand} draggable={canDragCols}
                   {...(canDragCols ? makeColHandlers(bi) : {})}
-                  className={`text-xs uppercase text-stone-500 font-medium px-3 py-2 text-left select-none group/col ${
+                  className={`text-xs uppercase text-stone-500 font-medium px-3 py-2 text-left select-none group/col relative ${
                     canDragCols ? "cursor-grab active:cursor-grabbing" : ""
                   } ${colDropTarget === bi && colDragIdx !== bi ? "border-l-2 border-amber-400" : ""}`}
                 >
@@ -1204,7 +1218,7 @@ function MatrixRenderer({
               <th className="w-8 px-1 py-2 print:hidden">
                 <button
                   onClick={handleAddColumn}
-                  className="text-xs text-stone-400 hover:text-stone-600 hover:bg-stone-100 rounded px-1.5 py-0.5 transition-colors"
+                  className="text-xs text-stone-400 hover:text-stone-600 hover:bg-stone-100 rounded px-1.5 py-0.5 transition-colors print:hidden"
                   title="添加列"
                 >
                   +
@@ -1232,7 +1246,7 @@ function MatrixRenderer({
                 {(() => {
                   const nodeId = `${block.id}:dim:${ri}`;
                   return (
-                    <td className="px-3 py-2 text-xs text-stone-700 font-medium align-top">
+                    <td className={`px-3 py-2 text-xs text-stone-700 font-medium align-top`}>
                       <EditableNode
                         nodeId={nodeId}
                         type="text"
@@ -1251,7 +1265,7 @@ function MatrixRenderer({
                   const isBest = row.best !== undefined && row.best === origIdx;
                   const nodeId = `${block.id}:cell:${ri}:${bi}`;
                   return (
-                    <td key={brand} className="px-3 py-2 text-xs text-stone-700 align-top">
+                    <td key={brand} className={`px-3 py-2 text-xs text-stone-700 align-top`}>
                       {isBest && <span className="text-amber-500 mr-1" title="最优">★</span>}
                       <EditableNode
                         nodeId={nodeId}
@@ -1327,13 +1341,20 @@ function DecisionDimensionRenderer({
     <div>
       {block.title && <BlockTitle title={block.title} blockId={block.id} />}
       <div className="overflow-x-auto">
-        <table className="w-full border-collapse">
+        <table className="w-full border-collapse table-fixed">
           <thead>
             <tr className="border-b border-stone-300">
-              {canDragRows && <th className="w-6 px-0 py-2" />}
-              {cols.map((col) => (
-                <th key={col.key} className="text-xs uppercase text-stone-500 font-medium px-3 py-2 text-left">{col.label}</th>
-              ))}
+              {canDragRows && <th className="w-6 px-0 py-2 print:hidden" />}
+              {cols.map((col) => {
+                const wClass =
+                  col.key === "dimension" ? "w-[18%]" :
+                  col.key === "consumerConcern" ? "w-[28%]" :
+                  col.key === "marketSolution" ? "w-[27%]" :
+                  "w-[27%]"; // gap
+                return (
+                  <th key={col.key} className={`${wClass} text-xs uppercase text-stone-500 font-medium px-3 py-2 text-left`}>{col.label}</th>
+                );
+              })}
             </tr>
           </thead>
           <tbody>

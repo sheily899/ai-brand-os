@@ -42,7 +42,7 @@ export default function BrandBlueprintSection({
     };
 
   return (
-    <section className="py-20 print:py-12 print:page-break-before-always">
+    <section className="py-20 print:py-12 page-break-before">
       <p className="text-7xl font-bold text-stone-200 select-none print:text-6xl" aria-hidden>BP</p>
 
       <h2 className="text-2xl font-semibold text-stone-900 mt-1">品牌蓝图</h2>

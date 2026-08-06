@@ -184,9 +184,9 @@ export default function AuditCard({
                   : "text-yellow-700 bg-yellow-100"
               }`}
             >
-              {item.text}
+              {localizeFieldNames(item.text)}
               {item.suggestion && (
-                <span className="text-gray-500 ml-1">→ {item.suggestion}</span>
+                <span className="text-gray-500 ml-1">→ {localizeFieldNames(item.suggestion)}</span>
               )}
             </div>
           ))}

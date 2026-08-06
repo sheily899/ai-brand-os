@@ -33,4 +33,43 @@
   .print\:hidden {
     display: none !important;
   }
+
+  /* 表格打印保护 */
+  table { break-inside: avoid; }
+  thead { break-inside: avoid; }
+
+
+}
+
+/* ── WYSIWYG 分页指示器 ────────────────────────────── */
+@media screen {
+  .page-break-before {
+    border-top: 1px dashed #d6d3d1;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    position: relative;
+  }
+  .page-break-before::before {
+    content: "—— 分页 ——";
+    position: absolute;
+    top: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: #a8a29e;
+    background: white;
+    padding: 0 0.75rem;
+    white-space: nowrap;
+  }
+}
+@media print {
+  .page-break-before {
+    break-before: page;
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .page-break-before::before {
+    content: none;
+  }
 }

@@ -29,7 +29,7 @@ export function createDeepSeekProvider(): LLMProvider {
   // ── 核心 chat 实现（闭包，chatSafe 通过此引用避免 this 绑定问题）──
   const doChat = async (
     messages: ChatMessage[],
-    options?: { temperature?: number; maxTokens?: number; responseFormat?: "json_object"; model?: string }
+    options?: { temperature?: number; maxTokens?: number; responseFormat?: "json_object"; model?: string; seed?: number }
   ): Promise<{ content: string; usage?: TokenUsage }> => {
     const model = options?.model ?? defaultModel;
     const isReasoner = model === "deepseek-reasoner";

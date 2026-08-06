@@ -57,7 +57,7 @@ function SummarySection({
 
 export default function ExecutiveSummary({ data, brandName }: ExecutiveSummaryProps) {
   return (
-    <section className="py-12 print:py-8">
+    <section className="py-12 print:py-8 page-break-before">
       <p className="text-7xl font-bold text-stone-200 select-none" aria-hidden>00</p>
       <h2 className="text-2xl font-semibold text-stone-900 mt-2">
         执行摘要

@@ -109,7 +109,7 @@ export default function ChapterSection({
   const subtitleNodeId = `chapter.${chapter.number}.subtitle`;
 
   return (
-    <section className="py-20 print:py-12 print:page-break-before-always">
+    <section className="py-20 print:py-12 page-break-before">
       <p className="text-7xl font-bold text-stone-200 select-none print:text-6xl" aria-hidden>{numStr}</p>
 
       <h2 className="text-2xl font-semibold text-stone-900 mt-1">

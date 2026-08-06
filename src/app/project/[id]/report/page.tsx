@@ -280,7 +280,7 @@ function ReportContent({
   const { report } = useDocumentEditor();
 
   return (
-    <main className="max-w-4xl mx-auto px-6">
+    <main className="max-w-4xl mx-auto px-6 print:max-w-none print:w-full print:px-8">
       {/* 质量审核横幅 */}
       {reportAudit && !reportAudit.passed && (
         <div className="mt-6">

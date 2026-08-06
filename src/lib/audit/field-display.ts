@@ -68,10 +68,10 @@ const FIELD_DISPLAY_NAMES: Record<string, string> = {
   "growthRate": "增长率",
   "targetConsumer.definition": "目标消费者定义",
   "targetConsumer.idealSelfReflection": "理想自我映射",
-  "idealSelfReflection": "理想自我映射",
   "targetConsumer": "目标消费者",
-  "competitors": "竞品分析",
+  "idealSelfReflection": "理想自我映射",
   "competitiveGap.unmetNeeds": "未满足需求",
+  "competitors": "竞品分析",
   "unmetNeeds": "未满足需求",
   "marketOpportunity": "市场机会",
   "opportunityGap": "机会缺口",
@@ -252,8 +252,12 @@ export function localizeFieldNames(text: string): string {
   const entries = Object.entries(FIELD_DISPLAY_NAMES)
     .sort((a, b) => b[0].length - a[0].length);
   for (const [fieldPath, display] of entries) {
+    // 只对纯英文标识符使用 \b 词边界，避免子串误匹配
+    // （如 "weakness" 不应匹配 "weaknesses"，"proposition" 不应匹配 "valueProposition"）
     const escaped = fieldPath.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    result = result.replace(new RegExp(escaped, "g"), display);
+    const isIdentifier = /^[a-zA-Z_]\w*$/.test(fieldPath);
+    const pattern = isIdentifier ? `\\b${escaped}\\b` : escaped;
+    result = result.replace(new RegExp(pattern, "g"), display);
   }
   // 清理技术标记
   result = result.replace(/\[S(\d+)\]/g, "S$1");
