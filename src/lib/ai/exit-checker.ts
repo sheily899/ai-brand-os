@@ -36,6 +36,8 @@ export interface ConditionAssessment {
   evidence: string;
   qualityOk: boolean;
   qualityIssue?: string;
+  /** 预测辅助：如果向用户追问该维度，能否预测用户回答？ */
+  predictable?: "yes" | "no" | "uncertain";
 }
 
 export interface ExitCheckResult {
@@ -47,6 +49,8 @@ export interface ExitCheckResult {
   assessments: ConditionAssessment[];
   /** 如果未满足，说明缺少什么 */
   missingSummary?: string;
+  /** 预测辅助：可预测条件数 vs 总条件数 */
+  predictabilitySummary?: string;
 }
 
 // ── S1-S8 Exit Condition Schemas ──────────────────────
@@ -358,7 +362,7 @@ const STAGE_EXIT_SCHEMAS: Record<number, StageExitSchema> = {
 
 // ── 评估 System Prompt ───────────────────────────────
 
-const CHECKER_SYSTEM_PROMPT = `你是一个品牌咨询质量检查员。你的唯一职责是：评估一段对话历史是否满足了当前阶段的退出条件。
+export const CHECKER_SYSTEM_PROMPT = `你是一个品牌咨询质量检查员。你的唯一职责是：评估一段对话历史是否满足了当前阶段的退出条件。
 
 你不是咨询顾问，不做判断、不追问、不评价内容好坏。
 
@@ -385,6 +389,18 @@ const CHECKER_SYSTEM_PROMPT = `你是一个品牌咨询质量检查员。你的�
 - "竞品A定位'天然安全'，但在消费者调研中用户反馈它的气味不够持久"（有具体维度+对比）
 - "这个品牌像一位有品味的朋友，会在你焦虑时递上一杯茶，但不会说教或强行安慰"（有行为描述+边界）
 
+## 预测辅助
+
+在评估每个条件的满足程度时，同时进行预测判断：
+如果现在向用户提出关于该维度的追问，你能否预测用户的回答？
+
+- **"yes"**：能预测 → 该维度信息已充分，追问不会带来新的实质性信息
+- **"no"**：不能预测 → 该维度仍有未知信息，可能需要继续追问
+- **"uncertain"**：不确定 → 保持现有判断，按常规逻辑处理
+
+如果一个维度的条件已标记为 met 且你能预测用户回答（predictable: "yes"），
+该维度的满足度置信度更高，退出判断更可靠。
+
 ## 输出格式
 
 必须输出严格的 JSON，不包含 markdown 代码块标记：
@@ -401,7 +417,8 @@ const CHECKER_SYSTEM_PROMPT = `你是一个品牌咨询质量检查员。你的�
       "met": true/false,
       "evidence": "对话中找到的证据原文摘要",
       "qualityOk": true/false,
-      "qualityIssue": "如果不达标，说明原因（达标则为空字符串）"
+      "qualityIssue": "如果不达标，说明原因（达标则为空字符串）",
+      "predictable": "yes/no/uncertain"
     }
   ],
   "missingSummary": "如果未满足，用一句话说明缺少什么核心信息（满足则为空字符串）"
@@ -526,6 +543,21 @@ ${historyText}
       coreCompleted >= schema.minCoreRequired &&
       suppCompleted >= schema.minSuppRequired;
 
+    // ── 预测辅助汇总 ────────────────────────────────
+    const predictableYes = assessments.filter(
+      (a) => a.predictable === "yes"
+    ).length;
+    const predictableNo = assessments.filter(
+      (a) => a.predictable === "no"
+    ).length;
+    const predictableUncertain = assessments.filter(
+      (a) => a.predictable === "uncertain"
+    ).length;
+    const predictabilitySummary =
+      assessments.length > 0
+        ? `${predictableYes} 可预测 / ${predictableNo} 不可预测 / ${predictableUncertain} 不确定（共 ${assessments.length} 条件）`
+        : undefined;
+
     return {
       conditionsMet,
       coreCompleted,
@@ -538,6 +570,7 @@ ${historyText}
         (!conditionsMet
           ? `核心 ${coreCompleted}/${coreTotal}（需≥${schema.minCoreRequired}），补充 ${suppCompleted}/${suppTotal}（需≥${schema.minSuppRequired}）`
           : undefined),
+      predictabilitySummary,
     };
   } catch (e: any) {
     console.error(`[exit-checker] LLM 调用失败: ${e.message}`);
