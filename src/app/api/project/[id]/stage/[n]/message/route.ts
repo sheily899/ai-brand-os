@@ -11,6 +11,7 @@ import { initStageRecord, getStageStatus, setStageStatus } from "@/lib/workflow/
 import { buildMemoryContext } from "@/lib/memory/decision-memory";
 import { checkExitConditions, detectConfirmationSummary } from "@/lib/ai/exit-checker";
 import { classifyConfirmationIntent } from "@/lib/ai/intent-classifier";
+import { classifyConfirmationQuality, getQualityAction } from "@/lib/ai/confirmation-quality";
 import { recordUsageFromProvider, estimateCharCount } from "@/lib/ai/token-tracker";
 
 export async function POST(
@@ -129,6 +130,71 @@ export async function POST(
         { role: "user" as const, content: message, timestamp: new Date().toISOString() },
       ];
       await saveConsultationMessages(projectId, stageNumber, confirmHistory as any);
+
+      // ── 确认质量分层（Phase 0 核心改动）──────────────
+      // 在推进到 confirmAndCompleteStage 之前，检测用户的确认质量。
+      // 非明确确认（模糊/推卸/急于结束）先追问一次，不直接推进。
+      const lastAssistantForQuality = [...history]
+        .reverse()
+        .find((m) => m.role === "assistant");
+      const { quality, isRetry } = classifyConfirmationQuality(
+        message,
+        lastAssistantForQuality?.content
+      );
+      const qualityAction = getQualityAction(quality, isRetry);
+
+      if (qualityAction.action === "follow_up" && qualityAction.message) {
+        // 非明确确认：发送确定性的质量追问，保持 waiting_confirm 状态
+        const followUpMsg = qualityAction.message;
+        console.log(
+          `[message] 确认质量: ${quality}${isRetry ? " (重试)" : ""} → 发送追问: ${followUpMsg.slice(0, 50)}`
+        );
+
+        const followUpHistory = [
+          ...confirmHistory,
+          {
+            role: "assistant" as const,
+            content: followUpMsg,
+            timestamp: new Date().toISOString(),
+          },
+        ];
+        await saveConsultationMessages(projectId, stageNumber, followUpHistory as any);
+
+        // 返回简单的 SSE 流（纯文本追问，无需 LLM）
+        const encoder = new TextEncoder();
+        const followUpStream = new ReadableStream({
+          start(controller) {
+            controller.enqueue(
+              encoder.encode(
+                `data: ${JSON.stringify({ content: followUpMsg })}\n\n`
+              )
+            );
+            controller.enqueue(
+              encoder.encode(
+                `data: ${JSON.stringify({ done: true, fullResponse: followUpMsg, qualityAction: "follow_up", quality })}\n\n`
+              )
+            );
+            controller.close();
+          },
+        });
+
+        return new Response(followUpStream, {
+          headers: {
+            "Content-Type": "text/event-stream",
+            "Cache-Control": "no-cache",
+            Connection: "keep-alive",
+          },
+        });
+      }
+
+      // advance 或 advance_with_flag：正常推进
+      if (qualityAction.action === "advance_with_flag") {
+        console.log(
+          `[message] 确认质量: ${quality} (重试) → 推进但标记 ${qualityAction.flag}`
+        );
+      } else {
+        console.log(`[message] 确认质量: ${quality} → 直接推进`);
+      }
 
       // 预加载 Schema（同步操作，提前完成以避免 stream 内 import 失败无回退）
       const schemas: Record<number, any> = {
