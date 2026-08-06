@@ -56,7 +56,7 @@ function buildAfterPrompt(): string {
 // ── 检测函数 ──────────────────────────────────────────
 
 /** 检测是否包含二选一/多选一句式 */
-function hasBinaryQuestion(text: string): string[] {
+function hasBinaryQuestion(text: string): RegExp[] {
   const patterns = [
     /是因为.*还是/,
     /更像.*还是/,
@@ -71,7 +71,7 @@ function hasBinaryQuestion(text: string): string[] {
 }
 
 /** 检测是否包含预设性追问 */
-function hasPresumptiveQuestion(text: string): string[] {
+function hasPresumptiveQuestion(text: string): RegExp[] {
   const patterns = [
     /缺少了什么/,
     /哪里让你不满意/,
