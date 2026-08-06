@@ -21,7 +21,6 @@ const VISION_ENABLED = process.env.VISION_ENABLED === "true"; // 默认关闭（
 const PROMPTS_DIR = resolve(process.cwd(), "src/lib/ai/prompts");
 const SEARCH_PROTOCOL_PATH = resolve(process.cwd(), "reference/shared-search-protocol.md");
 const SHARED_RULES_PATH = resolve(PROMPTS_DIR, "_shared-rules.md");
-const GUESS_MECHANISM_PATH = resolve(PROMPTS_DIR, "_guess-mechanism.md");
 
 // ── 搜索协议缓存 ──────────────────────────────────────
 
@@ -227,22 +226,6 @@ function injectSharedRules(processed: string, stage: number): string {
   );
 }
 
-// ── Guess 机制（实验性）─────────────────────────────────
-
-let _guessMechanismCache: string | null = null;
-
-function loadGuessMechanism(): string {
-  if (!_guessMechanismCache) {
-    try {
-      _guessMechanismCache = readFileSync(GUESS_MECHANISM_PATH, "utf8");
-    } catch {
-      console.warn("[loader] _guess-mechanism.md 加载失败，Guess 机制将跳过");
-      _guessMechanismCache = "";
-    }
-  }
-  return _guessMechanismCache;
-}
-
 // ── 搜索阶段判断 ──────────────────────────────────────
 
 /** 哪些阶段需要拼接搜索协议 */
@@ -263,8 +246,6 @@ export interface LoadOptions {
   decisionMemoryContext?: string;
   /** 搜索上下文（Search Intelligence Layer 产出，注入 system prompt） */
   searchContext?: string;
-  /** 是否注入 Guess 机制（实验性，仅 S5 consultation 生效，默认 false） */
-  includeGuessMechanism?: boolean;
 }
 
 /** 加载并注入变量后的完整 System Prompt */
@@ -275,7 +256,6 @@ export function loadPrompt(options: LoadOptions): string {
     variables = {},
     includeSearchProtocol = false,
     searchContext,
-    includeGuessMechanism = false,
   } = options;
 
   const filename = `stage${stage}-${mode}.md`;
@@ -298,14 +278,6 @@ export function loadPrompt(options: LoadOptions): string {
   // ── 共用规则注入（仅 consultation 模式）────────────────
   if (mode === "consultation") {
     processed = injectSharedRules(processed, stage);
-  }
-
-  // ── Guess 机制注入（实验性，仅 S5 consultation）─────────
-  if (includeGuessMechanism && mode === "consultation" && stage === 5) {
-    const guessRules = loadGuessMechanism();
-    if (guessRules) {
-      processed += `\n\n---\n\n${guessRules}`;
-    }
   }
 
   // ── 拼接搜索协议 ─────────────────────────────────────
